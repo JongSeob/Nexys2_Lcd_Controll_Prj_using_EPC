@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="E:\Assignment5\blaze\SDK\app_prj\Release\app_prj.elf" key="blaze_hw_platform-microblaze_0-initElf"/>
+	<item value="E:\Assignment5\edkBmmFile_bd.bmm" key="blaze_hw_platform-bmmFile"/>
+	<item value="E:\Assignment5\top.bit" key="blaze_hw_platform-bitFile"/>
+</section>

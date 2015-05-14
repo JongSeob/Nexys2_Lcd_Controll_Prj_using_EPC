@@ -1,0 +1,13 @@
+-p
+xc3s1200efg320-4
+-lang
+verilog
+-intstyle
+ise
+-toplevel
+no
+-ti
+blaze_i
+-msg
+__xps/ise/xmsgprops.lst
+blaze.mhs

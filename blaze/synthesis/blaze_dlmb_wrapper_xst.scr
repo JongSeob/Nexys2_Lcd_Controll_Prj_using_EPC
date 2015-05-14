@@ -1,0 +1,14 @@
+set -tmpdir E:\Assignment5\blaze\synthesis\xst_temp_dir\
+run
+-opt_mode speed
+-netlist_hierarchy as_optimized
+-opt_level 1
+-p xc3s1200efg320-4
+-top blaze_dlmb_wrapper
+-ifmt MIXED
+-ifn blaze_dlmb_wrapper_xst.prj
+-ofn ../implementation/blaze_dlmb_wrapper.ngc
+-hierarchy_separator /
+-iobuf NO
+-sd {../implementation}
+-vlgincdir {"E:\Assignment5\blaze\pcores\" "C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }

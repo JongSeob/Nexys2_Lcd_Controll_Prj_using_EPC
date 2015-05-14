@@ -1,0 +1,29 @@
+#Please do not modify this file by hand
+XmpVersion: 14.4
+VerMgmt: 14.4
+IntStyle: ise
+Flow: ise
+MHS File: blaze.mhs
+Architecture: spartan3e
+Device: xc3s1200e
+Package: fg320
+SpeedGrade: -4
+UserCmd1: 
+UserCmd1Type: 0
+UserCmd2: 
+UserCmd2Type: 0
+GenSimTB: 0
+SdkExportBmmBit: 1
+SdkExportDir: SDK/SDK_Export
+InsertNoPads: 1
+WarnForEAArch: 1
+HdlLang: verilog
+SimModel: BEHAVIORAL
+ExternalMemSim: 0
+UcfFile: data/blaze.ucf
+EnableParTimingError: 1
+ShowLicenseDialog: 1
+BInfo: 
+Processor: microblaze_0
+ElfImp: 
+ElfSim: 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<Update_bits_deps>
+
+  <Version XPSPNVER="1.0" EDKVER="14.4" />
+  <FPGA family="spartan3e" device="xc3s1200e" package="fg320" speedgrade="-4" />
+  <File Type="MHS" URL="../../blaze.mhs" />
+  <File Type="UCF" URL="../../data\blaze.ucf" />
+  <File Type="BitinitOpt" URL="../bitinit.opt" />
+
+
+</Update_bits_deps>

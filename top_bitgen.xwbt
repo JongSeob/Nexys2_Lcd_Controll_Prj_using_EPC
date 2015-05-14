@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=E:\Assignment5\top.ncd
+OUTFILE=E:\Assignment5\top.bit
+FAMILY=Spartan3E
+PART=xc3s1200e-4fg320
+WORKINGDIR=E:\Assignment5
+LICENSE=WebPack
+USER_INFO=_

@@ -1,0 +1,26 @@
+// File: E:\Assignment5\blaze\implementation\blaze.bmm
+
+ADDRESS_MAP microblaze_0 MICROBLAZE 100
+	ADDRESS_SPACE lmb_bram_combined COMBINED [0x00000000:0x00007fff]
+		ADDRESS_RANGE RAMB16
+		BUS_BLOCK
+			blaze/lmb_bram/lmb_bram/ramb16_s2_s2_0 [31:30] ;
+			blaze/lmb_bram/lmb_bram/ramb16_s2_s2_1 [29:28] ;
+			blaze/lmb_bram/lmb_bram/ramb16_s2_s2_2 [27:26] ;
+			blaze/lmb_bram/lmb_bram/ramb16_s2_s2_3 [25:24] ;
+			blaze/lmb_bram/lmb_bram/ramb16_s2_s2_4 [23:22] ;
+			blaze/lmb_bram/lmb_bram/ramb16_s2_s2_5 [21:20] ;
+			blaze/lmb_bram/lmb_bram/ramb16_s2_s2_6 [19:18] ;
+			blaze/lmb_bram/lmb_bram/ramb16_s2_s2_7 [17:16] ;
+			blaze/lmb_bram/lmb_bram/ramb16_s2_s2_8 [15:14] ;
+			blaze/lmb_bram/lmb_bram/ramb16_s2_s2_9 [13:12] ;
+			blaze/lmb_bram/lmb_bram/ramb16_s2_s2_10 [11:10] ;
+			blaze/lmb_bram/lmb_bram/ramb16_s2_s2_11 [9:8] ;
+			blaze/lmb_bram/lmb_bram/ramb16_s2_s2_12 [7:6] ;
+			blaze/lmb_bram/lmb_bram/ramb16_s2_s2_13 [5:4] ;
+			blaze/lmb_bram/lmb_bram/ramb16_s2_s2_14 [3:2] ;
+			blaze/lmb_bram/lmb_bram/ramb16_s2_s2_15 [1:0] ;
+		END_BUS_BLOCK;
+		END_ADDRESS_RANGE;
+	END_ADDRESS_SPACE;
+END_ADDRESS_MAP;

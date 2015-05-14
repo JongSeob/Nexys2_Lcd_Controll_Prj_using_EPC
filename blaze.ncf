@@ -1,0 +1,24 @@
+#  Generic Template
+## Net fpga_0_DIP_Switches_GPIO_IO_I_pin<0> LOC=;
+## Net fpga_0_DIP_Switches_GPIO_IO_I_pin<1> LOC=;
+## Net fpga_0_DIP_Switches_GPIO_IO_I_pin<2> LOC=;
+## Net fpga_0_DIP_Switches_GPIO_IO_I_pin<3> LOC=;
+## Net fpga_0_DIP_Switches_GPIO_IO_I_pin<4> LOC=;
+## Net fpga_0_DIP_Switches_GPIO_IO_I_pin<5> LOC=;
+## Net fpga_0_DIP_Switches_GPIO_IO_I_pin<6> LOC=;
+## Net fpga_0_DIP_Switches_GPIO_IO_I_pin<7> LOC=;
+## Net fpga_0_LEDS_GPIO_IO_O_pin<0> LOC=;
+## Net fpga_0_LEDS_GPIO_IO_O_pin<1> LOC=;
+## Net fpga_0_LEDS_GPIO_IO_O_pin<2> LOC=;
+## Net fpga_0_LEDS_GPIO_IO_O_pin<3> LOC=;
+## Net fpga_0_LEDS_GPIO_IO_O_pin<4> LOC=;
+## Net fpga_0_LEDS_GPIO_IO_O_pin<5> LOC=;
+## Net fpga_0_LEDS_GPIO_IO_O_pin<6> LOC=;
+## Net fpga_0_LEDS_GPIO_IO_O_pin<7> LOC=;
+## Net fpga_0_RS232_RX_pin LOC=;
+## Net fpga_0_RS232_TX_pin LOC=;
+Net fpga_0_clk_1_sys_clk_pin TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;
+## Net fpga_0_clk_1_sys_clk_pin LOC=;
+Net fpga_0_rst_1_sys_rst_pin TIG;
+## Net fpga_0_rst_1_sys_rst_pin LOC=;

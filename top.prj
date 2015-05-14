@@ -1,0 +1,3 @@
+verilog work "E:/Assignment5/blaze/hdl/blaze.v"
+verilog work "Lcd_Controller.v"
+verilog work "top.v"

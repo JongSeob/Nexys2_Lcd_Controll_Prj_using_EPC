@@ -1,0 +1,233 @@
+
+# ##############################################################################
+# Created by Base System Builder Wizard for Xilinx EDK 14.4 Build EDK_P.49d
+# Wed May 13 21:11:23 2015
+# Target Board:  Custom
+# Family:    spartan3e
+# Device:    xc3s1200e
+# Package:   fg320
+# Speed Grade:  -4
+# Processor number: 1
+# Processor 1: microblaze_0
+# System clock frequency: 50.0
+# Debug Interface: On-Chip HW Debug Module
+# ##############################################################################
+ PARAMETER VERSION = 2.1.0
+
+
+ PORT fpga_0_LEDS_GPIO_IO_O_pin = fpga_0_LEDS_GPIO_IO_O_pin_vslice_0_7_concat, DIR = O, VEC = [0:7]
+ PORT fpga_0_DIP_Switches_GPIO_IO_I_pin = fpga_0_DIP_Switches_GPIO_IO_I_pin_vslice_0_7_concat, DIR = I, VEC = [0:7]
+ PORT fpga_0_RS232_RX_pin = fpga_0_RS232_RX_pin, DIR = I
+ PORT fpga_0_RS232_TX_pin = fpga_0_RS232_TX_pin, DIR = O
+ PORT fpga_0_clk_1_sys_clk_pin = CLK_S, DIR = I, SIGIS = CLK, CLK_FREQ = 50000000
+ PORT fpga_0_rst_1_sys_rst_pin = sys_rst_s, DIR = I, SIGIS = RST, RST_POLARITY = 1
+ PORT xps_epc_0_PRH_Addr_pin = xps_epc_0_PRH_Addr, DIR = O, VEC = [0:5]
+ PORT xps_epc_0_PRH_CS_n_pin = xps_epc_0_PRH_CS_n, DIR = O
+ PORT xps_epc_0_PRH_Rd_n_pin = xps_epc_0_PRH_Rd_n, DIR = O
+ PORT xps_epc_0_PRH_Wr_n_pin = xps_epc_0_PRH_Wr_n, DIR = O
+ PORT xps_epc_0_PRH_Rdy_pin = net_xps_epc_0_PRH_Rdy_pin, DIR = I
+ PORT xps_epc_0_PRH_BE_pin = xps_epc_0_PRH_BE, DIR = O, VEC = [0:3]
+ PORT xps_epc_0_PRH_Data_I_pin = xps_epc_0_PRH_Data_I, DIR = I, VEC = [0:31]
+ PORT xps_epc_0_PRH_Data_O_pin = xps_epc_0_PRH_Data_O, DIR = O, VEC = [0:31]
+
+
+BEGIN microblaze
+ PARAMETER INSTANCE = microblaze_0
+ PARAMETER C_AREA_OPTIMIZED = 1
+ PARAMETER C_USE_BARREL = 1
+ PARAMETER C_DEBUG_ENABLED = 1
+ PARAMETER HW_VER = 8.40.b
+ BUS_INTERFACE DLMB = dlmb
+ BUS_INTERFACE ILMB = ilmb
+ BUS_INTERFACE DPLB = mb_plb
+ BUS_INTERFACE IPLB = mb_plb
+ BUS_INTERFACE DEBUG = microblaze_0_mdm_bus
+ PORT MB_RESET = mb_reset
+END
+
+BEGIN plb_v46
+ PARAMETER INSTANCE = mb_plb
+ PARAMETER HW_VER = 1.05.a
+ PORT PLB_Clk = clk_50_0000MHz
+ PORT SYS_Rst = sys_bus_reset
+END
+
+BEGIN lmb_v10
+ PARAMETER INSTANCE = ilmb
+ PARAMETER HW_VER = 2.00.b
+ PORT LMB_Clk = clk_50_0000MHz
+ PORT SYS_Rst = sys_bus_reset
+END
+
+BEGIN lmb_v10
+ PARAMETER INSTANCE = dlmb
+ PARAMETER HW_VER = 2.00.b
+ PORT LMB_Clk = clk_50_0000MHz
+ PORT SYS_Rst = sys_bus_reset
+END
+
+BEGIN lmb_bram_if_cntlr
+ PARAMETER INSTANCE = dlmb_cntlr
+ PARAMETER HW_VER = 3.10.c
+ PARAMETER C_BASEADDR = 0x00000000
+ PARAMETER C_HIGHADDR = 0x00007fff
+ BUS_INTERFACE SLMB = dlmb
+ BUS_INTERFACE BRAM_PORT = dlmb_port
+END
+
+BEGIN lmb_bram_if_cntlr
+ PARAMETER INSTANCE = ilmb_cntlr
+ PARAMETER HW_VER = 3.10.c
+ PARAMETER C_BASEADDR = 0x00000000
+ PARAMETER C_HIGHADDR = 0x00007fff
+ BUS_INTERFACE SLMB = ilmb
+ BUS_INTERFACE BRAM_PORT = ilmb_port
+END
+
+BEGIN bram_block
+ PARAMETER INSTANCE = lmb_bram
+ PARAMETER HW_VER = 1.00.a
+ BUS_INTERFACE PORTA = ilmb_port
+ BUS_INTERFACE PORTB = dlmb_port
+END
+
+BEGIN xps_gpio
+ PARAMETER INSTANCE = DIP_Switches
+ PARAMETER C_ALL_INPUTS = 1
+ PARAMETER C_GPIO_WIDTH = 8
+ PARAMETER C_INTERRUPT_PRESENT = 0
+ PARAMETER C_IS_DUAL = 0
+ PARAMETER HW_VER = 2.00.a
+ PARAMETER C_BASEADDR = 0x81420000
+ PARAMETER C_HIGHADDR = 0x8142ffff
+ BUS_INTERFACE SPLB = mb_plb
+ PORT GPIO_IO_I = fpga_0_DIP_Switches_GPIO_IO_I_pin_vslice_0_7_concat
+END
+
+BEGIN xps_gpio
+ PARAMETER INSTANCE = LEDS
+ PARAMETER C_ALL_INPUTS = 0
+ PARAMETER C_GPIO_WIDTH = 8
+ PARAMETER C_INTERRUPT_PRESENT = 0
+ PARAMETER C_IS_DUAL = 0
+ PARAMETER HW_VER = 2.00.a
+ PARAMETER C_BASEADDR = 0x81400000
+ PARAMETER C_HIGHADDR = 0x8140ffff
+ BUS_INTERFACE SPLB = mb_plb
+ PORT GPIO_IO_O = fpga_0_LEDS_GPIO_IO_O_pin_vslice_0_7_concat
+END
+
+BEGIN xps_uartlite
+ PARAMETER INSTANCE = RS232
+ PARAMETER C_BAUDRATE = 9600
+ PARAMETER C_DATA_BITS = 8
+ PARAMETER C_USE_PARITY = 0
+ PARAMETER C_ODD_PARITY = 0
+ PARAMETER HW_VER = 1.02.a
+ PARAMETER C_BASEADDR = 0x84000000
+ PARAMETER C_HIGHADDR = 0x8400ffff
+ BUS_INTERFACE SPLB = mb_plb
+ PORT RX = fpga_0_RS232_RX_pin
+ PORT TX = fpga_0_RS232_TX_pin
+END
+
+BEGIN clock_generator
+ PARAMETER INSTANCE = clock_generator_0
+ PARAMETER C_CLKIN_FREQ = 50000000
+ PARAMETER C_CLKOUT0_FREQ = 50000000
+ PARAMETER C_CLKOUT0_PHASE = 0
+ PARAMETER C_CLKOUT0_GROUP = NONE
+ PARAMETER C_CLKOUT0_BUF = TRUE
+ PARAMETER C_EXT_RESET_HIGH = 1
+ PARAMETER HW_VER = 4.03.a
+ PORT CLKIN = CLK_S
+ PORT CLKOUT0 = clk_50_0000MHz
+ PORT RST = sys_rst_s
+ PORT LOCKED = Dcm_all_locked
+END
+
+BEGIN mdm
+ PARAMETER INSTANCE = mdm_0
+ PARAMETER C_MB_DBG_PORTS = 1
+ PARAMETER C_USE_UART = 1
+ PARAMETER HW_VER = 2.10.a
+ PARAMETER C_BASEADDR = 0x84400000
+ PARAMETER C_HIGHADDR = 0x8440ffff
+ BUS_INTERFACE SPLB = mb_plb
+ BUS_INTERFACE MBDEBUG_0 = microblaze_0_mdm_bus
+ PORT Debug_SYS_Rst = Debug_SYS_Rst
+END
+
+BEGIN proc_sys_reset
+ PARAMETER INSTANCE = proc_sys_reset_0
+ PARAMETER C_EXT_RESET_HIGH = 1
+ PARAMETER HW_VER = 3.00.a
+ PORT Slowest_sync_clk = clk_50_0000MHz
+ PORT Ext_Reset_In = sys_rst_s
+ PORT MB_Debug_Sys_Rst = Debug_SYS_Rst
+ PORT Dcm_locked = Dcm_all_locked
+ PORT MB_Reset = mb_reset
+ PORT Bus_Struct_Reset = sys_bus_reset
+ PORT Peripheral_Reset = sys_periph_reset
+END
+
+BEGIN xps_epc
+ PARAMETER INSTANCE = xps_epc_0
+ PARAMETER HW_VER = 1.02.a
+# Number of peripherals. from 1 to 4.
+# PARAMETER C_NUM_PERIPHERALS 1. should not be assigned in mhs file.
+# Maximum of address bus width of all external peripherals. from 3 to 32.
+ PARAMETER C_PRH_MAX_AWIDTH = 6
+# Maximum of data bus width of all external peripherals. eg 8, 16 or 32
+ PARAMETER C_PRH_MAX_DWIDTH = 32
+# For address/data multiplexing mode : Maximum of data bus width of all peripherals and address bus with of peripherals employing address/data multiplexing
+# For all non multiplexed devices :  the maximum of data bus width of all external devices. The C_PRH_MAX_ADWIDTH reflects the maximum of data bus width of all external devices i.e. C_PRH_MAX_ADWIDTH equals C_PRH_MAX_DWIDTH.
+ PARAMETER C_PRH_MAX_ADWIDTH = 32
+# Most important! Asynchronous Mode=0. Synchronous Mode=1.
+ PARAMETER C_PRH0_SYNC = 0
+# Address bus width of peripherals
+ PARAMETER C_PRH0_AWIDTH = 6
+# Data bus width of peripherals
+ PARAMETER C_PRH0_DWIDTH = 32
+# 20ns. Address Setup time with repect to falling edge of Read/write
+ PARAMETER C_PRH0_ADDR_TSU = 40000
+# 20ns. Address bus (PRH_Addr) hold with respect to falling edge of address strobe (PRH_ADS) or rising edge of read/write
+ PARAMETER C_PRH0_ADDR_TH = 30000
+# 20ns. chip select set up time with respect to falling edge of read/write (PRH_Rd_n/ PRH_Wr_n)
+ PARAMETER C_PRH0_CSN_TSU = 40000
+# 20ns. chip select hold time with respect to rising edge of read/write (PRH_Rd_n/ PRH_Wr_n)
+ PARAMETER C_PRH0_CSN_TH = 30000
+# 300ns. Minimum pulse width of write signal (PRH_Wr_n). must be smaller than C_PRHx_WR_CYCLE.
+ PARAMETER C_PRH0_WRN_WIDTH = 30000
+# 600ns. Cycle time of write signal (PRH_Wr_n). The C_PRHx_WR_CYCLE time will be considered for the buffer period between consecutive writes.
+ PARAMETER C_PRH0_WR_CYCLE = 60000
+# Data bus (PRH_Data) setup with respect to falling edge of write signal (PRH_Wr_n). 보통 쓰기신호 활성화 후에 데이터가 유효하다.
+ PARAMETER C_PRH0_DATA_TSU = 30000
+# 20ns. Data bus (PRH_Data) hold with respect to rising edge of write signal (PRH_Wr_n)
+ PARAMETER C_PRH0_DATA_TH = 30000
+# 300ns. Minimum pulse width of read signal (PRH_Rd_n)
+ PARAMETER C_PRH0_RDN_WIDTH = 30000
+# 600ns. Cycle time of read signal (PRH_Rd_n)
+ PARAMETER C_PRH0_RD_CYCLE = 60000
+# 150ns. Data bus (PRH_Data) validity from falling edge of read signal (PRH_Rd_n). 읽기 사이클에서는 데이터는 사이클이 끝날 때 쯤 유효하다.
+ PARAMETER C_PRH0_DATA_TOUT = 15000
+# 30ns. Data bus (PRH_Data) high impedance from rising edge of read (PRH_Rd_n)
+ PARAMETER C_PRH0_DATA_TINV = 25000
+# 1ps. Device ready (PRH_Rdy) validity from the falling edge of read or write (PRH_Rd_n/ PRH_Wr_n).
+# less than device ready signal width (C_PRHx_RDY_WIDTH). I/O장치에서 RDY를 공급받지 않음을 가정한 듯. fast device로 가정하고 설계하자.
+ PARAMETER C_PRH0_RDY_TOUT = 20000
+# Maximum period of device ready signal (PRH_Rdy) to wait before device timeout. 외부 RDY를 쓰지 않는 경우는 관계없을 듯한데....
+ PARAMETER C_PRH0_RDY_WIDTH = 120000
+ PARAMETER C_PRH0_BASEADDR = 0x80800000
+ PARAMETER C_PRH0_HIGHADDR = 0x8080003F
+ BUS_INTERFACE SPLB = mb_plb
+ PORT PRH_CS_n = xps_epc_0_PRH_CS_n
+ PORT PRH_Addr = xps_epc_0_PRH_Addr
+ PORT PRH_Rd_n = xps_epc_0_PRH_Rd_n
+ PORT PRH_Wr_n = xps_epc_0_PRH_Wr_n
+ PORT PRH_Rdy = net_xps_epc_0_PRH_Rdy_pin
+ PORT PRH_BE = xps_epc_0_PRH_BE
+ PORT PRH_Data_O = xps_epc_0_PRH_Data_O
+ PORT PRH_Data_I = xps_epc_0_PRH_Data_I
+END
+
