@@ -109,6 +109,8 @@ void	PrintfLcd(char *String) {
 }
 
 void	InitLcd(void) {
+	int i;
+
 	Printf("\nLCD Initialization Start");
 
 	Printf("\n1. Function Set");

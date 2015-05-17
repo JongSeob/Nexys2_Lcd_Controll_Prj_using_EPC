@@ -109,6 +109,8 @@ void	PrintfLcd(char *String) {
 }
 
 void	InitLcd(void) {
+	int i;
+
 	Printf("\nLCD Initialization Start");
 
 	Printf("\n1. Function Set");
@@ -130,9 +132,11 @@ int main()
 
 	DataLCD = 'a';
 
-	ch = DataLCD;
+	PrintfLcd("abcdefg");
 
 	ch = DataLCD;
+
+	Print8bits(ch);
 
 	return 0;
 }

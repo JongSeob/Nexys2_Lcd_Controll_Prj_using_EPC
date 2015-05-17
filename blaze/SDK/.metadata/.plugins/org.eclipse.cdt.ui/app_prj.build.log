@@ -1,10 +1,12 @@
-01:52:37 **** Auto Build of configuration Release for project app_prj ****
+06:30:27 **** Auto Build of configuration Release for project app_prj ****
 make all 
 'Building file: ../src/src.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O2 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
 ../src/src.c: In function 'PrintfLcd':
 ../src/src.c:102:21: warning: comparison between pointer and integer [enabled by default]
+../src/src.c: In function 'InitLcd':
+../src/src.c:112:6: warning: unused variable 'i' [-Wunused-variable]
 'Finished building: ../src/src.c'
 ' '
 'Building target: app_prj.elf'
@@ -32,5 +34,5 @@ elfcheck passed.
 'Finished building: app_prj.elf.elfcheck'
 ' '
 
-01:52:39 Build Finished (took 2s.60ms)
+06:30:29 Build Finished (took 2s.74ms)
 

@@ -41,7 +41,7 @@
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000000000000000100000000000000000000000000000000000002b3000000040101000100000000000000000000000064ffffffff0000008100000000000000040000004700000001000000000000002900000001000000000000007a0000000100000000000001c90000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>blaze.xmp</CurrentItem>
    </ItemView>
    <ItemView guiview="Library" >
       <ClosedNodes>

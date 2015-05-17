@@ -109,27 +109,32 @@ void	PrintfLcd(char *String) {
 }
 
 void	InitLcd(void) {
+	int i;
+
 	Printf("\nLCD Initialization Start");
 
 	Printf("\n1. Function Set");
-	StatusCMD(0x38); // Function Set(40us)= 0x20 + 0x10(DL=8bit) + 0x08(2 lines) +0x00(5*8 dots)
+	StatusCMD = 0x38; // Function Set(40us)= 0x20 + 0x10(DL=8bit) + 0x08(2 lines) +0x00(5*8 dots)
 
 	Printf("\n2. Display On");
-	StatusCMD(0x0F); // Display On/Off Control(40us)= 0x08 + 0x04(Display On) + 0x02(Cursor On) + 0x01(Blink On)
+	StatusCMD = 0x0F; // Display On/Off Control(40us)= 0x08 + 0x04(Display On) + 0x02(Cursor On) + 0x01(Blink On)
 
 	Printf("\n3. Clear display\n");
-	StatusCMD(0x01); // Clear Display(1.64ms)
+	StatusCMD = 0x01; // Clear Display(1.64ms)
 
 }
 
 int main()
 {
-	char i = 0x12;
+	char ch;
 
 	InitLcd();
 
+	DataLCD = 'a';
 
-	//Printf("\ni = : "); Print8bits(i);
+	ch = DataLCD;
+
+	Print8bits(ch);
 
 	return 0;
 }

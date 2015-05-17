@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> 
 TABLE OF CONTENTS
@@ -212,48 +212,48 @@ Design Statistics
 # IOs                              : 47
 
 Cell Usage :
-# BELS                             : 3394
+# BELS                             : 3500
 #      GND                         : 15
 #      INV                         : 47
 #      LUT1                        : 45
-#      LUT2                        : 289
+#      LUT2                        : 294
 #      LUT2_D                      : 15
-#      LUT2_L                      : 12
-#      LUT3                        : 690
-#      LUT3_D                      : 53
-#      LUT3_L                      : 17
-#      LUT4                        : 1222
-#      LUT4_D                      : 23
-#      LUT4_L                      : 45
-#      MULT_AND                    : 69
-#      MUXCY                       : 187
+#      LUT2_L                      : 13
+#      LUT3                        : 729
+#      LUT3_D                      : 54
+#      LUT3_L                      : 18
+#      LUT4                        : 1258
+#      LUT4_D                      : 22
+#      LUT4_L                      : 47
+#      MULT_AND                    : 71
+#      MUXCY                       : 189
 #      MUXCY_L                     : 136
-#      MUXF5                       : 342
+#      MUXF5                       : 358
 #      MUXF6                       : 6
 #      MUXF7                       : 2
 #      MUXF8                       : 1
 #      VCC                         : 9
-#      XORCY                       : 169
-# FlipFlops/Latches                : 2311
-#      FD                          : 293
+#      XORCY                       : 171
+# FlipFlops/Latches                : 2397
+#      FD                          : 282
 #      FDC                         : 20
 #      FDC_1                       : 5
-#      FDCE                        : 15
+#      FDCE                        : 19
 #      FDE                         : 279
 #      FDE_1                       : 8
 #      FDP                         : 9
-#      FDR                         : 1061
-#      FDRE                        : 428
+#      FDR                         : 1115
+#      FDRE                        : 457
 #      FDRE_1                      : 1
 #      FDRS                        : 31
 #      FDRSE                       : 13
-#      FDS                         : 80
-#      FDSE                        : 68
+#      FDS                         : 89
+#      FDSE                        : 69
 # RAMS                             : 144
 #      RAM16X1D                    : 128
 #      RAMB16_S2_S2                : 16
-# Shift Registers                  : 150
-#      SRL16                       : 25
+# Shift Registers                  : 148
+#      SRL16                       : 23
 #      SRL16E                      : 117
 #      SRLC16E                     : 8
 # Clock Buffers                    : 6
@@ -271,11 +271,11 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                     1954  out of   8672    22%  
- Number of Slice Flip Flops:           2311  out of  17344    13%  
- Number of 4 input LUTs:               2864  out of  17344    16%  
-    Number used as logic:              2458
-    Number used as Shift registers:     150
+ Number of Slices:                     2015  out of   8672    23%  
+ Number of Slice Flip Flops:           2397  out of  17344    13%  
+ Number of 4 input LUTs:               2946  out of  17344    16%  
+    Number used as logic:              2542
+    Number used as Shift registers:     148
     Number used as RAMs:                256
  Number of IOs:                          47
  Number of bonded IOBs:                   0  out of    250     0%  
@@ -305,7 +305,7 @@ Clock Information:
 -----------------------------------+-------------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                                 | Load  |
 -----------------------------------+-------------------------------------------------------+-------+
-fpga_0_clk_1_sys_clk_pin           | clock_generator_0/DCM0_INST/Using_Virtex.DCM_INST:CLK0| 2353  |
+fpga_0_clk_1_sys_clk_pin           | clock_generator_0/DCM0_INST/Using_Virtex.DCM_INST:CLK0| 2437  |
 mdm_0/mdm_0/drck_i                 | BUFG                                                  | 212   |
 mdm_0/mdm_0/update1                | BUFG                                                  | 43    |
 -----------------------------------+-------------------------------------------------------+-------+
@@ -327,6 +327,10 @@ microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Co
 microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/no_sleeping(microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/no_sleeping1_INV_0:O)     | NONE(microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/dbg_wakeup_i)          | 1     |
 microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/normal_stop_cmd(microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/normal_stop_cmd1:O)   | NONE(microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/normal_stop_TClk)      | 1     |
 microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/start_single_step(microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/start_single_step:Q)| NONE(microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/single_Step_TClk)      | 1     |
+xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_rst<0>(xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_rst_0_or00001:O)                                                                                   | NONE(xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_0)                                                       | 1     |
+xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_rst<1>(xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_rst_1_or00001:O)                                                                                   | NONE(xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_1)                                                       | 1     |
+xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_rst<2>(xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_rst_2_or00001:O)                                                                                   | NONE(xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_2)                                                       | 1     |
+xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_rst<3>(xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_rst_3_or00001:O)                                                                                   | NONE(xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_3)                                                       | 1     |
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+-------+
 
 Timing Summary:
@@ -345,7 +349,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'fpga_0_clk_1_sys_clk_pin'
   Clock period: 12.524ns (frequency: 79.845MHz)
-  Total number of paths / destination ports: 178490 / 6722
+  Total number of paths / destination ports: 179645 / 6974
 -------------------------------------------------------------------------
 Delay:               12.524ns (Levels of Logic = 39)
   Source:            microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/PreFetch_Buffer_I/Using_FPGA.Buffer_DFFs[1].FDS_I (FF)
@@ -487,22 +491,22 @@ Offset:              4.704ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'fpga_0_clk_1_sys_clk_pin'
-  Total number of paths / destination ports: 19 / 19
+  Total number of paths / destination ports: 43 / 43
 -------------------------------------------------------------------------
-Offset:              1.091ns (Levels of Logic = 2)
-  Source:            xps_epc_0_PRH_Rdy_pin (PAD)
-  Destination:       xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.REG_PRH_RDY (FF)
+Offset:              1.187ns (Levels of Logic = 2)
+  Source:            xps_epc_0_PRH_Data_I_pin<7> (PAD)
+  Destination:       xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_PLBWIDTH_GEN[3].ASYNC_RDREG_PRHWIDTH_GEN[0].ASYNC_RDREG_BYTE_GEN[7].ASYNC_RDREG_BIT (FF)
   Destination Clock: fpga_0_clk_1_sys_clk_pin rising
 
-  Data Path: xps_epc_0_PRH_Rdy_pin to xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.REG_PRH_RDY
+  Data Path: xps_epc_0_PRH_Data_I_pin<7> to xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_PLBWIDTH_GEN[3].ASYNC_RDREG_PRHWIDTH_GEN[0].ASYNC_RDREG_BYTE_GEN[7].ASYNC_RDREG_BIT
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      begin scope: 'xps_epc_0'
-     LUT2:I1->O            1   0.704   0.000  xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/Dev_Rdy1 (xps_epc_0/EPC_CORE_I/dev_rdy)
-     FDR:D                     0.308          xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.REG_PRH_RDY
+     LUT2:I0->O            4   0.704   0.000  xps_epc_0/EPC_CORE_I/DATA_STEER_I/data_in<7>1 (xps_epc_0/EPC_CORE_I/DATA_STEER_I/data_in<7>)
+     FDRE:D                    0.308          xps_epc_0/EPC_CORE_I/DATA_STEER_I/DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_PLBWIDTH_GEN[0].ASYNC_RDREG_PRHWIDTH_GEN[0].ASYNC_RDREG_BYTE_GEN[7].ASYNC_RDREG_BIT
     ----------------------------------------
-    Total                      1.091ns (1.091ns logic, 0.000ns route)
+    Total                      1.187ns (1.187ns logic, 0.000ns route)
                                        (100.0% logic, 0.0% route)
 
 =========================================================================
@@ -540,7 +544,7 @@ Offset:              0.591ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               0   0.591   0.000  xps_epc_0/EPC_CORE_I/DATA_STEER_I/PRH_BE_0 (PRH_BE<0>)
+     FDS:C->Q              0   0.591   0.000  xps_epc_0/EPC_CORE_I/DATA_STEER_I/PRH_BE_0 (PRH_BE<0>)
      end scope: 'xps_epc_0'
     ----------------------------------------
     Total                      0.591ns (0.591ns logic, 0.000ns route)
@@ -613,8 +617,8 @@ Offset:              8.921ns (Levels of Logic = 10)
 =========================================================================
 
 
-Total REAL time to Xst completion: 37.00 secs
-Total CPU time to Xst completion: 37.60 secs
+Total REAL time to Xst completion: 36.00 secs
+Total CPU time to Xst completion: 36.01 secs
  
 --> 
 

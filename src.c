@@ -19,7 +19,6 @@
 #define DataLCD		(*((volatile unsigned char *)(BASEADDRESS_EPC + 0x20))) // 1000_00
 #define StatusCMD	(*((volatile unsigned char *)(BASEADDRESS_EPC + 0x24))) // 1001_00
 
-#define BUSY 0x80
 #define NULL 0
 
 #include <stdio.h>
@@ -98,65 +97,48 @@ void delay(unsigned int count)
 
  // ****************** LCD Functions *************************** //
 
-unsigned char	WaitBusyClear(void) {
-	unsigned char	BusyStatus = 0xFF;
-
-	int i;
-
-	Printf("\nStatusCMD Default : "); Printf("0x"); Print8bits(BusyStatus); PutCh('\n');
-
-	do{
-		BusyStatus = StatusCMD;
-		Printf("\nStatusCMD : "); Printf("0x"); Print8bits(BusyStatus); PutCh('\n');
-	}while( (BusyStatus & BUSY) == 1 );
-
-}
-
-void	SendCmdToLcd(unsigned char cCode) {
-	StatusCMD = cCode;
-
-	WaitBusyClear();
-}
-
-void	PutCharLcd(unsigned char cChar) {			// LCD print
-	DataLCD = cChar;
-
-	WaitBusyClear();
-}
-
 void	PrintfLcd(char *String) {
 	int	i;
 	for(i=0; String[i] != NULL; i++)
 	{
-		PutCharLcd(String[i]);
+		DataLCD = String[i];
 
 		if (String[i] == '\n')
-			PutCharLcd('\r');
+			DataLCD = '\r';
 	}
 }
 
 void	InitLcd(void) {
+	int i;
+
 	Printf("\nLCD Initialization Start");
 
 	Printf("\n1. Function Set");
-	SendCmdToLcd(0x38); // Function Set(40us)= 0x20 + 0x10(DL=8bit) + 0x08(2 lines) +0x00(5*8 dots)
+	StatusCMD = 0x38; // Function Set(40us)= 0x20 + 0x10(DL=8bit) + 0x08(2 lines) +0x00(5*8 dots)
+
+	for(i=0; i<99; i++)
+		;
+
 
 	Printf("\n2. Display On");
-	SendCmdToLcd(0x0F); // Display On/Off Control(40us)= 0x08 + 0x04(Display On) + 0x02(Cursor On) + 0x01(Blink On)
+	StatusCMD = 0x0F; // Display On/Off Control(40us)= 0x08 + 0x04(Display On) + 0x02(Cursor On) + 0x01(Blink On)
 
 	Printf("\n3. Clear display\n");
-	SendCmdToLcd(0x01); // Clear Display(1.64ms)
+	StatusCMD = 0x01; // Clear Display(1.64ms)
 
 }
 
 int main()
 {
-	char i = 0x12;
+	char ch;
 
 	InitLcd();
 
+	DataLCD = 'a';
 
-	//Printf("\ni = : "); Print8bits(i);
+	ch = DataLCD;
+
+	Print8bits(ch);
 
 	return 0;
 }

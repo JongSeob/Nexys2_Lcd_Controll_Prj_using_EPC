@@ -28,7 +28,8 @@ module Lcd_Controller#(
 				 stElevenDelay	  = 4'b0101,
 				 stClearEn		  = 4'b0110,
 				 stCheckBusy	  = 4'b0111,
-				 stWaitBusyClear = 4'b1000
+				 stWaitBusyClear = 4'b1000,
+				 stOneDelay		  = 4'b1001
 )
 (
 	input clk,
@@ -94,7 +95,7 @@ module Lcd_Controller#(
 										stNext <= stTwoDelay; 
 								  end 
 								  
-			stTwoDelay 		 : if(count == 1) 
+			stTwoDelay 		 : if(count == 2) 
 										stNext <= stSetEn;
 										
 			stSetEn 			 : begin 
@@ -102,7 +103,7 @@ module Lcd_Controller#(
 										stNext <= stElevenDelay; 	  		 
 								  end
 								  
-			stElevenDelay 	 : if(count == 10) 
+			stElevenDelay 	 : if(count == 11) 
 										stNext <= stClearEn;
 										
 			stClearEn 		 : begin 
@@ -114,8 +115,9 @@ module Lcd_Controller#(
 										EN   <= 1;
 										o_RS <= 0;
 										RW   <= 1;
-										stNext <= stWaitBusyClear;
+										stNext <= stOneDelay;
 								  end
+			stOneDelay      : stNext <= stWaitBusyClear;
 								  
 			stWaitBusyClear : begin
 										if(busy == 1)

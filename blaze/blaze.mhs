@@ -219,6 +219,8 @@ BEGIN xps_epc
 # Maximum period of device ready signal (PRH_Rdy) to wait before device timeout. 외부 RDY를 쓰지 않는 경우는 관계없을 듯한데....
 # 1.7 * 10^9 ps ==> 1.7ms  LCD의 최대 동작시간이 1.64ms이기 때문에 넉넉하게 1.7ms로 설정.
  PARAMETER C_PRH0_RDY_WIDTH = 1700000000
+# EPC에서 RDY신호를 계속 확인하게 만든다.
+ PARAMETER C_PRH0_DWIDTH_MATCH = 1
  PARAMETER C_PRH0_BASEADDR = 0x80800000
  PARAMETER C_PRH0_HIGHADDR = 0x8080003F
  BUS_INTERFACE SPLB = mb_plb
