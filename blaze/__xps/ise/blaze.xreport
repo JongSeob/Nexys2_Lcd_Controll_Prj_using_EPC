@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-05-14T14:48:57</DateModified>
+  <DateModified>2015-05-17T09:03:34</DateModified>
   <ModuleName>blaze</ModuleName>
-  <SummaryTimeStamp>2015-05-14T14:48:57</SummaryTimeStamp>
-  <SavedFilePath>E:/Assignment5/blaze/__xps/ise/blaze.xreport</SavedFilePath>
+  <SummaryTimeStamp>2015-05-17T09:03:34</SummaryTimeStamp>
+  <SavedFilePath>D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/__xps/ise/blaze.xreport</SavedFilePath>
   <FilterFile>filter.filter</FilterFile>
-  <SavedFilterFilePath>E:/Assignment5/blaze/__xps/ise</SavedFilterFilePath>
-  <DateInitialized>2015-05-13T21:11:27</DateInitialized>
+  <SavedFilterFilePath>D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/__xps/ise</SavedFilterFilePath>
+  <DateInitialized>2015-05-17T09:03:34</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

@@ -7,8 +7,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 
-library microblaze_v8_40_b;
-use microblaze_v8_40_b.all;
+library microblaze_v8_50_c;
+use microblaze_v8_50_c.all;
 
 entity blaze_microblaze_0_wrapper is
   port (
@@ -194,6 +194,9 @@ entity blaze_microblaze_0_wrapper is
     M_AXI_IC_AWVALID : out std_logic;
     M_AXI_IC_AWREADY : in std_logic;
     M_AXI_IC_AWUSER : out std_logic_vector(4 downto 0);
+    M_AXI_IC_AWDOMAIN : out std_logic_vector(1 downto 0);
+    M_AXI_IC_AWSNOOP : out std_logic_vector(2 downto 0);
+    M_AXI_IC_AWBAR : out std_logic_vector(1 downto 0);
     M_AXI_IC_WDATA : out std_logic_vector(31 downto 0);
     M_AXI_IC_WSTRB : out std_logic_vector(3 downto 0);
     M_AXI_IC_WLAST : out std_logic;
@@ -205,6 +208,7 @@ entity blaze_microblaze_0_wrapper is
     M_AXI_IC_BVALID : in std_logic;
     M_AXI_IC_BREADY : out std_logic;
     M_AXI_IC_BUSER : in std_logic_vector(0 downto 0);
+    M_AXI_IC_WACK : out std_logic;
     M_AXI_IC_ARID : out std_logic_vector(0 downto 0);
     M_AXI_IC_ARADDR : out std_logic_vector(31 downto 0);
     M_AXI_IC_ARLEN : out std_logic_vector(7 downto 0);
@@ -217,6 +221,9 @@ entity blaze_microblaze_0_wrapper is
     M_AXI_IC_ARVALID : out std_logic;
     M_AXI_IC_ARREADY : in std_logic;
     M_AXI_IC_ARUSER : out std_logic_vector(4 downto 0);
+    M_AXI_IC_ARDOMAIN : out std_logic_vector(1 downto 0);
+    M_AXI_IC_ARSNOOP : out std_logic_vector(3 downto 0);
+    M_AXI_IC_ARBAR : out std_logic_vector(1 downto 0);
     M_AXI_IC_RID : in std_logic_vector(0 downto 0);
     M_AXI_IC_RDATA : in std_logic_vector(31 downto 0);
     M_AXI_IC_RRESP : in std_logic_vector(1 downto 0);
@@ -224,6 +231,19 @@ entity blaze_microblaze_0_wrapper is
     M_AXI_IC_RVALID : in std_logic;
     M_AXI_IC_RREADY : out std_logic;
     M_AXI_IC_RUSER : in std_logic_vector(0 downto 0);
+    M_AXI_IC_RACK : out std_logic;
+    M_AXI_IC_ACVALID : in std_logic;
+    M_AXI_IC_ACADDR : in std_logic_vector(31 downto 0);
+    M_AXI_IC_ACSNOOP : in std_logic_vector(3 downto 0);
+    M_AXI_IC_ACPROT : in std_logic_vector(2 downto 0);
+    M_AXI_IC_ACREADY : out std_logic;
+    M_AXI_IC_CRREADY : in std_logic;
+    M_AXI_IC_CRVALID : out std_logic;
+    M_AXI_IC_CRRESP : out std_logic_vector(4 downto 0);
+    M_AXI_IC_CDVALID : out std_logic;
+    M_AXI_IC_CDREADY : in std_logic;
+    M_AXI_IC_CDDATA : out std_logic_vector(31 downto 0);
+    M_AXI_IC_CDLAST : out std_logic;
     M_AXI_DC_AWID : out std_logic_vector(0 downto 0);
     M_AXI_DC_AWADDR : out std_logic_vector(31 downto 0);
     M_AXI_DC_AWLEN : out std_logic_vector(7 downto 0);
@@ -236,6 +256,9 @@ entity blaze_microblaze_0_wrapper is
     M_AXI_DC_AWVALID : out std_logic;
     M_AXI_DC_AWREADY : in std_logic;
     M_AXI_DC_AWUSER : out std_logic_vector(4 downto 0);
+    M_AXI_DC_AWDOMAIN : out std_logic_vector(1 downto 0);
+    M_AXI_DC_AWSNOOP : out std_logic_vector(2 downto 0);
+    M_AXI_DC_AWBAR : out std_logic_vector(1 downto 0);
     M_AXI_DC_WDATA : out std_logic_vector(31 downto 0);
     M_AXI_DC_WSTRB : out std_logic_vector(3 downto 0);
     M_AXI_DC_WLAST : out std_logic;
@@ -247,6 +270,7 @@ entity blaze_microblaze_0_wrapper is
     M_AXI_DC_BVALID : in std_logic;
     M_AXI_DC_BREADY : out std_logic;
     M_AXI_DC_BUSER : in std_logic_vector(0 downto 0);
+    M_AXI_DC_WACK : out std_logic;
     M_AXI_DC_ARID : out std_logic_vector(0 downto 0);
     M_AXI_DC_ARADDR : out std_logic_vector(31 downto 0);
     M_AXI_DC_ARLEN : out std_logic_vector(7 downto 0);
@@ -259,6 +283,9 @@ entity blaze_microblaze_0_wrapper is
     M_AXI_DC_ARVALID : out std_logic;
     M_AXI_DC_ARREADY : in std_logic;
     M_AXI_DC_ARUSER : out std_logic_vector(4 downto 0);
+    M_AXI_DC_ARDOMAIN : out std_logic_vector(1 downto 0);
+    M_AXI_DC_ARSNOOP : out std_logic_vector(3 downto 0);
+    M_AXI_DC_ARBAR : out std_logic_vector(1 downto 0);
     M_AXI_DC_RID : in std_logic_vector(0 downto 0);
     M_AXI_DC_RDATA : in std_logic_vector(31 downto 0);
     M_AXI_DC_RRESP : in std_logic_vector(1 downto 0);
@@ -266,6 +293,19 @@ entity blaze_microblaze_0_wrapper is
     M_AXI_DC_RVALID : in std_logic;
     M_AXI_DC_RREADY : out std_logic;
     M_AXI_DC_RUSER : in std_logic_vector(0 downto 0);
+    M_AXI_DC_RACK : out std_logic;
+    M_AXI_DC_ACVALID : in std_logic;
+    M_AXI_DC_ACADDR : in std_logic_vector(31 downto 0);
+    M_AXI_DC_ACSNOOP : in std_logic_vector(3 downto 0);
+    M_AXI_DC_ACPROT : in std_logic_vector(2 downto 0);
+    M_AXI_DC_ACREADY : out std_logic;
+    M_AXI_DC_CRREADY : in std_logic;
+    M_AXI_DC_CRVALID : out std_logic;
+    M_AXI_DC_CRRESP : out std_logic_vector(4 downto 0);
+    M_AXI_DC_CDVALID : out std_logic;
+    M_AXI_DC_CDREADY : in std_logic;
+    M_AXI_DC_CDDATA : out std_logic_vector(31 downto 0);
+    M_AXI_DC_CDLAST : out std_logic;
     DBG_CLK : in std_logic;
     DBG_TDI : in std_logic;
     DBG_TDO : out std_logic;
@@ -615,7 +655,7 @@ entity blaze_microblaze_0_wrapper is
   );
 
   attribute x_core_info : STRING;
-  attribute x_core_info of blaze_microblaze_0_wrapper : entity is "microblaze_v8_40_b";
+  attribute x_core_info of blaze_microblaze_0_wrapper : entity is "microblaze_v8_50_c";
 
 end blaze_microblaze_0_wrapper;
 
@@ -966,6 +1006,9 @@ architecture STRUCTURE of blaze_microblaze_0_wrapper is
       M_AXI_IC_AWVALID : out std_logic;
       M_AXI_IC_AWREADY : in std_logic;
       M_AXI_IC_AWUSER : out std_logic_vector((C_M_AXI_IC_AWUSER_WIDTH-1) downto 0);
+      M_AXI_IC_AWDOMAIN : out std_logic_vector(1 downto 0);
+      M_AXI_IC_AWSNOOP : out std_logic_vector(2 downto 0);
+      M_AXI_IC_AWBAR : out std_logic_vector(1 downto 0);
       M_AXI_IC_WDATA : out std_logic_vector((C_M_AXI_IC_DATA_WIDTH-1) downto 0);
       M_AXI_IC_WSTRB : out std_logic_vector(((C_M_AXI_IC_DATA_WIDTH/8)-1) downto 0);
       M_AXI_IC_WLAST : out std_logic;
@@ -977,6 +1020,7 @@ architecture STRUCTURE of blaze_microblaze_0_wrapper is
       M_AXI_IC_BVALID : in std_logic;
       M_AXI_IC_BREADY : out std_logic;
       M_AXI_IC_BUSER : in std_logic_vector((C_M_AXI_IC_BUSER_WIDTH-1) downto 0);
+      M_AXI_IC_WACK : out std_logic;
       M_AXI_IC_ARID : out std_logic_vector((C_M_AXI_IC_THREAD_ID_WIDTH-1) downto 0);
       M_AXI_IC_ARADDR : out std_logic_vector((C_M_AXI_IC_ADDR_WIDTH-1) downto 0);
       M_AXI_IC_ARLEN : out std_logic_vector(7 downto 0);
@@ -989,13 +1033,29 @@ architecture STRUCTURE of blaze_microblaze_0_wrapper is
       M_AXI_IC_ARVALID : out std_logic;
       M_AXI_IC_ARREADY : in std_logic;
       M_AXI_IC_ARUSER : out std_logic_vector((C_M_AXI_IC_ARUSER_WIDTH-1) downto 0);
+      M_AXI_IC_ARDOMAIN : out std_logic_vector(1 downto 0);
+      M_AXI_IC_ARSNOOP : out std_logic_vector(3 downto 0);
+      M_AXI_IC_ARBAR : out std_logic_vector(1 downto 0);
       M_AXI_IC_RID : in std_logic_vector((C_M_AXI_IC_THREAD_ID_WIDTH-1) downto 0);
       M_AXI_IC_RDATA : in std_logic_vector((C_M_AXI_IC_DATA_WIDTH-1) downto 0);
-      M_AXI_IC_RRESP : in std_logic_vector(1 downto 0);
+      M_AXI_IC_RRESP : in std_logic_vector(1+2*((C_INTERCONNECT-1)/2) downto 0);
       M_AXI_IC_RLAST : in std_logic;
       M_AXI_IC_RVALID : in std_logic;
       M_AXI_IC_RREADY : out std_logic;
       M_AXI_IC_RUSER : in std_logic_vector((C_M_AXI_IC_RUSER_WIDTH-1) downto 0);
+      M_AXI_IC_RACK : out std_logic;
+      M_AXI_IC_ACVALID : in std_logic;
+      M_AXI_IC_ACADDR : in std_logic_vector((C_M_AXI_IC_ADDR_WIDTH-1) downto 0);
+      M_AXI_IC_ACSNOOP : in std_logic_vector(3 downto 0);
+      M_AXI_IC_ACPROT : in std_logic_vector(2 downto 0);
+      M_AXI_IC_ACREADY : out std_logic;
+      M_AXI_IC_CRREADY : in std_logic;
+      M_AXI_IC_CRVALID : out std_logic;
+      M_AXI_IC_CRRESP : out std_logic_vector(4 downto 0);
+      M_AXI_IC_CDVALID : out std_logic;
+      M_AXI_IC_CDREADY : in std_logic;
+      M_AXI_IC_CDDATA : out std_logic_vector((C_M_AXI_IC_DATA_WIDTH-1) downto 0);
+      M_AXI_IC_CDLAST : out std_logic;
       M_AXI_DC_AWID : out std_logic_vector((C_M_AXI_DC_THREAD_ID_WIDTH-1) downto 0);
       M_AXI_DC_AWADDR : out std_logic_vector((C_M_AXI_DC_ADDR_WIDTH-1) downto 0);
       M_AXI_DC_AWLEN : out std_logic_vector(7 downto 0);
@@ -1008,6 +1068,9 @@ architecture STRUCTURE of blaze_microblaze_0_wrapper is
       M_AXI_DC_AWVALID : out std_logic;
       M_AXI_DC_AWREADY : in std_logic;
       M_AXI_DC_AWUSER : out std_logic_vector((C_M_AXI_DC_AWUSER_WIDTH-1) downto 0);
+      M_AXI_DC_AWDOMAIN : out std_logic_vector(1 downto 0);
+      M_AXI_DC_AWSNOOP : out std_logic_vector(2 downto 0);
+      M_AXI_DC_AWBAR : out std_logic_vector(1 downto 0);
       M_AXI_DC_WDATA : out std_logic_vector((C_M_AXI_DC_DATA_WIDTH-1) downto 0);
       M_AXI_DC_WSTRB : out std_logic_vector(((C_M_AXI_DC_DATA_WIDTH/8)-1) downto 0);
       M_AXI_DC_WLAST : out std_logic;
@@ -1019,6 +1082,7 @@ architecture STRUCTURE of blaze_microblaze_0_wrapper is
       M_AXI_DC_BVALID : in std_logic;
       M_AXI_DC_BREADY : out std_logic;
       M_AXI_DC_BUSER : in std_logic_vector((C_M_AXI_DC_BUSER_WIDTH-1) downto 0);
+      M_AXI_DC_WACK : out std_logic;
       M_AXI_DC_ARID : out std_logic_vector((C_M_AXI_DC_THREAD_ID_WIDTH-1) downto 0);
       M_AXI_DC_ARADDR : out std_logic_vector((C_M_AXI_DC_ADDR_WIDTH-1) downto 0);
       M_AXI_DC_ARLEN : out std_logic_vector(7 downto 0);
@@ -1031,13 +1095,29 @@ architecture STRUCTURE of blaze_microblaze_0_wrapper is
       M_AXI_DC_ARVALID : out std_logic;
       M_AXI_DC_ARREADY : in std_logic;
       M_AXI_DC_ARUSER : out std_logic_vector((C_M_AXI_DC_ARUSER_WIDTH-1) downto 0);
+      M_AXI_DC_ARDOMAIN : out std_logic_vector(1 downto 0);
+      M_AXI_DC_ARSNOOP : out std_logic_vector(3 downto 0);
+      M_AXI_DC_ARBAR : out std_logic_vector(1 downto 0);
       M_AXI_DC_RID : in std_logic_vector((C_M_AXI_DC_THREAD_ID_WIDTH-1) downto 0);
       M_AXI_DC_RDATA : in std_logic_vector((C_M_AXI_DC_DATA_WIDTH-1) downto 0);
-      M_AXI_DC_RRESP : in std_logic_vector(1 downto 0);
+      M_AXI_DC_RRESP : in std_logic_vector(1+2*((C_INTERCONNECT-1)/2) downto 0);
       M_AXI_DC_RLAST : in std_logic;
       M_AXI_DC_RVALID : in std_logic;
       M_AXI_DC_RREADY : out std_logic;
       M_AXI_DC_RUSER : in std_logic_vector((C_M_AXI_DC_RUSER_WIDTH-1) downto 0);
+      M_AXI_DC_RACK : out std_logic;
+      M_AXI_DC_ACVALID : in std_logic;
+      M_AXI_DC_ACADDR : in std_logic_vector((C_M_AXI_DC_ADDR_WIDTH-1) downto 0);
+      M_AXI_DC_ACSNOOP : in std_logic_vector(3 downto 0);
+      M_AXI_DC_ACPROT : in std_logic_vector(2 downto 0);
+      M_AXI_DC_ACREADY : out std_logic;
+      M_AXI_DC_CRREADY : in std_logic;
+      M_AXI_DC_CRVALID : out std_logic;
+      M_AXI_DC_CRRESP : out std_logic_vector(4 downto 0);
+      M_AXI_DC_CDVALID : out std_logic;
+      M_AXI_DC_CDREADY : in std_logic;
+      M_AXI_DC_CDDATA : out std_logic_vector((C_M_AXI_DC_DATA_WIDTH-1) downto 0);
+      M_AXI_DC_CDLAST : out std_logic;
       DBG_CLK : in std_logic;
       DBG_TDI : in std_logic;
       DBG_TDO : out std_logic;
@@ -1734,6 +1814,9 @@ begin
       M_AXI_IC_AWVALID => M_AXI_IC_AWVALID,
       M_AXI_IC_AWREADY => M_AXI_IC_AWREADY,
       M_AXI_IC_AWUSER => M_AXI_IC_AWUSER,
+      M_AXI_IC_AWDOMAIN => M_AXI_IC_AWDOMAIN,
+      M_AXI_IC_AWSNOOP => M_AXI_IC_AWSNOOP,
+      M_AXI_IC_AWBAR => M_AXI_IC_AWBAR,
       M_AXI_IC_WDATA => M_AXI_IC_WDATA,
       M_AXI_IC_WSTRB => M_AXI_IC_WSTRB,
       M_AXI_IC_WLAST => M_AXI_IC_WLAST,
@@ -1745,6 +1828,7 @@ begin
       M_AXI_IC_BVALID => M_AXI_IC_BVALID,
       M_AXI_IC_BREADY => M_AXI_IC_BREADY,
       M_AXI_IC_BUSER => M_AXI_IC_BUSER,
+      M_AXI_IC_WACK => M_AXI_IC_WACK,
       M_AXI_IC_ARID => M_AXI_IC_ARID,
       M_AXI_IC_ARADDR => M_AXI_IC_ARADDR,
       M_AXI_IC_ARLEN => M_AXI_IC_ARLEN,
@@ -1757,6 +1841,9 @@ begin
       M_AXI_IC_ARVALID => M_AXI_IC_ARVALID,
       M_AXI_IC_ARREADY => M_AXI_IC_ARREADY,
       M_AXI_IC_ARUSER => M_AXI_IC_ARUSER,
+      M_AXI_IC_ARDOMAIN => M_AXI_IC_ARDOMAIN,
+      M_AXI_IC_ARSNOOP => M_AXI_IC_ARSNOOP,
+      M_AXI_IC_ARBAR => M_AXI_IC_ARBAR,
       M_AXI_IC_RID => M_AXI_IC_RID,
       M_AXI_IC_RDATA => M_AXI_IC_RDATA,
       M_AXI_IC_RRESP => M_AXI_IC_RRESP,
@@ -1764,6 +1851,19 @@ begin
       M_AXI_IC_RVALID => M_AXI_IC_RVALID,
       M_AXI_IC_RREADY => M_AXI_IC_RREADY,
       M_AXI_IC_RUSER => M_AXI_IC_RUSER,
+      M_AXI_IC_RACK => M_AXI_IC_RACK,
+      M_AXI_IC_ACVALID => M_AXI_IC_ACVALID,
+      M_AXI_IC_ACADDR => M_AXI_IC_ACADDR,
+      M_AXI_IC_ACSNOOP => M_AXI_IC_ACSNOOP,
+      M_AXI_IC_ACPROT => M_AXI_IC_ACPROT,
+      M_AXI_IC_ACREADY => M_AXI_IC_ACREADY,
+      M_AXI_IC_CRREADY => M_AXI_IC_CRREADY,
+      M_AXI_IC_CRVALID => M_AXI_IC_CRVALID,
+      M_AXI_IC_CRRESP => M_AXI_IC_CRRESP,
+      M_AXI_IC_CDVALID => M_AXI_IC_CDVALID,
+      M_AXI_IC_CDREADY => M_AXI_IC_CDREADY,
+      M_AXI_IC_CDDATA => M_AXI_IC_CDDATA,
+      M_AXI_IC_CDLAST => M_AXI_IC_CDLAST,
       M_AXI_DC_AWID => M_AXI_DC_AWID,
       M_AXI_DC_AWADDR => M_AXI_DC_AWADDR,
       M_AXI_DC_AWLEN => M_AXI_DC_AWLEN,
@@ -1776,6 +1876,9 @@ begin
       M_AXI_DC_AWVALID => M_AXI_DC_AWVALID,
       M_AXI_DC_AWREADY => M_AXI_DC_AWREADY,
       M_AXI_DC_AWUSER => M_AXI_DC_AWUSER,
+      M_AXI_DC_AWDOMAIN => M_AXI_DC_AWDOMAIN,
+      M_AXI_DC_AWSNOOP => M_AXI_DC_AWSNOOP,
+      M_AXI_DC_AWBAR => M_AXI_DC_AWBAR,
       M_AXI_DC_WDATA => M_AXI_DC_WDATA,
       M_AXI_DC_WSTRB => M_AXI_DC_WSTRB,
       M_AXI_DC_WLAST => M_AXI_DC_WLAST,
@@ -1787,6 +1890,7 @@ begin
       M_AXI_DC_BVALID => M_AXI_DC_BVALID,
       M_AXI_DC_BREADY => M_AXI_DC_BREADY,
       M_AXI_DC_BUSER => M_AXI_DC_BUSER,
+      M_AXI_DC_WACK => M_AXI_DC_WACK,
       M_AXI_DC_ARID => M_AXI_DC_ARID,
       M_AXI_DC_ARADDR => M_AXI_DC_ARADDR,
       M_AXI_DC_ARLEN => M_AXI_DC_ARLEN,
@@ -1799,6 +1903,9 @@ begin
       M_AXI_DC_ARVALID => M_AXI_DC_ARVALID,
       M_AXI_DC_ARREADY => M_AXI_DC_ARREADY,
       M_AXI_DC_ARUSER => M_AXI_DC_ARUSER,
+      M_AXI_DC_ARDOMAIN => M_AXI_DC_ARDOMAIN,
+      M_AXI_DC_ARSNOOP => M_AXI_DC_ARSNOOP,
+      M_AXI_DC_ARBAR => M_AXI_DC_ARBAR,
       M_AXI_DC_RID => M_AXI_DC_RID,
       M_AXI_DC_RDATA => M_AXI_DC_RDATA,
       M_AXI_DC_RRESP => M_AXI_DC_RRESP,
@@ -1806,6 +1913,19 @@ begin
       M_AXI_DC_RVALID => M_AXI_DC_RVALID,
       M_AXI_DC_RREADY => M_AXI_DC_RREADY,
       M_AXI_DC_RUSER => M_AXI_DC_RUSER,
+      M_AXI_DC_RACK => M_AXI_DC_RACK,
+      M_AXI_DC_ACVALID => M_AXI_DC_ACVALID,
+      M_AXI_DC_ACADDR => M_AXI_DC_ACADDR,
+      M_AXI_DC_ACSNOOP => M_AXI_DC_ACSNOOP,
+      M_AXI_DC_ACPROT => M_AXI_DC_ACPROT,
+      M_AXI_DC_ACREADY => M_AXI_DC_ACREADY,
+      M_AXI_DC_CRREADY => M_AXI_DC_CRREADY,
+      M_AXI_DC_CRVALID => M_AXI_DC_CRVALID,
+      M_AXI_DC_CRRESP => M_AXI_DC_CRRESP,
+      M_AXI_DC_CDVALID => M_AXI_DC_CDVALID,
+      M_AXI_DC_CDREADY => M_AXI_DC_CDREADY,
+      M_AXI_DC_CDDATA => M_AXI_DC_CDDATA,
+      M_AXI_DC_CDLAST => M_AXI_DC_CDLAST,
       DBG_CLK => DBG_CLK,
       DBG_TDI => DBG_TDI,
       DBG_TDO => DBG_TDO,

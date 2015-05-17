@@ -1,10 +1,10 @@
-Release 14.4 - xst P.49d (nt64)
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to E:\Assignment5\blaze\synthesis\xst_temp_dir\
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\synthesis\xst_temp_dir\
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> 
 TABLE OF CONTENTS
@@ -30,7 +30,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "blaze_xst.prj"
-Verilog Include Directory          : {"E:\Assignment5\blaze\pcores\" "C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc3s1200efg320-4
@@ -209,21 +209,21 @@ Optimization Goal                  : speed
 Keep Hierarchy                     : no
 
 Design Statistics
-# IOs                              : 98
+# IOs                              : 47
 
 Cell Usage :
-# BELS                             : 3357
+# BELS                             : 3334
 #      GND                         : 15
 #      INV                         : 46
 #      LUT1                        : 45
-#      LUT2                        : 281
+#      LUT2                        : 280
 #      LUT2_D                      : 15
 #      LUT2_L                      : 9
-#      LUT3                        : 713
-#      LUT3_D                      : 50
+#      LUT3                        : 689
+#      LUT3_D                      : 51
 #      LUT3_L                      : 16
-#      LUT4                        : 1222
-#      LUT4_D                      : 26
+#      LUT4                        : 1224
+#      LUT4_D                      : 25
 #      LUT4_L                      : 45
 #      MULT_AND                    : 55
 #      MUXCY                       : 168
@@ -234,16 +234,16 @@ Cell Usage :
 #      MUXF8                       : 1
 #      VCC                         : 9
 #      XORCY                       : 155
-# FlipFlops/Latches                : 2401
-#      FD                          : 319
+# FlipFlops/Latches                : 2297
+#      FD                          : 293
 #      FDC                         : 20
 #      FDC_1                       : 5
 #      FDCE                        : 15
-#      FDE                         : 314
+#      FDE                         : 279
 #      FDE_1                       : 8
 #      FDP                         : 9
-#      FDR                         : 1112
-#      FDRE                        : 406
+#      FDR                         : 1061
+#      FDRE                        : 414
 #      FDRE_1                      : 1
 #      FDRS                        : 31
 #      FDRSE                       : 13
@@ -271,13 +271,13 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                     1984  out of   8672    22%  
- Number of Slice Flip Flops:           2401  out of  17344    13%  
- Number of 4 input LUTs:               2874  out of  17344    16%  
-    Number used as logic:              2468
+ Number of Slices:                     1942  out of   8672    22%  
+ Number of Slice Flip Flops:           2297  out of  17344    13%  
+ Number of 4 input LUTs:               2851  out of  17344    16%  
+    Number used as logic:              2445
     Number used as Shift registers:     150
     Number used as RAMs:                256
- Number of IOs:                          98
+ Number of IOs:                          47
  Number of bonded IOBs:                   0  out of    250     0%  
  Number of BRAMs:                        16  out of     28    57%  
  Number of MULT18X18SIOs:                 3  out of     28    10%  
@@ -305,7 +305,7 @@ Clock Information:
 -----------------------------------+-------------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                                 | Load  |
 -----------------------------------+-------------------------------------------------------+-------+
-fpga_0_clk_1_sys_clk_pin           | clock_generator_0/DCM0_INST/Using_Virtex.DCM_INST:CLK0| 2443  |
+fpga_0_clk_1_sys_clk_pin           | clock_generator_0/DCM0_INST/Using_Virtex.DCM_INST:CLK0| 2339  |
 mdm_0/mdm_0/drck_i                 | BUFG                                                  | 212   |
 mdm_0/mdm_0/update1                | BUFG                                                  | 43    |
 -----------------------------------+-------------------------------------------------------+-------+
@@ -324,7 +324,7 @@ mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/local_sel_n3(mdm_0/mdm_0/MDM_Core_I1/JTAG
 mdm_0/mdm_0/update1(mdm_0/mdm_0/Use_Spartan3.BSCAN_SPARTAN3_I:UPDATE)                                                                                                                                                             | BUFG(microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/running_clock)         | 1     |
 microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/continue_from_brk(microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/continue_from_brk:Q)| NONE(microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/continue_from_brk_TClk)| 1     |
 microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/force_stop_cmd(microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/force_stop_cmd1:O)     | NONE(microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/force_stop_TClk)       | 1     |
-microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/no_sleeping(microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/no_sleeping1_INV_0:O)     | NONE(microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/Dbg_Wakeup)            | 1     |
+microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/no_sleeping(microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/no_sleeping1_INV_0:O)     | NONE(microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/dbg_wakeup_i)          | 1     |
 microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/normal_stop_cmd(microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/normal_stop_cmd1:O)   | NONE(microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/normal_stop_TClk)      | 1     |
 microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/start_single_step(microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/start_single_step:Q)| NONE(microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/single_Step_TClk)      | 1     |
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+-------+
@@ -345,7 +345,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'fpga_0_clk_1_sys_clk_pin'
   Clock period: 12.524ns (frequency: 79.845MHz)
-  Total number of paths / destination ports: 177242 / 6862
+  Total number of paths / destination ports: 176670 / 6680
 -------------------------------------------------------------------------
 Delay:               12.524ns (Levels of Logic = 39)
   Source:            microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/PreFetch_Buffer_I/Using_FPGA.Buffer_DFFs[1].FDS_I (FF)
@@ -358,7 +358,7 @@ Delay:               12.524ns (Levels of Logic = 39)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDS:C->Q             67   0.591   1.448  microblaze_0/MicroBlaze_Core_I/Area.Decode_I/PreFetch_Buffer_I/Using_FPGA.Buffer_DFFs[1].FDS_I (microblaze_0/MicroBlaze_Core_I/buffer_Addr<1>)
-     LUT3_L:I0->LO         1   0.704   0.179  microblaze_0/MicroBlaze_Core_I/Area.Decode_I/PC_Incr_0_and0000_SW0 (N237)
+     LUT3_L:I0->LO         1   0.704   0.179  microblaze_0/MicroBlaze_Core_I/Area.Decode_I/PC_Incr_0_and0000_SW0 (N239)
      LUT4:I1->O            1   0.704   0.595  microblaze_0/MicroBlaze_Core_I/Area.Decode_I/PC_Incr_0_and0000 (microblaze_0/MicroBlaze_Core_I/pc_Incr)
      LUT4:I0->O            1   0.704   0.000  microblaze_0/MicroBlaze_Core_I/Area.Data_Flow_I/PC_Module_I/Using_FPGA.All_Bits.PC_GEN[29].PC_Bit_I/SUM_I (microblaze_0/MicroBlaze_Core_I/Area.Data_Flow_I/PC_Module_I/Using_FPGA.All_Bits.PC_GEN[29].PC_Bit_I/xor_Sum)
      MUXCY_L:S->LO         1   0.464   0.000  microblaze_0/MicroBlaze_Core_I/Area.Data_Flow_I/PC_Module_I/Using_FPGA.All_Bits.PC_GEN[29].PC_Bit_I/MUXCY_X (microblaze_0/MicroBlaze_Core_I/Area.Data_Flow_I/PC_Module_I/Carry<29>)
@@ -455,7 +455,7 @@ Delay:               8.025ns (Levels of Logic = 6)
      LUT4:I0->O            4   0.704   0.762  microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/Command_Reg_En_cmp_eq000011 (microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/N4)
      LUT3:I0->O            2   0.704   0.622  microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/Control_Reg_En_cmp_eq000011 (microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/N16)
      LUT3:I0->O           10   0.704   0.882  microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/Control_Reg_En_cmp_eq00001 (microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/Control_Reg_En)
-     FDCE:CE                   0.555          microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/Dbg_Wakeup
+     FDCE:CE                   0.555          microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/dbg_wakeup_i
     ----------------------------------------
     Total                      8.025ns (3.962ns logic, 4.063ns route)
                                        (49.4% logic, 50.6% route)
@@ -487,7 +487,7 @@ Offset:              4.704ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'fpga_0_clk_1_sys_clk_pin'
-  Total number of paths / destination ports: 43 / 43
+  Total number of paths / destination ports: 19 / 19
 -------------------------------------------------------------------------
 Offset:              1.091ns (Levels of Logic = 2)
   Source:            xps_epc_0_PRH_Rdy_pin (PAD)
@@ -529,19 +529,19 @@ Offset:              4.085ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'fpga_0_clk_1_sys_clk_pin'
-  Total number of paths / destination ports: 54 / 54
+  Total number of paths / destination ports: 27 / 27
 -------------------------------------------------------------------------
 Offset:              0.591ns (Levels of Logic = 1)
-  Source:            RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/TX (FF)
-  Destination:       fpga_0_RS232_TX_pin (PAD)
+  Source:            xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/PRH_BE_0 (FF)
+  Destination:       xps_epc_0_PRH_BE_pin (PAD)
   Source Clock:      fpga_0_clk_1_sys_clk_pin rising
 
-  Data Path: RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/TX to fpga_0_RS232_TX_pin
+  Data Path: xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/PRH_BE_0 to xps_epc_0_PRH_BE_pin
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDS:C->Q              0   0.591   0.000  RS232/UARTLITE_CORE_I/UARTLITE_TX_I/TX (TX)
-     end scope: 'RS232'
+     FD:C->Q               0   0.591   0.000  xps_epc_0/EPC_CORE_I/DATA_STEER_I/PRH_BE_0 (PRH_BE<0>)
+     end scope: 'xps_epc_0'
     ----------------------------------------
     Total                      0.591ns (0.591ns logic, 0.000ns route)
                                        (100.0% logic, 0.0% route)
@@ -563,9 +563,9 @@ Offset:              12.965ns (Levels of Logic = 11)
      LUT4:I0->O            1   0.704   0.000  microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/TDO162 (microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/TDO162)
      MUXF5:I0->O           1   0.321   0.424  microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/TDO16_f5 (microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/TDO16)
      LUT4:I3->O            1   0.704   0.455  microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/TDO30 (microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/TDO30)
-     LUT3:I2->O            1   0.704   0.000  microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/TDO84_G (N391)
+     LUT3:I2->O            1   0.704   0.000  microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/TDO84_G (N393)
      MUXF5:I1->O           1   0.321   0.499  microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/TDO84 (microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/TDO84)
-     LUT4:I1->O            1   0.704   0.595  microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/TDO138_SW0 (N292)
+     LUT4:I1->O            1   0.704   0.595  microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/TDO138_SW0 (N294)
      LUT4:I0->O            1   0.704   0.499  microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/TDO138 (DBG_TDO)
      end scope: 'microblaze_0'
      begin scope: 'mdm_0'
@@ -597,7 +597,7 @@ Offset:              8.921ns (Levels of Logic = 10)
      end scope: 'mdm_0'
      begin scope: 'microblaze_0'
      MUXF5:S->O            1   0.739   0.499  microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/TDO84 (microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/TDO84)
-     LUT4:I1->O            1   0.704   0.595  microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/TDO138_SW0 (N292)
+     LUT4:I1->O            1   0.704   0.595  microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/TDO138_SW0 (N294)
      LUT4:I0->O            1   0.704   0.499  microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/TDO138 (DBG_TDO)
      end scope: 'microblaze_0'
      begin scope: 'mdm_0'
@@ -613,12 +613,12 @@ Offset:              8.921ns (Levels of Logic = 10)
 =========================================================================
 
 
-Total REAL time to Xst completion: 34.00 secs
-Total CPU time to Xst completion: 33.76 secs
+Total REAL time to Xst completion: 35.00 secs
+Total CPU time to Xst completion: 35.45 secs
  
 --> 
 
-Total memory usage is 352556 kilobytes
+Total memory usage is 354036 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

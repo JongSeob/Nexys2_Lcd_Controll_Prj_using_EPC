@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-05-14T14:47:19</DateModified>
+  <DateModified>2015-05-17T09:00:33</DateModified>
   <ModuleName>top</ModuleName>
-  <SummaryTimeStamp>2015-05-13T21:18:11</SummaryTimeStamp>
-  <SavedFilePath>E:/Assignment5/iseconfig/top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>E:/Assignment5\</ImplementationReportsDirectory>
+  <SummaryTimeStamp>2015-05-17T08:43:13</SummaryTimeStamp>
+  <SavedFilePath>D:/Nexys2_Lcd_Controll_Prj_using_EPC/iseconfig/top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>D:/Nexys2_Lcd_Controll_Prj_using_EPC\</ImplementationReportsDirectory>
   <DateInitialized>2015-05-12T14:59:51</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
-  <XMP_File>E:/Assignment5/blaze/blaze.xmp</XMP_File>
+  <XMP_File>D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/blaze.xmp</XMP_File>
  </header>
  <body>
   <viewgroup label="Design Overview" >
@@ -31,19 +31,19 @@
    <view inputState="Fitted" program="taengine" contextTags="CPLD_ONLY,EDK_OFF" hidden="true" type="EXTERNAL_HTML" file="top_html/tim/report.htm" label="CPLD Timing Report" />
   </viewgroup>
   <viewgroup label="XPS Errors and Warnings" >
-   <view program="platgen" WrapMessages="true" contextTags="EDK_ON" hidden="false" type="MessageList" hideColumns="Filtered" file="E:/Assignment5/blaze\__xps\ise\_xmsgs\platgen.xmsgs" label="Platgen Messages" />
-   <view program="simgen" WrapMessages="true" contextTags="EDK_ON" hidden="false" type="MessageList" hideColumns="Filtered" file="E:/Assignment5/blaze\__xps\ise\_xmsgs\simgen.xmsgs" label="Simgen Messages" />
-   <view program="bitinit" WrapMessages="true" contextTags="EDK_ON" hidden="false" type="MessageList" hideColumns="Filtered" file="E:/Assignment5/blaze\__xps\ise\_xmsgs\bitinit.xmsgs" label="BitInit Messages" />
+   <view program="platgen" WrapMessages="true" contextTags="EDK_ON" hidden="false" type="MessageList" hideColumns="Filtered" file="D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze\__xps\ise\_xmsgs\platgen.xmsgs" label="Platgen Messages" />
+   <view program="simgen" WrapMessages="true" contextTags="EDK_ON" hidden="false" type="MessageList" hideColumns="Filtered" file="D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze\__xps\ise\_xmsgs\simgen.xmsgs" label="Simgen Messages" />
+   <view program="bitinit" WrapMessages="true" contextTags="EDK_ON" hidden="false" type="MessageList" hideColumns="Filtered" file="D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze\__xps\ise\_xmsgs\bitinit.xmsgs" label="BitInit Messages" />
   </viewgroup>
   <viewgroup label="XPS Reports" >
-   <view inputState="PreSynthesized" program="platgen" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="E:/Assignment5/blaze\platgen.log" label="Platgen Log File" />
-   <view inputState="PreSynthesized" program="simgen" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="E:/Assignment5/blaze\simgen.log" label="Simgen Log File" />
-   <view inputState="PreSynthesized" program="bitinit" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="E:/Assignment5/blaze\bitinit.log" label="BitInit Log File" />
-   <view inputState="PreSynthesized" program="system" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="E:/Assignment5/blaze\top.log" label="System Log File" />
+   <view inputState="PreSynthesized" program="platgen" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze\platgen.log" label="Platgen Log File" />
+   <view inputState="PreSynthesized" program="simgen" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze\simgen.log" label="Simgen Log File" />
+   <view inputState="PreSynthesized" program="bitinit" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze\bitinit.log" label="BitInit Log File" />
+   <view inputState="PreSynthesized" program="system" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze\top.log" label="System Log File" />
   </viewgroup>
   <viewgroup label="Errors and Warnings" >
    <view program="pn" WrapMessages="true" contextTags="EDK_OFF" hidden="true" type="MessageList" hideColumns="Filtered, New" file="_xmsgs/pn_parser.xmsgs" label="Parser Messages" />
-   <view program="xst" WrapMessages="true" contextTags="XST_ONLY,EDK_OFF" hidden="true" type="MessageList" hideColumns="Filtered" file="_xmsgs/xst.xmsgs" label="Synthesis Messages" />
+   <view program="xst" WrapMessages="true" contextTags="XST_ONLY,EDK_OFF" hidden="false" type="MessageList" hideColumns="Filtered" file="_xmsgs/xst.xmsgs" label="Synthesis Messages" />
    <view inputState="Synthesized" program="ngdbuild" WrapMessages="true" type="MessageList" hideColumns="Filtered" file="_xmsgs/ngdbuild.xmsgs" label="Translation Messages" />
    <view inputState="Translated" program="map" WrapMessages="true" contextTags="FPGA_ONLY" type="MessageList" hideColumns="Filtered" file="_xmsgs/map.xmsgs" label="Map Messages" />
    <view inputState="Mapped" program="par" WrapMessages="true" contextTags="FPGA_ONLY" type="MessageList" hideColumns="Filtered" file="_xmsgs/par.xmsgs" label="Place and Route Messages" />
@@ -55,7 +55,7 @@
    <view inputState="Current" program="fitting" WrapMessages="true" fileList="_xmsgs/xst.xmsgs,_xmsgs/ngdbuild.xmsgs,_xmsgs/cpldfit.xmsgs,_xmsgs/xpwr.xmsgs" contextTags="CPLD_ONLY,EDK_OFF" hidden="true" type="CPLD_MessageList" hideColumns="Filtered" file="_xmsgs/*.xmsgs" label="All Implementation Messages (CPLD)" />
   </viewgroup>
   <viewgroup label="Detailed Reports" >
-   <view program="xst" contextTags="XST_ONLY,EDK_OFF" hidden="true" type="Report" file="top.syr" label="Synthesis Report" >
+   <view program="xst" contextTags="XST_ONLY,EDK_OFF" hidden="false" type="Report" file="top.syr" label="Synthesis Report" >
     <toc-item title="Top of Report" target="Copyright " searchDir="Forward" />
     <toc-item title="Synthesis Options Summary" target="   Synthesis Options Summary   " />
     <toc-item title="HDL Compilation" target="   HDL Compilation   " />

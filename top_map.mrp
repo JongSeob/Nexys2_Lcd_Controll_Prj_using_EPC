@@ -1,4 +1,4 @@
-Release 14.4 Map P.49d (nt64)
+Release 14.7 Map P.20131013 (nt64)
 Xilinx Mapping Report File for Design 'top'
 
 Design Information
@@ -9,23 +9,23 @@ Target Device  : xc3s1200e
 Target Package : fg320
 Target Speed   : -4
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Thu May 14 14:53:56 2015
+Mapped Date    : Sun May 17 09:17:13 2015
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    0
 Logic Utilization:
-  Number of Slice Flip Flops:         1,884 out of  17,344   10%
-  Number of 4 input LUTs:             2,698 out of  17,344   15%
+  Number of Slice Flip Flops:         1,508 out of  17,344    8%
+  Number of 4 input LUTs:             2,500 out of  17,344   14%
 Logic Distribution:
-  Number of occupied Slices:          2,075 out of   8,672   23%
-    Number of Slices containing only related logic:   2,075 out of   2,075 100%
-    Number of Slices containing unrelated logic:          0 out of   2,075   0%
+  Number of occupied Slices:          1,811 out of   8,672   20%
+    Number of Slices containing only related logic:   1,811 out of   1,811 100%
+    Number of Slices containing unrelated logic:          0 out of   1,811   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       2,800 out of  17,344   16%
-    Number used as logic:             2,294
-    Number used as a route-thru:        102
+  Total Number of 4 input LUTs:       2,584 out of  17,344   14%
+    Number used as logic:             2,096
+    Number used as a route-thru:         84
     Number used for Dual Port RAMs:     256
       (Two LUTs used per Dual Port RAM)
     Number used as Shift registers:     148
@@ -33,17 +33,17 @@ Logic Distribution:
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
 
-  Number of bonded IOBs:                 31 out of     250   12%
+  Number of bonded IOBs:                 43 out of     250   17%
   Number of RAMB16s:                     16 out of      28   57%
   Number of BUFGMUXs:                     3 out of      24   12%
   Number of DCMs:                         1 out of       8   12%
   Number of BSCANs:                       1 out of       1  100%
   Number of MULT18X18SIOs:                3 out of      28   10%
 
-Average Fanout of Non-Clock Nets:                3.57
+Average Fanout of Non-Clock Nets:                3.59
 
-Peak Memory Usage:  293 MB
-Total REAL time to MAP completion:  7 secs 
+Peak Memory Usage:  304 MB
+Total REAL time to MAP completion:  5 secs 
 Total CPU time to MAP completion:   5 secs 
 
 NOTES:
@@ -88,14 +88,14 @@ Section 2 - Warnings
 
 Section 3 - Informational
 -------------------------
-INFO:LIT:243 - Logical network blaze/N1 has no load.
-INFO:LIT:395 - The above info message is repeated 573 more times for the
+INFO:LIT:243 - Logical network blaze/xps_epc_0_PRH_BE_pin has no load.
+INFO:LIT:395 - The above info message is repeated 600 more times for the
    following (max. 5 shown):
-   blaze/mb_plb_PLB_MIRQ<1>,
-   blaze/mb_plb_PLB_MRdErr<1>,
-   blaze/mb_plb_PLB_MBusy<0>,
-   blaze/mb_plb_PLB_MIRQ<0>,
-   blaze/mb_plb_PLB_MBusy<1>
+   blaze/fpga_0_LEDS_GPIO_IO_O_pin<0>,
+   blaze/fpga_0_LEDS_GPIO_IO_O_pin<1>,
+   blaze/fpga_0_LEDS_GPIO_IO_O_pin<2>,
+   blaze/fpga_0_LEDS_GPIO_IO_O_pin<3>,
+   blaze/fpga_0_LEDS_GPIO_IO_O_pin<4>
    To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
@@ -104,9 +104,9 @@ INFO:LIT:244 - All of the single ended outputs in this design are using slew
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-1117 block(s) removed
- 138 block(s) optimized away
-1165 signal(s) removed
+1170 block(s) removed
+ 218 block(s) optimized away
+1250 signal(s) removed
 
 Section 5 - Removed Logic
 -------------------------
@@ -121,6 +121,61 @@ To quickly locate the original cause for the removal of a chain of logic, look
 above the place where that logic is listed in the trimming report, then locate
 the lines that are least indented (begin at the leftmost edge).
 
+The signal "blaze/xps_epc_0_PRH_BE_pin" is loadless and has been removed.
+ Loadless block "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/PRH_BE_0" (FF)
+removed.
+  The signal
+"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_be_i<0>" is
+loadless and has been removed.
+   Loadless block
+"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_0" (SFF)
+removed.
+    The signal
+"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_be_reg<0>" is
+loadless and has been removed.
+     Loadless block
+"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_be_reg_0" (SFF)
+removed.
+      The signal "blaze/mb_plb_PLB_BE<0>" is loadless and has been removed.
+       Loadless block "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_BE_0" (SFF)
+removed.
+        The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/plb_be_i<0>" is
+loadless and has been removed.
+         Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/I_PLBBE_MUX/lutout_0_or00001"
+(ROM) removed.
+          The signal "blaze/mb_plb_M_BE<0>" is loadless and has been removed.
+           Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_be_i_0" (SFF) removed.
+The signal "blaze/fpga_0_LEDS_GPIO_IO_O_pin<0>" is loadless and has been
+removed.
+ Loadless block "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_0" (SFF) removed.
+  The signal "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_0_not0001" is loadless and
+has been removed.
+   Loadless block "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_0_not00011" (ROM)
+removed.
+The signal "blaze/fpga_0_LEDS_GPIO_IO_O_pin<1>" is loadless and has been
+removed.
+ Loadless block "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_1" (SFF) removed.
+The signal "blaze/fpga_0_LEDS_GPIO_IO_O_pin<2>" is loadless and has been
+removed.
+ Loadless block "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_2" (SFF) removed.
+The signal "blaze/fpga_0_LEDS_GPIO_IO_O_pin<3>" is loadless and has been
+removed.
+ Loadless block "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_3" (SFF) removed.
+The signal "blaze/fpga_0_LEDS_GPIO_IO_O_pin<4>" is loadless and has been
+removed.
+ Loadless block "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_4" (SFF) removed.
+The signal "blaze/fpga_0_LEDS_GPIO_IO_O_pin<5>" is loadless and has been
+removed.
+ Loadless block "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_5" (SFF) removed.
+The signal "blaze/fpga_0_LEDS_GPIO_IO_O_pin<6>" is loadless and has been
+removed.
+ Loadless block "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_6" (SFF) removed.
+The signal "blaze/fpga_0_LEDS_GPIO_IO_O_pin<7>" is loadless and has been
+removed.
+ Loadless block "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_7" (SFF) removed.
 The signal "blaze/N1" is loadless and has been removed.
  Loadless block "blaze/XST_VCC" (ONE) removed.
 The signal "blaze/mb_plb_PLB_MIRQ<1>" is loadless and has been removed.
@@ -1272,6 +1327,158 @@ _rd_lvl1_n<1>" is loadless and has been removed.
      Loadless block
 "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/I_PEND_PRIOR/M
 ASTER_RD_LVLS[1].I_QUAL_MASTERS_PRIORITY/Lvl1_n1" (ROM) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<8>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout7_0_or00001
+" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<8>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_8" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<9>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout8_0_or00001
+" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<9>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_9" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<10>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout9_0_or00001
+" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<10>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_10" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<11>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout10_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<11>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_11" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<12>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout11_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<12>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_12" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<13>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout12_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<13>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_13" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<14>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout13_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<14>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_14" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<15>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout14_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<15>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_15" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<16>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout15_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<16>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_16" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<17>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout16_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<17>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_17" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<18>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout17_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<18>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_18" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<19>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout18_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<19>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_19" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<20>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout19_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<20>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_20" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<21>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout20_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<21>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_21" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<22>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout21_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<22>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_22" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<23>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout22_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<23>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_23" (SFF) removed.
+The signal "blaze/mb_plb_PLB_BE<1>" is loadless and has been removed.
+ Loadless block "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_BE_1" (SFF)
+removed.
+  The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/plb_be_i<1>" is
+loadless and has been removed.
+   Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/I_PLBBE_MUX/lutout0_0_or00001"
+(ROM) removed.
+    The signal "blaze/mb_plb_M_BE<1>" is loadless and has been removed.
+     Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_be_i_1" (SFF) removed.
+The signal "blaze/mb_plb_PLB_BE<2>" is loadless and has been removed.
+ Loadless block "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_BE_2" (SFF)
+removed.
+  The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/plb_be_i<2>" is
+loadless and has been removed.
+   Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/I_PLBBE_MUX/lutout1_0_or00001"
+(ROM) removed.
+    The signal "blaze/mb_plb_M_BE<2>" is loadless and has been removed.
+     Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_be_i_2" (SFF) removed.
 The signal "blaze/mb_plb_PLB_TAttribute<0>" is loadless and has been removed.
  Loadless block "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_TAttribute_0"
 (SFF) removed.
@@ -1405,10 +1612,10 @@ The signal "blaze/mb_plb_PLB_rdPrim<0>" is loadless and has been removed.
 (ROM) removed.
 The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Ma
-ster_Core.Debug_Area/Dbg_Wakeup" is loadless and has been removed.
+ster_Core.Debug_Area/dbg_wakeup_i" is loadless and has been removed.
  Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Ma
-ster_Core.Debug_Area/Dbg_Wakeup" (FF) removed.
+ster_Core.Debug_Area/dbg_wakeup_i" (FF) removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Ma
 ster_Core.Debug_Area/no_sleeping" is loadless and has been removed.
@@ -1421,16 +1628,16 @@ ster_Core.Debug_Area/control_reg<3>" is loadless and has been removed.
  Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Ma
 ster_Core.Debug_Area/control_reg_3" (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3766>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3818>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3766" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3818" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Ma
-ster_Core.Debug_Area/MB_Halted" is loadless and has been removed.
+ster_Core.Debug_Area/mb_halted_i" is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Ma
-ster_Core.Debug_Area/MB_Halted" (FF) removed.
+ster_Core.Debug_Area/mb_halted_i" (FF) removed.
 The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<2>" is loadless and has
 been removed.
  Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_2" (SFF) removed.
@@ -1787,9 +1994,9 @@ has been removed.
 The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<111>" is loadless and
 has been removed.
  Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_111" (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3765>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3817>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3765" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3817" (SFF)
 removed.
 The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<118>" is loadless and
 has been removed.
@@ -2097,9 +2304,9 @@ has been removed.
 The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<494>" is loadless and
 has been removed.
  Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_494" (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3551>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3603>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3551" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3603" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<0>" is
@@ -2113,9 +2320,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_0"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3552>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3604>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3552" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3604" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<1>" is
@@ -2129,9 +2336,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_1"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3553>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3605>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3553" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3605" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<2>" is
@@ -2145,9 +2352,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_2"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3554>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3606>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3554" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3606" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<3>" is
@@ -2161,9 +2368,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_3"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3555>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3607>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3555" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3607" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<4>" is
@@ -2171,9 +2378,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction_4" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3556>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3608>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3556" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3608" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<5>" is
@@ -2181,9 +2388,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction_5" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3557>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3609>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3557" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3609" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<6>" is
@@ -2191,9 +2398,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction_6" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3558>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3610>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3558" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3610" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<7>" is
@@ -2207,9 +2414,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_7"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3559>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3611>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3559" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3611" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<8>" is
@@ -2223,9 +2430,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_8"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3560>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3612>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3560" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3612" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<9>" is
@@ -2239,9 +2446,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_9"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3561>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3613>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3561" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3613" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<10>" is
@@ -2255,9 +2462,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_10"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3562>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3614>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3562" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3614" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<11>" is
@@ -2271,9 +2478,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_11"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3563>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3615>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3563" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3615" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<12>" is
@@ -2287,9 +2494,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_12"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3564>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3616>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3564" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3616" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<13>" is
@@ -2303,9 +2510,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_13"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3565>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3617>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3565" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3617" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<14>" is
@@ -2319,9 +2526,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_14"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3566>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3618>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3566" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3618" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<15>" is
@@ -2335,9 +2542,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_15"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3567>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3619>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3567" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3619" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<16>" is
@@ -2351,9 +2558,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_16"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3568>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3620>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3568" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3620" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<17>" is
@@ -2367,9 +2574,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_17"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3569>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3621>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3569" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3621" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<18>" is
@@ -2383,9 +2590,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_18"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3570>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3622>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3570" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3622" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<19>" is
@@ -2399,9 +2606,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_19"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3571>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3623>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3571" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3623" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<20>" is
@@ -2415,9 +2622,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_20"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3572>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3624>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3572" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3624" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<21>" is
@@ -2425,9 +2632,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction_21" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3573>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3625>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3573" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3625" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<22>" is
@@ -2435,9 +2642,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction_22" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3574>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3626>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3574" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3626" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<23>" is
@@ -2451,9 +2658,9 @@ loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/FPU_Op_1" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3575>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3627>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3575" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3627" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<24>" is
@@ -2467,9 +2674,9 @@ loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/FPU_Op_2" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3576>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3628>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3576" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3628" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<25>" is
@@ -2477,9 +2684,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction_25" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3577>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3629>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3577" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3629" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<26>" is
@@ -2487,9 +2694,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction_26" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3578>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3630>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3578" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3630" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<27>" is
@@ -2503,9 +2710,9 @@ loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/FPU_Cond_2"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3579>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3631>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3579" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3631" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<28>" is
@@ -2519,9 +2726,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_28"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3580>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3632>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3580" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3632" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<29>" is
@@ -2535,9 +2742,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_29"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3581>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3633>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3581" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3633" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<30>" is
@@ -2551,9 +2758,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_30"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3582>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3634>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3582" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3634" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Instruction<31>" is
@@ -2567,9 +2774,9 @@ is loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/instr_EX_i_31"
 (SFF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3583>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3635>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3583" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3635" (SFF)
 removed.
   The signal "blaze/microblaze_0/Trace_Valid_Instr" is loadless and has been
 removed.
@@ -2618,7 +2825,7 @@ tr_part1_or000012" is loadless and has been removed.
          Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/trace_valid_ins
 tr_part1_or000012" (ROM) removed.
-          The signal "blaze/microblaze_0/N312" is loadless and has been removed.
+          The signal "blaze/microblaze_0/N314" is loadless and has been removed.
            Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/trace_valid_ins
 tr_part1_or000012_SW0" (ROM) removed.
@@ -2670,9 +2877,9 @@ nstr_or0000" is loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Blocked_Valid_I
 nstr_or00001" (ROM) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3584>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3636>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3584" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3636" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<0>" is
 loadless and has been removed.
@@ -2714,9 +2921,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_0" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3585>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3637>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3585" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3637" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<1>" is
 loadless and has been removed.
@@ -2734,9 +2941,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_1" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3586>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3638>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3586" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3638" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<2>" is
 loadless and has been removed.
@@ -2754,9 +2961,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_2" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3587>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3639>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3587" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3639" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<3>" is
 loadless and has been removed.
@@ -2774,9 +2981,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_3" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3588>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3640>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3588" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3640" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<4>" is
 loadless and has been removed.
@@ -2794,9 +3001,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_4" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3589>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3641>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3589" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3641" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<5>" is
 loadless and has been removed.
@@ -2814,9 +3021,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_5" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3590>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3642>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3590" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3642" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<6>" is
 loadless and has been removed.
@@ -2834,9 +3041,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_6" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3591>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3643>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3591" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3643" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<7>" is
 loadless and has been removed.
@@ -2854,9 +3061,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_7" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3592>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3644>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3592" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3644" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<8>" is
 loadless and has been removed.
@@ -2874,9 +3081,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_8" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3593>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3645>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3593" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3645" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<9>" is
 loadless and has been removed.
@@ -2894,9 +3101,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_9" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3594>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3646>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3594" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3646" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<10>" is
 loadless and has been removed.
@@ -2914,9 +3121,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_10" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3595>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3647>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3595" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3647" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<11>" is
 loadless and has been removed.
@@ -2934,9 +3141,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_11" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3596>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3648>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3596" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3648" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<12>" is
 loadless and has been removed.
@@ -2954,9 +3161,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_12" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3597>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3649>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3597" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3649" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<13>" is
 loadless and has been removed.
@@ -2974,9 +3181,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_13" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3598>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3650>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3598" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3650" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<14>" is
 loadless and has been removed.
@@ -2994,9 +3201,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_14" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3599>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3651>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3599" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3651" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<15>" is
 loadless and has been removed.
@@ -3014,9 +3221,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_15" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3600>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3652>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3600" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3652" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<16>" is
 loadless and has been removed.
@@ -3034,9 +3241,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_16" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3601>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3653>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3601" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3653" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<17>" is
 loadless and has been removed.
@@ -3054,9 +3261,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_17" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3602>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3654>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3602" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3654" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<18>" is
 loadless and has been removed.
@@ -3074,9 +3281,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_18" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3603>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3655>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3603" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3655" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<19>" is
 loadless and has been removed.
@@ -3094,9 +3301,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_19" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3604>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3656>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3604" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3656" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<20>" is
 loadless and has been removed.
@@ -3114,9 +3321,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_20" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3605>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3657>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3605" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3657" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<21>" is
 loadless and has been removed.
@@ -3134,9 +3341,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_21" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3606>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3658>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3606" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3658" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<22>" is
 loadless and has been removed.
@@ -3154,9 +3361,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_22" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3607>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3659>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3607" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3659" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<23>" is
 loadless and has been removed.
@@ -3174,9 +3381,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_23" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3608>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3660>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3608" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3660" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<24>" is
 loadless and has been removed.
@@ -3194,9 +3401,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_24" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3609>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3661>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3609" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3661" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<25>" is
 loadless and has been removed.
@@ -3214,9 +3421,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_25" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3610>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3662>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3610" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3662" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<26>" is
 loadless and has been removed.
@@ -3234,9 +3441,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_26" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3611>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3663>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3611" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3663" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<27>" is
 loadless and has been removed.
@@ -3254,9 +3461,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_27" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3612>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3664>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3612" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3664" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<28>" is
 loadless and has been removed.
@@ -3274,9 +3481,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_28" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3613>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3665>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3613" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3665" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<29>" is
 loadless and has been removed.
@@ -3294,9 +3501,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_29" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3614>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3666>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3614" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3666" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<30>" is
 loadless and has been removed.
@@ -3314,9 +3521,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_30" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3615>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3667>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3615" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3667" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_PC<31>" is
 loadless and has been removed.
@@ -3334,9 +3541,9 @@ loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Instr_Addr_Stored_1_31" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3616>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3668>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3616" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3668" (SFF)
 removed.
   The signal "blaze/microblaze_0/Trace_Reg_Write" is loadless and has been
 removed.
@@ -3353,209 +3560,209 @@ is loadless and has been removed.
        Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/reg_Write_I_inv1" (ROM)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3617>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3669>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3617" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3669" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Reg_Addr<0>"
 is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Reg_Addr_0" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3618>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3670>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3618" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3670" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Reg_Addr<1>"
 is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Reg_Addr_1" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3619>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3671>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3619" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3671" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Reg_Addr<2>"
 is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Reg_Addr_2" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3620>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3672>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3620" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3672" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Reg_Addr<3>"
 is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Reg_Addr_3" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3621>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3673>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3621" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3673" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Reg_Addr<4>"
 is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Reg_Addr_4" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3633>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3685>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3633" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3685" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_MSR_Reg<11>"
 is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_MSR_Reg_11" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3634>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3686>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3634" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3686" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_MSR_Reg<12>"
 is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_MSR_Reg_12" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3635>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3687>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3635" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3687" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_MSR_Reg<13>"
 is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_MSR_Reg_13" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3645>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3697>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3645" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3697" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3646>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3698>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3646" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3698" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3647>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3699>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3647" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3699" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3648>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3700>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3648" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3700" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3649>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3701>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3649" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3701" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3650>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3702>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3650" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3702" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3651>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3703>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3651" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3703" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3652>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3704>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3652" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3704" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3653>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3705>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3653" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3705" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3654>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3706>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3654" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3706" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3655>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3707>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3655" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3707" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3656>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3708>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3656" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3708" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3657>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3709>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3657" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3709" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3658>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3710>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3658" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3710" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3659>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3711>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3659" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3711" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3660>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3712>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3660" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3712" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3661>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3713>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3661" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3713" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3662>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3714>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3662" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3714" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3663>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3715>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3663" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3715" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3664>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3716>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3664" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3716" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3665>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3717>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3665" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3717" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3666>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3718>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3666" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3718" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3667>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3719>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3667" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3719" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3668>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3720>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3668" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3720" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3669>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3721>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3669" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3721" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3670>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3722>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3670" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3722" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3671>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3723>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3671" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3723" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3672>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3724>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3672" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3724" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3673>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3725>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3673" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3725" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3674>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3726>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3674" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3726" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3675>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3727>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3675" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3727" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3676>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3728>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3676" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3728" (SFF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3677>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3729>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3677" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3729" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Exception_Taken" is
@@ -3563,9 +3770,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Exception_Taken" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3679>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3731>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3679" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3731" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Exception_Kind<1>" is
@@ -3579,9 +3786,9 @@ loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Exception_Kind<
 28>1" (ROM) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3680>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3732>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3680" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3732" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Exception_Kind<2>" is
@@ -3595,9 +3802,9 @@ removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/OpSel2_Imm_0_or
 00010" (ROM) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3682>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3734>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3682" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3734" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Exception_Kind<4>" is
@@ -3611,9 +3818,9 @@ loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Exception_Kind<
 31>1" (ROM) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3683>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3735>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3683" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3735" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Jump_Taken"
 is loadless and has been removed.
@@ -3625,18 +3832,18 @@ loadless and has been removed.
      Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/jump_inv1_INV_0" (BUF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3684>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3736>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3684" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3736" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Delay_Slot"
 is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Delay_Slot" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3685>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3737>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3685" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3737" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<0>" is
@@ -3644,9 +3851,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_0" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3686>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3738>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3686" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3738" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<1>" is
@@ -3654,9 +3861,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_1" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3687>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3739>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3687" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3739" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<2>" is
@@ -3664,9 +3871,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_2" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3688>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3740>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3688" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3740" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<3>" is
@@ -3674,9 +3881,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_3" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3689>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3741>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3689" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3741" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<4>" is
@@ -3684,9 +3891,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_4" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3690>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3742>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3690" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3742" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<5>" is
@@ -3694,9 +3901,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_5" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3691>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3743>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3691" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3743" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<6>" is
@@ -3704,9 +3911,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_6" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3692>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3744>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3692" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3744" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<7>" is
@@ -3714,9 +3921,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_7" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3693>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3745>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3693" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3745" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<8>" is
@@ -3724,9 +3931,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_8" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3694>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3746>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3694" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3746" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<9>" is
@@ -3734,9 +3941,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_9" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3695>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3747>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3695" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3747" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<10>" is
@@ -3744,9 +3951,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_10" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3696>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3748>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3696" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3748" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<11>" is
@@ -3754,9 +3961,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_11" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3697>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3749>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3697" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3749" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<12>" is
@@ -3764,9 +3971,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_12" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3698>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3750>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3698" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3750" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<13>" is
@@ -3774,9 +3981,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_13" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3699>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3751>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3699" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3751" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<14>" is
@@ -3784,9 +3991,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_14" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3700>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3752>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3700" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3752" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<15>" is
@@ -3794,9 +4001,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_15" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3701>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3753>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3701" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3753" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<16>" is
@@ -3804,9 +4011,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_16" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3702>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3754>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3702" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3754" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<17>" is
@@ -3814,9 +4021,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_17" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3703>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3755>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3703" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3755" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<18>" is
@@ -3824,9 +4031,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_18" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3704>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3756>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3704" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3756" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<19>" is
@@ -3834,9 +4041,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_19" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3705>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3757>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3705" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3757" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<20>" is
@@ -3844,9 +4051,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_20" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3706>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3758>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3706" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3758" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<21>" is
@@ -3854,9 +4061,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_21" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3707>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3759>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3707" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3759" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<22>" is
@@ -3864,9 +4071,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_22" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3708>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3760>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3708" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3760" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<23>" is
@@ -3874,9 +4081,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_23" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3709>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3761>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3709" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3761" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<24>" is
@@ -3884,9 +4091,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_24" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3710>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3762>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3710" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3762" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<25>" is
@@ -3894,9 +4101,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_25" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3711>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3763>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3711" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3763" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<26>" is
@@ -3904,9 +4111,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_26" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3712>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3764>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3712" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3764" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<27>" is
@@ -3914,9 +4121,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_27" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3713>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3765>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3713" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3765" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<28>" is
@@ -3924,9 +4131,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_28" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3714>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3766>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3714" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3766" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<29>" is
@@ -3934,9 +4141,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_29" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3715>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3767>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3715" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3767" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<30>" is
@@ -3944,9 +4151,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_30" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3716>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3768>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3716" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3768" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address<31>" is
@@ -3954,9 +4161,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Address_31" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3717>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3769>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3717" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3769" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<0>" is
@@ -3964,9 +4171,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_0"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3718>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3770>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3718" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3770" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<1>" is
@@ -3974,9 +4181,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_1"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3719>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3771>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3719" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3771" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<2>" is
@@ -3984,9 +4191,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_2"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3720>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3772>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3720" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3772" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<3>" is
@@ -3994,9 +4201,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_3"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3721>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3773>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3721" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3773" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<4>" is
@@ -4004,9 +4211,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_4"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3722>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3774>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3722" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3774" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<5>" is
@@ -4014,9 +4221,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_5"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3723>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3775>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3723" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3775" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<6>" is
@@ -4024,9 +4231,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_6"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3724>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3776>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3724" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3776" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<7>" is
@@ -4034,9 +4241,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_7"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3725>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3777>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3725" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3777" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<8>" is
@@ -4044,9 +4251,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_8"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3726>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3778>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3726" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3778" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<9>" is
@@ -4054,9 +4261,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_9"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3727>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3779>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3727" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3779" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<10>"
@@ -4064,9 +4271,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_10"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3728>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3780>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3728" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3780" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<11>"
@@ -4074,9 +4281,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_11"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3729>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3781>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3729" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3781" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<12>"
@@ -4084,9 +4291,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_12"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3730>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3782>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3730" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3782" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<13>"
@@ -4094,9 +4301,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_13"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3731>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3783>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3731" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3783" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<14>"
@@ -4104,9 +4311,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_14"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3732>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3784>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3732" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3784" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<15>"
@@ -4114,9 +4321,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_15"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3733>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3785>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3733" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3785" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<16>"
@@ -4124,9 +4331,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_16"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3734>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3786>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3734" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3786" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<17>"
@@ -4134,9 +4341,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_17"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3735>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3787>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3735" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3787" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<18>"
@@ -4144,9 +4351,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_18"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3736>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3788>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3736" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3788" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<19>"
@@ -4154,9 +4361,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_19"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3737>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3789>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3737" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3789" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<20>"
@@ -4164,9 +4371,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_20"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3738>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3790>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3738" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3790" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<21>"
@@ -4174,9 +4381,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_21"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3739>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3791>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3739" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3791" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<22>"
@@ -4184,9 +4391,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_22"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3740>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3792>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3740" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3792" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<23>"
@@ -4194,9 +4401,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_23"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3741>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3793>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3741" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3793" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<24>"
@@ -4204,9 +4411,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_24"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3742>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3794>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3742" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3794" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<25>"
@@ -4214,9 +4421,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_25"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3743>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3795>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3743" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3795" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<26>"
@@ -4224,9 +4431,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_26"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3744>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3796>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3744" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3796" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<27>"
@@ -4234,9 +4441,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_27"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3745>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3797>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3745" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3797" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<28>"
@@ -4244,9 +4451,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_28"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3746>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3798>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3746" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3798" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<29>"
@@ -4254,9 +4461,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_29"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3747>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3799>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3747" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3799" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<30>"
@@ -4264,9 +4471,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_30"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3748>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3800>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3748" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3800" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value<31>"
@@ -4274,9 +4481,9 @@ is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write_Value_31"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3749>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3801>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3749" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3801" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Byte_Enable<0>" is
@@ -4284,9 +4491,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Byte_Enable_0"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3750>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3802>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3750" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3802" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Byte_Enable<1>" is
@@ -4294,9 +4501,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Byte_Enable_1"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3751>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3803>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3751" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3803" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Byte_Enable<2>" is
@@ -4304,9 +4511,9 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Byte_Enable_2"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3752>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3804>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3752" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3804" (SFF)
 removed.
   The signal
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Byte_Enable<3>" is
@@ -4314,36 +4521,36 @@ loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Byte_Enable_3"
 (FF) removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3753>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3805>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3753" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3805" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Access"
 is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Access" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3754>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3806>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3754" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3806" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Read"
 is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Read" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3755>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3807>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3755" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3807" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write"
 is loadless and has been removed.
    Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_Data_Write" (FF)
 removed.
-The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3763>" is loadless and
+The signal "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out<3815>" is loadless and
 has been removed.
- Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3763" (SFF)
+ Loadless block "blaze/microblaze_0/microblaze_0/LOCKSTEP_Out_3815" (SFF)
 removed.
   The signal "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Trace_OF_PipeRun"
 is loadless and has been removed.
@@ -5180,6 +5387,22 @@ The trimmed logic reported below is either:
    2. part of disabled logic
    3. a side-effect of other trimmed logic
 
+The signal "blaze/mb_plb_PLB_MRdDBus<40>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<41>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<10>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<11>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<12>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<13>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<14>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<15>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<16>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<17>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<18>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<19>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<20>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<21>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<22>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<23>" is unused and has been removed.
 The signal "blaze/mb_plb_PLB_size<3>" is unused and has been removed.
 The signal "blaze/mb_plb_PLB_type<0>" is unused and has been removed.
 The signal "blaze/mb_plb_PLB_type<1>" is unused and has been removed.
@@ -5226,6 +5449,38 @@ The signal "blaze/mb_plb/N155" is unused and has been removed.
 "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/LoadDisReg64
 _SW1" (ROM) removed.
 The signal "blaze/mb_plb/N171" is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_9_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_8_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_23_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_22_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_21_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_20_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_19_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_18_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_17_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_16_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_15_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_14_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_13_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_12_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_11_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_10_or0000"
+is unused and has been removed.
 The signal
 "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/LoadDisReg78
 " is unused and has been removed.
@@ -5461,6 +5716,54 @@ lutout_0_or00001
 LUT4
 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_WDT/wdtTimeOutCntrEnable1
    optimized to 1
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_10_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_10_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_11_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_11_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_12_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_12_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_13_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_13_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_14_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_14_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_15_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_15_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_16_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_16_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_17_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_17_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_18_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_18_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_19_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_19_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_20_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_20_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_21_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_21_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_22_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_22_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_23_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_23_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_8_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_8_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_9_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_9_or0000_f5
 LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/WAIT_OR/Y_0_or0000
    optimized to 0
 LUT2 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/WAIT_OR/Y_0_or0000_SW0
@@ -5497,6 +5800,198 @@ aster_Core.Debug_Area/dbg_stop_Detected_and00001
 LUT4
 		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.M
 aster_Core.Debug_Area/dbg_stop_i1
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_10
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_11
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_12
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_13
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_14
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_15
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_16
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_17
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_18
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_19
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_20
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_21
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_22
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_23
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_8
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_9
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_10
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_11
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_12
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_13
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_14
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_15
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_16
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_17
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_18
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_19
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_20
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_21
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_22
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_23
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_8
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_9
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[10].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[11].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[12].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[13].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[14].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[15].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[16].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[17].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[18].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[19].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[20].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[21].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[22].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[23].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[8].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[9].MUXF5_I1_rt
    optimized to 0
 GND 		blaze/proc_sys_reset_0/XST_GND
 VCC 		blaze/proc_sys_reset_0/XST_VCC
@@ -5569,8 +6064,20 @@ Section 6 - IOB Properties
 | Led<7>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | RXD                                | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
 | TXD                                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| an<0>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| an<1>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| an<2>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| an<3>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | btn<0>                             | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
 | clk                                | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| dp                                 | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| seg<0>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| seg<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| seg<2>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| seg<3>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| seg<4>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| seg<5>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| seg<6>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | sw<0>                              | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
 | sw<1>                              | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
 | sw<2>                              | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |

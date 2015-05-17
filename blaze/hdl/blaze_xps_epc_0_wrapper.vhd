@@ -59,15 +59,15 @@ entity blaze_xps_epc_0_wrapper is
     PRH_CS_n : out std_logic_vector(0 to 0);
     PRH_Addr : out std_logic_vector(0 to 5);
     PRH_ADS : out std_logic;
-    PRH_BE : out std_logic_vector(0 to 3);
+    PRH_BE : out std_logic_vector(0 to 0);
     PRH_RNW : out std_logic;
     PRH_Rd_n : out std_logic;
     PRH_Wr_n : out std_logic;
     PRH_Burst : out std_logic;
     PRH_Rdy : in std_logic_vector(0 to 0);
-    PRH_Data_I : in std_logic_vector(0 to 31);
-    PRH_Data_O : out std_logic_vector(0 to 31);
-    PRH_Data_T : out std_logic_vector(0 to 31)
+    PRH_Data_I : in std_logic_vector(0 to 7);
+    PRH_Data_O : out std_logic_vector(0 to 7);
+    PRH_Data_T : out std_logic_vector(0 to 7)
   );
 
   attribute x_core_info : STRING;
@@ -268,8 +268,8 @@ begin
       C_SPLB_SUPPORT_BURSTS => 0,
       C_NUM_PERIPHERALS => 1,
       C_PRH_MAX_AWIDTH => 6,
-      C_PRH_MAX_DWIDTH => 32,
-      C_PRH_MAX_ADWIDTH => 32,
+      C_PRH_MAX_DWIDTH => 8,
+      C_PRH_MAX_ADWIDTH => 8,
       C_PRH_CLK_SUPPORT => 0,
       C_PRH_BURST_SUPPORT => 0,
       C_PRH0_BASEADDR => X"80800000",
@@ -277,7 +277,7 @@ begin
       C_PRH0_FIFO_ACCESS => 0,
       C_PRH0_FIFO_OFFSET => 0,
       C_PRH0_AWIDTH => 6,
-      C_PRH0_DWIDTH => 32,
+      C_PRH0_DWIDTH => 8,
       C_PRH0_DWIDTH_MATCH => 0,
       C_PRH0_SYNC => 0,
       C_PRH0_BUS_MULTIPLEX => 0,

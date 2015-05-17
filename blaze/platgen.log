@@ -1,11 +1,11 @@
-Release 14.4 - platgen Xilinx EDK 14.4 Build EDK_P.49d
+Release 14.7 - platgen Xilinx EDK 14.7 Build EDK_P.20131013
  (nt64)
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 Command Line: platgen -p xc3s1200efg320-4 -lang verilog -intstyle ise -toplevel
 no -ti blaze_i -msg __xps/ise/xmsgprops.lst blaze.mhs 
 
-Parse E:/Assignment5/blaze/blaze.mhs ...
+Parse D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/blaze.mhs ...
 
 Read MPD definitions ...
 
@@ -36,55 +36,55 @@ Address Map for Processor microblaze_0
   (0x84400000-0x8440ffff) mdm_0	mb_plb
 INFO:EDK:4130 - IPNAME: plb_v46, INSTANCE:mb_plb - tool is overriding PARAMETER
    C_PLBV46_NUM_MASTERS value to 2 -
-   C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\plb_v46_v1_05_a\data
+   C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\plb_v46_v1_05_a\data
    \plb_v46_v2_1_0.mpd line 79 
 INFO:EDK:4130 - IPNAME: plb_v46, INSTANCE:mb_plb - tool is overriding PARAMETER
    C_PLBV46_NUM_SLAVES value to 5 -
-   C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\plb_v46_v1_05_a\data
+   C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\plb_v46_v1_05_a\data
    \plb_v46_v2_1_0.mpd line 80 
 INFO:EDK:4130 - IPNAME: plb_v46, INSTANCE:mb_plb - tool is overriding PARAMETER
    C_PLBV46_MID_WIDTH value to 1 -
-   C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\plb_v46_v1_05_a\data
+   C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\plb_v46_v1_05_a\data
    \plb_v46_v2_1_0.mpd line 81 
 INFO:EDK:4130 - IPNAME: plb_v46, INSTANCE:mb_plb - tool is overriding PARAMETER
    C_PLBV46_DWIDTH value to 32 -
-   C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\plb_v46_v1_05_a\data
+   C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\plb_v46_v1_05_a\data
    \plb_v46_v2_1_0.mpd line 83 
 INFO:EDK:4130 - IPNAME: lmb_v10, INSTANCE:ilmb - tool is overriding PARAMETER
    C_LMB_NUM_SLAVES value to 1 -
-   C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_v10_v2_00_b\data
+   C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_v10_v2_00_b\data
    \lmb_v10_v2_1_0.mpd line 82 
 INFO:EDK:4130 - IPNAME: lmb_v10, INSTANCE:dlmb - tool is overriding PARAMETER
    C_LMB_NUM_SLAVES value to 1 -
-   C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_v10_v2_00_b\data
+   C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_v10_v2_00_b\data
    \lmb_v10_v2_1_0.mpd line 82 
 INFO:EDK:4130 - IPNAME: bram_block, INSTANCE:lmb_bram - tool is overriding
    PARAMETER C_MEMSIZE value to 0x8000 -
-   C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\bram_block_v1_00_a\d
+   C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\bram_block_v1_00_a\d
    ata\bram_block_v2_1_0.mpd line 78 
 INFO:EDK:4130 - IPNAME: xps_gpio, INSTANCE:DIP_Switches - tool is overriding
    PARAMETER C_SPLB_NUM_MASTERS value to 2 -
-   C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\xps_gpio_v2_00_a\dat
+   C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\xps_gpio_v2_00_a\dat
    a\xps_gpio_v2_1_0.mpd line 82 
 INFO:EDK:4130 - IPNAME: xps_gpio, INSTANCE:LEDS - tool is overriding PARAMETER
    C_SPLB_NUM_MASTERS value to 2 -
-   C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\xps_gpio_v2_00_a\dat
+   C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\xps_gpio_v2_00_a\dat
    a\xps_gpio_v2_1_0.mpd line 82 
 INFO:EDK:4130 - IPNAME: xps_uartlite, INSTANCE:RS232 - tool is overriding
    PARAMETER C_SPLB_NUM_MASTERS value to 2 -
-   C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\xps_uartlite_v1_02_a
+   C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\xps_uartlite_v1_02_a
    \data\xps_uartlite_v2_1_0.mpd line 84 
 INFO:EDK:4130 - IPNAME: mdm, INSTANCE:mdm_0 - tool is overriding PARAMETER
    C_SPLB_MID_WIDTH value to 1 -
-   C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\mdm_v2_10_a\data\mdm
+   C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\mdm_v2_10_a\data\mdm
    _v2_1_0.mpd line 118 
 INFO:EDK:4130 - IPNAME: mdm, INSTANCE:mdm_0 - tool is overriding PARAMETER
    C_SPLB_NUM_MASTERS value to 2 -
-   C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\mdm_v2_10_a\data\mdm
+   C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\mdm_v2_10_a\data\mdm
    _v2_1_0.mpd line 119 
 INFO:EDK:4130 - IPNAME: xps_epc, INSTANCE:xps_epc_0 - tool is overriding
    PARAMETER C_SPLB_NUM_MASTERS value to 2 -
-   C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\xps_epc_v1_02_a\data
+   C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\xps_epc_v1_02_a\data
    \xps_epc_v2_1_0.mpd line 84 
 
 Checking platform address map ...
@@ -96,7 +96,8 @@ IPNAME: lmb_v10, INSTANCE: dlmb - 1 master(s) : 1 slave(s)
 
 Checking port drivers...
 WARNING:EDK:4181 - PORT: Peripheral_Reset, CONNECTOR: sys_periph_reset -
-   floating connection - E:\Assignment5\blaze\blaze.mhs line 171 
+   floating connection - D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs
+   line 171 
 
 Performing Clock DRCs...
 INFO:EDK:4060 - INSTANCE: xps_epc_0, PARAMETER: C_PRH_CLK_PERIOD_PS - Did not
@@ -109,35 +110,35 @@ Performing Reset DRCs...
 Overriding system level properties...
 INFO:EDK:4130 - IPNAME: microblaze, INSTANCE:microblaze_0 - tcl is overriding
    PARAMETER C_D_PLB value to 1 -
-   C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_40_b\d
-   ata\microblaze_v2_1_0.mpd line 231 
+   C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_50_c\d
+   ata\microblaze_v2_1_0.mpd line 233 
 INFO:EDK:4130 - IPNAME: microblaze, INSTANCE:microblaze_0 - tcl is overriding
    PARAMETER C_I_PLB value to 1 -
-   C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_40_b\d
-   ata\microblaze_v2_1_0.mpd line 234 
+   C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_50_c\d
+   ata\microblaze_v2_1_0.mpd line 236 
 INFO:EDK:4130 - IPNAME: microblaze, INSTANCE:microblaze_0 - tcl is overriding
    PARAMETER C_ADDR_TAG_BITS value to 0 -
-   C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_40_b\d
-   ata\microblaze_v2_1_0.mpd line 335 
+   C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_50_c\d
+   ata\microblaze_v2_1_0.mpd line 337 
 INFO:EDK:4130 - IPNAME: microblaze, INSTANCE:microblaze_0 - tcl is overriding
    PARAMETER C_DCACHE_ADDR_TAG value to 0 -
-   C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_40_b\d
-   ata\microblaze_v2_1_0.mpd line 365 
+   C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_50_c\d
+   ata\microblaze_v2_1_0.mpd line 367 
 INFO:EDK:4130 - IPNAME: microblaze, INSTANCE:microblaze_0 - tcl is overriding
    PARAMETER C_USE_EXT_BRK value to 1 -
-   C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_40_b\d
-   ata\microblaze_v2_1_0.mpd line 400 
+   C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_50_c\d
+   ata\microblaze_v2_1_0.mpd line 402 
 INFO:EDK:4130 - IPNAME: microblaze, INSTANCE:microblaze_0 - tcl is overriding
    PARAMETER C_USE_EXT_NM_BRK value to 1 -
-   C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_40_b\d
-   ata\microblaze_v2_1_0.mpd line 401 
+   C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_50_c\d
+   ata\microblaze_v2_1_0.mpd line 403 
 INFO:EDK:4130 - IPNAME: lmb_bram_if_cntlr, INSTANCE:dlmb_cntlr - tcl is
    overriding PARAMETER C_MASK value to 0x80000000 -
-   C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_bram_if_cntlr_v3
+   C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_bram_if_cntlr_v3
    _10_c\data\lmb_bram_if_cntlr_v2_1_0.mpd line 92 
 INFO:EDK:4130 - IPNAME: lmb_bram_if_cntlr, INSTANCE:ilmb_cntlr - tcl is
    overriding PARAMETER C_MASK value to 0x80000000 -
-   C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_bram_if_cntlr_v3
+   C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_bram_if_cntlr_v3
    _10_c\data\lmb_bram_if_cntlr_v2_1_0.mpd line 92 
 
 Running system level update procedures...
@@ -176,36 +177,12 @@ Creating hardware output directories ...
 Managing hardware (BBD-specified) netlist files ...
 
 Managing cache ...
-IPNAME:microblaze INSTANCE:microblaze_0 - E:\Assignment5\blaze\blaze.mhs line 34
-- Copying cache implementation netlist
-IPNAME:plb_v46 INSTANCE:mb_plb - E:\Assignment5\blaze\blaze.mhs line 48 -
-Copying cache implementation netlist
-IPNAME:lmb_v10 INSTANCE:ilmb - E:\Assignment5\blaze\blaze.mhs line 55 - Copying
-cache implementation netlist
-IPNAME:lmb_v10 INSTANCE:dlmb - E:\Assignment5\blaze\blaze.mhs line 62 - Copying
-cache implementation netlist
-IPNAME:lmb_bram_if_cntlr INSTANCE:dlmb_cntlr - E:\Assignment5\blaze\blaze.mhs
-line 69 - Copying cache implementation netlist
-IPNAME:lmb_bram_if_cntlr INSTANCE:ilmb_cntlr - E:\Assignment5\blaze\blaze.mhs
-line 78 - Copying cache implementation netlist
-IPNAME:bram_block INSTANCE:lmb_bram - E:\Assignment5\blaze\blaze.mhs line 87 -
-Copying cache implementation netlist
-IPNAME:xps_gpio INSTANCE:dip_switches - E:\Assignment5\blaze\blaze.mhs line 94 -
-Copying cache implementation netlist
-IPNAME:xps_gpio INSTANCE:leds - E:\Assignment5\blaze\blaze.mhs line 107 -
-Copying cache implementation netlist
-IPNAME:xps_uartlite INSTANCE:rs232 - E:\Assignment5\blaze\blaze.mhs line 120 -
-Copying cache implementation netlist
-IPNAME:mdm INSTANCE:mdm_0 - E:\Assignment5\blaze\blaze.mhs line 149 - Copying
-cache implementation netlist
-IPNAME:proc_sys_reset INSTANCE:proc_sys_reset_0 - E:\Assignment5\blaze\blaze.mhs
-line 161 - Copying cache implementation netlist
 
 Elaborating instances ...
-IPNAME:bram_block INSTANCE:lmb_bram - E:\Assignment5\blaze\blaze.mhs line 87 -
-elaborating IP
+IPNAME:bram_block INSTANCE:lmb_bram -
+D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 87 - elaborating IP
 IPNAME:clock_generator INSTANCE:clock_generator_0 -
-E:\Assignment5\blaze\blaze.mhs line 134 - elaborating IP
+D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 134 - elaborating IP
 ClkGen elaborate status: PASSED
 ----------------------------------------
 ----------------------------------------
@@ -213,10 +190,10 @@ ClkGen elaborate status: PASSED
 Writing HDL for elaborated instances ...
 
 Inserting wrapper level ...
-Completion time: 1.00 seconds
+Completion time: 0.00 seconds
 
 Constructing platform-level connectivity ...
-Completion time: 0.00 seconds
+Completion time: 1.00 seconds
 
 Writing (top-level) BMM ...
 
@@ -229,18 +206,49 @@ Running XST synthesis ...
 INFO:EDK:4211 - The following instances are synthesized with XST. The MPD option
    IMP_NETLIST=TRUE indicates that a NGC file is to be produced using XST
    synthesis. IMP_NETLIST=FALSE (default) instances are not synthesized. 
-INSTANCE:clock_generator_0 - E:\Assignment5\blaze\blaze.mhs line 134 - Running
-XST synthesis
-INSTANCE:xps_epc_0 - E:\Assignment5\blaze\blaze.mhs line 174 - Running XST
+INSTANCE:microblaze_0 - D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs
+line 34 - Running XST synthesis
+INSTANCE:mb_plb - D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 48 -
+Running XST synthesis
+INSTANCE:ilmb - D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 55 -
+Running XST synthesis
+INSTANCE:dlmb - D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 62 -
+Running XST synthesis
+INSTANCE:dlmb_cntlr - D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line
+69 - Running XST synthesis
+INSTANCE:ilmb_cntlr - D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line
+78 - Running XST synthesis
+INSTANCE:lmb_bram - D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 87
+- Running XST synthesis
+INSTANCE:dip_switches - D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs
+line 94 - Running XST synthesis
+INSTANCE:leds - D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 107 -
+Running XST synthesis
+INSTANCE:rs232 - D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 120 -
+Running XST synthesis
+INSTANCE:clock_generator_0 -
+D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 134 - Running XST
 synthesis
+INSTANCE:mdm_0 - D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 149 -
+Running XST synthesis
+INSTANCE:proc_sys_reset_0 - D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs
+line 161 - Running XST synthesis
+INSTANCE:xps_epc_0 - D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line
+174 - Running XST synthesis
 
 Running NGCBUILD ...
+IPNAME:blaze_microblaze_0_wrapper INSTANCE:microblaze_0 -
+D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 34 - Running NGCBUILD
+IPNAME:blaze_ilmb_wrapper INSTANCE:ilmb -
+D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 55 - Running NGCBUILD
+IPNAME:blaze_dlmb_wrapper INSTANCE:dlmb -
+D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 62 - Running NGCBUILD
 IPNAME:blaze_clock_generator_0_wrapper INSTANCE:clock_generator_0 -
-E:\Assignment5\blaze\blaze.mhs line 134 - Running NGCBUILD
+D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 134 - Running NGCBUILD
 INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
    If any constraint needs to be overridden, this should be done by modifying
    the data/blaze.ucf file.
 
 Rebuilding cache ...
 
-Total run time: 38.00 seconds
+Total run time: 466.00 seconds

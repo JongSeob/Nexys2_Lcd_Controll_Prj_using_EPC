@@ -38,20 +38,31 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module top(
+module top #(
+	parameter LCD_DATA_ADDR		= 6'b100000,
+				 LCD_CONTROL_ADDR = 6'b100100	
+)
+(
 	input			 clk,					// 50 MHz input
 	input  [7:0] sw,					// Slide switch
 	input  [0:0] btn,					// reset
-	output [7:0] Led,					// LED
+	output reg [7:0] Led,			// LED
 	output 		 TXD,					// RS232 out
 	input 		 RXD,					// RS232 in
 	inout  [7:0] JA,					// LCD Data
-	output [6:4] JB					// JB[4] = RS, JB[5] = R/W#, JB[6] = EN
+	output [6:4] JB,					// JB[4] = RS, JB[5] = R/W#, JB[6] = EN
+	
+	output [6:0] seg,
+	output 		 dp,
+	output [3:0] an
 	);
+	
+	
+	reg [15:0] Digit = 16'hABCD;
 	
 
 	// Signals of External Peripheral Controller. EPC가 MicroBlaze의 출력을 받아 외부 장치에 전달.
-	wire	nCS;			// Chip Select. active low. EPC의 출력.			
+	wire	EPC_nCS;		// Chip Select. active low. EPC의 출력.			
 	wire	[5:0] Addr;	// A5A4A3A2A1A0. EPC의 출력.
 	wire	nRD;			// Read. active low. EPC의 출력.
 	wire	nWR;			// Write. active low. EPC의 출력.
@@ -61,229 +72,62 @@ module top(
 	assign	nBE = ~BE;
 	assign	RDY = 1;
 
-	
-	reg	[31:0] RegisterDDO_0 = 32'h00000000;	// 출력장치. Dital Data Output Register
-	reg	[31:0] RegisterDDO_1 = 32'h00000000;	// 출력장치. Dital Data Output Register
-	reg	[31:0] RegisterDDO_2 = 32'h00000000;	// 출력장치. Dital Data Output Register
-	reg	[31:0] RegisterDDO_3 = 32'h00000000;	// 출력장치. Dital Data Output Register
-	reg	[31:0] RegisterDDO_4 = 32'h00000000;	// 출력장치. Dital Data Output Register
-	reg	[31:0] RegisterDDO_5 = 32'h00000000;	// 출력장치. Dital Data Output Register
-	reg	[31:0] RegisterDDO_6 = 32'h00000000;	// 출력장치. Dital Data Output Register
-	reg	[31:0] RegisterDDO_7 = 32'h00000000;	// 본 예제에서 7번 레지스터는 실제로는 저장 기능이 없다.
-		
-	wire	[31:0] BlazeDataOut; 
-	reg	[31:0] BlazeDataIn; 
-	wire	[31:0] BusData;
+	wire	[7:0] BlazeDataOut; 
+	wire	[7:0] BlazeDataIn; 
 	
 	// Lcd Controller Signal. R/W, EN 신호는 JB[5],JB[6]에 직접 연결.
-	wire Data_T;	// Data_T == 0, Blaze -> LCD 데이터 전달.
-						// Data_T == 1, LCD -> Blaze 데이터 전달.
+
 	wire RS;			// RS == 1, LCD Data mode.	   Addr = 6'b1000_00
 						// RS == 0, LCD Control mode  Addr = 6'b1001_00
 	
-	assign RS = (Addr[5:2] == 4'b1000) ? 1 :
-					(Addr[5:2] == 4'b1001) ? 0 : 1'bx;
+	wire RW;			// RW == 1, Read mode
+						// RW == 0, Write mode
 	
-	assign JB[4] = RS;	
-	assign JA = (Data_T == 0) ? BlazeDataOut[7:0] : 8'bz;
-
+	wire EN;			// EN이  1 -> 0 으로 떨어졌을 때 RS,RW,Data 값을 확인해서 한가지 동작을 한다.
 	
-	// 7번 레지스터는 다양한 신호선을 관찰하는 용도로 사용할 수 있다. 여기서는 하위 16비트에는 Led와 스위치 상태를 읽도록 하였다.
-	// * 실습 차원에서 다양한 H/W 신호를 레지스터 읽기 동작을 통해 관찰할 수 있다.
-	// 예 : BE, ncs, 주소신호 A0, A1, A2, A3 등의 신호를 관찰하라.
-	assign	BusData = (nCS == 0 && Addr[5:2] == 4'b0111 && nRD==0)? {RegisterDDO_7[31:24], {Led[3:0],Addr[4:0]}, {nCS, nRD, nWR,nBE}, sw} : 32'hzzzzzzzz;		// register 7. 
-
-
-
-/////////////////////////////////////////////////////////////////////////////////////
-// 레지스터 읽기 동작에 대비한 동작 기술
-/////////////////////////////////////////////////////////////////////////////////////
-
-	always @(negedge nRD) begin
+	wire LCD_nCS;
+						
 	
-		if(nCS == 0 && nBE[3] == 0 ) begin	
-			case(Addr[5:2])
-			4'b0000 :
-				BlazeDataIn[31:24] <= RegisterDDO_0[31:24];
-			4'b0001 :
-				BlazeDataIn[31:24] <= RegisterDDO_1[31:24];
-			4'b0010 :
-				BlazeDataIn[31:24] <= RegisterDDO_2[31:24];
-			4'b0011 :
-				BlazeDataIn[31:24] <= RegisterDDO_3[31:24];
-			4'b0100 :
-				BlazeDataIn[31:24] <= RegisterDDO_4[31:24];
-			4'b0101 :
-				BlazeDataIn[31:24] <= RegisterDDO_5[31:24];
-			4'b0110 :
-				BlazeDataIn[31:24] <= RegisterDDO_6[31:24];
-			4'b0111 :
-				BlazeDataIn[31:24] <= BusData[31:24];
-			endcase	
-		end	
-
-		if(nCS == 0 && nBE[2] == 0 ) begin	
-			case(Addr[5:2])
-			4'b0000 :
-				BlazeDataIn[23:16] <= RegisterDDO_0[23:16];
-			4'b0001 :
-				BlazeDataIn[23:16] <= RegisterDDO_1[23:16];
-			4'b0010 :
-				BlazeDataIn[23:16] <= RegisterDDO_2[23:16];
-			4'b0011 :
-				BlazeDataIn[23:16] <= RegisterDDO_3[23:16];
-			4'b0100 :
-				BlazeDataIn[23:16] <= RegisterDDO_4[23:16];
-			4'b0101 :
-				BlazeDataIn[23:16] <= RegisterDDO_5[23:16];
-			4'b0110 :
-				BlazeDataIn[23:16] <= RegisterDDO_6[23:16];
-			4'b0111 :
-				BlazeDataIn[23:16] <= BusData[23:16];
-			endcase	
-		end	
-
-		if(nCS == 0 && nBE[1] == 0 ) begin	
-			case(Addr[5:2])
-			4'b0000 :
-				BlazeDataIn[15:8] <= RegisterDDO_0[15:8];
-			4'b0001 :
-				BlazeDataIn[15:8] <= RegisterDDO_1[15:8];
-			4'b0010 :
-				BlazeDataIn[15:8] <= RegisterDDO_2[15:8];
-			4'b0011 :
-				BlazeDataIn[15:8] <= RegisterDDO_3[15:8];
-			4'b0100 :
-				BlazeDataIn[15:8] <= RegisterDDO_4[15:8];
-			4'b0101 :
-				BlazeDataIn[15:8] <= RegisterDDO_5[15:8];
-			4'b0110 :
-				BlazeDataIn[15:8] <= RegisterDDO_6[15:8];
-			4'b0111 :
-				BlazeDataIn[15:8] <= BusData[15:8];
-			endcase	
-		end	
-		
-		
-		if(nCS == 0 && nBE[0] == 0 ) begin		
-			case(Addr[5:2])
-			4'b0000 :
-				BlazeDataIn[7:0] <= RegisterDDO_0[7:0];
-			4'b0001 :
-				BlazeDataIn[7:0] <= RegisterDDO_1[7:0];
-			4'b0010 :
-				BlazeDataIn[7:0] <= RegisterDDO_2[7:0];
-			4'b0011 :
-				BlazeDataIn[7:0] <= RegisterDDO_3[7:0];
-			4'b0100 :
-				BlazeDataIn[7:0] <= RegisterDDO_4[7:0];
-			4'b0101 :
-				BlazeDataIn[7:0] <= RegisterDDO_5[7:0];
-			4'b0110 :
-				BlazeDataIn[7:0] <= RegisterDDO_6[7:0];
-			4'b0111 :
-				BlazeDataIn[7:0] <= BusData[7:0];
-			4'b1000 : if(Data_T == 1)					//LCD Data Mode
-							BlazeDataIn[7:0] <= JA;				
-			4'b1001 : if(Data_T == 1)					//LCD Control Mode
-							BlazeDataIn[7:0] <= JA;			
-			endcase	
-		end	
-
+	assign RS = (Addr == LCD_DATA_ADDR)    ? 1 :
+					(Addr == LCD_CONTROL_ADDR) ? 0 : 1'bx;
+	
+	assign LCD_nCS = ( (EPC_nCS == 0) && ((Addr == LCD_DATA_ADDR) || (Addr == LCD_CONTROL_ADDR)) ) ? 0 : 1;
+	
+	assign JB[4] = RS;
+	assign JB[5] = RW;
+	assign JB[6] = EN;
+	
+	assign JA = (nWR == 0) ? BlazeDataOut[7:0] : 8'bz;
+	
+	assign BlazeDataIn = (nRD == 0) ? JA : 8'bx;
+	
+	always @(posedge clk) begin
+		if(EPC_nCS == 0)
+			Led <= {RS, RW, Addr[5:0]};
 	end
-
-/////////////////////////////////////////////////////////////////////////////////////
-// 레지스터 쓰기 동작에 대비한 동작 기술
-/////////////////////////////////////////////////////////////////////////////////////
+	
+	always @(posedge nRD) begin
+		Digit[15:8] <= JA;
+	end
+	
 	always @(posedge nWR) begin
+		Digit[7:0] 	<= BlazeDataOut;
+	end
 	
-		if(nCS == 0 && nBE[3] == 0 ) begin	
-			case(Addr[5:2])
-			4'b0000 :
-				RegisterDDO_0[31:24] <= BlazeDataOut[31:24];
-			4'b0001 :
-				RegisterDDO_1[31:24] <= BlazeDataOut[31:24];	
-			4'b0010 :
-				RegisterDDO_2[31:24] <= BlazeDataOut[31:24];
-			4'b0011 :
-				RegisterDDO_3[31:24] <= BlazeDataOut[31:24];
-			4'b0100 :
-				RegisterDDO_4[31:24] <= BlazeDataOut[31:24];
-			4'b0101 :
-				RegisterDDO_5[31:24] <= BlazeDataOut[31:24];
-			4'b0110 :
-				RegisterDDO_6[31:24] <= BlazeDataOut[31:24];			
-			4'b0111 :
-				RegisterDDO_7[31:24] <= BlazeDataOut[31:24];
-			endcase	
-		end	
-
-		if(nCS == 0 && nBE[2] == 0 ) begin	
-			case(Addr[5:2])
-			4'b0000 :
-				RegisterDDO_0[23:16] <= BlazeDataOut[23:16];
-			4'b0001 :
-				RegisterDDO_1[23:16] <= BlazeDataOut[23:16];	
-			4'b0010 :
-				RegisterDDO_2[23:16] <= BlazeDataOut[23:16];
-			4'b0011 :
-				RegisterDDO_3[23:16] <= BlazeDataOut[23:16];
-			4'b0100 :
-				RegisterDDO_4[23:16] <= BlazeDataOut[23:16];
-			4'b0101 :
-				RegisterDDO_5[23:16] <= BlazeDataOut[23:16];
-			4'b0110 :
-				RegisterDDO_6[23:16] <= BlazeDataOut[23:16];			
-			4'b0111 :
-				RegisterDDO_7[23:16] <= BlazeDataOut[23:16];
-			endcase	
-		end	
-
-		if(nCS == 0 && nBE[1] == 0 ) begin	
-			case(Addr[5:2])
-			4'b0000 :
-				RegisterDDO_0[15:8] <= BlazeDataOut[15:8];
-			4'b0001 :
-				RegisterDDO_1[15:8] <= BlazeDataOut[15:8];	
-			4'b0010 :
-				RegisterDDO_2[15:8] <= BlazeDataOut[15:8];
-			4'b0011 :
-				RegisterDDO_3[15:8] <= BlazeDataOut[15:8];
-			4'b0100 :
-				RegisterDDO_4[15:8] <= BlazeDataOut[15:8];
-			4'b0101 :
-				RegisterDDO_5[15:8] <= BlazeDataOut[15:8];
-			4'b0110 :
-				RegisterDDO_6[15:8] <= BlazeDataOut[15:8];			
-			4'b0111 :
-				RegisterDDO_7[15:8] <= BlazeDataOut[15:8];
-			endcase	
-		end	
+	/*
+	always @(posedge nRD) begin
 		
-		
-		if(nCS == 0 && nBE[0] == 0 ) begin	
-			case(Addr[5:2])
-			4'b0000 :
-				RegisterDDO_0[7:0] <= BlazeDataOut[7:0];
-			4'b0001 :
-				RegisterDDO_1[7:0] <= BlazeDataOut[7:0];	
-			4'b0010 :
-				RegisterDDO_2[7:0] <= BlazeDataOut[7:0];
-			4'b0011 :
-				RegisterDDO_3[7:0] <= BlazeDataOut[7:0];
-			4'b0100 :
-				RegisterDDO_4[7:0] <= BlazeDataOut[7:0];
-			4'b0101 :
-				RegisterDDO_5[7:0] <= BlazeDataOut[7:0];
-			4'b0110 :
-				RegisterDDO_6[7:0] <= BlazeDataOut[7:0];			
-			4'b0111 :
-				RegisterDDO_7[7:0] <= BlazeDataOut[7:0];
-			endcase	
-		end	
+		if(nBE == 0);
+			case(Addr)		
+			LCD_DATA_ADDR    :						//LCD Data Mode
+				BlazeDataIn[7:0] <= JA[7:0];				
+			LCD_CONTROL_ADDR : 						//LCD Control Mode
+				BlazeDataIn[7:0] <= JA[7:0];			
+			endcase			
 
 	end
-
+	*/
+	
 	// Instantiate the MicroBlaze & RS232 module
 	(* BOX_TYPE = "user_black_box" *)
 	blaze blaze (
@@ -292,8 +136,8 @@ module top(
 		 .fpga_0_clk_1_sys_clk_pin(clk), 
 		 .fpga_0_rst_1_sys_rst_pin(btn[0]),
 		 .fpga_0_DIP_Switches_GPIO_IO_I_pin(sw),
-		 .fpga_0_LEDS_GPIO_IO_O_pin(Led),
-		 .xps_epc_0_PRH_CS_n_pin(nCS),					// 4바이트 레지스터 * 8개 = 32 바이트 영역.
+//		 .fpga_0_LEDS_GPIO_IO_O_pin(Led),
+		 .xps_epc_0_PRH_CS_n_pin(EPC_nCS),					
 		 .xps_epc_0_PRH_Addr_pin(Addr),
 		 .xps_epc_0_PRH_Rd_n_pin(nRD),
 		 .xps_epc_0_PRH_Wr_n_pin(nWR),
@@ -302,20 +146,33 @@ module top(
 		 .xps_epc_0_PRH_Data_O_pin(BlazeDataOut),		// 출력 전용 데이터 버스
 		 .xps_epc_0_PRH_BE_pin(BE)
 		 );
-		 
-	
 	
 	Lcd_Controller Lcd_Controller(
 		 .clk			(clk), 
 		 .rst			(btn[0]), 
-		 .nCS			(nCS), 
+		 .nCS			(LCD_nCS), 
 		 .nWR			(nWR), 
 		 .nRD			(nRD), 
-		 .Data_T		(Data_T), 
 		 .RS			(RS), 
-		 .RW			(JB[5]), 
-		 .EN			(JB[6])
+		 .RW			(RW), 
+		 .EN			(EN)
     );
+	 
+	 SevenSegment SevenSegment (
+		 .i_clk					(clk), 
+		 .i_Digit				(Digit), 
+		 .i_Seg_DP_Switch		(4'b1111), 
+		 .o_ControlLed			(an), 
+		 .o_SegA					(seg[0]), 
+		 .o_SegB					(seg[1]), 
+		 .o_SegC					(seg[2]), 
+		 .o_SegD					(seg[3]), 
+		 .o_SegE					(seg[4]), 
+		 .o_SegF					(seg[5]), 
+		 .o_SegG					(seg[6]), 
+		 .o_Seg_DP				(dp)
+    );
+
 	 
 endmodule
 

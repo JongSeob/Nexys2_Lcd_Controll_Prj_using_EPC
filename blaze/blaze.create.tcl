@@ -1,4 +1,4 @@
-cd E:/Assignment5/blaze
+cd D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze
 if { [xload new blaze.xmp] != 0 } {
   exit -1
 }

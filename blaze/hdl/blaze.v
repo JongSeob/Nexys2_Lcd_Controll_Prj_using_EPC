@@ -30,9 +30,9 @@ module blaze
   output xps_epc_0_PRH_Rd_n_pin;
   output xps_epc_0_PRH_Wr_n_pin;
   input xps_epc_0_PRH_Rdy_pin;
-  output [0:3] xps_epc_0_PRH_BE_pin;
-  input [0:31] xps_epc_0_PRH_Data_I_pin;
-  output [0:31] xps_epc_0_PRH_Data_O_pin;
+  output xps_epc_0_PRH_BE_pin;
+  input [0:7] xps_epc_0_PRH_Data_I_pin;
+  output [0:7] xps_epc_0_PRH_Data_O_pin;
 
   // Internal signals
 
@@ -184,7 +184,7 @@ module blaze
   wire net_gnd0;
   wire [0:0] net_gnd1;
   wire [0:1] net_gnd2;
-  wire [0:2] net_gnd3;
+  wire [2:0] net_gnd3;
   wire [0:3] net_gnd4;
   wire [0:7] net_gnd8;
   wire [0:9] net_gnd10;
@@ -196,10 +196,10 @@ module blaze
   wire [0:0] sys_bus_reset;
   wire sys_rst_s;
   wire [0:5] xps_epc_0_PRH_Addr;
-  wire [0:3] xps_epc_0_PRH_BE;
+  wire [0:0] xps_epc_0_PRH_BE;
   wire [0:0] xps_epc_0_PRH_CS_n;
-  wire [0:31] xps_epc_0_PRH_Data_I;
-  wire [0:31] xps_epc_0_PRH_Data_O;
+  wire [0:7] xps_epc_0_PRH_Data_I;
+  wire [0:7] xps_epc_0_PRH_Data_O;
   wire xps_epc_0_PRH_Rd_n;
   wire xps_epc_0_PRH_Wr_n;
 
@@ -214,7 +214,7 @@ module blaze
   assign xps_epc_0_PRH_Rd_n_pin = xps_epc_0_PRH_Rd_n;
   assign xps_epc_0_PRH_Wr_n_pin = xps_epc_0_PRH_Wr_n;
   assign net_xps_epc_0_PRH_Rdy_pin[0] = xps_epc_0_PRH_Rdy_pin;
-  assign xps_epc_0_PRH_BE_pin = xps_epc_0_PRH_BE;
+  assign xps_epc_0_PRH_BE_pin = xps_epc_0_PRH_BE[0];
   assign xps_epc_0_PRH_Data_I = xps_epc_0_PRH_Data_I_pin;
   assign xps_epc_0_PRH_Data_O_pin = xps_epc_0_PRH_Data_O;
   assign net_gnd0 = 1'b0;
@@ -222,7 +222,7 @@ module blaze
   assign net_gnd10[0:9] = 10'b0000000000;
   assign net_gnd16[0:15] = 16'b0000000000000000;
   assign net_gnd2[0:1] = 2'b00;
-  assign net_gnd3[0:2] = 3'b000;
+  assign net_gnd3[2:0] = 3'b000;
   assign net_gnd32[0:31] = 32'b00000000000000000000000000000000;
   assign net_gnd4[0:3] = 4'b0000;
   assign net_gnd4096[0:4095] = 4096'h0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
@@ -414,6 +414,9 @@ module blaze
       .M_AXI_IC_AWVALID (  ),
       .M_AXI_IC_AWREADY ( net_gnd0 ),
       .M_AXI_IC_AWUSER (  ),
+      .M_AXI_IC_AWDOMAIN (  ),
+      .M_AXI_IC_AWSNOOP (  ),
+      .M_AXI_IC_AWBAR (  ),
       .M_AXI_IC_WDATA (  ),
       .M_AXI_IC_WSTRB (  ),
       .M_AXI_IC_WLAST (  ),
@@ -425,6 +428,7 @@ module blaze
       .M_AXI_IC_BVALID ( net_gnd0 ),
       .M_AXI_IC_BREADY (  ),
       .M_AXI_IC_BUSER ( net_gnd1[0:0] ),
+      .M_AXI_IC_WACK (  ),
       .M_AXI_IC_ARID (  ),
       .M_AXI_IC_ARADDR (  ),
       .M_AXI_IC_ARLEN (  ),
@@ -437,6 +441,9 @@ module blaze
       .M_AXI_IC_ARVALID (  ),
       .M_AXI_IC_ARREADY ( net_gnd0 ),
       .M_AXI_IC_ARUSER (  ),
+      .M_AXI_IC_ARDOMAIN (  ),
+      .M_AXI_IC_ARSNOOP (  ),
+      .M_AXI_IC_ARBAR (  ),
       .M_AXI_IC_RID ( net_gnd1[0:0] ),
       .M_AXI_IC_RDATA ( net_gnd32[0:31] ),
       .M_AXI_IC_RRESP ( net_gnd2[0:1] ),
@@ -444,6 +451,19 @@ module blaze
       .M_AXI_IC_RVALID ( net_gnd0 ),
       .M_AXI_IC_RREADY (  ),
       .M_AXI_IC_RUSER ( net_gnd1[0:0] ),
+      .M_AXI_IC_RACK (  ),
+      .M_AXI_IC_ACVALID ( net_gnd0 ),
+      .M_AXI_IC_ACADDR ( net_gnd32[0:31] ),
+      .M_AXI_IC_ACSNOOP ( net_gnd4[0:3] ),
+      .M_AXI_IC_ACPROT ( net_gnd3 ),
+      .M_AXI_IC_ACREADY (  ),
+      .M_AXI_IC_CRREADY ( net_gnd0 ),
+      .M_AXI_IC_CRVALID (  ),
+      .M_AXI_IC_CRRESP (  ),
+      .M_AXI_IC_CDVALID (  ),
+      .M_AXI_IC_CDREADY ( net_gnd0 ),
+      .M_AXI_IC_CDDATA (  ),
+      .M_AXI_IC_CDLAST (  ),
       .M_AXI_DC_AWID (  ),
       .M_AXI_DC_AWADDR (  ),
       .M_AXI_DC_AWLEN (  ),
@@ -456,6 +476,9 @@ module blaze
       .M_AXI_DC_AWVALID (  ),
       .M_AXI_DC_AWREADY ( net_gnd0 ),
       .M_AXI_DC_AWUSER (  ),
+      .M_AXI_DC_AWDOMAIN (  ),
+      .M_AXI_DC_AWSNOOP (  ),
+      .M_AXI_DC_AWBAR (  ),
       .M_AXI_DC_WDATA (  ),
       .M_AXI_DC_WSTRB (  ),
       .M_AXI_DC_WLAST (  ),
@@ -467,6 +490,7 @@ module blaze
       .M_AXI_DC_BVALID ( net_gnd0 ),
       .M_AXI_DC_BREADY (  ),
       .M_AXI_DC_BUSER ( net_gnd1[0:0] ),
+      .M_AXI_DC_WACK (  ),
       .M_AXI_DC_ARID (  ),
       .M_AXI_DC_ARADDR (  ),
       .M_AXI_DC_ARLEN (  ),
@@ -479,6 +503,9 @@ module blaze
       .M_AXI_DC_ARVALID (  ),
       .M_AXI_DC_ARREADY ( net_gnd0 ),
       .M_AXI_DC_ARUSER (  ),
+      .M_AXI_DC_ARDOMAIN (  ),
+      .M_AXI_DC_ARSNOOP (  ),
+      .M_AXI_DC_ARBAR (  ),
       .M_AXI_DC_RID ( net_gnd1[0:0] ),
       .M_AXI_DC_RDATA ( net_gnd32[0:31] ),
       .M_AXI_DC_RRESP ( net_gnd2[0:1] ),
@@ -486,6 +513,19 @@ module blaze
       .M_AXI_DC_RVALID ( net_gnd0 ),
       .M_AXI_DC_RREADY (  ),
       .M_AXI_DC_RUSER ( net_gnd1[0:0] ),
+      .M_AXI_DC_RACK (  ),
+      .M_AXI_DC_ACVALID ( net_gnd0 ),
+      .M_AXI_DC_ACADDR ( net_gnd32[0:31] ),
+      .M_AXI_DC_ACSNOOP ( net_gnd4[0:3] ),
+      .M_AXI_DC_ACPROT ( net_gnd3 ),
+      .M_AXI_DC_ACREADY (  ),
+      .M_AXI_DC_CRREADY ( net_gnd0 ),
+      .M_AXI_DC_CRVALID (  ),
+      .M_AXI_DC_CRRESP (  ),
+      .M_AXI_DC_CDVALID (  ),
+      .M_AXI_DC_CDREADY ( net_gnd0 ),
+      .M_AXI_DC_CDDATA (  ),
+      .M_AXI_DC_CDLAST (  ),
       .DBG_CLK ( microblaze_0_mdm_bus_Dbg_Clk ),
       .DBG_TDI ( microblaze_0_mdm_bus_Dbg_TDI ),
       .DBG_TDO ( microblaze_0_mdm_bus_Dbg_TDO ),
@@ -1061,7 +1101,7 @@ module blaze
       .SPLB_CTRL_PLB_RNW ( net_gnd0 ),
       .SPLB_CTRL_PLB_BE ( net_gnd4 ),
       .SPLB_CTRL_PLB_size ( net_gnd4 ),
-      .SPLB_CTRL_PLB_type ( net_gnd3 ),
+      .SPLB_CTRL_PLB_type ( net_gnd3[2:0] ),
       .SPLB_CTRL_PLB_wrDBus ( net_gnd32 ),
       .SPLB_CTRL_Sl_addrAck (  ),
       .SPLB_CTRL_Sl_SSize (  ),
@@ -1181,7 +1221,7 @@ module blaze
       .SPLB_CTRL_PLB_RNW ( net_gnd0 ),
       .SPLB_CTRL_PLB_BE ( net_gnd4 ),
       .SPLB_CTRL_PLB_size ( net_gnd4 ),
-      .SPLB_CTRL_PLB_type ( net_gnd3 ),
+      .SPLB_CTRL_PLB_type ( net_gnd3[2:0] ),
       .SPLB_CTRL_PLB_wrDBus ( net_gnd32 ),
       .SPLB_CTRL_Sl_addrAck (  ),
       .SPLB_CTRL_Sl_SSize (  ),
@@ -1870,7 +1910,7 @@ module blaze
       .PRH_CS_n ( xps_epc_0_PRH_CS_n[0:0] ),
       .PRH_Addr ( xps_epc_0_PRH_Addr ),
       .PRH_ADS (  ),
-      .PRH_BE ( xps_epc_0_PRH_BE ),
+      .PRH_BE ( xps_epc_0_PRH_BE[0:0] ),
       .PRH_RNW (  ),
       .PRH_Rd_n ( xps_epc_0_PRH_Rd_n ),
       .PRH_Wr_n ( xps_epc_0_PRH_Wr_n ),
@@ -2067,6 +2107,9 @@ module blaze_microblaze_0_wrapper
     M_AXI_IC_AWVALID,
     M_AXI_IC_AWREADY,
     M_AXI_IC_AWUSER,
+    M_AXI_IC_AWDOMAIN,
+    M_AXI_IC_AWSNOOP,
+    M_AXI_IC_AWBAR,
     M_AXI_IC_WDATA,
     M_AXI_IC_WSTRB,
     M_AXI_IC_WLAST,
@@ -2078,6 +2121,7 @@ module blaze_microblaze_0_wrapper
     M_AXI_IC_BVALID,
     M_AXI_IC_BREADY,
     M_AXI_IC_BUSER,
+    M_AXI_IC_WACK,
     M_AXI_IC_ARID,
     M_AXI_IC_ARADDR,
     M_AXI_IC_ARLEN,
@@ -2090,6 +2134,9 @@ module blaze_microblaze_0_wrapper
     M_AXI_IC_ARVALID,
     M_AXI_IC_ARREADY,
     M_AXI_IC_ARUSER,
+    M_AXI_IC_ARDOMAIN,
+    M_AXI_IC_ARSNOOP,
+    M_AXI_IC_ARBAR,
     M_AXI_IC_RID,
     M_AXI_IC_RDATA,
     M_AXI_IC_RRESP,
@@ -2097,6 +2144,19 @@ module blaze_microblaze_0_wrapper
     M_AXI_IC_RVALID,
     M_AXI_IC_RREADY,
     M_AXI_IC_RUSER,
+    M_AXI_IC_RACK,
+    M_AXI_IC_ACVALID,
+    M_AXI_IC_ACADDR,
+    M_AXI_IC_ACSNOOP,
+    M_AXI_IC_ACPROT,
+    M_AXI_IC_ACREADY,
+    M_AXI_IC_CRREADY,
+    M_AXI_IC_CRVALID,
+    M_AXI_IC_CRRESP,
+    M_AXI_IC_CDVALID,
+    M_AXI_IC_CDREADY,
+    M_AXI_IC_CDDATA,
+    M_AXI_IC_CDLAST,
     M_AXI_DC_AWID,
     M_AXI_DC_AWADDR,
     M_AXI_DC_AWLEN,
@@ -2109,6 +2169,9 @@ module blaze_microblaze_0_wrapper
     M_AXI_DC_AWVALID,
     M_AXI_DC_AWREADY,
     M_AXI_DC_AWUSER,
+    M_AXI_DC_AWDOMAIN,
+    M_AXI_DC_AWSNOOP,
+    M_AXI_DC_AWBAR,
     M_AXI_DC_WDATA,
     M_AXI_DC_WSTRB,
     M_AXI_DC_WLAST,
@@ -2120,6 +2183,7 @@ module blaze_microblaze_0_wrapper
     M_AXI_DC_BVALID,
     M_AXI_DC_BREADY,
     M_AXI_DC_BUSER,
+    M_AXI_DC_WACK,
     M_AXI_DC_ARID,
     M_AXI_DC_ARADDR,
     M_AXI_DC_ARLEN,
@@ -2132,6 +2196,9 @@ module blaze_microblaze_0_wrapper
     M_AXI_DC_ARVALID,
     M_AXI_DC_ARREADY,
     M_AXI_DC_ARUSER,
+    M_AXI_DC_ARDOMAIN,
+    M_AXI_DC_ARSNOOP,
+    M_AXI_DC_ARBAR,
     M_AXI_DC_RID,
     M_AXI_DC_RDATA,
     M_AXI_DC_RRESP,
@@ -2139,6 +2206,19 @@ module blaze_microblaze_0_wrapper
     M_AXI_DC_RVALID,
     M_AXI_DC_RREADY,
     M_AXI_DC_RUSER,
+    M_AXI_DC_RACK,
+    M_AXI_DC_ACVALID,
+    M_AXI_DC_ACADDR,
+    M_AXI_DC_ACSNOOP,
+    M_AXI_DC_ACPROT,
+    M_AXI_DC_ACREADY,
+    M_AXI_DC_CRREADY,
+    M_AXI_DC_CRVALID,
+    M_AXI_DC_CRRESP,
+    M_AXI_DC_CDVALID,
+    M_AXI_DC_CDREADY,
+    M_AXI_DC_CDDATA,
+    M_AXI_DC_CDLAST,
     DBG_CLK,
     DBG_TDI,
     DBG_TDO,
@@ -2668,6 +2748,9 @@ module blaze_microblaze_0_wrapper
   output M_AXI_IC_AWVALID;
   input M_AXI_IC_AWREADY;
   output [4:0] M_AXI_IC_AWUSER;
+  output [1:0] M_AXI_IC_AWDOMAIN;
+  output [2:0] M_AXI_IC_AWSNOOP;
+  output [1:0] M_AXI_IC_AWBAR;
   output [31:0] M_AXI_IC_WDATA;
   output [3:0] M_AXI_IC_WSTRB;
   output M_AXI_IC_WLAST;
@@ -2679,6 +2762,7 @@ module blaze_microblaze_0_wrapper
   input M_AXI_IC_BVALID;
   output M_AXI_IC_BREADY;
   input [0:0] M_AXI_IC_BUSER;
+  output M_AXI_IC_WACK;
   output [0:0] M_AXI_IC_ARID;
   output [31:0] M_AXI_IC_ARADDR;
   output [7:0] M_AXI_IC_ARLEN;
@@ -2691,6 +2775,9 @@ module blaze_microblaze_0_wrapper
   output M_AXI_IC_ARVALID;
   input M_AXI_IC_ARREADY;
   output [4:0] M_AXI_IC_ARUSER;
+  output [1:0] M_AXI_IC_ARDOMAIN;
+  output [3:0] M_AXI_IC_ARSNOOP;
+  output [1:0] M_AXI_IC_ARBAR;
   input [0:0] M_AXI_IC_RID;
   input [31:0] M_AXI_IC_RDATA;
   input [1:0] M_AXI_IC_RRESP;
@@ -2698,6 +2785,19 @@ module blaze_microblaze_0_wrapper
   input M_AXI_IC_RVALID;
   output M_AXI_IC_RREADY;
   input [0:0] M_AXI_IC_RUSER;
+  output M_AXI_IC_RACK;
+  input M_AXI_IC_ACVALID;
+  input [31:0] M_AXI_IC_ACADDR;
+  input [3:0] M_AXI_IC_ACSNOOP;
+  input [2:0] M_AXI_IC_ACPROT;
+  output M_AXI_IC_ACREADY;
+  input M_AXI_IC_CRREADY;
+  output M_AXI_IC_CRVALID;
+  output [4:0] M_AXI_IC_CRRESP;
+  output M_AXI_IC_CDVALID;
+  input M_AXI_IC_CDREADY;
+  output [31:0] M_AXI_IC_CDDATA;
+  output M_AXI_IC_CDLAST;
   output [0:0] M_AXI_DC_AWID;
   output [31:0] M_AXI_DC_AWADDR;
   output [7:0] M_AXI_DC_AWLEN;
@@ -2710,6 +2810,9 @@ module blaze_microblaze_0_wrapper
   output M_AXI_DC_AWVALID;
   input M_AXI_DC_AWREADY;
   output [4:0] M_AXI_DC_AWUSER;
+  output [1:0] M_AXI_DC_AWDOMAIN;
+  output [2:0] M_AXI_DC_AWSNOOP;
+  output [1:0] M_AXI_DC_AWBAR;
   output [31:0] M_AXI_DC_WDATA;
   output [3:0] M_AXI_DC_WSTRB;
   output M_AXI_DC_WLAST;
@@ -2721,6 +2824,7 @@ module blaze_microblaze_0_wrapper
   input M_AXI_DC_BVALID;
   output M_AXI_DC_BREADY;
   input [0:0] M_AXI_DC_BUSER;
+  output M_AXI_DC_WACK;
   output [0:0] M_AXI_DC_ARID;
   output [31:0] M_AXI_DC_ARADDR;
   output [7:0] M_AXI_DC_ARLEN;
@@ -2733,6 +2837,9 @@ module blaze_microblaze_0_wrapper
   output M_AXI_DC_ARVALID;
   input M_AXI_DC_ARREADY;
   output [4:0] M_AXI_DC_ARUSER;
+  output [1:0] M_AXI_DC_ARDOMAIN;
+  output [3:0] M_AXI_DC_ARSNOOP;
+  output [1:0] M_AXI_DC_ARBAR;
   input [0:0] M_AXI_DC_RID;
   input [31:0] M_AXI_DC_RDATA;
   input [1:0] M_AXI_DC_RRESP;
@@ -2740,6 +2847,19 @@ module blaze_microblaze_0_wrapper
   input M_AXI_DC_RVALID;
   output M_AXI_DC_RREADY;
   input [0:0] M_AXI_DC_RUSER;
+  output M_AXI_DC_RACK;
+  input M_AXI_DC_ACVALID;
+  input [31:0] M_AXI_DC_ACADDR;
+  input [3:0] M_AXI_DC_ACSNOOP;
+  input [2:0] M_AXI_DC_ACPROT;
+  output M_AXI_DC_ACREADY;
+  input M_AXI_DC_CRREADY;
+  output M_AXI_DC_CRVALID;
+  output [4:0] M_AXI_DC_CRRESP;
+  output M_AXI_DC_CDVALID;
+  input M_AXI_DC_CDREADY;
+  output [31:0] M_AXI_DC_CDDATA;
+  output M_AXI_DC_CDLAST;
   input DBG_CLK;
   input DBG_TDI;
   output DBG_TDO;
@@ -5106,14 +5226,14 @@ module blaze_xps_epc_0_wrapper
   output [0:0] PRH_CS_n;
   output [0:5] PRH_Addr;
   output PRH_ADS;
-  output [0:3] PRH_BE;
+  output [0:0] PRH_BE;
   output PRH_RNW;
   output PRH_Rd_n;
   output PRH_Wr_n;
   output PRH_Burst;
   input [0:0] PRH_Rdy;
-  input [0:31] PRH_Data_I;
-  output [0:31] PRH_Data_O;
-  output [0:31] PRH_Data_T;
+  input [0:7] PRH_Data_I;
+  output [0:7] PRH_Data_O;
+  output [0:7] PRH_Data_T;
 endmodule
 

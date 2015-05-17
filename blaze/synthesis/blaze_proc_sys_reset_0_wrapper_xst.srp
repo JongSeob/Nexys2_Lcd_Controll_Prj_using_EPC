@@ -1,10 +1,10 @@
-Release 14.4 - xst P.49d (nt64)
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to E:\Assignment5\blaze\synthesis\xst_temp_dir\
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\synthesis\xst_temp_dir\
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> 
 TABLE OF CONTENTS
@@ -30,7 +30,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "blaze_proc_sys_reset_0_wrapper_xst.prj"
-Verilog Include Directory          : {"E:\Assignment5\blaze\pcores\" "C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc3s1200efg320-4
@@ -57,19 +57,19 @@ Cores Search Directories           : {../implementation}
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "C:/Xilinx/14.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/upcnt_n.vhd" in Library proc_sys_reset_v3_00_a.
+Compiling vhdl file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/upcnt_n.vhd" in Library proc_sys_reset_v3_00_a.
 Entity <upcnt_n> compiled.
 Entity <upcnt_n> (Architecture <imp>) compiled.
-Compiling vhdl file "C:/Xilinx/14.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/lpf.vhd" in Library proc_sys_reset_v3_00_a.
+Compiling vhdl file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/lpf.vhd" in Library proc_sys_reset_v3_00_a.
 Entity <lpf> compiled.
 Entity <lpf> (Architecture <imp>) compiled.
-Compiling vhdl file "C:/Xilinx/14.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/sequence.vhd" in Library proc_sys_reset_v3_00_a.
+Compiling vhdl file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/sequence.vhd" in Library proc_sys_reset_v3_00_a.
 Entity <sequence> compiled.
 Entity <sequence> (Architecture <imp>) compiled.
-Compiling vhdl file "C:/Xilinx/14.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/proc_sys_reset.vhd" in Library proc_sys_reset_v3_00_a.
+Compiling vhdl file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/proc_sys_reset.vhd" in Library proc_sys_reset_v3_00_a.
 Entity <proc_sys_reset> compiled.
 Entity <proc_sys_reset> (Architecture <imp>) compiled.
-Compiling vhdl file "E:/Assignment5/blaze/hdl/blaze_proc_sys_reset_0_wrapper.vhd" in Library work.
+Compiling vhdl file "D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_proc_sys_reset_0_wrapper.vhd" in Library work.
 Entity <blaze_proc_sys_reset_0_wrapper> compiled.
 Entity <blaze_proc_sys_reset_0_wrapper> (Architecture <STRUCTURE>) compiled.
 
@@ -133,7 +133,7 @@ Analyzing generic Entity <lpf> in library <proc_sys_reset_v3_00_a> (Architecture
 	C_AUX_RST_WIDTH = 4
 	C_EXT_RESET_HIGH = '1'
 	C_EXT_RST_WIDTH = 4
-WARNING:Xst:2211 - "C:/Xilinx/14.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/lpf.vhd" line 188: Instantiating black box module <SRL16>.
+WARNING:Xst:2211 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/lpf.vhd" line 188: Instantiating black box module <SRL16>.
     Set user-defined property "INIT =  FFFF" for instance <POR_SRL_I> in unit <lpf>.
 Entity <lpf> analyzed. Unit <lpf> generated.
 
@@ -152,7 +152,7 @@ Entity <upcnt_n.2> analyzed. Unit <upcnt_n.2> generated.
 Performing bidirectional port resolution...
 
 Synthesizing Unit <upcnt_n_1>.
-    Related source file is "C:/Xilinx/14.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/upcnt_n.vhd".
+    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/upcnt_n.vhd".
     Found 4-bit up counter for signal <q_int>.
     Summary:
 	inferred   1 Counter(s).
@@ -160,7 +160,7 @@ Unit <upcnt_n_1> synthesized.
 
 
 Synthesizing Unit <upcnt_n_2>.
-    Related source file is "C:/Xilinx/14.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/upcnt_n.vhd".
+    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/upcnt_n.vhd".
     Found 6-bit up counter for signal <q_int>.
     Summary:
 	inferred   1 Counter(s).
@@ -168,7 +168,7 @@ Unit <upcnt_n_2> synthesized.
 
 
 Synthesizing Unit <lpf>.
-    Related source file is "C:/Xilinx/14.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/lpf.vhd".
+    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/lpf.vhd".
     Found 1-bit register for signal <asr_d1>.
     Found 4-bit register for signal <asr_lpf>.
     Found 1-bit register for signal <exr_d1>.
@@ -182,7 +182,7 @@ Unit <lpf> synthesized.
 
 
 Synthesizing Unit <sequence>.
-    Related source file is "C:/Xilinx/14.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/sequence.vhd".
+    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/sequence.vhd".
     Register <sys_dec<0>> equivalent to <bsr_dec<0>> has been removed
     Register <core_dec<1>> equivalent to <bsr_dec<1>> has been removed
     Register <pr_dec<1>> equivalent to <bsr_dec<1>> has been removed
@@ -216,7 +216,7 @@ Unit <sequence> synthesized.
 
 
 Synthesizing Unit <proc_sys_reset>.
-    Related source file is "C:/Xilinx/14.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/proc_sys_reset.vhd".
+    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_sys_reset_v3_00_a/hdl/vhdl/proc_sys_reset.vhd".
     Register <RstcPPCresetchip_1> equivalent to <RstcPPCresetchip_0> has been removed
     Register <RstcPPCresetsys_1> equivalent to <RstcPPCresetsys_0> has been removed
     Found 1-bit register for signal <Interconnect_aresetn<0>>.
@@ -244,7 +244,7 @@ Unit <proc_sys_reset> synthesized.
 
 
 Synthesizing Unit <blaze_proc_sys_reset_0_wrapper>.
-    Related source file is "E:/Assignment5/blaze/hdl/blaze_proc_sys_reset_0_wrapper.vhd".
+    Related source file is "D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_proc_sys_reset_0_wrapper.vhd".
 Unit <blaze_proc_sys_reset_0_wrapper> synthesized.
 
 
@@ -471,11 +471,11 @@ Offset:              0.591ns (Levels of Logic = 0)
 
 
 Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 4.46 secs
+Total CPU time to Xst completion: 4.84 secs
  
 --> 
 
-Total memory usage is 281320 kilobytes
+Total memory usage is 283892 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

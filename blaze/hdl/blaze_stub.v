@@ -30,9 +30,9 @@ module blaze_stub
   output xps_epc_0_PRH_Rd_n_pin;
   output xps_epc_0_PRH_Wr_n_pin;
   input xps_epc_0_PRH_Rdy_pin;
-  output [0:3] xps_epc_0_PRH_BE_pin;
-  input [0:31] xps_epc_0_PRH_Data_I_pin;
-  output [0:31] xps_epc_0_PRH_Data_O_pin;
+  output xps_epc_0_PRH_BE_pin;
+  input [0:7] xps_epc_0_PRH_Data_I_pin;
+  output [0:7] xps_epc_0_PRH_Data_O_pin;
 
   (* BOX_TYPE = "user_black_box" *)
   blaze
@@ -83,8 +83,8 @@ module blaze
   output xps_epc_0_PRH_Rd_n_pin;
   output xps_epc_0_PRH_Wr_n_pin;
   input xps_epc_0_PRH_Rdy_pin;
-  output [0:3] xps_epc_0_PRH_BE_pin;
-  input [0:31] xps_epc_0_PRH_Data_I_pin;
-  output [0:31] xps_epc_0_PRH_Data_O_pin;
+  output xps_epc_0_PRH_BE_pin;
+  input [0:7] xps_epc_0_PRH_Data_I_pin;
+  output [0:7] xps_epc_0_PRH_Data_O_pin;
 endmodule
 

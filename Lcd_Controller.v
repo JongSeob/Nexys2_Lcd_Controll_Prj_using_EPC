@@ -10,7 +10,7 @@
 // Target Devices: Nexys2
 // Tool versions:  ISE Navigator 14.7
 // Description:    외부로부터 nCS, nWR, nRD, RS 신호를 받아서
-//						 Data_T, RW, EN 신호를 LCD 타이밍에 맞게 보내준다.
+//						 RW, EN 신호를 LCD 타이밍에 맞게 보내준다.
 //
 // Dependencies: 
 //
@@ -35,7 +35,6 @@ module Lcd_Controller#(
 	input nCS,
 	input nWR,
 	input nRD,
-	output reg Data_T,
 	
 	input  RS,
 	output reg RW,
@@ -67,7 +66,6 @@ module Lcd_Controller#(
 								  
 			stRead			: begin
 										RW 	 <= 1;
-										Data_T <= 1; // 3상태버퍼를 LCD -> CPU 방향으로 연다.
 										
 										if(RS == 1)
 											stNext <= stTwoDelay;
@@ -79,7 +77,6 @@ module Lcd_Controller#(
 								  
 			stWrite 			: begin 
 										RW <= 0; 
-										Data_T <= 0; // 3상태 버퍼를 CPU -> LCD 방향으로 연다.
 										stNext <= stTwoDelay; 
 								  end 
 								  

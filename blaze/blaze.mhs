@@ -1,7 +1,7 @@
 
 # ##############################################################################
-# Created by Base System Builder Wizard for Xilinx EDK 14.4 Build EDK_P.49d
-# Wed May 13 21:11:23 2015
+# Created by Base System Builder Wizard for Xilinx EDK 14.7 Build EDK_P.20131013
+# Sun May 17 09:03:32 2015
 # Target Board:  Custom
 # Family:    spartan3e
 # Device:    xc3s1200e
@@ -26,9 +26,9 @@
  PORT xps_epc_0_PRH_Rd_n_pin = xps_epc_0_PRH_Rd_n, DIR = O
  PORT xps_epc_0_PRH_Wr_n_pin = xps_epc_0_PRH_Wr_n, DIR = O
  PORT xps_epc_0_PRH_Rdy_pin = net_xps_epc_0_PRH_Rdy_pin, DIR = I
- PORT xps_epc_0_PRH_BE_pin = xps_epc_0_PRH_BE, DIR = O, VEC = [0:3]
- PORT xps_epc_0_PRH_Data_I_pin = xps_epc_0_PRH_Data_I, DIR = I, VEC = [0:31]
- PORT xps_epc_0_PRH_Data_O_pin = xps_epc_0_PRH_Data_O, DIR = O, VEC = [0:31]
+ PORT xps_epc_0_PRH_BE_pin = xps_epc_0_PRH_BE, DIR = O
+ PORT xps_epc_0_PRH_Data_I_pin = xps_epc_0_PRH_Data_I, DIR = I, VEC = [0:7]
+ PORT xps_epc_0_PRH_Data_O_pin = xps_epc_0_PRH_Data_O, DIR = O, VEC = [0:7]
 
 
 BEGIN microblaze
@@ -36,7 +36,7 @@ BEGIN microblaze
  PARAMETER C_AREA_OPTIMIZED = 1
  PARAMETER C_USE_BARREL = 1
  PARAMETER C_DEBUG_ENABLED = 1
- PARAMETER HW_VER = 8.40.b
+ PARAMETER HW_VER = 8.50.c
  BUS_INTERFACE DLMB = dlmb
  BUS_INTERFACE ILMB = ilmb
  BUS_INTERFACE DPLB = mb_plb
@@ -179,16 +179,16 @@ BEGIN xps_epc
 # Maximum of address bus width of all external peripherals. from 3 to 32.
  PARAMETER C_PRH_MAX_AWIDTH = 6
 # Maximum of data bus width of all external peripherals. eg 8, 16 or 32
- PARAMETER C_PRH_MAX_DWIDTH = 32
+ PARAMETER C_PRH_MAX_DWIDTH = 8
 # For address/data multiplexing mode : Maximum of data bus width of all peripherals and address bus with of peripherals employing address/data multiplexing
 # For all non multiplexed devices :  the maximum of data bus width of all external devices. The C_PRH_MAX_ADWIDTH reflects the maximum of data bus width of all external devices i.e. C_PRH_MAX_ADWIDTH equals C_PRH_MAX_DWIDTH.
- PARAMETER C_PRH_MAX_ADWIDTH = 32
+ PARAMETER C_PRH_MAX_ADWIDTH = 8
 # Most important! Asynchronous Mode=0. Synchronous Mode=1.
  PARAMETER C_PRH0_SYNC = 0
 # Address bus width of peripherals
  PARAMETER C_PRH0_AWIDTH = 6
 # Data bus width of peripherals
- PARAMETER C_PRH0_DWIDTH = 32
+ PARAMETER C_PRH0_DWIDTH = 8
 # 20ns. Address Setup time with repect to falling edge of Read/write
  PARAMETER C_PRH0_ADDR_TSU = 40000
 # 20ns. Address bus (PRH_Addr) hold with respect to falling edge of address strobe (PRH_ADS) or rising edge of read/write

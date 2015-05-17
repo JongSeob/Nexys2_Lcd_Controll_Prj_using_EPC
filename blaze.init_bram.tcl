@@ -1,4 +1,4 @@
-cd E:/Assignment5/blaze
+cd D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze
 if { [ catch { xload xmp blaze.xmp } result ] } {
   exit 10
 }

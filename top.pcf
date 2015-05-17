@@ -1,8 +1,9 @@
 //! **************************************************************************
-// Written by: Map P.49d on Thu May 14 14:54:02 2015
+// Written by: Map P.20131013 on Sun May 17 09:17:17 2015
 //! **************************************************************************
 
 SCHEMATIC START;
+COMP "dp" LOCATE = SITE "C17" LEVEL 1;
 COMP "RXD" LOCATE = SITE "U6" LEVEL 1;
 COMP "TXD" LOCATE = SITE "P9" LEVEL 1;
 COMP "clk" LOCATE = SITE "B8" LEVEL 1;
@@ -17,6 +18,10 @@ COMP "JA<7>" LOCATE = SITE "M16" LEVEL 1;
 COMP "JB<4>" LOCATE = SITE "P17" LEVEL 1;
 COMP "JB<5>" LOCATE = SITE "R16" LEVEL 1;
 COMP "JB<6>" LOCATE = SITE "T18" LEVEL 1;
+COMP "an<0>" LOCATE = SITE "F17" LEVEL 1;
+COMP "an<1>" LOCATE = SITE "H17" LEVEL 1;
+COMP "an<2>" LOCATE = SITE "C18" LEVEL 1;
+COMP "an<3>" LOCATE = SITE "F15" LEVEL 1;
 COMP "sw<0>" LOCATE = SITE "G18" LEVEL 1;
 COMP "sw<1>" LOCATE = SITE "H18" LEVEL 1;
 COMP "sw<2>" LOCATE = SITE "K18" LEVEL 1;
@@ -34,6 +39,13 @@ COMP "Led<5>" LOCATE = SITE "P16" LEVEL 1;
 COMP "Led<6>" LOCATE = SITE "E4" LEVEL 1;
 COMP "Led<7>" LOCATE = SITE "P4" LEVEL 1;
 COMP "btn<0>" LOCATE = SITE "B18" LEVEL 1;
+COMP "seg<0>" LOCATE = SITE "L18" LEVEL 1;
+COMP "seg<1>" LOCATE = SITE "F18" LEVEL 1;
+COMP "seg<2>" LOCATE = SITE "D17" LEVEL 1;
+COMP "seg<3>" LOCATE = SITE "D16" LEVEL 1;
+COMP "seg<4>" LOCATE = SITE "G14" LEVEL 1;
+COMP "seg<5>" LOCATE = SITE "J17" LEVEL 1;
+COMP "seg<6>" LOCATE = SITE "H14" LEVEL 1;
 NET "clk_IBUFG1" BEL "clk_IBUFG_BUFG.GCLKMUX" USELOCALCONNECT;
 NET
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Data_Flow_I/PC_Module_I/pc_write_I"
@@ -43,18 +55,40 @@ PIN
         = BEL
         "blaze/clock_generator_0/clock_generator_0/DCM0_INST/Using_Virtex.DCM_INST"
         PINNAME CLKIN;
-TIMEGRP sys_clk_pin = BEL "Lcd_Controller/count_5" BEL
-        "Lcd_Controller/count_4" BEL "Lcd_Controller/count_3" BEL
-        "Lcd_Controller/count_2" BEL "Lcd_Controller/count_1" BEL
-        "Lcd_Controller/count_0" BEL "Lcd_Controller/stCur_0" BEL
-        "Lcd_Controller/stCur_1" BEL "Lcd_Controller/stCur_2" BEL
-        "Lcd_Controller/stCur_3" BEL "Lcd_Controller/stCur_6" BEL
-        "Lcd_Controller/stCur_4" BEL "Lcd_Controller/stCur_5" BEL
-        "Lcd_Controller/stNext_6" BEL "Lcd_Controller/stNext_5" BEL
-        "Lcd_Controller/stNext_4" BEL "Lcd_Controller/stNext_2" BEL
-        "Lcd_Controller/stNext_1" BEL "Lcd_Controller/EN" BEL
-        "Lcd_Controller/stNext_3" BEL "Lcd_Controller/stNext_0" BEL
-        "Lcd_Controller/Data_T" BEL
+TIMEGRP sys_clk_pin = BEL "Led_0" BEL "Led_1" BEL "Led_2" BEL "Led_3" BEL
+        "Led_4" BEL "Led_5" BEL "Led_6" BEL "Led_7" BEL
+        "Lcd_Controller/count_5" BEL "Lcd_Controller/count_4" BEL
+        "Lcd_Controller/count_3" BEL "Lcd_Controller/count_2" BEL
+        "Lcd_Controller/count_1" BEL "Lcd_Controller/count_0" BEL
+        "Lcd_Controller/stCur_0" BEL "Lcd_Controller/stCur_1" BEL
+        "Lcd_Controller/stCur_2" BEL "Lcd_Controller/stCur_3" BEL
+        "Lcd_Controller/stCur_6" BEL "Lcd_Controller/stCur_4" BEL
+        "Lcd_Controller/stCur_5" BEL "Lcd_Controller/stNext_6" BEL
+        "Lcd_Controller/stNext_2" BEL "Lcd_Controller/stNext_1" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_19" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_18" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_17" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_16" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_15" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_14" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_13" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_12" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_11" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_10" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_9" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_8" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_7" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_6" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_5" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_4" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_3" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_2" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_1" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_0" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/OutClk" BEL
+        "Lcd_Controller/EN" BEL "Lcd_Controller/stNext_5" BEL
+        "Lcd_Controller/stNext_4" BEL "Lcd_Controller/stNext_3" BEL
+        "Lcd_Controller/stNext_0" BEL "Lcd_Controller/RW" BEL
         "blaze/clock_generator_0/clock_generator_0/DCM0_INST/rsti" BEL
         "blaze/clock_generator_0/clock_generator_0/DCM0_INST/rst_delay_0" BEL
         "blaze/clock_generator_0/clock_generator_0/DCM0_INST/rst_delay_1" BEL
@@ -1320,17 +1354,17 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_19"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_30"
-        BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_25"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_26"
+        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_30"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_27"
+        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_26"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_31"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_32"
+        BEL
+        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_27"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/force_stop_cmd_i"
         BEL
@@ -1338,9 +1372,9 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_29"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/start_single_cmd"
-        BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/continue_from_brk"
+        BEL
+        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/start_single_cmd"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/command_reg_clear"
         BEL
@@ -1456,6 +1490,8 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/mbar_first_0"
         BEL
+        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/reset_delay_0"
+        BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/sleep_i_0"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/is_swx_I_0"
@@ -1504,9 +1540,9 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/doublet_i_0"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Reverse_Mem_Access"
-        BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/doublet_Read_i_0"
+        BEL
+        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Reverse_Mem_Access"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Unsigned_Op"
         BEL
@@ -1590,11 +1626,11 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Logic_Oper_0"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Using_FPGA.ALU_OP0_FDE"
+        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Using_FPGA.ALU_OP0_FDRE"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Using_FPGA.ALU_OP1_FDE"
+        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Using_FPGA.ALU_OP1_FDRE"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Using_FPGA.ALU_Carry_FDE"
+        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Using_FPGA.ALU_Carry_FDRE"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Using_FPGA.Force1_FDRE"
         BEL
@@ -1702,38 +1738,6 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_24"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_23"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_22"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_21"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_20"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_19"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_18"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_17"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_16"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_15"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_14"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_13"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_12"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_11"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_10"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_9"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_8"
-        BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_7"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_6"
@@ -1836,38 +1840,6 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_24"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_23"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_22"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_21"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_20"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_19"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_18"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_17"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_16"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_15"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_14"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_13"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_12"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_11"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_10"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_9"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_8"
-        BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_7"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_6"
@@ -1890,12 +1862,6 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_be_i_3"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_be_i_2"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_be_i_1"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_be_i_0"
-        BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_31"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_30"
@@ -1911,38 +1877,6 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_25"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_24"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_23"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_22"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_21"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_20"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_19"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_18"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_17"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_16"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_15"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_14"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_13"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_12"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_11"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_10"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_9"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_8"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_7"
         BEL
@@ -2087,9 +2021,6 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_ABus_29" BEL
         "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_ABus_30" BEL
         "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_ABus_31" BEL
-        "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_BE_0" BEL
-        "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_BE_1" BEL
-        "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_BE_2" BEL
         "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_BE_3" BEL
         "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/PrevTrnsReArb"
         BEL
@@ -2370,14 +2301,7 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         "blaze/LEDS/LEDS/PLBV46_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/icount_out_7"
         BEL "blaze/LEDS/LEDS/gpio_core_1/gpio_xferAck_Reg" BEL
         "blaze/LEDS/LEDS/gpio_core_1/gpio_OE_1" BEL
-        "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_5" BEL
-        "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_6" BEL
         "blaze/LEDS/LEDS/gpio_core_1/gpio_OE_0" BEL
-        "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_4" BEL
-        "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_3" BEL
-        "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_2" BEL
-        "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_1" BEL
-        "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_0" BEL
         "blaze/LEDS/LEDS/gpio_core_1/iGPIO_xferAck" BEL
         "blaze/LEDS/LEDS/gpio_core_1/gpio_OE_7" BEL
         "blaze/LEDS/LEDS/gpio_core_1/GPIO_DBus_i_28" BEL
@@ -2392,7 +2316,6 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         "blaze/LEDS/LEDS/gpio_core_1/GPIO_DBus_i_25" BEL
         "blaze/LEDS/LEDS/gpio_core_1/gpio_OE_3" BEL
         "blaze/LEDS/LEDS/gpio_core_1/GPIO_DBus_i_24" BEL
-        "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_7" BEL
         "blaze/LEDS/LEDS/gpio_core_1/gpio_OE_2" BEL
         "blaze/LEDS/LEDS/PLBV46_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_s_h_0"
         BEL "blaze/LEDS/LEDS/PLBV46_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0"
@@ -2891,54 +2814,6 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_NON_MUXED_CNTR9/PERBIT_GEN[0].FF_RST0_GEN.FDRE_i1"
         BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_31"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_30"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_29"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_28"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_27"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_26"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_25"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_24"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_23"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_22"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_21"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_20"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_19"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_18"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_17"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_16"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_15"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_14"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_13"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_12"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_11"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_10"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_9"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_8"
-        BEL
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_7"
         BEL
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_6"
@@ -2958,54 +2833,6 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_pavalid_reg"
         BEL
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/addr_cntl_cs_0"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_31"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_30"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_29"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_28"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_27"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_26"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_25"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_24"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_23"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_22"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_21"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_20"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_19"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_18"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_17"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_16"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_15"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_14"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_13"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_12"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_11"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_10"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_9"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_8"
         BEL
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_7"
         BEL
@@ -3091,27 +2918,11 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         BEL
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_rnw_reg"
         BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_be_reg_3"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_be_reg_2"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_be_reg_1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_be_reg_0"
-        BEL
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/set_sl_busy"
         BEL
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i"
         BEL
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/data_timeout"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_3"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_2"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_0"
         BEL
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_31"
         BEL
@@ -3140,10 +2951,7 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_0"
         BEL
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/rnw_s_h"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/PRH_BE_3" BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/PRH_BE_2" BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/PRH_BE_1" BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/PRH_BE_0" BEL
+        BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[0].ASYNC_RDREG_BYTE_GEN[0].ASYNC_RDREG_BIT"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[0].ASYNC_RDREG_BYTE_GEN[1].ASYNC_RDREG_BIT"
@@ -3159,78 +2967,6 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[0].ASYNC_RDREG_BYTE_GEN[6].ASYNC_RDREG_BIT"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[0].ASYNC_RDREG_BYTE_GEN[7].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[1].ASYNC_RDREG_BYTE_GEN[0].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[1].ASYNC_RDREG_BYTE_GEN[1].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[1].ASYNC_RDREG_BYTE_GEN[2].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[1].ASYNC_RDREG_BYTE_GEN[3].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[1].ASYNC_RDREG_BYTE_GEN[4].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[1].ASYNC_RDREG_BYTE_GEN[5].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[1].ASYNC_RDREG_BYTE_GEN[6].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[1].ASYNC_RDREG_BYTE_GEN[7].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[2].ASYNC_RDREG_BYTE_GEN[0].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[2].ASYNC_RDREG_BYTE_GEN[1].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[2].ASYNC_RDREG_BYTE_GEN[2].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[2].ASYNC_RDREG_BYTE_GEN[3].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[2].ASYNC_RDREG_BYTE_GEN[4].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[2].ASYNC_RDREG_BYTE_GEN[5].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[2].ASYNC_RDREG_BYTE_GEN[6].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[2].ASYNC_RDREG_BYTE_GEN[7].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[3].ASYNC_RDREG_BYTE_GEN[0].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[3].ASYNC_RDREG_BYTE_GEN[1].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[3].ASYNC_RDREG_BYTE_GEN[2].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[3].ASYNC_RDREG_BYTE_GEN[3].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[3].ASYNC_RDREG_BYTE_GEN[4].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[3].ASYNC_RDREG_BYTE_GEN[5].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[3].ASYNC_RDREG_BYTE_GEN[6].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[3].ASYNC_RDREG_BYTE_GEN[7].ASYNC_RDREG_BIT"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_31"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_30"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_29"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_28"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_27"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_26"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_25"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_24"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_23"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_22"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_21"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_20"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_19"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_18"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_17"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_16"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_15"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_14"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_13"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_12"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_11"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_10"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_9"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_8"
         BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_7"
         BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_6"
         BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_5"
@@ -3250,7 +2986,7 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Addr_0" BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/dev_in_access_int_d1"
         BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/dev_dbus_width_i_0"
+        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/dev_dbus_width_i_2"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/local_async_req"
         BEL
@@ -4455,17 +4191,17 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_19"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_30"
-        BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_25"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_26"
+        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_30"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_27"
+        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_26"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_31"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_32"
+        BEL
+        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_27"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/force_stop_cmd_i"
         BEL
@@ -4473,9 +4209,9 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/data_rd_reg_29"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/start_single_cmd"
-        BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/continue_from_brk"
+        BEL
+        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/start_single_cmd"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/command_reg_clear"
         BEL
@@ -4591,6 +4327,8 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/mbar_first_0"
         BEL
+        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/reset_delay_0"
+        BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/sleep_i_0"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/is_swx_I_0"
@@ -4639,9 +4377,9 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/doublet_i_0"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Reverse_Mem_Access"
-        BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/doublet_Read_i_0"
+        BEL
+        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Reverse_Mem_Access"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Unsigned_Op"
         BEL
@@ -4725,11 +4463,11 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Logic_Oper_0"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Using_FPGA.ALU_OP0_FDE"
+        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Using_FPGA.ALU_OP0_FDRE"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Using_FPGA.ALU_OP1_FDE"
+        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Using_FPGA.ALU_OP1_FDRE"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Using_FPGA.ALU_Carry_FDE"
+        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Using_FPGA.ALU_Carry_FDRE"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/Using_FPGA.Force1_FDRE"
         BEL
@@ -4837,38 +4575,6 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_24"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_23"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_22"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_21"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_20"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_19"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_18"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_17"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_16"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_15"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_14"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_13"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_12"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_11"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_10"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_9"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_8"
-        BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_7"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interface_I1/IPLB_Data_6"
@@ -4971,38 +4677,6 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_24"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_23"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_22"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_21"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_20"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_19"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_18"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_17"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_16"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_15"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_14"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_13"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_12"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_11"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_10"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_9"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_8"
-        BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_7"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_6"
@@ -5025,12 +4699,6 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_be_i_3"
         BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_be_i_2"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_be_i_1"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/dplb_m_be_i_0"
-        BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_31"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_30"
@@ -5046,38 +4714,6 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_25"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_24"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_23"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_22"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_21"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_20"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_19"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_18"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_17"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_16"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_15"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_14"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_13"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_12"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_11"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_10"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_9"
-        BEL
-        "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_8"
         BEL
         "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_7"
         BEL
@@ -5222,9 +4858,6 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_ABus_29" BEL
         "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_ABus_30" BEL
         "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_ABus_31" BEL
-        "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_BE_0" BEL
-        "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_BE_1" BEL
-        "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_BE_2" BEL
         "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_BE_3" BEL
         "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/PrevTrnsReArb"
         BEL
@@ -5505,14 +5138,7 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         "blaze/LEDS/LEDS/PLBV46_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/icount_out_7"
         BEL "blaze/LEDS/LEDS/gpio_core_1/gpio_xferAck_Reg" BEL
         "blaze/LEDS/LEDS/gpio_core_1/gpio_OE_1" BEL
-        "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_5" BEL
-        "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_6" BEL
         "blaze/LEDS/LEDS/gpio_core_1/gpio_OE_0" BEL
-        "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_4" BEL
-        "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_3" BEL
-        "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_2" BEL
-        "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_1" BEL
-        "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_0" BEL
         "blaze/LEDS/LEDS/gpio_core_1/iGPIO_xferAck" BEL
         "blaze/LEDS/LEDS/gpio_core_1/gpio_OE_7" BEL
         "blaze/LEDS/LEDS/gpio_core_1/GPIO_DBus_i_28" BEL
@@ -5527,7 +5153,6 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         "blaze/LEDS/LEDS/gpio_core_1/GPIO_DBus_i_25" BEL
         "blaze/LEDS/LEDS/gpio_core_1/gpio_OE_3" BEL
         "blaze/LEDS/LEDS/gpio_core_1/GPIO_DBus_i_24" BEL
-        "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_7" BEL
         "blaze/LEDS/LEDS/gpio_core_1/gpio_OE_2" BEL
         "blaze/LEDS/LEDS/PLBV46_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_s_h_0"
         BEL "blaze/LEDS/LEDS/PLBV46_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0"
@@ -6026,54 +5651,6 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_NON_MUXED_CNTR9/PERBIT_GEN[0].FF_RST0_GEN.FDRE_i1"
         BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_31"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_30"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_29"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_28"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_27"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_26"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_25"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_24"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_23"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_22"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_21"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_20"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_19"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_18"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_17"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_16"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_15"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_14"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_13"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_12"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_11"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_10"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_9"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_8"
-        BEL
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_7"
         BEL
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_6"
@@ -6093,54 +5670,6 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_pavalid_reg"
         BEL
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/addr_cntl_cs_0"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_31"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_30"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_29"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_28"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_27"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_26"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_25"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_24"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_23"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_22"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_21"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_20"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_19"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_18"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_17"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_16"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_15"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_14"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_13"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_12"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_11"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_10"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_9"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_8"
         BEL
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_7"
         BEL
@@ -6226,27 +5755,11 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         BEL
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_rnw_reg"
         BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_be_reg_3"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_be_reg_2"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_be_reg_1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_be_reg_0"
-        BEL
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/set_sl_busy"
         BEL
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i"
         BEL
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/data_timeout"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_3"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_2"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_0"
         BEL
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_31"
         BEL
@@ -6275,10 +5788,7 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_0"
         BEL
         "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/rnw_s_h"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/PRH_BE_3" BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/PRH_BE_2" BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/PRH_BE_1" BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/PRH_BE_0" BEL
+        BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[0].ASYNC_RDREG_BYTE_GEN[0].ASYNC_RDREG_BIT"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[0].ASYNC_RDREG_BYTE_GEN[1].ASYNC_RDREG_BIT"
@@ -6294,78 +5804,6 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[0].ASYNC_RDREG_BYTE_GEN[6].ASYNC_RDREG_BIT"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[0].ASYNC_RDREG_BYTE_GEN[7].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[1].ASYNC_RDREG_BYTE_GEN[0].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[1].ASYNC_RDREG_BYTE_GEN[1].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[1].ASYNC_RDREG_BYTE_GEN[2].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[1].ASYNC_RDREG_BYTE_GEN[3].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[1].ASYNC_RDREG_BYTE_GEN[4].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[1].ASYNC_RDREG_BYTE_GEN[5].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[1].ASYNC_RDREG_BYTE_GEN[6].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[1].ASYNC_RDREG_BYTE_GEN[7].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[2].ASYNC_RDREG_BYTE_GEN[0].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[2].ASYNC_RDREG_BYTE_GEN[1].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[2].ASYNC_RDREG_BYTE_GEN[2].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[2].ASYNC_RDREG_BYTE_GEN[3].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[2].ASYNC_RDREG_BYTE_GEN[4].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[2].ASYNC_RDREG_BYTE_GEN[5].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[2].ASYNC_RDREG_BYTE_GEN[6].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[2].ASYNC_RDREG_BYTE_GEN[7].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[3].ASYNC_RDREG_BYTE_GEN[0].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[3].ASYNC_RDREG_BYTE_GEN[1].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[3].ASYNC_RDREG_BYTE_GEN[2].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[3].ASYNC_RDREG_BYTE_GEN[3].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[3].ASYNC_RDREG_BYTE_GEN[4].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[3].ASYNC_RDREG_BYTE_GEN[5].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[3].ASYNC_RDREG_BYTE_GEN[6].ASYNC_RDREG_BIT"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/NO_DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_GEN[3].ASYNC_RDREG_BYTE_GEN[7].ASYNC_RDREG_BIT"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_31"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_30"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_29"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_28"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_27"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_26"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_25"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_24"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_23"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_22"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_21"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_20"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_19"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_18"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_17"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_16"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_15"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_14"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_13"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_12"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_11"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_10"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_9"
-        BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_8"
         BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_7"
         BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_6"
         BEL "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Data_O_5"
@@ -6385,7 +5823,7 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Addr_0" BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/dev_in_access_int_d1"
         BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/dev_dbus_width_i_0"
+        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/dev_dbus_width_i_2"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/local_async_req"
         BEL
