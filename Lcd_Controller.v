@@ -20,13 +20,13 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module Lcd_Controller#(
-	parameter stIdle 			 = 3'b000,
-				 stRead			 = 3'b001,
-				 stWrite			 = 3'b010,
-				 stTwoDelay		 = 3'b011,
-				 stSetEn			 = 3'b100,
-				 stElevenDelay	 = 3'b101,
-				 stClearEn		 = 3'b110
+	parameter stIdle 			  = 4'b0000,
+				 stRead			  = 4'b0001,
+				 stWrite			  = 4'b0010,
+				 stTwoDelay		  = 4'b0011,
+				 stSetEn			  = 4'b0100,
+				 stElevenDelay	  = 4'b0101,
+				 stClearEn		  = 4'b0110				 
 )
 (
 	input clk,
@@ -42,8 +42,8 @@ module Lcd_Controller#(
     );
 	 
 	
-	reg [2:0] stCur  = stIdle;
-	reg [2:0] stNext = stIdle;
+	reg [3:0] stCur  = stIdle;
+	reg [3:0] stNext = stIdle;
 	
 	reg [5:0] count = 0;
 		
@@ -57,14 +57,14 @@ module Lcd_Controller#(
 	
 	always @(posedge clk) begin
 		case(stCur)
-			stIdle 			: begin										
+			stIdle 			 : begin										
 										if(nCS == 0 && nWR == 0)	// LCD 쓰기동작
 											stNext <= stWrite;
 										if(nCS == 0 && nRD == 0)	// LCD 읽기동작
 											stNext <= stRead;
 								  end
 								  
-			stRead			: begin
+			stRead			 : begin
 										RW 	 <= 1;
 										
 										if(RS == 1)
@@ -75,23 +75,23 @@ module Lcd_Controller#(
 										end
 								  end
 								  
-			stWrite 			: begin 
+			stWrite 			 : begin 
 										RW <= 0; 
 										stNext <= stTwoDelay; 
 								  end 
 								  
-			stTwoDelay 		: if(count == 1) 
+			stTwoDelay 		 : if(count == 1) 
 										stNext <= stSetEn;
 										
-			stSetEn 			: begin 
+			stSetEn 			 : begin 
 										EN <= 1; 
 										stNext <= stElevenDelay; 	  		 
 								  end
 								  
-			stElevenDelay 	: if(count == 10) 
+			stElevenDelay 	 : if(count == 10) 
 										stNext <= stClearEn;
 										
-			stClearEn 		: begin 
+			stClearEn 		 : begin 
 										EN <= 0; 
 										stNext <= stIdle;             		 
 								  end

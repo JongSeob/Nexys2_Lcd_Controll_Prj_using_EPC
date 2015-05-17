@@ -101,6 +101,8 @@ void delay(unsigned int count)
 unsigned char	WaitBusyClear(void) {
 	unsigned char	BusyStatus = 0xFF;
 
+	Printf("\nStatusCMD Default : "); Printf("0x"); Print8bits(BusyStatus); PutCh('\n');
+
 	do{
 		BusyStatus = StatusCMD;
 		Printf("\nStatusCMD : "); Printf("0x"); Print8bits(BusyStatus); PutCh('\n');
@@ -147,13 +149,29 @@ void	InitLcd(void) {
 
 int main()
 {
-	int i;
+	char i = 0x12;
 
 	InitLcd();
 
-	//i = DataLCD;
-	//i =
-	DataLCD = 0x12;
+	//PutCharLcd('a');
+
+	//i = DataLCD; // Data Read. RS = 1, RW = 1
+
+	//DataLCD = 0x12; // Data Write. RS = 1, RW = 0,
+
+	//StatusCMD = i; // Control Write. RS = 0, RW = 0
+
+	i = StatusCMD; // Status Read. RS = 0, RW = 1
+
+		Printf("\ni = : "); Print8bits(i);
+
+		i = StatusCMD; // Status Read. RS = 0, RW = 1
+
+			Printf("\ni = : "); Print8bits(i);
+
+			i = StatusCMD; // Status Read. RS = 0, RW = 1
+
+				Printf("\ni = : "); Print8bits(i);
 
 
 	return 0;

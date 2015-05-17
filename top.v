@@ -88,10 +88,10 @@ module top #(
 	wire LCD_nCS;
 						
 	
-	assign RS = (Addr == LCD_DATA_ADDR)    ? 1 :
-					(Addr == LCD_CONTROL_ADDR) ? 0 : 1'bx;
+	assign RS = (Addr == LCD_DATA_ADDR + 3)    ? 1 :
+					(Addr == LCD_CONTROL_ADDR + 3) ? 0 : 1'bx;
 	
-	assign LCD_nCS = ( (EPC_nCS == 0) && ((Addr == LCD_DATA_ADDR) || (Addr == LCD_CONTROL_ADDR)) ) ? 0 : 1;
+	assign LCD_nCS = ( (EPC_nCS == 0) && ((Addr == LCD_DATA_ADDR + 3) || (Addr == LCD_CONTROL_ADDR + 3)) ) ? 0 : 1;
 	
 	assign JB[4] = RS;
 	assign JB[5] = RW;
@@ -99,11 +99,20 @@ module top #(
 	
 	assign JA = (nWR == 0) ? BlazeDataOut[7:0] : 8'bz;
 	
-	assign BlazeDataIn = (nRD == 0) ? JA : 8'bx;
+	assign BlazeDataIn = (nRD == 0) ? JA : 8'bz;
 	
 	always @(posedge clk) begin
-		if(EPC_nCS == 0)
-			Led <= {RS, RW, Addr[5:0]};
+			
+		if((EPC_nCS == 0) && ((Addr == LCD_DATA_ADDR + 3) || (Addr == LCD_CONTROL_ADDR + 3)) )
+		begin
+			Led[7:6] <= {RS, RW};
+		
+			if(Addr == LCD_DATA_ADDR+3)
+				Led[5:0] <= 6'b111000;//LCD_DATA_ADDR+3;
+			else if(Addr == LCD_CONTROL_ADDR+3)
+				Led[5:0] <= 6'b000111;//LCD_CONTROL_ADDR+3;
+		end
+			
 	end
 	
 	always @(posedge nRD) begin
@@ -113,20 +122,6 @@ module top #(
 	always @(posedge nWR) begin
 		Digit[7:0] 	<= BlazeDataOut;
 	end
-	
-	/*
-	always @(posedge nRD) begin
-		
-		if(nBE == 0);
-			case(Addr)		
-			LCD_DATA_ADDR    :						//LCD Data Mode
-				BlazeDataIn[7:0] <= JA[7:0];				
-			LCD_CONTROL_ADDR : 						//LCD Control Mode
-				BlazeDataIn[7:0] <= JA[7:0];			
-			endcase			
-
-	end
-	*/
 	
 	// Instantiate the MicroBlaze & RS232 module
 	(* BOX_TYPE = "user_black_box" *)

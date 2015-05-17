@@ -1,4 +1,0 @@
-verilog work "D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze.v"
-verilog work "SevenSegment.v"
-verilog work "Lcd_Controller.v"
-verilog work "top.v"

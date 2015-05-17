@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-05-17T09:03:34</DateModified>
+  <DateModified>2015-05-17T22:52:47</DateModified>
   <ModuleName>blaze</ModuleName>
-  <SummaryTimeStamp>2015-05-17T09:03:34</SummaryTimeStamp>
+  <SummaryTimeStamp>2015-05-17T22:52:47</SummaryTimeStamp>
   <SavedFilePath>D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/__xps/ise/blaze.xreport</SavedFilePath>
   <FilterFile>filter.filter</FilterFile>
   <SavedFilterFilePath>D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/__xps/ise</SavedFilterFilePath>
