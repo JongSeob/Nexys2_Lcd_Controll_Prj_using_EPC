@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj Assignment5 -o D:/Nexys2_Lcd_Controll_Prj_using_EPC/SevenSegment.tfi -lib work D:/Nexys2_Lcd_Controll_Prj_using_EPC//SevenSegment.v -module SevenSegment -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
