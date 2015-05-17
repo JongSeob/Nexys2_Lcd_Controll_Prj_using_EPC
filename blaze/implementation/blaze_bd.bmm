@@ -20,22 +20,22 @@ ADDRESS_MAP microblaze_0 MICROBLAZE 100
 
     ADDRESS_SPACE lmb_bram_combined RAMB16 [0x00000000:0x00007FFF]
         BUS_BLOCK
-            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_0 RAMB16 [31:30] [0:8191] PLACED = X0Y4;
-            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_1 RAMB16 [29:28] [0:8191] PLACED = X0Y2;
-            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_2 RAMB16 [27:26] [0:8191] PLACED = X0Y6;
-            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_3 RAMB16 [25:24] [0:8191] PLACED = X0Y3;
-            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_4 RAMB16 [23:22] [0:8191] PLACED = X0Y5;
-            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_5 RAMB16 [21:20] [0:8191] PLACED = X1Y5;
-            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_6 RAMB16 [19:18] [0:8191] PLACED = X0Y1;
-            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_7 RAMB16 [17:16] [0:8191] PLACED = X0Y0;
-            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_8 RAMB16 [15:14] [0:8191] PLACED = X0Y11;
-            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_9 RAMB16 [13:12] [0:8191] PLACED = X1Y7;
-            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_10 RAMB16 [11:10] [0:8191] PLACED = X0Y7;
-            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_11 RAMB16 [9:8] [0:8191] PLACED = X0Y8;
-            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_12 RAMB16 [7:6] [0:8191] PLACED = X0Y10;
-            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_13 RAMB16 [5:4] [0:8191] PLACED = X0Y9;
-            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_14 RAMB16 [3:2] [0:8191] PLACED = X0Y13;
-            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_15 RAMB16 [1:0] [0:8191] PLACED = X0Y12;
+            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_0 RAMB16 [31:30] [0:8191] PLACED = X1Y5;
+            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_1 RAMB16 [29:28] [0:8191] PLACED = X1Y6;
+            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_2 RAMB16 [27:26] [0:8191] PLACED = X1Y7;
+            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_3 RAMB16 [25:24] [0:8191] PLACED = X0Y6;
+            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_4 RAMB16 [23:22] [0:8191] PLACED = X0Y8;
+            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_5 RAMB16 [21:20] [0:8191] PLACED = X0Y4;
+            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_6 RAMB16 [19:18] [0:8191] PLACED = X0Y5;
+            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_7 RAMB16 [17:16] [0:8191] PLACED = X0Y7;
+            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_8 RAMB16 [15:14] [0:8191] PLACED = X1Y12;
+            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_9 RAMB16 [13:12] [0:8191] PLACED = X1Y10;
+            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_10 RAMB16 [11:10] [0:8191] PLACED = X1Y11;
+            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_11 RAMB16 [9:8] [0:8191] PLACED = X1Y9;
+            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_12 RAMB16 [7:6] [0:8191] PLACED = X1Y3;
+            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_13 RAMB16 [5:4] [0:8191] PLACED = X1Y8;
+            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_14 RAMB16 [3:2] [0:8191] PLACED = X1Y2;
+            blaze/lmb_bram/lmb_bram/ramb16_s2_s2_15 RAMB16 [1:0] [0:8191] PLACED = X1Y4;
         END_BUS_BLOCK;
     END_ADDRESS_SPACE;
 

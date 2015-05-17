@@ -1,0 +1,26 @@
+01:43:06.865 INFO  - Processing command line option -hwspec D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/SDK_Export/hw/blaze.xml. 
+01:46:28.801 INFO  - FPGA configured successfully with bitstream "D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+01:46:54.475 INFO  - FPGA configured successfully with bitstream "D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+01:46:58.114 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+01:46:58.115 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+01:47:40.261 ERROR - Unexpected error while issuing command {"command": "xdisconnect -cable"} to XMD: java.net.SocketException: Connection reset by peer: socket write error 
+01:47:55.584 INFO  - Processing command line option -hwspec D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/SDK_Export/hw/blaze.xml. 
+01:48:04.540 INFO  - FPGA configured successfully with bitstream "D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+01:48:06.774 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+01:48:06.777 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+01:49:31.215 INFO  - Processing command line option -hwspec D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/SDK_Export/hw/blaze.xml. 
+01:49:40.375 INFO  - FPGA configured successfully with bitstream "D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+01:50:09.117 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+01:50:09.120 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+01:51:36.706 INFO  - Processing command line option -hwspec D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/SDK_Export/hw/blaze.xml. 
+01:51:50.927 INFO  - FPGA configured successfully with bitstream "D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+01:52:45.887 INFO  - FPGA configured successfully with bitstream "D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 

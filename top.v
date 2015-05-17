@@ -57,21 +57,18 @@ module top #(
 	output [3:0] an
 	);
 	
-	
 	reg [15:0] Digit = 16'hABCD;
 	
-
+	wire RDY;
+	
 	// Signals of External Peripheral Controller. EPC가 MicroBlaze의 출력을 받아 외부 장치에 전달.
 	wire	EPC_nCS;		// Chip Select. active low. EPC의 출력.			
 	wire	[5:0] Addr;	// A5A4A3A2A1A0. EPC의 출력.
 	wire	nRD;			// Read. active low. EPC의 출력.
 	wire	nWR;			// Write. active low. EPC의 출력.
-	wire 	[3:0] BE;		// Byte Enable. Active High. EPC의 출력. 4바이트 중 어떤 바이트가 액세스 되는지 알림. BE[0]가 MSB. 
-	wire	[3:0] nBE;		// Byte Enable. Active Low. EPC의 출력을 받아 극성을 반전하여 사용하기로 한다.
+	wire 	BE;			// Byte Enable. Active High. EPC의 출력. 4바이트 중 어떤 바이트가 액세스 되는지 알림. BE[0]가 MSB. 
+	wire	nBE;			// Byte Enable. Active Low. EPC의 출력을 받아 극성을 반전하여 사용하기로 한다.
 	
-	assign	nBE = ~BE;
-	assign	RDY = 1;
-
 	wire	[7:0] BlazeDataOut; 
 	wire	[7:0] BlazeDataIn; 
 	
@@ -85,31 +82,20 @@ module top #(
 	
 	wire EN;			// EN이  1 -> 0 으로 떨어졌을 때 RS,RW,Data 값을 확인해서 한가지 동작을 한다.
 	
-	wire LCD_nCS;
-						
-	
-	assign RS = (Addr == LCD_DATA_ADDR + 3)    ? 1 :
-					(Addr == LCD_CONTROL_ADDR + 3) ? 0 : 1'bx;
-	
-	assign LCD_nCS = ( (EPC_nCS == 0) && ((Addr == LCD_DATA_ADDR + 3) || (Addr == LCD_CONTROL_ADDR + 3)) ) ? 0 : 1;
-	
-	assign JB[4] = RS;
-	assign JB[5] = RW;
-	assign JB[6] = EN;
-	
-	assign JA = (nWR == 0) ? BlazeDataOut[7:0] : 8'bz;
-	
-	assign BlazeDataIn = (nRD == 0) ? JA : 8'bz;
-	
+	wire LCD_nCS;  // LCD로 전달할 Chip Select 신호.
+	wire LCD_RS;   // LCD로부터 받은 RS신호(Busy 플래그 확인할 때 사용)
+	wire LCD_RDY;	// LCD의 RDY 신호.
+		
+	// ************* EPC 데이터, 주소가 잘 전달 되는지 확인하기 위한 코드 **************** //
 	always @(posedge clk) begin
 			
-		if((EPC_nCS == 0) && ((Addr == LCD_DATA_ADDR + 3) || (Addr == LCD_CONTROL_ADDR + 3)) )
+		if((EPC_nCS == 0) && ((Addr == LCD_DATA_ADDR) || (Addr == LCD_CONTROL_ADDR)) )
 		begin
 			Led[7:6] <= {RS, RW};
 		
-			if(Addr == LCD_DATA_ADDR+3)
+			if(Addr == LCD_DATA_ADDR)
 				Led[5:0] <= 6'b111000;//LCD_DATA_ADDR+3;
-			else if(Addr == LCD_CONTROL_ADDR+3)
+			else if(Addr == LCD_CONTROL_ADDR)
 				Led[5:0] <= 6'b000111;//LCD_CONTROL_ADDR+3;
 		end
 			
@@ -122,6 +108,25 @@ module top #(
 	always @(posedge nWR) begin
 		Digit[7:0] 	<= BlazeDataOut;
 	end
+	
+	
+	assign	nBE = ~BE;
+	assign   RDY = ((Addr == LCD_DATA_ADDR) || (Addr == LCD_CONTROL_ADDR)) ? LCD_RDY : 1'bx;
+	
+	
+	assign RS = (Addr == LCD_DATA_ADDR)    ? 1 :
+					(Addr == LCD_CONTROL_ADDR) ? 0 : 1'bx;
+	
+	assign LCD_nCS = ( (EPC_nCS == 0) && ((Addr == LCD_DATA_ADDR) || (Addr == LCD_CONTROL_ADDR)) ) ? 0 : 1;
+	
+	assign JB[4] = LCD_RS;
+	assign JB[5] = RW;
+	assign JB[6] = EN;
+	
+	assign JA = (nWR == 0) ? BlazeDataOut[7:0] : 8'bz;
+	
+	assign BlazeDataIn = (nRD == 0) ? JA : 8'bz;
+	
 	
 	// Instantiate the MicroBlaze & RS232 module
 	(* BOX_TYPE = "user_black_box" *)
@@ -148,9 +153,12 @@ module top #(
 		 .nCS			(LCD_nCS), 
 		 .nWR			(nWR), 
 		 .nRD			(nRD), 
-		 .RS			(RS), 
+		 .busy		(JA[7]),
+		 .i_RS		(RS), 
+		 .o_RS		(LCD_RS),
 		 .RW			(RW), 
-		 .EN			(EN)
+		 .EN			(EN),
+		 .RDY			(LCD_RDY)
     );
 	 
 	 SevenSegment SevenSegment (

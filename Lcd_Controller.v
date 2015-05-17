@@ -26,7 +26,9 @@ module Lcd_Controller#(
 				 stTwoDelay		  = 4'b0011,
 				 stSetEn			  = 4'b0100,
 				 stElevenDelay	  = 4'b0101,
-				 stClearEn		  = 4'b0110				 
+				 stClearEn		  = 4'b0110,
+				 stCheckBusy	  = 4'b0111,
+				 stWaitBusyClear = 4'b1000
 )
 (
 	input clk,
@@ -36,9 +38,13 @@ module Lcd_Controller#(
 	input nWR,
 	input nRD,
 	
-	input  RS,
+	input busy,	
+	input  i_RS, // 외부에서 Data mode, Control mode 여부를 알려주는 역할
+	output reg o_RS, // Busy Flag를 확인하기 위해서 LCD장치로 보내는 신호.
 	output reg RW,
-	output reg EN	
+	output reg EN,
+	
+	output reg RDY
     );
 	 
 	
@@ -55,19 +61,27 @@ module Lcd_Controller#(
 			stCur <= stNext;		
 	end
 	
-	always @(posedge clk) begin
+	always @(posedge clk) begin // 9개의 상태 = 180ns
 		case(stCur)
-			stIdle 			 : begin										
+			stIdle 			 : begin	
+										o_RS <= i_RS;
+																				
 										if(nCS == 0 && nWR == 0)	// LCD 쓰기동작
+										begin
 											stNext <= stWrite;
+											RDY <= 0;
+										end
 										if(nCS == 0 && nRD == 0)	// LCD 읽기동작
+										begin
 											stNext <= stRead;
+											RDY <= 0;
+										end
 								  end
 								  
 			stRead			 : begin
 										RW 	 <= 1;
 										
-										if(RS == 1)
+										if(i_RS == 1)
 											stNext <= stTwoDelay;
 										else begin	// RS가 0일때의 Read 동작은 실행시간이 0이므로 바로 EN 신호를 1로 올린다.
 											EN <= 1;
@@ -93,7 +107,23 @@ module Lcd_Controller#(
 										
 			stClearEn 		 : begin 
 										EN <= 0; 
-										stNext <= stIdle;             		 
+										stNext <= stCheckBusy;             		 
+								  end
+								  
+			stCheckBusy     : begin
+										EN   <= 1;
+										o_RS <= 0;
+										RW   <= 1;
+										stNext <= stWaitBusyClear;
+								  end
+								  
+			stWaitBusyClear : begin
+										if(busy == 1)
+											stNext <= stWaitBusyClear;
+										else begin
+											RDY <= 1;
+											stNext <= stIdle;											
+										end
 								  end
 								  
 			default			: stNext <= stIdle;

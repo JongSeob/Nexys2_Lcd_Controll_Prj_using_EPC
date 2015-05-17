@@ -16,8 +16,8 @@
 #define StatReg (*((volatile unsigned char *)(BASEADDRESS_RS232 + 0x8 +3 )) )
 #define CtrlReg (*((volatile unsigned char *)(BASEADDRESS_RS232 + 0xc +3 )) )
 
-#define DataLCD		(*((volatile unsigned long *)(BASEADDRESS_EPC + 0x20 + 3))) // 1000_00
-#define StatusCMD	(*((volatile unsigned long *)(BASEADDRESS_EPC + 0x24 + 3))) // 1001_00
+#define DataLCD		(*((volatile unsigned char *)(BASEADDRESS_EPC + 0x20))) // 1000_00
+#define StatusCMD	(*((volatile unsigned char *)(BASEADDRESS_EPC + 0x24))) // 1001_00
 
 #define BUSY 0x80
 #define NULL 0
@@ -101,6 +101,8 @@ void delay(unsigned int count)
 unsigned char	WaitBusyClear(void) {
 	unsigned char	BusyStatus = 0xFF;
 
+	int i;
+
 	Printf("\nStatusCMD Default : "); Printf("0x"); Print8bits(BusyStatus); PutCh('\n');
 
 	do{
@@ -153,26 +155,8 @@ int main()
 
 	InitLcd();
 
-	//PutCharLcd('a');
 
-	//i = DataLCD; // Data Read. RS = 1, RW = 1
-
-	//DataLCD = 0x12; // Data Write. RS = 1, RW = 0,
-
-	//StatusCMD = i; // Control Write. RS = 0, RW = 0
-
-	i = StatusCMD; // Status Read. RS = 0, RW = 1
-
-		Printf("\ni = : "); Print8bits(i);
-
-		i = StatusCMD; // Status Read. RS = 0, RW = 1
-
-			Printf("\ni = : "); Print8bits(i);
-
-			i = StatusCMD; // Status Read. RS = 0, RW = 1
-
-				Printf("\ni = : "); Print8bits(i);
-
+	//Printf("\ni = : "); Print8bits(i);
 
 	return 0;
 }

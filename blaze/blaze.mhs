@@ -215,9 +215,10 @@ BEGIN xps_epc
  PARAMETER C_PRH0_DATA_TINV = 25000
 # 1ps. Device ready (PRH_Rdy) validity from the falling edge of read or write (PRH_Rd_n/ PRH_Wr_n).
 # less than device ready signal width (C_PRHx_RDY_WIDTH). I/O장치에서 RDY를 공급받지 않음을 가정한 듯. fast device로 가정하고 설계하자.
- PARAMETER C_PRH0_RDY_TOUT = 20000
+ PARAMETER C_PRH0_RDY_TOUT = 25000
 # Maximum period of device ready signal (PRH_Rdy) to wait before device timeout. 외부 RDY를 쓰지 않는 경우는 관계없을 듯한데....
- PARAMETER C_PRH0_RDY_WIDTH = 120000
+# 1.7 * 10^9 ps ==> 1.7ms  LCD의 최대 동작시간이 1.64ms이기 때문에 넉넉하게 1.7ms로 설정.
+ PARAMETER C_PRH0_RDY_WIDTH = 1700000000
  PARAMETER C_PRH0_BASEADDR = 0x80800000
  PARAMETER C_PRH0_HIGHADDR = 0x8080003F
  BUS_INTERFACE SPLB = mb_plb
