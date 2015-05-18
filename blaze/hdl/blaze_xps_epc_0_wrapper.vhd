@@ -295,7 +295,7 @@ begin
       C_PRH0_DATA_TOUT => 15000,
       C_PRH0_DATA_TINV => 40000,
       C_PRH0_RDY_TOUT => 25000,
-      C_PRH0_RDY_WIDTH => 85000,
+      C_PRH0_RDY_WIDTH => 1700000000,
       C_PRH1_BASEADDR => X"ffffffff",
       C_PRH1_HIGHADDR => X"00000000",
       C_PRH1_FIFO_ACCESS => 0,

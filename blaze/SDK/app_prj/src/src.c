@@ -134,9 +134,11 @@ int main()
 
 	ch = DataLCD;
 
+	//StatusCMD = 0x38;
+	//StatusCMD = 0x0F;
+	//StatusCMD = 0x01;
+
 	Print8bits(ch);
 
 	return 0;
 }
-
-

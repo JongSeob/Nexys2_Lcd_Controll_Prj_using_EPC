@@ -59,14 +59,11 @@ module top #(
 	
 	reg [15:0] Digit = 16'hABCD;
 	
-	wire RDY;
-	
-	// Signals of External Peripheral Controller. EPC가 MicroBlaze의 출력을 받아 외부 장치에 전달.
-	wire	EPC_nCS;		// Chip Select. active low. EPC의 출력.			
+	wire	EPC_nCS;		// EPC로 전달하는 CS신호. Active Low
 	wire	[5:0] Addr;	// A5A4A3A2A1A0. EPC의 출력.
 	wire	nRD;			// Read. active low. EPC의 출력.
 	wire	nWR;			// Write. active low. EPC의 출력.
-	wire 	BE;			// Byte Enable. Active High. EPC의 출력. 4바이트 중 어떤 바이트가 액세스 되는지 알림. BE[0]가 MSB. 
+	wire 	BE;			// Byte Enable. Active High. EPC의 출력 1바이트이기 때문에 큰 의미 없음.
 	wire	nBE;			// Byte Enable. Active Low. EPC의 출력을 받아 극성을 반전하여 사용하기로 한다.
 	
 	wire	[7:0] BlazeDataOut; 
@@ -86,18 +83,6 @@ module top #(
 	wire LCD_RS;   // LCD로부터 받은 RS신호(Busy 플래그 확인할 때 사용)
 	wire LCD_RDY;	// LCD의 RDY 신호.
 		
-	// ************* EPC 데이터, 주소가 잘 전달 되는지 확인하기 위한 코드 **************** //
-//	always @(posedge clk) begin
-//		Led[5:3] <= count[5:3];
-//		Led[2:0] <= count[2:0];
-//			
-//		if((EPC_nCS == 0) && ((Addr == LCD_DATA_ADDR) || (Addr == LCD_CONTROL_ADDR)) )
-//		begin
-//			Led[7:6] <= {RS, RW};
-//					
-//		end
-//			
-//	end
 	
 	always @(posedge LCD_RDY) begin
 		Led[7:0] <= JA[7:0];
@@ -111,10 +96,7 @@ module top #(
 		Digit[7:0] 	<= BlazeDataOut;
 	end
 	
-	
 	assign	nBE = ~BE;
-	assign   RDY = ((Addr == LCD_DATA_ADDR) || (Addr == LCD_CONTROL_ADDR)) ? LCD_RDY : 1'bx;
-	
 	
 	assign RS = (Addr == LCD_DATA_ADDR)    ? 1 :
 					(Addr == LCD_CONTROL_ADDR) ? 0 : 1'bx;
@@ -143,7 +125,7 @@ module top #(
 		 .xps_epc_0_PRH_Addr_pin(Addr),
 		 .xps_epc_0_PRH_Rd_n_pin(nRD),
 		 .xps_epc_0_PRH_Wr_n_pin(nWR),
-		 .xps_epc_0_PRH_Rdy_pin(RDY),
+		 .xps_epc_0_PRH_Rdy_pin(LCD_RDY),
 		 .xps_epc_0_PRH_Data_I_pin(BlazeDataIn),		// 입력전용 데이터버스
 		 .xps_epc_0_PRH_Data_O_pin(BlazeDataOut),		// 출력 전용 데이터 버스
 		 .xps_epc_0_PRH_BE_pin(BE)

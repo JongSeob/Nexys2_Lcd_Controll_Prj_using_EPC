@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.26 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.26 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Reading design: top.prj
 
@@ -448,29 +448,29 @@ Design Statistics
 # IOs                              : 43
 
 Cell Usage :
-# BELS                             : 3517
+# BELS                             : 3582
 #      GND                         : 16
-#      INV                         : 52
+#      INV                         : 53
 #      LUT1                        : 65
-#      LUT2                        : 297
+#      LUT2                        : 308
 #      LUT2_D                      : 15
-#      LUT2_L                      : 9
-#      LUT3                        : 702
+#      LUT2_L                      : 12
+#      LUT3                        : 706
 #      LUT3_D                      : 52
-#      LUT3_L                      : 16
-#      LUT4                        : 1270
-#      LUT4_D                      : 25
-#      LUT4_L                      : 46
-#      MULT_AND                    : 63
-#      MUXCY                       : 206
+#      LUT3_L                      : 17
+#      LUT4                        : 1268
+#      LUT4_D                      : 24
+#      LUT4_L                      : 45
+#      MULT_AND                    : 77
+#      MUXCY                       : 225
 #      MUXCY_L                     : 136
-#      MUXF5                       : 345
+#      MUXF5                       : 347
 #      MUXF6                       : 6
 #      MUXF7                       : 2
 #      MUXF8                       : 1
 #      VCC                         : 10
-#      XORCY                       : 183
-# FlipFlops/Latches                : 2390
+#      XORCY                       : 197
+# FlipFlops/Latches                : 2404
 #      FD                          : 328
 #      FDC                         : 34
 #      FDC_1                       : 5
@@ -478,10 +478,10 @@ Cell Usage :
 #      FDE                         : 280
 #      FDE_1                       : 8
 #      FDP                         : 10
-#      FDR                         : 1085
-#      FDRE                        : 422
+#      FDR                         : 1086
+#      FDRE                        : 436
 #      FDRE_1                      : 1
-#      FDRS                        : 31
+#      FDRS                        : 30
 #      FDRSE                       : 13
 #      FDS                         : 90
 #      FDSE                        : 68
@@ -512,10 +512,10 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                     2012  out of   8672    23%  
- Number of Slice Flip Flops:           2382  out of  17344    13%  
- Number of 4 input LUTs:               2955  out of  17344    17%  
-    Number used as logic:              2549
+ Number of Slices:                     2022  out of   8672    23%  
+ Number of Slice Flip Flops:           2396  out of  17344    13%  
+ Number of 4 input LUTs:               2971  out of  17344    17%  
+    Number used as logic:              2565
     Number used as Shift registers:     150
     Number used as RAMs:                256
  Number of IOs:                          43
@@ -547,7 +547,7 @@ Clock Information:
 ---------------------------------------------+-------------------------------------------------------+-------+
 Clock Signal                                 | Clock buffer(FF name)                                 | Load  |
 ---------------------------------------------+-------------------------------------------------------+-------+
-clk                                          | clock_generator_0/DCM0_INST/Using_Virtex.DCM_INST:CLK0| 2396  |
+clk                                          | clock_generator_0/DCM0_INST/Using_Virtex.DCM_INST:CLK0| 2410  |
 blaze/mdm_0/mdm_0/drck_i                     | BUFG                                                  | 212   |
 blaze/mdm_0/mdm_0/update1                    | BUFG                                                  | 43    |
 blaze/xps_epc_0/PRH_Wr_n                     | NONE(Digit_5)                                         | 8     |
@@ -592,7 +592,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 12.524ns (frequency: 79.845MHz)
-  Total number of paths / destination ports: 177754 / 6788
+  Total number of paths / destination ports: 179599 / 6829
 -------------------------------------------------------------------------
 Delay:               12.524ns (Levels of Logic = 39)
   Source:            blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/PreFetch_Buffer_I/Using_FPGA.Buffer_DFFs[1].FDS_I (FF)
@@ -758,7 +758,7 @@ Offset:              4.704ns (Levels of Logic = 4)
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
   Total number of paths / destination ports: 21 / 21
 -------------------------------------------------------------------------
-Offset:              4.097ns (Levels of Logic = 2)
+Offset:              4.001ns (Levels of Logic = 2)
   Source:            JA<7> (PAD)
   Destination:       Lcd_Controller/stNext_0 (FF)
   Destination Clock: clk rising
@@ -767,12 +767,12 @@ Offset:              4.097ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IOBUF:IO->O           6   1.218   0.844  JA_7_IOBUF (N30)
-     LUT4:I0->O            1   0.704   0.420  Lcd_Controller/stNext_mux0000<8>_SW0 (N28)
+     IOBUF:IO->O           6   1.218   0.748  JA_7_IOBUF (N25)
+     LUT4:I1->O            1   0.704   0.420  Lcd_Controller/stNext_mux0000<8>_SW0 (N23)
      FDS:S                     0.911          Lcd_Controller/stNext_0
     ----------------------------------------
-    Total                      4.097ns (2.833ns logic, 1.264ns route)
-                                       (69.1% logic, 30.9% route)
+    Total                      4.001ns (2.833ns logic, 1.168ns route)
+                                       (70.8% logic, 29.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'blaze/mdm_0/mdm_0/update1'
@@ -809,7 +809,7 @@ Offset:              2.195ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IOBUF:IO->O           6   1.218   0.669  JA_7_IOBUF (N30)
+     IOBUF:IO->O           6   1.218   0.669  JA_7_IOBUF (N25)
      FD:D                      0.308          Digit_15
     ----------------------------------------
     Total                      2.195ns (1.526ns logic, 0.669ns route)
@@ -828,7 +828,7 @@ Offset:              2.195ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IOBUF:IO->O           6   1.218   0.669  JA_7_IOBUF (N30)
+     IOBUF:IO->O           6   1.218   0.669  JA_7_IOBUF (N25)
      FD:D                      0.308          Led_7
     ----------------------------------------
     Total                      2.195ns (1.526ns logic, 0.669ns route)
@@ -838,7 +838,7 @@ Offset:              2.195ns (Levels of Logic = 1)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 20 / 12
 -------------------------------------------------------------------------
-Offset:              4.965ns (Levels of Logic = 2)
+Offset:              4.948ns (Levels of Logic = 2)
   Source:            blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Wr_n (FF)
   Destination:       JA<7> (PAD)
   Source Clock:      clk rising
@@ -847,13 +847,13 @@ Offset:              4.965ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              20   0.591   1.102  xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Wr_n (PRH_Wr_n)
+     FD:C->Q              19   0.591   1.085  xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Wr_n (PRH_Wr_n)
      end scope: 'xps_epc_0'
      end scope: 'blaze'
      IOBUF:T->IO               3.272          JA_7_IOBUF (JA<7>)
     ----------------------------------------
-    Total                      4.965ns (3.863ns logic, 1.102ns route)
-                                       (77.8% logic, 22.2% route)
+    Total                      4.948ns (3.863ns logic, 1.085ns route)
+                                       (78.1% logic, 21.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'SevenSegment/divide_Clk_50Mhz_To_240hz/OutClk'
@@ -961,12 +961,12 @@ Offset:              8.921ns (Levels of Logic = 10)
 =========================================================================
 
 
-Total REAL time to Xst completion: 20.00 secs
-Total CPU time to Xst completion: 19.82 secs
+Total REAL time to Xst completion: 19.00 secs
+Total CPU time to Xst completion: 19.07 secs
  
 --> 
 
-Total memory usage is 344924 kilobytes
+Total memory usage is 345756 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    2 (   0 filtered)

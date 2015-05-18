@@ -9,22 +9,22 @@ Target Device  : xc3s1200e
 Target Package : fg320
 Target Speed   : -4
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Mon May 18 17:41:03 2015
+Mapped Date    : Mon May 18 18:22:23 2015
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    0
 Logic Utilization:
-  Number of Slice Flip Flops:         1,510 out of  17,344    8%
-  Number of 4 input LUTs:             2,515 out of  17,344   14%
+  Number of Slice Flip Flops:         1,524 out of  17,344    8%
+  Number of 4 input LUTs:             2,530 out of  17,344   14%
 Logic Distribution:
-  Number of occupied Slices:          1,812 out of   8,672   20%
-    Number of Slices containing only related logic:   1,812 out of   1,812 100%
-    Number of Slices containing unrelated logic:          0 out of   1,812   0%
+  Number of occupied Slices:          1,822 out of   8,672   21%
+    Number of Slices containing only related logic:   1,822 out of   1,822 100%
+    Number of Slices containing unrelated logic:          0 out of   1,822   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       2,598 out of  17,344   14%
-    Number used as logic:             2,111
+  Total Number of 4 input LUTs:       2,613 out of  17,344   15%
+    Number used as logic:             2,126
     Number used as a route-thru:         83
     Number used for Dual Port RAMs:     256
       (Two LUTs used per Dual Port RAM)
@@ -43,9 +43,9 @@ Logic Distribution:
 
 Average Fanout of Non-Clock Nets:                3.59
 
-Peak Memory Usage:  357 MB
-Total REAL time to MAP completion:  8 secs 
-Total CPU time to MAP completion:   5 secs 
+Peak Memory Usage:  366 MB
+Total REAL time to MAP completion:  5 secs 
+Total CPU time to MAP completion:   4 secs 
 
 NOTES:
 
@@ -105,9 +105,9 @@ INFO:LIT:244 - All of the single ended outputs in this design are using slew
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-1185 block(s) removed
- 218 block(s) optimized away
-1265 signal(s) removed
+1186 block(s) removed
+ 219 block(s) optimized away
+1266 signal(s) removed
 
 Section 5 - Removed Logic
 -------------------------
@@ -251,14 +251,14 @@ is loadless and has been removed.
            Loadless block
 "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_masterid_reg_0"
 (SFF) removed.
-      The signal "blaze/xps_epc_0/N62" is loadless and has been removed.
+      The signal "blaze/xps_epc_0/N60" is loadless and has been removed.
        Loadless block
 "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
 EMACHINE_I/asynch_Rdack_i2_SW2" (ROM) removed.
-        The signal "blaze/xps_epc_0/N81" is loadless and has been removed.
+        The signal "blaze/xps_epc_0/N40" is loadless and has been removed.
          Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
-EMACHINE_I/asynch_Rdack_i2_SW2_SW0" (ROM) removed.
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Rdack_i1_SW0" (ROM)
+removed.
 The signal "blaze/mb_plb_PLB_MBusy<0>" is loadless and has been removed.
  Loadless block
 "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/MBUSY_OR/Y_0_or0000_f5" (MUX)
@@ -423,10 +423,14 @@ removed.
      Loadless block
 "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mwrerr_i_1_or0000
 1" (ROM) removed.
-      The signal "blaze/xps_epc_0/N68" is loadless and has been removed.
+      The signal "blaze/xps_epc_0/N72" is loadless and has been removed.
        Loadless block
 "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
 EMACHINE_I/asynch_Wrack_i1_SW1" (ROM) removed.
+        The signal "blaze/xps_epc_0/N44" is loadless and has been removed.
+         Loadless block
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Wrack_i1_SW0" (ROM)
+removed.
 The signal "blaze/mb_plb_PLB_MRdErr<0>" is loadless and has been removed.
  Loadless block
 "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/MRDERR_OR/Y_0_or0000_f5" (MUX)
@@ -463,7 +467,7 @@ removed.
        Loadless block
 "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_0_or0000
 21_SW1" (ROM) removed.
-      The signal "blaze/xps_epc_0/N63" is loadless and has been removed.
+      The signal "blaze/xps_epc_0/N61" is loadless and has been removed.
        Loadless block
 "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
 EMACHINE_I/asynch_Rdack_i2_SW3" (ROM) removed.
@@ -517,7 +521,7 @@ removed.
      Loadless block
 "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mwrerr_i_0_or0000
 1" (ROM) removed.
-      The signal "blaze/xps_epc_0/N69" is loadless and has been removed.
+      The signal "blaze/xps_epc_0/N73" is loadless and has been removed.
        Loadless block
 "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
 EMACHINE_I/asynch_Wrack_i1_SW2" (ROM) removed.
@@ -5005,7 +5009,7 @@ EMACHINE_I/asynch_data_sel_i1" is loadless and has been removed.
      Loadless block
 "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
 EMACHINE_I/asynch_data_sel_i1" (ROM) removed.
-      The signal "blaze/xps_epc_0/N95" is loadless and has been removed.
+      The signal "blaze/xps_epc_0/N78" is loadless and has been removed.
        Loadless block
 "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
 EMACHINE_I/asynch_data_sel_i1_SW0" (ROM) removed.
@@ -6122,10 +6126,13 @@ FDR 		blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_type_reg_1
    optimized to 0
 FDR 		blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_type_reg_2
    optimized to 0
-LUT2
+LUT2_L
 		blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rearbitrate_ns11
 1
    optimized to 1
+LOCALBUF
+		blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rearbitrate_ns11
+1/LUT2_L_BUF
 MUXCY_L
 		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Data_Flow_I/PC_Module_I
 /Using_FPGA.All_Bits.PC_GEN[31].PC_Bit_I/MUXCY_X

@@ -1,7 +1,6 @@
-17:45:13.406 INFO  - Processing command line option -hwspec E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/SDK_Export/hw/blaze.xml. 
-17:50:07.431 ERROR - FPGA Configuration failed.Connection to Board Failed
-
-Failed to Scan JTAG Chain
-    Unknown Error
- 
-17:50:15.173 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+18:32:09.343 INFO  - Processing command line option -hwspec E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/SDK_Export/hw/blaze.xml. 
+18:45:05.942 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+18:46:02.733 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+18:46:27.454 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+18:48:14.709 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+18:49:03.017 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 

@@ -67,16 +67,10 @@ module Lcd_Controller#(
 										o_RS <= i_RS;
 																				
 										if(nCS == 0 && nWR == 0)	// LCD 쓰기동작
-										begin
 											stNext <= stWrite;
-											RDY <= 0;
-										end
 											
 										if(nCS == 0 && nRD == 0)	// LCD 읽기동작
-										begin
-											RDY <= 0;
 											stNext <= stRead;
-										end
 											
 								  end
 								  
@@ -87,7 +81,6 @@ module Lcd_Controller#(
 											stNext <= stTwoDelay;
 										else begin	// RS가 0일때의 Read 동작은 실행시간이 0이므로 바로 EN 신호를 1로 올린다.
 											EN   <= 1;
-											RDY  <= 1;
 											stNext <= stIdle;
 										end
 								  end
@@ -109,7 +102,8 @@ module Lcd_Controller#(
 										stNext <= stClearEn;
 										
 			stClearEn 		 : begin 
-										EN <= 0; 
+										EN  <= 0;
+										RDY <= 0;	// Busy Flag가 0으로 떨어지기 전까지 RDY신호를 0으로 떨어뜨려 EPC가 기다리게 만든다.
 										stNext <= stCheckBusy;             		 
 								  end
 								  
