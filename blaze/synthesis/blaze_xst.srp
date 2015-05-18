@@ -212,29 +212,29 @@ Design Statistics
 # IOs                              : 47
 
 Cell Usage :
-# BELS                             : 3427
+# BELS                             : 3404
 #      GND                         : 15
 #      INV                         : 47
 #      LUT1                        : 45
 #      LUT2                        : 291
 #      LUT2_D                      : 15
-#      LUT2_L                      : 12
-#      LUT3                        : 692
+#      LUT2_L                      : 11
+#      LUT3                        : 691
 #      LUT3_D                      : 52
 #      LUT3_L                      : 17
-#      LUT4                        : 1227
-#      LUT4_D                      : 24
+#      LUT4                        : 1221
+#      LUT4_D                      : 27
 #      LUT4_L                      : 45
-#      MULT_AND                    : 77
-#      MUXCY                       : 195
+#      MULT_AND                    : 71
+#      MUXCY                       : 189
 #      MUXCY_L                     : 136
 #      MUXF5                       : 342
 #      MUXF6                       : 6
 #      MUXF7                       : 2
 #      MUXF8                       : 1
 #      VCC                         : 9
-#      XORCY                       : 177
-# FlipFlops/Latches                : 2319
+#      XORCY                       : 171
+# FlipFlops/Latches                : 2313
 #      FD                          : 294
 #      FDC                         : 20
 #      FDC_1                       : 5
@@ -243,7 +243,7 @@ Cell Usage :
 #      FDE_1                       : 8
 #      FDP                         : 9
 #      FDR                         : 1062
-#      FDRE                        : 436
+#      FDRE                        : 430
 #      FDRE_1                      : 1
 #      FDRS                        : 30
 #      FDRSE                       : 13
@@ -271,10 +271,10 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                     1962  out of   8672    22%  
- Number of Slice Flip Flops:           2319  out of  17344    13%  
- Number of 4 input LUTs:               2873  out of  17344    16%  
-    Number used as logic:              2467
+ Number of Slices:                     1957  out of   8672    22%  
+ Number of Slice Flip Flops:           2313  out of  17344    13%  
+ Number of 4 input LUTs:               2868  out of  17344    16%  
+    Number used as logic:              2462
     Number used as Shift registers:     150
     Number used as RAMs:                256
  Number of IOs:                          47
@@ -305,7 +305,7 @@ Clock Information:
 -----------------------------------+-------------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                                 | Load  |
 -----------------------------------+-------------------------------------------------------+-------+
-fpga_0_clk_1_sys_clk_pin           | clock_generator_0/DCM0_INST/Using_Virtex.DCM_INST:CLK0| 2361  |
+fpga_0_clk_1_sys_clk_pin           | clock_generator_0/DCM0_INST/Using_Virtex.DCM_INST:CLK0| 2355  |
 mdm_0/mdm_0/drck_i                 | BUFG                                                  | 212   |
 mdm_0/mdm_0/update1                | BUFG                                                  | 43    |
 -----------------------------------+-------------------------------------------------------+-------+
@@ -345,7 +345,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'fpga_0_clk_1_sys_clk_pin'
   Clock period: 12.524ns (frequency: 79.845MHz)
-  Total number of paths / destination ports: 178616 / 6744
+  Total number of paths / destination ports: 178583 / 6726
 -------------------------------------------------------------------------
 Delay:               12.524ns (Levels of Logic = 39)
   Source:            microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/PreFetch_Buffer_I/Using_FPGA.Buffer_DFFs[1].FDS_I (FF)
@@ -614,7 +614,7 @@ Offset:              8.921ns (Levels of Logic = 10)
 
 
 Total REAL time to Xst completion: 35.00 secs
-Total CPU time to Xst completion: 34.80 secs
+Total CPU time to Xst completion: 34.77 secs
  
 --> 
 
