@@ -9,32 +9,32 @@ Target Device  : xc3s1200e
 Target Package : fg320
 Target Speed   : -4
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Mon May 18 06:20:35 2015
+Mapped Date    : Mon May 18 17:41:03 2015
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    0
 Logic Utilization:
-  Number of Slice Flip Flops:         1,672 out of  17,344    9%
-  Number of 4 input LUTs:             2,600 out of  17,344   14%
+  Number of Slice Flip Flops:         1,510 out of  17,344    8%
+  Number of 4 input LUTs:             2,515 out of  17,344   14%
 Logic Distribution:
-  Number of occupied Slices:          1,903 out of   8,672   21%
-    Number of Slices containing only related logic:   1,903 out of   1,903 100%
-    Number of Slices containing unrelated logic:          0 out of   1,903   0%
+  Number of occupied Slices:          1,812 out of   8,672   20%
+    Number of Slices containing only related logic:   1,812 out of   1,812 100%
+    Number of Slices containing unrelated logic:          0 out of   1,812   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       2,699 out of  17,344   15%
-    Number used as logic:             2,198
-    Number used as a route-thru:         99
+  Total Number of 4 input LUTs:       2,598 out of  17,344   14%
+    Number used as logic:             2,111
+    Number used as a route-thru:         83
     Number used for Dual Port RAMs:     256
       (Two LUTs used per Dual Port RAM)
-    Number used as Shift registers:     146
+    Number used as Shift registers:     148
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
 
   Number of bonded IOBs:                 43 out of     250   17%
-    IOB Flip Flops:                       6
+    IOB Flip Flops:                       8
   Number of RAMB16s:                     16 out of      28   57%
   Number of BUFGMUXs:                     3 out of      24   12%
   Number of DCMs:                         1 out of       8   12%
@@ -43,9 +43,9 @@ Logic Distribution:
 
 Average Fanout of Non-Clock Nets:                3.59
 
-Peak Memory Usage:  307 MB
-Total REAL time to MAP completion:  6 secs 
-Total CPU time to MAP completion:   6 secs 
+Peak Memory Usage:  357 MB
+Total REAL time to MAP completion:  8 secs 
+Total CPU time to MAP completion:   5 secs 
 
 NOTES:
 
@@ -90,7 +90,7 @@ Section 2 - Warnings
 Section 3 - Informational
 -------------------------
 INFO:LIT:243 - Logical network blaze/xps_epc_0_PRH_BE_pin has no load.
-INFO:LIT:395 - The above info message is repeated 582 more times for the
+INFO:LIT:395 - The above info message is repeated 600 more times for the
    following (max. 5 shown):
    blaze/fpga_0_LEDS_GPIO_IO_O_pin<0>,
    blaze/fpga_0_LEDS_GPIO_IO_O_pin<1>,
@@ -105,9 +105,9 @@ INFO:LIT:244 - All of the single ended outputs in this design are using slew
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-1141 block(s) removed
- 137 block(s) optimized away
-1188 signal(s) removed
+1185 block(s) removed
+ 218 block(s) optimized away
+1265 signal(s) removed
 
 Section 5 - Removed Logic
 -------------------------
@@ -123,28 +123,32 @@ above the place where that logic is listed in the trimming report, then locate
 the lines that are least indented (begin at the leftmost edge).
 
 The signal "blaze/xps_epc_0_PRH_BE_pin" is loadless and has been removed.
- Loadless block "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/PRH_BE_0"
-(SFF) removed.
+ Loadless block "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/PRH_BE_0" (FF)
+removed.
   The signal
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/prh_be_i_0_mux000061" is
+"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_be_i<0>" is
 loadless and has been removed.
    Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/prh_be_i_0_mux0000611" (MUX)
+"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_0" (SFF)
 removed.
-    The signal "blaze/xps_epc_0/N127" is loadless and has been removed.
-     Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/prh_be_i_0_mux0000611_F"
-(ROM) removed.
-    The signal "blaze/xps_epc_0/N128" is loadless and has been removed.
-     Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/prh_be_i_0_mux0000611_G"
-(ROM) removed.
-  The signal
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/prh_be_i_0_mux000058" is
+    The signal
+"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_be_reg<0>" is
 loadless and has been removed.
-   Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/prh_be_i_0_mux000058" (ROM)
+     Loadless block
+"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_be_reg_0" (SFF)
 removed.
+      The signal "blaze/mb_plb_PLB_BE<0>" is loadless and has been removed.
+       Loadless block "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_BE_0" (SFF)
+removed.
+        The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/plb_be_i<0>" is
+loadless and has been removed.
+         Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/I_PLBBE_MUX/lutout_0_or00001"
+(ROM) removed.
+          The signal "blaze/mb_plb_M_BE<0>" is loadless and has been removed.
+           Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_be_i_0" (SFF) removed.
 The signal "blaze/fpga_0_LEDS_GPIO_IO_O_pin<0>" is loadless and has been
 removed.
  Loadless block "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_0" (SFF) removed.
@@ -230,11 +234,11 @@ removed.
 " is loadless and has been removed.
      Loadless block
 "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_1_or0000
-1" (MUX) removed.
-      The signal "blaze/xps_epc_0/N107" is loadless and has been removed.
+1" (ROM) removed.
+      The signal "blaze/xps_epc_0/N16" is loadless and has been removed.
        Loadless block
-"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_1_or0000
-1_F" (ROM) removed.
+"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_0_or0000
+21_SW0" (ROM) removed.
         The signal
 "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/master_id<0>" is
 loadless and has been removed.
@@ -247,22 +251,14 @@ is loadless and has been removed.
            Loadless block
 "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_masterid_reg_0"
 (SFF) removed.
-      The signal "blaze/xps_epc_0/N108" is loadless and has been removed.
+      The signal "blaze/xps_epc_0/N62" is loadless and has been removed.
        Loadless block
-"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_1_or0000
-1_G" (ROM) removed.
-        The signal "blaze/xps_epc_0/N74" is loadless and has been removed.
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
+EMACHINE_I/asynch_Rdack_i2_SW2" (ROM) removed.
+        The signal "blaze/xps_epc_0/N81" is loadless and has been removed.
          Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Rdack_i1_SW1" (MUX)
-removed.
-          The signal "blaze/xps_epc_0/N97" is loadless and has been removed.
-           Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Rdack_i1_SW1_F" (ROM)
-removed.
-          The signal "blaze/xps_epc_0/N98" is loadless and has been removed.
-           Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Rdack_i1_SW1_G" (ROM)
-removed.
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
+EMACHINE_I/asynch_Rdack_i2_SW2_SW0" (ROM) removed.
 The signal "blaze/mb_plb_PLB_MBusy<0>" is loadless and has been removed.
  Loadless block
 "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/MBUSY_OR/Y_0_or0000_f5" (MUX)
@@ -429,8 +425,8 @@ removed.
 1" (ROM) removed.
       The signal "blaze/xps_epc_0/N68" is loadless and has been removed.
        Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Wrack_i1_SW1" (ROM)
-removed.
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
+EMACHINE_I/asynch_Wrack_i1_SW1" (ROM) removed.
 The signal "blaze/mb_plb_PLB_MRdErr<0>" is loadless and has been removed.
  Loadless block
 "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/MRDERR_OR/Y_0_or0000_f5" (MUX)
@@ -462,27 +458,15 @@ removed.
 " is loadless and has been removed.
      Loadless block
 "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_0_or0000
-1" (MUX) removed.
-      The signal "blaze/xps_epc_0/N109" is loadless and has been removed.
+1" (ROM) removed.
+      The signal "blaze/xps_epc_0/N18" is loadless and has been removed.
        Loadless block
 "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_0_or0000
-1_F" (ROM) removed.
-      The signal "blaze/xps_epc_0/N110" is loadless and has been removed.
+21_SW1" (ROM) removed.
+      The signal "blaze/xps_epc_0/N63" is loadless and has been removed.
        Loadless block
-"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_0_or0000
-1_G" (ROM) removed.
-        The signal "blaze/xps_epc_0/N77" is loadless and has been removed.
-         Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Rdack_i1_SW3" (MUX)
-removed.
-          The signal "blaze/xps_epc_0/N99" is loadless and has been removed.
-           Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Rdack_i1_SW3_F" (ROM)
-removed.
-          The signal "blaze/xps_epc_0/N100" is loadless and has been removed.
-           Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Rdack_i1_SW3_G" (ROM)
-removed.
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
+EMACHINE_I/asynch_Rdack_i2_SW3" (ROM) removed.
 The signal "blaze/mb_plb_PLB_MRdBTerm<1>" is loadless and has been removed.
  Loadless block
 "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_MUXEDSIGNALS/PLB_MRdBTerm_
@@ -533,10 +517,10 @@ removed.
      Loadless block
 "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mwrerr_i_0_or0000
 1" (ROM) removed.
-      The signal "blaze/xps_epc_0/N71" is loadless and has been removed.
+      The signal "blaze/xps_epc_0/N69" is loadless and has been removed.
        Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Wrack_i1_SW3" (ROM)
-removed.
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
+EMACHINE_I/asynch_Wrack_i1_SW2" (ROM) removed.
 The signal "blaze/mb_plb_PLB_MRearbitrate<0>" is loadless and has been removed.
  Loadless block
 "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_MUXEDSIGNALS/PLB_MRearbitr
@@ -1340,6 +1324,158 @@ _rd_lvl1_n<1>" is loadless and has been removed.
      Loadless block
 "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/I_PEND_PRIOR/M
 ASTER_RD_LVLS[1].I_QUAL_MASTERS_PRIORITY/Lvl1_n1" (ROM) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<8>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout7_0_or00001
+" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<8>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_8" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<9>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout8_0_or00001
+" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<9>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_9" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<10>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout9_0_or00001
+" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<10>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_10" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<11>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout10_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<11>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_11" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<12>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout11_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<12>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_12" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<13>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout12_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<13>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_13" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<14>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout13_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<14>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_14" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<15>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout14_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<15>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_15" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<16>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout15_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<16>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_16" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<17>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout16_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<17>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_17" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<18>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout17_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<18>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_18" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<19>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout18_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<19>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_19" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<20>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout19_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<20>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_20" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<21>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout20_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<21>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_21" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<22>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout21_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<22>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_22" (SFF) removed.
+The signal "blaze/mb_plb_PLB_wrDBus<23>" is loadless and has been removed.
+ Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_WR_DATAPATH/I_WRDBUS_MUX/lutout22_0_or0000
+1" (ROM) removed.
+  The signal "blaze/mb_plb_M_wrDBus<23>" is loadless and has been removed.
+   Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_wrdbus_i_23" (SFF) removed.
+The signal "blaze/mb_plb_PLB_BE<1>" is loadless and has been removed.
+ Loadless block "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_BE_1" (SFF)
+removed.
+  The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/plb_be_i<1>" is
+loadless and has been removed.
+   Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/I_PLBBE_MUX/lutout0_0_or00001"
+(ROM) removed.
+    The signal "blaze/mb_plb_M_BE<1>" is loadless and has been removed.
+     Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_be_i_1" (SFF) removed.
+The signal "blaze/mb_plb_PLB_BE<2>" is loadless and has been removed.
+ Loadless block "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_BE_2" (SFF)
+removed.
+  The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/plb_be_i<2>" is
+loadless and has been removed.
+   Loadless block
+"blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/I_PLBBE_MUX/lutout1_0_or00001"
+(ROM) removed.
+    The signal "blaze/mb_plb_M_BE<2>" is loadless and has been removed.
+     Loadless block
+"blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
+D_PLB.DPLB_Interface_I1/dplb_m_be_i_2" (SFF) removed.
 The signal "blaze/mb_plb_PLB_TAttribute<0>" is loadless and has been removed.
  Loadless block "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ADDRPATH/PLB_TAttribute_0"
 (SFF) removed.
@@ -4869,7 +5005,7 @@ EMACHINE_I/asynch_data_sel_i1" is loadless and has been removed.
      Loadless block
 "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
 EMACHINE_I/asynch_data_sel_i1" (ROM) removed.
-      The signal "blaze/xps_epc_0/N105" is loadless and has been removed.
+      The signal "blaze/xps_epc_0/N95" is loadless and has been removed.
        Loadless block
 "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
 EMACHINE_I/asynch_data_sel_i1_SW0" (ROM) removed.
@@ -5022,15 +5158,6 @@ Loadless block
 Loadless block "blaze/mdm_0/mdm_0/BUFG_DRCK1" (CKBUF) removed.
  The signal "blaze/mdm_0/mdm_0/drck1_i" is loadless and has been removed.
 Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ADDRESS_GEN_I/DEV_DWIDTH_MATCH_GEN.SOME_DE
-V_ASYNC_GEN.I_ASYNC_ADDRCNT/PERBIT_GEN[0].MUXCY_i1" (MUX) removed.
- The signal
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ADDRESS_GEN_I/DEV_DWIDTH_MATCH_GEN.SOME_DE
-V_ASYNC_GEN.I_ASYNC_ADDRCNT/gen_cry_kill_n<0>" is loadless and has been removed.
-  Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ADDRESS_GEN_I/DEV_DWIDTH_MATCH_GEN.SOME_DE
-V_ASYNC_GEN.I_ASYNC_ADDRCNT/PERBIT_GEN[0].MULT_AND_i1" (AND) removed.
-Loadless block
 "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
 _I/LD_ARITH_REG_I_CNTR12/PERBIT_GEN[0].MUXCY_i1" (MUX) removed.
  The signal
@@ -5142,6 +5269,62 @@ _I/LD_ARITH_REG_I_MUXED_CNTR5/cry<1>" is loadless and has been removed.
 _I/LD_ARITH_REG_I_MUXED_CNTR5/PERBIT_GEN[1].MUXCY_i1" (MUX) removed.
    The signal
 "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR5/cry<2>" is loadless and has been removed.
+    Loadless block
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR5/PERBIT_GEN[2].MUXCY_i1" (MUX) removed.
+     The signal
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR5/cry<3>" is loadless and has been removed.
+      Loadless block
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR5/PERBIT_GEN[3].MUXCY_i1" (MUX) removed.
+       The signal
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR5/gen_cry_kill_n<3>" is loadless and has been
+removed.
+        Loadless block
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR5/PERBIT_GEN[3].MULT_AND_i1" (AND) removed.
+         The signal
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/twr_muxed_rec_cnt<3>" is
+loadless and has been removed.
+          Loadless block
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR5/PERBIT_GEN[3].FF_RST0_GEN.FDRE_i1" (SFF) removed.
+           The signal
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR5/CE" is loadless and has been removed.
+            Loadless block
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
+EMACHINE_I/command_cs_FSM_Out181" (ROM) removed.
+           The signal
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR5/xorcy_out<3>" is loadless and has been removed.
+            Loadless block
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR5/PERBIT_GEN[3].XORCY_i1" (XOR) removed.
+     The signal
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR5/gen_cry_kill_n<2>" is loadless and has been
+removed.
+      Loadless block
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR5/PERBIT_GEN[2].MULT_AND_i1" (AND) removed.
+       The signal
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/twr_muxed_rec_cnt<2>" is
+loadless and has been removed.
+        Loadless block
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR5/PERBIT_GEN[2].FF_RST0_GEN.FDRE_i1" (SFF) removed.
+         The signal
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR5/xorcy_out<2>" is loadless and has been removed.
+          Loadless block
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR5/PERBIT_GEN[2].XORCY_i1" (XOR) removed.
+   The signal
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
 _I/LD_ARITH_REG_I_MUXED_CNTR5/gen_cry_kill_n<1>" is loadless and has been
 removed.
     Loadless block
@@ -5153,12 +5336,6 @@ loadless and has been removed.
       Loadless block
 "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
 _I/LD_ARITH_REG_I_MUXED_CNTR5/PERBIT_GEN[1].FF_RST0_GEN.FDRE_i1" (SFF) removed.
-       The signal
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
-_I/LD_ARITH_REG_I_MUXED_CNTR5/CE" is loadless and has been removed.
-        Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
-EMACHINE_I/command_cs_FSM_Out181" (ROM) removed.
        The signal
 "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
 _I/LD_ARITH_REG_I_MUXED_CNTR5/xorcy_out<1>" is loadless and has been removed.
@@ -5193,6 +5370,56 @@ _I/LD_ARITH_REG_I_MUXED_CNTR9/cry<1>" is loadless and has been removed.
   Loadless block
 "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
 _I/LD_ARITH_REG_I_MUXED_CNTR9/PERBIT_GEN[1].MUXCY_i1" (MUX) removed.
+   The signal
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR9/cry<2>" is loadless and has been removed.
+    Loadless block
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR9/PERBIT_GEN[2].MUXCY_i1" (MUX) removed.
+     The signal
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR9/cry<3>" is loadless and has been removed.
+      Loadless block
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR9/PERBIT_GEN[3].MUXCY_i1" (MUX) removed.
+       The signal
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR9/gen_cry_kill_n<3>" is loadless and has been
+removed.
+        Loadless block
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR9/PERBIT_GEN[3].MULT_AND_i1" (AND) removed.
+         The signal
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/trd_muxed_rec_cnt<3>" is
+loadless and has been removed.
+          Loadless block
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR9/PERBIT_GEN[3].FF_RST0_GEN.FDRE_i1" (SFF) removed.
+           The signal
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR9/xorcy_out<3>" is loadless and has been removed.
+            Loadless block
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR9/PERBIT_GEN[3].XORCY_i1" (XOR) removed.
+     The signal
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR9/gen_cry_kill_n<2>" is loadless and has been
+removed.
+      Loadless block
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR9/PERBIT_GEN[2].MULT_AND_i1" (AND) removed.
+       The signal
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/trd_muxed_rec_cnt<2>" is
+loadless and has been removed.
+        Loadless block
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR9/PERBIT_GEN[2].FF_RST0_GEN.FDRE_i1" (SFF) removed.
+         The signal
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR9/xorcy_out<2>" is loadless and has been removed.
+          Loadless block
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
+_I/LD_ARITH_REG_I_MUXED_CNTR9/PERBIT_GEN[2].XORCY_i1" (XOR) removed.
    The signal
 "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR
 _I/LD_ARITH_REG_I_MUXED_CNTR9/gen_cry_kill_n<1>" is loadless and has been
@@ -5257,6 +5484,22 @@ The trimmed logic reported below is either:
    2. part of disabled logic
    3. a side-effect of other trimmed logic
 
+The signal "blaze/mb_plb_PLB_MRdDBus<40>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<41>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<10>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<11>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<12>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<13>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<14>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<15>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<16>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<17>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<18>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<19>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<20>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<21>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<22>" is unused and has been removed.
+The signal "blaze/mb_plb_PLB_MRdDBus<23>" is unused and has been removed.
 The signal "blaze/mb_plb_PLB_size<3>" is unused and has been removed.
 The signal "blaze/mb_plb_PLB_type<0>" is unused and has been removed.
 The signal "blaze/mb_plb_PLB_type<1>" is unused and has been removed.
@@ -5303,6 +5546,38 @@ The signal "blaze/mb_plb/N155" is unused and has been removed.
 "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/LoadDisReg64
 _SW1" (ROM) removed.
 The signal "blaze/mb_plb/N171" is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_9_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_8_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_23_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_22_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_21_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_20_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_19_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_18_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_17_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_16_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_15_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_14_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_13_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_12_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_11_or0000"
+is unused and has been removed.
+The signal "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_10_or0000"
+is unused and has been removed.
 The signal
 "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/LoadDisReg78
 " is unused and has been removed.
@@ -5330,30 +5605,6 @@ The signal
 unused and has been removed.
  Unused block
 "blaze/proc_sys_reset_0/proc_sys_reset_0/Mshreg_Core_Reset_Req_0_d2/VCC" (ONE)
-removed.
-The signal
-"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mwrerr_i_0_or0000
-21_SW0/O" is unused and has been removed.
- Unused block
-"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mwrerr_i_0_or0000
-21_SW0" (ROM) removed.
-The signal
-"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mwrerr_i_0_or0000
-21_SW1/O" is unused and has been removed.
- Unused block
-"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mwrerr_i_0_or0000
-21_SW1" (ROM) removed.
-The signal
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Wrack_i1_SW0/O" is
-unused and has been removed.
- Unused block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Wrack_i1_SW0" (ROM)
-removed.
-The signal
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Wrack_i1_SW2/O" is
-unused and has been removed.
- Unused block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Wrack_i1_SW2" (ROM)
 removed.
 Unused block
 "blaze/proc_sys_reset_0/proc_sys_reset_0/Mshreg_Core_Reset_Req_0_d2/SRL16E"
@@ -5562,6 +5813,54 @@ lutout_0_or00001
 LUT4
 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_WDT/wdtTimeOutCntrEnable1
    optimized to 1
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_10_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_10_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_11_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_11_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_12_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_12_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_13_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_13_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_14_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_14_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_15_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_15_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_16_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_16_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_17_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_17_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_18_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_18_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_19_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_19_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_20_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_20_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_21_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_21_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_22_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_22_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_23_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_23_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_8_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_8_or0000_f5
+LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_9_or00001
+   optimized to 0
+MUXF5 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/RDBUS_OR/Y_9_or0000_f5
 LUT4 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/WAIT_OR/Y_0_or0000
    optimized to 0
 LUT2 		blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/WAIT_OR/Y_0_or0000_SW0
@@ -5599,6 +5898,198 @@ LUT4
 		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.M
 aster_Core.Debug_Area/dbg_stop_i1
    optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_10
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_11
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_12
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_13
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_14
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_15
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_16
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_17
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_18
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_19
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_20
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_21
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_22
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_23
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_8
+   optimized to 0
+FDRE
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using
+_D_PLB.DPLB_Interface_I1/WB_DPLB_Read_Data_9
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_10
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_11
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_12
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_13
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_14
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_15
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_16
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_17
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_18
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_19
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_20
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_21
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_22
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_23
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_8
+   optimized to 0
+FDR
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_I_PLB.IPLB_Interf
+ace_I1/IPLB_Data_9
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[10].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[11].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[12].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[13].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[14].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[15].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[16].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[17].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[18].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[19].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[20].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[21].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[22].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[23].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[8].MUXF5_I1_rt
+   optimized to 0
+LUT1
+		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.instr_mux_I1/Use_LUT4.F
+ull_Last_Mux.The_Mux[9].MUXF5_I1_rt
+   optimized to 0
 GND 		blaze/proc_sys_reset_0/XST_GND
 VCC 		blaze/proc_sys_reset_0/XST_VCC
 FDS 		blaze/proc_sys_reset_0/proc_sys_reset_0/SEQ/chip_Reset_Req_d1
@@ -5631,13 +6122,10 @@ FDR 		blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_type_reg_1
    optimized to 0
 FDR 		blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_type_reg_2
    optimized to 0
-LUT2_L
+LUT2
 		blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rearbitrate_ns11
 1
    optimized to 1
-LOCALBUF
-		blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rearbitrate_ns11
-1/LUT2_L_BUF
 MUXCY_L
 		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Data_Flow_I/PC_Module_I
 /Using_FPGA.All_Bits.PC_GEN[31].PC_Bit_I/MUXCY_X
@@ -5652,23 +6140,23 @@ Section 6 - IOB Properties
 | IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
 |                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| JA<0>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| JA<1>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| JA<2>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| JA<3>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| JA<4>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| JA<5>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| JA<6>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| JA<7>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| JA<0>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
+| JA<1>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
+| JA<2>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
+| JA<3>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
+| JA<4>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
+| JA<5>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
+| JA<6>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
+| JA<7>                              | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
 | JB<4>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | JB<5>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | JB<6>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| Led<0>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
-| Led<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
-| Led<2>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
-| Led<3>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
-| Led<4>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
-| Led<5>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| Led<0>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| Led<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| Led<2>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| Led<3>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| Led<4>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| Led<5>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | Led<6>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | Led<7>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | RXD                                | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |

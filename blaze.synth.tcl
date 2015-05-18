@@ -1,5 +1,5 @@
 proc pnsynth {} {
-  cd D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze
+  cd E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze
   if { [ catch { xload xmp blaze.xmp } result ] } {
     exit 10
   }

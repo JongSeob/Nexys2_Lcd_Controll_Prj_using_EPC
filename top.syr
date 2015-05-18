@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.26 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.26 secs
  
 --> Reading design: top.prj
 
@@ -104,7 +104,7 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling verilog file "D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze.v" in library work
+Compiling verilog file "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze.v" in library work
 Module <blaze> compiled
 Module <blaze_microblaze_0_wrapper> compiled
 Module <blaze_mb_plb_wrapper> compiled
@@ -144,7 +144,6 @@ Analyzing hierarchy for module <Lcd_Controller> in library <work> with parameter
 	stClearEn = "0110"
 	stElevenDelay = "0101"
 	stIdle = "0000"
-	stOneDelay = "1001"
 	stRead = "0001"
 	stSetEn = "0100"
 	stTwoDelay = "0011"
@@ -190,7 +189,6 @@ Analyzing module <Lcd_Controller> in library <work>.
 	stClearEn = 4'b0110
 	stElevenDelay = 4'b0101
 	stIdle = 4'b0000
-	stOneDelay = 4'b1001
 	stRead = 4'b0001
 	stSetEn = 4'b0100
 	stTwoDelay = 4'b0011
@@ -235,7 +233,7 @@ Performing bidirectional port resolution...
 Synthesizing Unit <Lcd_Controller>.
     Related source file is "Lcd_Controller.v".
     Using one-hot encoding for signal <stCur>.
-INFO:Xst:2117 - HDL ADVISOR - Mux Selector <stCur> of Case statement line 66 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <stCur> of Case statement line 65 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
    	- add an 'INIT' attribute on signal <stCur> (optimization is then done without any risk)
    	- use the attribute 'signal_encoding user' to avoid onehot optimization
    	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
@@ -244,11 +242,11 @@ INFO:Xst:2117 - HDL ADVISOR - Mux Selector <stCur> of Case statement line 66 was
     Found 1-bit register for signal <RW>.
     Found 1-bit register for signal <RDY>.
     Found 6-bit up counter for signal <count>.
-    Found 10-bit register for signal <stCur>.
-    Found 10-bit register for signal <stNext>.
+    Found 9-bit register for signal <stCur>.
+    Found 9-bit register for signal <stNext>.
     Summary:
 	inferred   1 Counter(s).
-	inferred  14 D-type flip-flop(s).
+	inferred  13 D-type flip-flop(s).
 Unit <Lcd_Controller> synthesized.
 
 
@@ -298,14 +296,10 @@ Synthesizing Unit <top>.
 WARNING:Xst:646 - Signal <nBE> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found 8-bit tristate buffer for signal <JA>.
     Found 8-bit register for signal <Led>.
-    Found 3-bit adder for signal <$add0000> created at line 112.
-    Found 3-bit adder for signal <$add0001> created at line 117.
     Found 8-bit tristate buffer for signal <BlazeDataIn>.
-    Found 6-bit register for signal <count>.
     Found 16-bit register for signal <Digit>.
     Summary:
-	inferred  30 D-type flip-flop(s).
-	inferred   2 Adder/Subtractor(s).
+	inferred  24 D-type flip-flop(s).
 	inferred  16 Tristate(s).
 Unit <top> synthesized.
 
@@ -316,15 +310,14 @@ HDL Synthesis Report
 Macro Statistics
 # ROMs                                                 : 1
  16x7-bit ROM                                          : 1
-# Adders/Subtractors                                   : 2
- 3-bit adder                                           : 2
 # Counters                                             : 2
  20-bit up counter                                     : 1
  6-bit up counter                                      : 1
-# Registers                                            : 39
- 1-bit register                                        : 35
- 10-bit register                                       : 2
+# Registers                                            : 26
+ 1-bit register                                        : 21
  4-bit register                                        : 2
+ 8-bit register                                        : 1
+ 9-bit register                                        : 2
 # Comparators                                          : 1
  20-bit comparator greater                             : 1
 # Tristates                                            : 2
@@ -384,13 +377,11 @@ Macro Statistics
 # FSMs                                                 : 1
 # ROMs                                                 : 1
  16x7-bit ROM                                          : 1
-# Adders/Subtractors                                   : 2
- 3-bit adder                                           : 2
 # Counters                                             : 2
  20-bit up counter                                     : 1
  6-bit up counter                                      : 1
-# Registers                                            : 63
- Flip-Flops                                            : 63
+# Registers                                            : 55
+ Flip-Flops                                            : 55
 # Comparators                                          : 1
  20-bit comparator greater                             : 1
 
@@ -409,7 +400,7 @@ Optimizing unit <SevenSegment> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 24.
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 23.
 INFO:Xst:2260 - The FF/Latch <microblaze_0/MicroBlaze_Core_I/Area.Decode_I/SWAP_Instr_0> in Unit <microblaze_0> is equivalent to the following FF/Latch : <microblaze_0/MicroBlaze_Core_I/Area.Decode_I/SWAP_Instr_0_1> 
 INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_MPLB_RST[1].I_MPLB_RST> in Unit <mb_plb> is equivalent to the following 7 FFs/Latches : <mb_plb/GEN_MPLB_RST[0].I_MPLB_RST> <mb_plb/GEN_SPLB_RST[4].I_SPLB_RST> <mb_plb/GEN_SPLB_RST[3].I_SPLB_RST> <mb_plb/GEN_SPLB_RST[2].I_SPLB_RST> <mb_plb/GEN_SPLB_RST[1].I_SPLB_RST> <mb_plb/GEN_SPLB_RST[0].I_SPLB_RST> <mb_plb/I_PLB_RST> 
 INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/arbctrl_sm_cs_FSM_FFd3> in Unit <mb_plb> is equivalent to the following FF/Latch : <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/arbctrl_sm_cs_FSM_FFd3_1> 
@@ -427,8 +418,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 93
- Flip-Flops                                            : 93
+# Registers                                            : 85
+ Flip-Flops                                            : 85
 
 =========================================================================
 
@@ -457,48 +448,48 @@ Design Statistics
 # IOs                              : 43
 
 Cell Usage :
-# BELS                             : 3663
+# BELS                             : 3517
 #      GND                         : 16
-#      INV                         : 54
+#      INV                         : 52
 #      LUT1                        : 65
-#      LUT2                        : 311
+#      LUT2                        : 297
 #      LUT2_D                      : 15
-#      LUT2_L                      : 13
-#      LUT3                        : 750
-#      LUT3_D                      : 54
-#      LUT3_L                      : 18
-#      LUT4                        : 1298
-#      LUT4_D                      : 22
-#      LUT4_L                      : 47
-#      MULT_AND                    : 71
-#      MUXCY                       : 219
+#      LUT2_L                      : 9
+#      LUT3                        : 702
+#      LUT3_D                      : 52
+#      LUT3_L                      : 16
+#      LUT4                        : 1270
+#      LUT4_D                      : 25
+#      LUT4_L                      : 46
+#      MULT_AND                    : 63
+#      MUXCY                       : 206
 #      MUXCY_L                     : 136
-#      MUXF5                       : 364
+#      MUXF5                       : 345
 #      MUXF6                       : 6
 #      MUXF7                       : 2
 #      MUXF8                       : 1
 #      VCC                         : 10
-#      XORCY                       : 191
-# FlipFlops/Latches                : 2490
-#      FD                          : 318
-#      FDC                         : 35
+#      XORCY                       : 183
+# FlipFlops/Latches                : 2390
+#      FD                          : 328
+#      FDC                         : 34
 #      FDC_1                       : 5
-#      FDCE                        : 19
-#      FDE                         : 282
+#      FDCE                        : 15
+#      FDE                         : 280
 #      FDE_1                       : 8
 #      FDP                         : 10
-#      FDR                         : 1141
-#      FDRE                        : 457
+#      FDR                         : 1085
+#      FDRE                        : 422
 #      FDRE_1                      : 1
 #      FDRS                        : 31
 #      FDRSE                       : 13
-#      FDS                         : 101
-#      FDSE                        : 69
+#      FDS                         : 90
+#      FDSE                        : 68
 # RAMS                             : 144
 #      RAM16X1D                    : 128
 #      RAMB16_S2_S2                : 16
-# Shift Registers                  : 148
-#      SRL16                       : 23
+# Shift Registers                  : 150
+#      SRL16                       : 25
 #      SRL16E                      : 117
 #      SRLC16E                     : 8
 # Clock Buffers                    : 7
@@ -521,15 +512,15 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                     2083  out of   8672    24%  
- Number of Slice Flip Flops:           2484  out of  17344    14%  
- Number of 4 input LUTs:               3051  out of  17344    17%  
-    Number used as logic:              2647
-    Number used as Shift registers:     148
+ Number of Slices:                     2012  out of   8672    23%  
+ Number of Slice Flip Flops:           2382  out of  17344    13%  
+ Number of 4 input LUTs:               2955  out of  17344    17%  
+    Number used as logic:              2549
+    Number used as Shift registers:     150
     Number used as RAMs:                256
  Number of IOs:                          43
  Number of bonded IOBs:                  43  out of    250    17%  
-    IOB Flip Flops:                       6
+    IOB Flip Flops:                       8
  Number of BRAMs:                        16  out of     28    57%  
  Number of MULT18X18SIOs:                 3  out of     28    10%  
  Number of GCLKs:                         7  out of     24    29%  
@@ -556,11 +547,12 @@ Clock Information:
 ---------------------------------------------+-------------------------------------------------------+-------+
 Clock Signal                                 | Clock buffer(FF name)                                 | Load  |
 ---------------------------------------------+-------------------------------------------------------+-------+
-clk                                          | clock_generator_0/DCM0_INST/Using_Virtex.DCM_INST:CLK0| 2496  |
+clk                                          | clock_generator_0/DCM0_INST/Using_Virtex.DCM_INST:CLK0| 2396  |
 blaze/mdm_0/mdm_0/drck_i                     | BUFG                                                  | 212   |
 blaze/mdm_0/mdm_0/update1                    | BUFG                                                  | 43    |
-blaze/xps_epc_0/PRH_Wr_n                     | NONE(Digit_5)                                         | 11    |
-blaze/xps_epc_0/PRH_Rd_n                     | NONE(count_4)                                         | 11    |
+blaze/xps_epc_0/PRH_Wr_n                     | NONE(Digit_5)                                         | 8     |
+blaze/xps_epc_0/PRH_Rd_n                     | NONE(Digit_13)                                        | 8     |
+Lcd_Controller/RDY                           | NONE(Led_0)                                           | 8     |
 SevenSegment/divide_Clk_50Mhz_To_240hz/OutClk| NONE(SevenSegment/TmpCnt_FSM_FFd1)                    | 12    |
 ---------------------------------------------+-------------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -571,7 +563,7 @@ Asynchronous Control Signals Information:
 Control Signal                                                                                                                                                                                                                                | Buffer(FF name)                                                                                                                 | Load  |
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------+
 blaze/mdm_0/mdm_0/MDM_Core_I1/Config_Reg_Acst_inv(blaze/mdm_0/mdm_0/MDM_Core_I1/Config_Reg_Acst_inv1_INV_0:O)                                                                                                                                 | NONE(blaze/mdm_0/mdm_0/MDM_Core_I1/Config_Reg_0)                                                                                | 23    |
-btn<0>                                                                                                                                                                                                                                        | IBUF                                                                                                                            | 20    |
+btn<0>                                                                                                                                                                                                                                        | IBUF                                                                                                                            | 19    |
 blaze/mdm_0/mdm_0/MDM_Core_I1/SEL_inv(blaze/mdm_0/mdm_0/MDM_Core_I1/SEL_inv1_INV_0:O)                                                                                                                                                         | NONE(blaze/mdm_0/mdm_0/MDM_Core_I1/PORT_Selector_0)                                                                             | 12    |
 blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/command_reg_clear(blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/command_reg_clear:Q)| NONE(blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/command_reg_0)         | 2     |
 blaze/mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/data_cmd_inv(blaze/mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/data_cmd_inv1_INV_0:O)                                                                                                                 | NONE(blaze/mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/execute)                                                                      | 1     |
@@ -582,10 +574,6 @@ blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Mas
 blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/no_sleeping(blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/no_sleeping1_INV_0:O)     | NONE(blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/dbg_wakeup_i)          | 1     |
 blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/normal_stop_cmd(blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/normal_stop_cmd1:O)   | NONE(blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/normal_stop_TClk)      | 1     |
 blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/start_single_step(blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/start_single_step:Q)| NONE(blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Implement_Debug_Logic.Master_Core.Debug_Area/single_Step_TClk)      | 1     |
-blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_rst<0>(blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_rst_0_or00001:O)                                                                                   | NONE(blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_0)                                                       | 1     |
-blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_rst<1>(blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_rst_1_or00001:O)                                                                                   | NONE(blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_1)                                                       | 1     |
-blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_rst<2>(blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_rst_2_or00001:O)                                                                                   | NONE(blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_2)                                                       | 1     |
-blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_rst<3>(blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_rst_3_or00001:O)                                                                                   | NONE(blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_3)                                                       | 1     |
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+-------+
 
 Timing Summary:
@@ -604,7 +592,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 12.524ns (frequency: 79.845MHz)
-  Total number of paths / destination ports: 180696 / 7058
+  Total number of paths / destination ports: 177754 / 6788
 -------------------------------------------------------------------------
 Delay:               12.524ns (Levels of Logic = 39)
   Source:            blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/PreFetch_Buffer_I/Using_FPGA.Buffer_DFFs[1].FDS_I (FF)
@@ -720,50 +708,6 @@ Delay:               8.025ns (Levels of Logic = 6)
                                        (49.4% logic, 50.6% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'blaze/xps_epc_0/PRH_Rd_n'
-  Clock period: 2.309ns (frequency: 433.088MHz)
-  Total number of paths / destination ports: 6 / 3
--------------------------------------------------------------------------
-Delay:               2.309ns (Levels of Logic = 1)
-  Source:            count_4 (FF)
-  Destination:       count_4 (FF)
-  Source Clock:      blaze/xps_epc_0/PRH_Rd_n rising
-  Destination Clock: blaze/xps_epc_0/PRH_Rd_n rising
-
-  Data Path: count_4 to count_4
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q               3   0.591   0.706  count_4 (count_4)
-     LUT2:I0->O            1   0.704   0.000  Madd__add0000_xor<1>11 (_add0000<1>)
-     FD:D                      0.308          count_4
-    ----------------------------------------
-    Total                      2.309ns (1.603ns logic, 0.706ns route)
-                                       (69.4% logic, 30.6% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'blaze/xps_epc_0/PRH_Wr_n'
-  Clock period: 2.309ns (frequency: 433.088MHz)
-  Total number of paths / destination ports: 6 / 3
--------------------------------------------------------------------------
-Delay:               2.309ns (Levels of Logic = 1)
-  Source:            count_1 (FF)
-  Destination:       count_1 (FF)
-  Source Clock:      blaze/xps_epc_0/PRH_Wr_n rising
-  Destination Clock: blaze/xps_epc_0/PRH_Wr_n rising
-
-  Data Path: count_1 to count_1
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q               3   0.591   0.706  count_1 (count_1)
-     LUT2:I0->O            1   0.704   0.000  Madd__add0001_xor<1>11 (_add0001<1>)
-     FD:D                      0.308          count_1
-    ----------------------------------------
-    Total                      2.309ns (1.603ns logic, 0.706ns route)
-                                       (69.4% logic, 30.6% route)
-
-=========================================================================
 Timing constraint: Default period analysis for Clock 'SevenSegment/divide_Clk_50Mhz_To_240hz/OutClk'
   Clock period: 3.470ns (frequency: 288.184MHz)
   Total number of paths / destination ports: 24 / 16
@@ -812,26 +756,23 @@ Offset:              4.704ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 45 / 45
+  Total number of paths / destination ports: 21 / 21
 -------------------------------------------------------------------------
-Offset:              4.337ns (Levels of Logic = 4)
+Offset:              4.097ns (Levels of Logic = 2)
   Source:            JA<7> (PAD)
-  Destination:       blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_PLBWIDTH_GEN[3].ASYNC_RDREG_PRHWIDTH_GEN[0].ASYNC_RDREG_BYTE_GEN[0].ASYNC_RDREG_BIT (FF)
+  Destination:       Lcd_Controller/stNext_0 (FF)
   Destination Clock: clk rising
 
-  Data Path: JA<7> to blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_PLBWIDTH_GEN[3].ASYNC_RDREG_PRHWIDTH_GEN[0].ASYNC_RDREG_BYTE_GEN[0].ASYNC_RDREG_BIT
+  Data Path: JA<7> to Lcd_Controller/stNext_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IOBUF:IO->O           5   1.218   0.808  JA_7_IOBUF (N36)
-     LUT2:I0->O            1   0.704   0.595  BlazeDataIn<7>LogicTrst1 (BlazeDataIn<7>)
-     begin scope: 'blaze'
-     begin scope: 'xps_epc_0'
-     LUT2:I0->O            4   0.704   0.000  xps_epc_0/EPC_CORE_I/DATA_STEER_I/data_in<0>1 (xps_epc_0/EPC_CORE_I/DATA_STEER_I/data_in<0>)
-     FDRE:D                    0.308          xps_epc_0/EPC_CORE_I/DATA_STEER_I/DEV_DWIDTH_MATCH_GEN.SOME_DEV_ASYNC_GEN.ASYNC_RDREG_PLBWIDTH_GEN[0].ASYNC_RDREG_PRHWIDTH_GEN[0].ASYNC_RDREG_BYTE_GEN[0].ASYNC_RDREG_BIT
+     IOBUF:IO->O           6   1.218   0.844  JA_7_IOBUF (N30)
+     LUT4:I0->O            1   0.704   0.420  Lcd_Controller/stNext_mux0000<8>_SW0 (N28)
+     FDS:S                     0.911          Lcd_Controller/stNext_0
     ----------------------------------------
-    Total                      4.337ns (2.934ns logic, 1.403ns route)
-                                       (67.7% logic, 32.3% route)
+    Total                      4.097ns (2.833ns logic, 1.264ns route)
+                                       (69.1% logic, 30.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'blaze/mdm_0/mdm_0/update1'
@@ -859,7 +800,7 @@ Offset:              4.085ns (Levels of Logic = 3)
 Timing constraint: Default OFFSET IN BEFORE for Clock 'blaze/xps_epc_0/PRH_Rd_n'
   Total number of paths / destination ports: 8 / 8
 -------------------------------------------------------------------------
-Offset:              2.159ns (Levels of Logic = 1)
+Offset:              2.195ns (Levels of Logic = 1)
   Source:            JA<7> (PAD)
   Destination:       Digit_15 (FF)
   Destination Clock: blaze/xps_epc_0/PRH_Rd_n rising
@@ -868,17 +809,36 @@ Offset:              2.159ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IOBUF:IO->O           5   1.218   0.633  JA_7_IOBUF (N36)
+     IOBUF:IO->O           6   1.218   0.669  JA_7_IOBUF (N30)
      FD:D                      0.308          Digit_15
     ----------------------------------------
-    Total                      2.159ns (1.526ns logic, 0.633ns route)
-                                       (70.7% logic, 29.3% route)
+    Total                      2.195ns (1.526ns logic, 0.669ns route)
+                                       (69.5% logic, 30.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Lcd_Controller/RDY'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              2.195ns (Levels of Logic = 1)
+  Source:            JA<7> (PAD)
+  Destination:       Led_7 (FF)
+  Destination Clock: Lcd_Controller/RDY rising
+
+  Data Path: JA<7> to Led_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IOBUF:IO->O           6   1.218   0.669  JA_7_IOBUF (N30)
+     FD:D                      0.308          Led_7
+    ----------------------------------------
+    Total                      2.195ns (1.526ns logic, 0.669ns route)
+                                       (69.5% logic, 30.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 28 / 20
+  Total number of paths / destination ports: 20 / 12
 -------------------------------------------------------------------------
-Offset:              5.065ns (Levels of Logic = 2)
+Offset:              4.965ns (Levels of Logic = 2)
   Source:            blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Wr_n (FF)
   Destination:       JA<7> (PAD)
   Source Clock:      clk rising
@@ -887,13 +847,13 @@ Offset:              5.065ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              23   0.591   1.202  xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Wr_n (PRH_Wr_n)
+     FD:C->Q              20   0.591   1.102  xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Wr_n (PRH_Wr_n)
      end scope: 'xps_epc_0'
      end scope: 'blaze'
      IOBUF:T->IO               3.272          JA_7_IOBUF (JA<7>)
     ----------------------------------------
-    Total                      5.065ns (3.863ns logic, 1.202ns route)
-                                       (76.3% logic, 23.7% route)
+    Total                      4.965ns (3.863ns logic, 1.102ns route)
+                                       (77.8% logic, 22.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'SevenSegment/divide_Clk_50Mhz_To_240hz/OutClk'
@@ -914,6 +874,25 @@ Offset:              5.870ns (Levels of Logic = 2)
     ----------------------------------------
     Total                      5.870ns (4.567ns logic, 1.303ns route)
                                        (77.8% logic, 22.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Lcd_Controller/RDY'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              4.283ns (Levels of Logic = 1)
+  Source:            Led_7 (FF)
+  Destination:       Led<7> (PAD)
+  Source Clock:      Lcd_Controller/RDY rising
+
+  Data Path: Led_7 to Led<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.591   0.420  Led_7 (Led_7)
+     OBUF:I->O                 3.272          Led_7_OBUF (Led<7>)
+    ----------------------------------------
+    Total                      4.283ns (3.863ns logic, 0.420ns route)
+                                       (90.2% logic, 9.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'blaze/mdm_0/mdm_0/drck_i'
@@ -982,12 +961,12 @@ Offset:              8.921ns (Levels of Logic = 10)
 =========================================================================
 
 
-Total REAL time to Xst completion: 33.00 secs
-Total CPU time to Xst completion: 32.37 secs
+Total REAL time to Xst completion: 20.00 secs
+Total CPU time to Xst completion: 19.82 secs
  
 --> 
 
-Total memory usage is 406104 kilobytes
+Total memory usage is 344924 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    2 (   0 filtered)

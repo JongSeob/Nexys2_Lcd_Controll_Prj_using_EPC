@@ -1,10 +1,10 @@
 Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\synthesis\xst_temp_dir\
+--> Parameter TMPDIR set to E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\synthesis\xst_temp_dir\
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> 
 TABLE OF CONTENTS
@@ -30,7 +30,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "blaze_dip_switches_wrapper_xst.prj"
-Verilog Include Directory          : {"D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc3s1200efg320-4
@@ -253,7 +253,7 @@ Entity <GPIO_Core> (Architecture <IMP>) compiled.
 Compiling vhdl file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/xps_gpio_v2_00_a/hdl/vhdl/xps_gpio.vhd" in Library xps_gpio_v2_00_a.
 Entity <xps_gpio> compiled.
 Entity <xps_gpio> (Architecture <imp>) compiled.
-Compiling vhdl file "D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_dip_switches_wrapper.vhd" in Library work.
+Compiling vhdl file "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_dip_switches_wrapper.vhd" in Library work.
 Entity <blaze_dip_switches_wrapper> compiled.
 Entity <blaze_dip_switches_wrapper> (Architecture <STRUCTURE>) compiled.
 
@@ -731,7 +731,7 @@ Unit <xps_gpio> synthesized.
 
 
 Synthesizing Unit <blaze_dip_switches_wrapper>.
-    Related source file is "D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_dip_switches_wrapper.vhd".
+    Related source file is "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_dip_switches_wrapper.vhd".
 Unit <blaze_dip_switches_wrapper> synthesized.
 
 
@@ -1074,12 +1074,12 @@ Offset:              0.591ns (Levels of Logic = 0)
 =========================================================================
 
 
-Total REAL time to Xst completion: 12.00 secs
-Total CPU time to Xst completion: 12.50 secs
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 13.67 secs
  
 --> 
 
-Total memory usage is 532084 kilobytes
+Total memory usage is 532444 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  171 (   0 filtered)

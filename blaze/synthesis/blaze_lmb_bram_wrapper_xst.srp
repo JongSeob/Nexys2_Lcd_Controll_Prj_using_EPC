@@ -1,10 +1,10 @@
 Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\synthesis\xst_temp_dir\
+--> Parameter TMPDIR set to E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\synthesis\xst_temp_dir\
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> 
 TABLE OF CONTENTS
@@ -30,7 +30,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "blaze_lmb_bram_wrapper_xst.prj"
-Verilog Include Directory          : {"D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc3s1200efg320-4
@@ -57,7 +57,7 @@ Cores Search Directories           : {../implementation}
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling verilog file "D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\hdl\elaborate\lmb_bram_elaborate_v1_00_a/hdl/verilog/lmb_bram_elaborate.v" in library lmb_bram_elaborate_v1_00_a
+Compiling verilog file "E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\hdl\elaborate\lmb_bram_elaborate_v1_00_a/hdl/verilog/lmb_bram_elaborate.v" in library lmb_bram_elaborate_v1_00_a
 Module <lmb_bram_elaborate> compiled
 Compiling verilog file "../hdl/blaze_lmb_bram_wrapper.v" in library work
 Module <blaze_lmb_bram_wrapper> compiled
@@ -1238,7 +1238,7 @@ Module <lmb_bram_elaborate> is correct for synthesis.
 Performing bidirectional port resolution...
 
 Synthesizing Unit <lmb_bram_elaborate>.
-    Related source file is "D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\hdl\elaborate\lmb_bram_elaborate_v1_00_a/hdl/verilog/lmb_bram_elaborate.v".
+    Related source file is "E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\hdl\elaborate\lmb_bram_elaborate_v1_00_a/hdl/verilog/lmb_bram_elaborate.v".
 WARNING:Xst:647 - Input <BRAM_Addr_A<0:16>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <BRAM_Addr_A<30:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <BRAM_Addr_B<0:16>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -1447,12 +1447,12 @@ Offset:              2.800ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.54 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.20 secs
  
 --> 
 
-Total memory usage is 266868 kilobytes
+Total memory usage is 266788 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    4 (   0 filtered)

@@ -116,10 +116,6 @@ void	InitLcd(void) {
 	Printf("\n1. Function Set");
 	StatusCMD = 0x38; // Function Set(40us)= 0x20 + 0x10(DL=8bit) + 0x08(2 lines) +0x00(5*8 dots)
 
-	for(i=0; i<99; i++)
-		;
-
-
 	Printf("\n2. Display On");
 	StatusCMD = 0x0F; // Display On/Off Control(40us)= 0x08 + 0x04(Display On) + 0x02(Cursor On) + 0x01(Blink On)
 

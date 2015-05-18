@@ -59,8 +59,6 @@ module top #(
 	
 	reg [15:0] Digit = 16'hABCD;
 	
-	reg [5:0] count = 0;
-	
 	wire RDY;
 	
 	// Signals of External Peripheral Controller. EPC가 MicroBlaze의 출력을 받아 외부 장치에 전달.
@@ -89,32 +87,28 @@ module top #(
 	wire LCD_RDY;	// LCD의 RDY 신호.
 		
 	// ************* EPC 데이터, 주소가 잘 전달 되는지 확인하기 위한 코드 **************** //
-	always @(posedge clk) begin
-		Led[5:3] <= count[5:3];
-		Led[2:0] <= count[2:0];
-			
-		if((EPC_nCS == 0) && ((Addr == LCD_DATA_ADDR) || (Addr == LCD_CONTROL_ADDR)) )
-		begin
-			Led[7:6] <= {RS, RW};
-					
-			/*
-			if(Addr == LCD_DATA_ADDR)
-				Led[5:0] <= 6'b111000;//LCD_DATA_ADDR+3;
-			else if(Addr == LCD_CONTROL_ADDR)
-				Led[5:0] <= 6'b000111;//LCD_CONTROL_ADDR+3;
-			*/
-		end
-			
+//	always @(posedge clk) begin
+//		Led[5:3] <= count[5:3];
+//		Led[2:0] <= count[2:0];
+//			
+//		if((EPC_nCS == 0) && ((Addr == LCD_DATA_ADDR) || (Addr == LCD_CONTROL_ADDR)) )
+//		begin
+//			Led[7:6] <= {RS, RW};
+//					
+//		end
+//			
+//	end
+	
+	always @(posedge LCD_RDY) begin
+		Led[7:0] <= JA[7:0];
 	end
 	
 	always @(posedge nRD) begin
 		Digit[15:8] <= JA;
-		count[5:3] <= count[5:3] + 1;
 	end
 	
 	always @(posedge nWR) begin
 		Digit[7:0] 	<= BlazeDataOut;
-		count[2:0]  <= count[2:0] + 1;
 	end
 	
 	

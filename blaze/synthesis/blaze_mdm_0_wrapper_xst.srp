@@ -1,10 +1,10 @@
 Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\synthesis\xst_temp_dir\
+--> Parameter TMPDIR set to E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\synthesis\xst_temp_dir\
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.19 secs
  
 --> 
 TABLE OF CONTENTS
@@ -30,7 +30,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "blaze_mdm_0_wrapper_xst.prj"
-Verilog Include Directory          : {"D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc3s1200efg320-4
@@ -256,7 +256,7 @@ Entity <MDM_Core> (Architecture <IMP>) compiled.
 Compiling vhdl file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/mdm_v2_10_a/hdl/vhdl/mdm.vhd" in Library mdm_v2_10_a.
 Entity <MDM> compiled.
 Entity <MDM> (Architecture <IMP>) compiled.
-Compiling vhdl file "D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_mdm_0_wrapper.vhd" in Library work.
+Compiling vhdl file "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_mdm_0_wrapper.vhd" in Library work.
 Entity <blaze_mdm_0_wrapper> compiled.
 Entity <blaze_mdm_0_wrapper> (Architecture <STRUCTURE>) compiled.
 
@@ -323,7 +323,7 @@ Analyzing hierarchy for entity <SRL_FIFO> in library <proc_common_v3_00_a> (arch
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <blaze_mdm_0_wrapper> in library <work> (Architecture <STRUCTURE>).
-WARNING:Xst:752 - "D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_mdm_0_wrapper.vhd" line 740: Unconnected input port 'Config_Reset' of component 'mdm' is tied to default value.
+WARNING:Xst:752 - "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_mdm_0_wrapper.vhd" line 740: Unconnected input port 'Config_Reset' of component 'mdm' is tied to default value.
 Entity <blaze_mdm_0_wrapper> analyzed. Unit <blaze_mdm_0_wrapper> generated.
 
 Analyzing generic Entity <mdm> in library <mdm_v2_10_a> (Architecture <IMP>).
@@ -583,7 +583,7 @@ Unit <mdm> synthesized.
 
 
 Synthesizing Unit <blaze_mdm_0_wrapper>.
-    Related source file is "D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_mdm_0_wrapper.vhd".
+    Related source file is "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_mdm_0_wrapper.vhd".
 Unit <blaze_mdm_0_wrapper> synthesized.
 
 
@@ -808,12 +808,12 @@ Slack:                  188.588ns
 =========================================================================
 
 
-Total REAL time to Xst completion: 12.00 secs
-Total CPU time to Xst completion: 11.22 secs
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 13.08 secs
  
 --> 
 
-Total memory usage is 412084 kilobytes
+Total memory usage is 412316 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   98 (   0 filtered)

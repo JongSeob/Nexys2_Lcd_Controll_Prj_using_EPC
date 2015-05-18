@@ -10,4 +10,4 @@ vhdl lmb_bram_if_cntlr_v3_10_c "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLi
 vhdl lmb_bram_if_cntlr_v3_10_c "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_bram_if_cntlr_v3_10_c\hdl\vhdl\axi_interface.vhd"
 vhdl lmb_bram_if_cntlr_v3_10_c "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_bram_if_cntlr_v3_10_c\hdl\vhdl\lmb_mux.vhd"
 vhdl lmb_bram_if_cntlr_v3_10_c "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_bram_if_cntlr_v3_10_c\hdl\vhdl\lmb_bram_if_cntlr.vhd"
-vhdl work "D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\hdl\blaze_ilmb_cntlr_wrapper.vhd"
+vhdl work "E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\hdl\blaze_ilmb_cntlr_wrapper.vhd"

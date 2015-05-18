@@ -1,10 +1,10 @@
 Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\synthesis\xst_temp_dir\
+--> Parameter TMPDIR set to E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\synthesis\xst_temp_dir\
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> 
 TABLE OF CONTENTS
@@ -30,7 +30,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "blaze_dlmb_cntlr_wrapper_xst.prj"
-Verilog Include Directory          : {"D:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc3s1200efg320-4
@@ -93,7 +93,7 @@ Package body <lmb_bram_if_funcs> compiled.
 Compiling vhdl file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_v3_10_c/hdl/vhdl/lmb_bram_if_cntlr.vhd" in Library lmb_bram_if_cntlr_v3_10_c.
 Entity <lmb_bram_if_cntlr> compiled.
 Entity <lmb_bram_if_cntlr> (Architecture <imp>) compiled.
-Compiling vhdl file "D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_dlmb_cntlr_wrapper.vhd" in Library work.
+Compiling vhdl file "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_dlmb_cntlr_wrapper.vhd" in Library work.
 Entity <blaze_dlmb_cntlr_wrapper> compiled.
 Entity <blaze_dlmb_cntlr_wrapper> (Architecture <STRUCTURE>) compiled.
 
@@ -296,7 +296,7 @@ Unit <lmb_bram_if_cntlr> synthesized.
 
 
 Synthesizing Unit <blaze_dlmb_cntlr_wrapper>.
-    Related source file is "D:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_dlmb_cntlr_wrapper.vhd".
+    Related source file is "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_dlmb_cntlr_wrapper.vhd".
 Unit <blaze_dlmb_cntlr_wrapper> synthesized.
 
 
@@ -489,12 +489,12 @@ Delay:               0.879ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.90 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.79 secs
  
 --> 
 
-Total memory usage is 274484 kilobytes
+Total memory usage is 274972 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   57 (   0 filtered)

@@ -28,8 +28,7 @@ module Lcd_Controller#(
 				 stElevenDelay	  = 4'b0101,
 				 stClearEn		  = 4'b0110,
 				 stCheckBusy	  = 4'b0111,
-				 stWaitBusyClear = 4'b1000,
-				 stOneDelay		  = 4'b1001
+				 stWaitBusyClear = 4'b1000
 )
 (
 	input clk,
@@ -72,30 +71,33 @@ module Lcd_Controller#(
 											stNext <= stWrite;
 											RDY <= 0;
 										end
+											
 										if(nCS == 0 && nRD == 0)	// LCD 읽기동작
 										begin
-											stNext <= stRead;
 											RDY <= 0;
+											stNext <= stRead;
 										end
+											
 								  end
 								  
 			stRead			 : begin
-										RW 	 <= 1;
+										RW  <= 1;
 										
 										if(i_RS == 1)
 											stNext <= stTwoDelay;
 										else begin	// RS가 0일때의 Read 동작은 실행시간이 0이므로 바로 EN 신호를 1로 올린다.
-											EN <= 1;
+											EN   <= 1;
+											RDY  <= 1;
 											stNext <= stIdle;
 										end
 								  end
 								  
 			stWrite 			 : begin 
-										RW <= 0; 
+										RW <= 0;
 										stNext <= stTwoDelay; 
 								  end 
 								  
-			stTwoDelay 		 : if(count == 2) 
+			stTwoDelay 		 : if(count == 1) 
 										stNext <= stSetEn;
 										
 			stSetEn 			 : begin 
@@ -103,7 +105,7 @@ module Lcd_Controller#(
 										stNext <= stElevenDelay; 	  		 
 								  end
 								  
-			stElevenDelay 	 : if(count == 11) 
+			stElevenDelay 	 : if(count == 10) 
 										stNext <= stClearEn;
 										
 			stClearEn 		 : begin 
@@ -115,9 +117,8 @@ module Lcd_Controller#(
 										EN   <= 1;
 										o_RS <= 0;
 										RW   <= 1;
-										stNext <= stOneDelay;
+										stNext <= stWaitBusyClear;
 								  end
-			stOneDelay      : stNext <= stWaitBusyClear;
 								  
 			stWaitBusyClear : begin
 										if(busy == 1)
