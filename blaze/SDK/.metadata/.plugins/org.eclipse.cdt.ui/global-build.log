@@ -1,415 +1,13 @@
-15:49:43 **** Incremental Build of configuration Release for project app_prj ****
-make all 
-'Building file: ../src/src.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O2 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
-../src/src.c: In function 'PrintfLcd':
-../src/src.c:102:21: warning: comparison between pointer and integer [enabled by default]
-../src/src.c: In function 'InitLcd':
-../src/src.c:112:6: warning: unused variable 'i' [-Wunused-variable]
-../src/src.c: In function 'main':
-../src/src.c:129:7: warning: unused variable 'ch' [-Wunused-variable]
-'Finished building: ../src/src.c'
-' '
-'Building target: app_prj.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "app_prj.elf"  ./src/src.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: app_prj.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size app_prj.elf  |tee "app_prj.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-   1726	    268	   2084	   4078	    fee	app_prj.elf
-'Finished building: app_prj.elf.size'
-' '
-'Invoking: Xilinx ELF Check'
-elfcheck app_prj.elf -hw ../../blaze_hw_platform/system.xml -pe microblaze_0  |tee "app_prj.elf.elfcheck"
-elfcheck
-Xilinx EDK 14.7 Build EDK_P.20131013
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
-
-Command Line: elfcheck -hw ../../blaze_hw_platform/system.xml -pe microblaze_0
-app_prj.elf 
-
-ELF file	: app_prj.elf
-elfcheck passed.
-'Finished building: app_prj.elf.elfcheck'
-' '
-15:50:04 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-15:50:15 **** Auto Build of configuration Release for project app_prj ****
-make all 
-'Building file: ../src/src.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O2 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
-../src/src.c: In function 'PrintfLcd':
-../src/src.c:102:21: warning: comparison between pointer and integer [enabled by default]
-../src/src.c: In function 'InitLcd':
-../src/src.c:112:6: warning: unused variable 'i' [-Wunused-variable]
-../src/src.c: In function 'main':
-../src/src.c:129:7: warning: unused variable 'ch' [-Wunused-variable]
-'Finished building: ../src/src.c'
-' '
-'Building target: app_prj.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "app_prj.elf"  ./src/src.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: app_prj.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size app_prj.elf  |tee "app_prj.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-   1742	    268	   2084	   4094	    ffe	app_prj.elf
-'Finished building: app_prj.elf.size'
-' '
-'Invoking: Xilinx ELF Check'
-elfcheck app_prj.elf -hw ../../blaze_hw_platform/system.xml -pe microblaze_0  |tee "app_prj.elf.elfcheck"
-elfcheck
-Xilinx EDK 14.7 Build EDK_P.20131013
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
-
-Command Line: elfcheck -hw ../../blaze_hw_platform/system.xml -pe microblaze_0
-app_prj.elf 
-
-ELF file	: app_prj.elf
-elfcheck passed.
-'Finished building: app_prj.elf.elfcheck'
-' '
-15:50:23 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-15:50:33 **** Auto Build of configuration Release for project app_prj ****
-make all 
-'Building file: ../src/src.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O2 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
-../src/src.c: In function 'PrintfLcd':
-../src/src.c:102:21: warning: comparison between pointer and integer [enabled by default]
-../src/src.c: In function 'InitLcd':
-../src/src.c:112:6: warning: unused variable 'i' [-Wunused-variable]
-'Finished building: ../src/src.c'
-' '
-'Building target: app_prj.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "app_prj.elf"  ./src/src.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: app_prj.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size app_prj.elf  |tee "app_prj.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-   2294	    268	   2084	   4646	   1226	app_prj.elf
-'Finished building: app_prj.elf.size'
-' '
-'Invoking: Xilinx ELF Check'
-elfcheck app_prj.elf -hw ../../blaze_hw_platform/system.xml -pe microblaze_0  |tee "app_prj.elf.elfcheck"
-elfcheck
-Xilinx EDK 14.7 Build EDK_P.20131013
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
-
-Command Line: elfcheck -hw ../../blaze_hw_platform/system.xml -pe microblaze_0
-app_prj.elf 
-
-ELF file	: app_prj.elf
-elfcheck passed.
-'Finished building: app_prj.elf.elfcheck'
-' '
-15:50:40 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-15:51:01 **** Auto Build of configuration Release for project app_prj ****
-make all 
-'Building file: ../src/src.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O2 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
-../src/src.c: In function 'PrintfLcd':
-../src/src.c:102:21: warning: comparison between pointer and integer [enabled by default]
-../src/src.c: In function 'InitLcd':
-../src/src.c:112:6: warning: unused variable 'i' [-Wunused-variable]
-../src/src.c: In function 'main':
-../src/src.c:142:12: warning: 'ch' is used uninitialized in this function [-Wuninitialized]
-'Finished building: ../src/src.c'
-' '
-'Building target: app_prj.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "app_prj.elf"  ./src/src.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: app_prj.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size app_prj.elf  |tee "app_prj.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-   2286	    268	   2084	   4638	   121e	app_prj.elf
-'Finished building: app_prj.elf.size'
-' '
-'Invoking: Xilinx ELF Check'
-elfcheck app_prj.elf -hw ../../blaze_hw_platform/system.xml -pe microblaze_0  |tee "app_prj.elf.elfcheck"
-elfcheck
-Xilinx EDK 14.7 Build EDK_P.20131013
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
-
-Command Line: elfcheck -hw ../../blaze_hw_platform/system.xml -pe microblaze_0
-app_prj.elf 
-
-ELF file	: app_prj.elf
-elfcheck passed.
-'Finished building: app_prj.elf.elfcheck'
-' '
-15:51:08 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-15:51:22 **** Auto Build of configuration Release for project app_prj ****
-make all 
-'Building file: ../src/src.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O2 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
-../src/src.c: In function 'PrintfLcd':
-../src/src.c:102:21: warning: comparison between pointer and integer [enabled by default]
-../src/src.c: In function 'InitLcd':
-../src/src.c:112:6: warning: unused variable 'i' [-Wunused-variable]
-../src/src.c: In function 'main':
-../src/src.c:142:12: warning: 'ch' is used uninitialized in this function [-Wuninitialized]
-'Finished building: ../src/src.c'
-' '
-'Building target: app_prj.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "app_prj.elf"  ./src/src.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: app_prj.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size app_prj.elf  |tee "app_prj.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-   2294	    268	   2084	   4646	   1226	app_prj.elf
-'Finished building: app_prj.elf.size'
-' '
-'Invoking: Xilinx ELF Check'
-elfcheck app_prj.elf -hw ../../blaze_hw_platform/system.xml -pe microblaze_0  |tee "app_prj.elf.elfcheck"
-elfcheck
-Xilinx EDK 14.7 Build EDK_P.20131013
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
-
-Command Line: elfcheck -hw ../../blaze_hw_platform/system.xml -pe microblaze_0
-app_prj.elf 
-
-ELF file	: app_prj.elf
-elfcheck passed.
-'Finished building: app_prj.elf.elfcheck'
-' '
-15:51:29 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-15:51:58 **** Auto Build of configuration Release for project app_prj ****
-make all 
-'Building file: ../src/src.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O2 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
-../src/src.c: In function 'PrintfLcd':
-../src/src.c:102:21: warning: comparison between pointer and integer [enabled by default]
-../src/src.c: In function 'InitLcd':
-../src/src.c:112:6: warning: unused variable 'i' [-Wunused-variable]
-'Finished building: ../src/src.c'
-' '
-'Building target: app_prj.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "app_prj.elf"  ./src/src.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: app_prj.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size app_prj.elf  |tee "app_prj.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-   2294	    268	   2084	   4646	   1226	app_prj.elf
-'Finished building: app_prj.elf.size'
-' '
-'Invoking: Xilinx ELF Check'
-elfcheck app_prj.elf -hw ../../blaze_hw_platform/system.xml -pe microblaze_0  |tee "app_prj.elf.elfcheck"
-elfcheck
-Xilinx EDK 14.7 Build EDK_P.20131013
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
-
-Command Line: elfcheck -hw ../../blaze_hw_platform/system.xml -pe microblaze_0
-app_prj.elf 
-
-ELF file	: app_prj.elf
-elfcheck passed.
-'Finished building: app_prj.elf.elfcheck'
-' '
-15:52:06 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-15:53:02 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-15:54:10 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-15:55:44 **** Clean-only build of configuration Release for project app_prj ****
-make clean 
-rm -rf  ./src/src.o  ./src/src.d  app_prj.elf.size  app_prj.elf.elfcheck  app_prj.elf
-' '
-15:55:45 **** Auto Build of configuration Release for project app_prj ****
-make all 
-'Building file: ../src/src.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O2 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
-../src/src.c: In function 'PrintfLcd':
-../src/src.c:102:21: warning: comparison between pointer and integer [enabled by default]
-../src/src.c: In function 'InitLcd':
-../src/src.c:112:6: warning: unused variable 'i' [-Wunused-variable]
-'Finished building: ../src/src.c'
-' '
-'Building target: app_prj.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "app_prj.elf"  ./src/src.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: app_prj.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size app_prj.elf  |tee "app_prj.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-   2302	    268	   2084	   4654	   122e	app_prj.elf
-'Finished building: app_prj.elf.size'
-' '
-'Invoking: Xilinx ELF Check'
-elfcheck app_prj.elf -hw ../../blaze_hw_platform/system.xml -pe microblaze_0  |tee "app_prj.elf.elfcheck"
-elfcheck
-Xilinx EDK 14.7 Build EDK_P.20131013
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
-
-Command Line: elfcheck -hw ../../blaze_hw_platform/system.xml -pe microblaze_0
-app_prj.elf 
-
-ELF file	: app_prj.elf
-elfcheck passed.
-'Finished building: app_prj.elf.elfcheck'
-' '
-15:55:58 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:04:09 **** Auto Build of configuration Release for project app_prj ****
-make all 
-'Invoking: Xilinx ELF Check'
-elfcheck app_prj.elf -hw ../../blaze_hw_platform/system.xml -pe microblaze_0  |tee "app_prj.elf.elfcheck"
-elfcheck
-Xilinx EDK 14.7 Build EDK_P.20131013
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
-
-Command Line: elfcheck -hw ../../blaze_hw_platform/system.xml -pe microblaze_0
-app_prj.elf 
-
-ELF file	: app_prj.elf
-elfcheck passed.
-'Finished building: app_prj.elf.elfcheck'
-' '
-16:04:22 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:04:22 **** Auto Build of configuration Release for project app_prj ****
+21:29:08 **** Incremental Build of configuration Release for project app_prj ****
 make all 
 make: `all'를 위해 할 일이 없습니다
-16:07:14 **** Auto Build of configuration Release for project app_prj ****
+21:29:26 **** Auto Build of configuration Release for project app_prj ****
 make all 
 'Building file: ../src/src.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O2 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
 ../src/src.c: In function 'PrintfLcd':
-../src/src.c:102:21: warning: comparison between pointer and integer [enabled by default]
-../src/src.c: In function 'InitLcd':
-../src/src.c:112:6: warning: unused variable 'i' [-Wunused-variable]
-'Finished building: ../src/src.c'
-' '
-'Building target: app_prj.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "app_prj.elf"  ./src/src.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: app_prj.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size app_prj.elf  |tee "app_prj.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-   2294	    268	   2084	   4646	   1226	app_prj.elf
-'Finished building: app_prj.elf.size'
-' '
-'Invoking: Xilinx ELF Check'
-elfcheck app_prj.elf -hw ../../blaze_hw_platform/system.xml -pe microblaze_0  |tee "app_prj.elf.elfcheck"
-elfcheck
-Xilinx EDK 14.7 Build EDK_P.20131013
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
-
-Command Line: elfcheck -hw ../../blaze_hw_platform/system.xml -pe microblaze_0
-app_prj.elf 
-
-ELF file	: app_prj.elf
-elfcheck passed.
-'Finished building: app_prj.elf.elfcheck'
-' '
-16:07:22 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:07:46 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:08:10 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:08:36 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:08:51 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:09:04 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:09:14 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:12:54 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:13:08 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:13:17 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:13:34 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:13:44 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:46:19 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:46:36 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:47:17 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:49:05 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-16:49:23 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-17:31:57 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-17:32:05 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-17:32:36 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-17:32:46 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-17:33:29 **** Auto Build of configuration Release for project app_prj ****
-make all 
-'Building file: ../src/src.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O2 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
-../src/src.c: In function 'PrintfLcd':
-../src/src.c:102:21: warning: comparison between pointer and integer [enabled by default]
-../src/src.c: In function 'InitLcd':
-../src/src.c:112:6: warning: unused variable 'i' [-Wunused-variable]
+../src/src.c:147:21: warning: comparison between pointer and integer [enabled by default]
 'Finished building: ../src/src.c'
 ' '
 'Building target: app_prj.elf'
@@ -436,30 +34,13 @@ ELF file	: app_prj.elf
 elfcheck passed.
 'Finished building: app_prj.elf.elfcheck'
 ' '
-17:33:44 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-17:46:44 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-17:46:53 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-17:47:12 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-17:47:42 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-17:47:48 **** Auto Build of configuration Release for project app_prj ****
+21:29:44 **** Auto Build of configuration Release for project app_prj ****
 make all 
 'Building file: ../src/src.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O2 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
 ../src/src.c: In function 'PrintfLcd':
-../src/src.c:102:21: warning: comparison between pointer and integer [enabled by default]
-../src/src.c: In function 'InitLcd':
-../src/src.c:112:6: warning: unused variable 'i' [-Wunused-variable]
+../src/src.c:147:21: warning: comparison between pointer and integer [enabled by default]
 'Finished building: ../src/src.c'
 ' '
 'Building target: app_prj.elf'
@@ -470,7 +51,7 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -m
 'Invoking: MicroBlaze Print Size'
 mb-size app_prj.elf  |tee "app_prj.elf.size"
    text	   data	    bss	    dec	    hex	filename
-   2294	    268	   2084	   4646	   1226	app_prj.elf
+   2458	    268	   2090	   4816	   12d0	app_prj.elf
 'Finished building: app_prj.elf.size'
 ' '
 'Invoking: Xilinx ELF Check'
@@ -486,21 +67,78 @@ ELF file	: app_prj.elf
 elfcheck passed.
 'Finished building: app_prj.elf.elfcheck'
 ' '
-17:47:56 **** Auto Build of project standalone_bsp_0 ****
+21:30:12 **** Auto Build of project standalone_bsp_0 ****
 make -k all 
 'Finished building libraries'
-17:48:23 **** Auto Build of project standalone_bsp_0 ****
+21:36:23 **** Auto Build of configuration Release for project app_prj ****
+make all 
+'Building file: ../src/src.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O2 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
+../src/src.c: In function 'PrintfLcd':
+../src/src.c:147:21: warning: comparison between pointer and integer [enabled by default]
+'Finished building: ../src/src.c'
+' '
+'Building target: app_prj.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "app_prj.elf"  ./src/src.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: app_prj.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size app_prj.elf  |tee "app_prj.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   2674	    268	   2090	   5032	   13a8	app_prj.elf
+'Finished building: app_prj.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck app_prj.elf -hw ../../blaze_hw_platform/system.xml -pe microblaze_0  |tee "app_prj.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../blaze_hw_platform/system.xml -pe microblaze_0
+app_prj.elf 
+
+ELF file	: app_prj.elf
+elfcheck passed.
+'Finished building: app_prj.elf.elfcheck'
+' '
+21:36:31 **** Auto Build of project standalone_bsp_0 ****
 make -k all 
 'Finished building libraries'
-17:48:43 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-17:49:04 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-17:49:16 **** Auto Build of project standalone_bsp_0 ****
-make -k all 
-'Finished building libraries'
-17:49:44 **** Auto Build of project standalone_bsp_0 ****
+21:38:11 **** Auto Build of configuration Release for project app_prj ****
+make all 
+'Building file: ../src/src.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O2 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
+../src/src.c: In function 'PrintfLcd':
+../src/src.c:147:21: warning: comparison between pointer and integer [enabled by default]
+'Finished building: ../src/src.c'
+' '
+'Building target: app_prj.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "app_prj.elf"  ./src/src.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: app_prj.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size app_prj.elf  |tee "app_prj.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   2682	    268	   2090	   5040	   13b0	app_prj.elf
+'Finished building: app_prj.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck app_prj.elf -hw ../../blaze_hw_platform/system.xml -pe microblaze_0  |tee "app_prj.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../blaze_hw_platform/system.xml -pe microblaze_0
+app_prj.elf 
+
+ELF file	: app_prj.elf
+elfcheck passed.
+'Finished building: app_prj.elf.elfcheck'
+' '
+21:38:19 **** Auto Build of project standalone_bsp_0 ****
 make -k all 
 'Finished building libraries'

@@ -89,7 +89,6 @@ module top #(
 	wire EN;			// EN이  1 -> 0 으로 떨어졌을 때 RS,RW,Data 값을 확인해서 한가지 동작을 한다.
 	
 	wire LCD_nCS;  // LCD로 전달할 Chip Select 신호.
-	wire LCD_RS;   // LCD로부터 받은 RS신호(Busy 플래그 확인할 때 사용)
 	wire LCD_RDY;	// LCD의 RDY 신호.
 		
 	always @(negedge EN) begin
@@ -107,7 +106,7 @@ module top #(
 	
 	assign LCD_nCS = ( (EPC_nCS == 0) && ((Addr == LCD_DATA_ADDR) || (Addr == LCD_CONTROL_ADDR)) ) ? 0 : 1;
 
-	assign JB[4] = LCD_RS;
+	assign JB[4] = RS;
 	assign JB[5] = RW;
 	assign JB[6] = EN;
 	
@@ -140,9 +139,7 @@ module top #(
 		 .nCS			(LCD_nCS), 
 		 .nWR			(nWR), 
 		 .nRD			(nRD), 
-		 .busy		(JA[7]),
-		 .i_RS		(RS), 
-		 .o_RS		(LCD_RS),
+		 .RS			(RS), 
 		 .RW			(RW), 
 		 .EN			(EN),
 		 .RDY			(LCD_RDY)

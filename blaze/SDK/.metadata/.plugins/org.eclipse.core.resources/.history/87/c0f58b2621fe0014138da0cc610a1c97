@@ -19,6 +19,7 @@
 #define DataLCD		(*((volatile unsigned char *)(BASEADDRESS_EPC + 0x20))) // 1000_00
 #define StatusCMD	(*((volatile unsigned char *)(BASEADDRESS_EPC + 0x24))) // 1001_00
 
+#define BUSY 0x80
 #define NULL 0
 
 #include <stdio.h>
@@ -97,14 +98,23 @@ void delay(unsigned int count)
 
  // ****************** LCD Functions *************************** //
 
-void	PrintfLcd(char *String) {
+void PutChLcd(unsigned ch)
+{
+	unsigned char Lcd_Stat;
+
+	do{
+		Lcd_Stat = StatusCMD;
+	}while(Lcd_Stat & BUSY);
+}
+
+void PrintfLcd(const char *String) {
 	int	i;
 	for(i=0; String[i] != NULL; i++)
 	{
-		DataLCD = String[i];
+		PutChLcd(String[i]);
 
 		if (String[i] == '\n')
-			DataLCD = '\r';
+			PutChLcd('r');
 	}
 }
 
@@ -130,14 +140,14 @@ int main()
 
 	InitLcd();
 
-	DataLCD = 'a';
-	DataLCD = 'b';
-	DataLCD = 'c';
+	//PrintfLcd("abcdefg");
 
-	ch = DataLCD;
-	ch = StatusCMD;
-
-	Print8bits(ch);
-
+	while(1)
+	{
+		ch = GetCh();
+		DataLCD = ch;
+		Print8bits(ch);
+	}
+	//Å×½ºÆ®
 	return 0;
 }

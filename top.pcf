@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue May 19 15:14:48 2015
+// Written by: Map P.20131013 on Tue May 19 20:58:35 2015
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -55,17 +55,15 @@ PIN
         = BEL
         "blaze/clock_generator_0/clock_generator_0/DCM0_INST/Using_Virtex.DCM_INST"
         PINNAME CLKIN;
-TIMEGRP sys_clk_pin = BEL "Lcd_Controller/stCur_2" BEL
-        "Lcd_Controller/stCur_0" BEL "Lcd_Controller/stCur_1" BEL
-        "Lcd_Controller/stCur_3" BEL "Lcd_Controller/stCur_4" BEL
-        "Lcd_Controller/stCur_5" BEL "Lcd_Controller/stCur_6" BEL
-        "Lcd_Controller/stCur_7" BEL "Lcd_Controller/stCur_8" BEL
-        "Lcd_Controller/count_5" BEL "Lcd_Controller/count_4" BEL
-        "Lcd_Controller/count_3" BEL "Lcd_Controller/count_2" BEL
-        "Lcd_Controller/count_1" BEL "Lcd_Controller/count_0" BEL
+TIMEGRP sys_clk_pin = BEL "Lcd_Controller/count_5" BEL
+        "Lcd_Controller/count_4" BEL "Lcd_Controller/count_3" BEL
+        "Lcd_Controller/count_2" BEL "Lcd_Controller/count_1" BEL
+        "Lcd_Controller/count_0" BEL "Lcd_Controller/stCur_0" BEL
+        "Lcd_Controller/stCur_1" BEL "Lcd_Controller/stCur_2" BEL
+        "Lcd_Controller/stCur_3" BEL "Lcd_Controller/stCur_6" BEL
+        "Lcd_Controller/stCur_4" BEL "Lcd_Controller/stCur_5" BEL
         "Lcd_Controller/RDY" BEL "Lcd_Controller/stNext_6" BEL
-        "Lcd_Controller/stNext_4" BEL "Lcd_Controller/stNext_2" BEL
-        "Lcd_Controller/stNext_1" BEL "Lcd_Controller/o_RS" BEL
+        "Lcd_Controller/stNext_2" BEL "Lcd_Controller/stNext_1" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_19" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_18" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_17" BEL
@@ -87,10 +85,9 @@ TIMEGRP sys_clk_pin = BEL "Lcd_Controller/stCur_2" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_1" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_0" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/OutClk" BEL
-        "Lcd_Controller/EN" BEL "Lcd_Controller/RW" BEL
-        "Lcd_Controller/stNext_8" BEL "Lcd_Controller/stNext_7" BEL
-        "Lcd_Controller/stNext_5" BEL "Lcd_Controller/stNext_3" BEL
-        "Lcd_Controller/stNext_0" BEL
+        "Lcd_Controller/EN" BEL "Lcd_Controller/stNext_5" BEL
+        "Lcd_Controller/stNext_4" BEL "Lcd_Controller/stNext_3" BEL
+        "Lcd_Controller/stNext_0" BEL "Lcd_Controller/RW" BEL
         "blaze/clock_generator_0/clock_generator_0/DCM0_INST/rsti" BEL
         "blaze/clock_generator_0/clock_generator_0/DCM0_INST/rst_delay_0" BEL
         "blaze/clock_generator_0/clock_generator_0/DCM0_INST/rst_delay_1" BEL
@@ -2728,9 +2725,11 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd15"
         BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd10"
+        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd14"
         BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd12"
+        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd13"
+        BEL
+        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd10"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd9"
         BEL
@@ -2742,11 +2741,13 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Twr_non_muxed_recovery_load_ce"
         BEL
+        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Tdev_valid_load_ce"
+        BEL
+        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Tdev_rdy_load_ce"
+        BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Tads_load_ce"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Trd_non_muxed_recovery_load_ce"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Asynch_en"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Asynch_chip_select_0"
         BEL
@@ -2774,55 +2775,19 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd17"
         BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd14"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd13"
+        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd12"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Asynch_Wr"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Asynch_Rd"
         BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Tdev_valid_load_ce"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Tdev_rdy_load_ce"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[16].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[15].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[14].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[13].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[12].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[11].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[10].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[9].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[8].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[7].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[6].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[5].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[4].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[3].FF_RST0_GEN.FDRE_i1"
+        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Asynch_en"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[2].FF_RST0_GEN.FDRE_i1"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[1].FF_RST0_GEN.FDRE_i1"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[0].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR3/PERBIT_GEN[3].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR3/PERBIT_GEN[2].FF_RST0_GEN.FDRE_i1"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR3/PERBIT_GEN[1].FF_RST0_GEN.FDRE_i1"
         BEL
@@ -5597,9 +5562,11 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd15"
         BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd10"
+        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd14"
         BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd12"
+        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd13"
+        BEL
+        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd10"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd9"
         BEL
@@ -5611,11 +5578,13 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Twr_non_muxed_recovery_load_ce"
         BEL
+        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Tdev_valid_load_ce"
+        BEL
+        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Tdev_rdy_load_ce"
+        BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Tads_load_ce"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Trd_non_muxed_recovery_load_ce"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Asynch_en"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Asynch_chip_select_0"
         BEL
@@ -5643,55 +5612,19 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd17"
         BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd14"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd13"
+        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd12"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Asynch_Wr"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Asynch_Rd"
         BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Tdev_valid_load_ce"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Tdev_rdy_load_ce"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[16].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[15].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[14].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[13].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[12].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[11].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[10].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[9].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[8].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[7].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[6].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[5].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[4].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[3].FF_RST0_GEN.FDRE_i1"
+        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Asynch_en"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[2].FF_RST0_GEN.FDRE_i1"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[1].FF_RST0_GEN.FDRE_i1"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[0].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR3/PERBIT_GEN[3].FF_RST0_GEN.FDRE_i1"
-        BEL
-        "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR3/PERBIT_GEN[2].FF_RST0_GEN.FDRE_i1"
         BEL
         "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR3/PERBIT_GEN[1].FF_RST0_GEN.FDRE_i1"
         BEL

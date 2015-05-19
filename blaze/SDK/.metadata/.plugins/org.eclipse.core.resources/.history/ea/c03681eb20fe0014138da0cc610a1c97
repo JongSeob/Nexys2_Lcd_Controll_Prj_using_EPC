@@ -130,13 +130,14 @@ int main()
 
 	InitLcd();
 
-	DataLCD = 'a';
-	DataLCD = 'b';
-	DataLCD = 'c';
+	//PrintfLcd("abcdefg");
 
-	ch = DataLCD;
-
-	Print8bits(ch);
-
+	while(1)
+	{
+		ch = GetCh();
+		DataLCD = ch;
+		Print8bits(ch);
+	}
+	//Å×½ºÆ®
 	return 0;
 }

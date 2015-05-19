@@ -19,6 +19,7 @@
 #define DataLCD		(*((volatile unsigned char *)(BASEADDRESS_EPC + 0x20))) // 1000_00
 #define StatusCMD	(*((volatile unsigned char *)(BASEADDRESS_EPC + 0x24))) // 1001_00
 
+#define BUSY 0x80
 #define NULL 0
 
 #include <stdio.h>
@@ -97,31 +98,62 @@ void delay(unsigned int count)
 
  // ****************** LCD Functions *************************** //
 
-void	PrintfLcd(char *String) {
+unsigned char	CheckBusy(void)
+{
+	unsigned char	iBusyStatus;
+
+	iBusyStatus = StatusCMD;
+
+	return(iBusyStatus & 0x80);		// bit7 =1 if busy
+}
+
+void	SendCmdToLcd(unsigned char cCode)
+{
+	while (CheckBusy() == BUSY);		// wait until busy clear
+
+	StatusCMD = cCode;
+}
+
+
+void	SendCharToLcd(unsigned char cChar)
+{
+	while (CheckBusy() == BUSY);		// wait until busy clear
+
+	DataLCD = cChar;
+}
+
+void	InitLcd(void)
+{
+	Printf("\nLCD Initialization : Data out mode");
+
+	Printf("\nLCD Initialization Stage 1 : Sending 0x38");
+	SendCmdToLcd(0x38);						// Function Set(40us)= 0x20 + 0x10(DL=8bit) + 0x08(2 lines) +0x00(5*8 dots)
+	Printf("\nLCD Initialization Stage 2 : Sending 0x0f");
+	SendCmdToLcd(0x0f);						// Display On/Off Control(40us)= 0x08 + 0x04(Display On) + 0x02(Cursor On) + 0x01(Blink On)
+	Printf("\nLCD Initialization Stage 3 : Sending 0x01");
+	SendCmdToLcd(0x01);						// Clear Display(1.64ms)
+}
+
+void	PutCharLcd(unsigned char cChar) // LCD print
+{
+	while (CheckBusy() == BUSY);
+
+	SendCharToLcd(cChar);
+}
+
+void	PrintfLcd(char *String)
+{
 	int	i;
 	for(i=0; String[i] != NULL; i++)
 	{
-		DataLCD = String[i];
-
-		if (String[i] == '\n')
-			DataLCD = '\r';
+		if ( String[i] == '\n' )
+		{
+				PutCharLcd('n');
+				PutCharLcd('r');
+		}
+		else
+			PutCharLcd(String[i]);
 	}
-}
-
-void	InitLcd(void) {
-	int i;
-
-	Printf("\nLCD Initialization Start");
-
-	Printf("\n1. Function Set");
-	StatusCMD = 0x38; // Function Set(40us)= 0x20 + 0x10(DL=8bit) + 0x08(2 lines) +0x00(5*8 dots)
-
-	Printf("\n2. Display On");
-	StatusCMD = 0x0F; // Display On/Off Control(40us)= 0x08 + 0x04(Display On) + 0x02(Cursor On) + 0x01(Blink On)
-
-	Printf("\n3. Clear display\n");
-	StatusCMD = 0x01; // Clear Display(1.64ms)
-
 }
 
 int main()
@@ -130,12 +162,12 @@ int main()
 
 	InitLcd();
 
-	PrintfLcd("abcdefg");
+	//PrintfLcd("abcdefg");
 
 	while(1)
 	{
 		ch = GetCh();
-		DataLCD = ch;
+		PutCharLcd(ch);
 		Print8bits(ch);
 	}
 
