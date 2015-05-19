@@ -83,17 +83,10 @@ module top #(
 	wire LCD_RS;   // LCD로부터 받은 RS신호(Busy 플래그 확인할 때 사용)
 	wire LCD_RDY;	// LCD의 RDY 신호.
 		
-	
-	always @(posedge LCD_RDY) begin
-		Led[7:0] <= JA[7:0];
-	end
-	
-	always @(posedge nRD) begin
+	always @(negedge EN) begin
+		Led[7:0] <= {RS, RW, Addr[5:0]};
 		Digit[15:8] <= JA;
-	end
-	
-	always @(posedge nWR) begin
-		Digit[7:0] 	<= BlazeDataOut;
+		Digit[7:0]  <= BlazeDataOut;
 	end
 	
 	assign	nBE = ~BE;
