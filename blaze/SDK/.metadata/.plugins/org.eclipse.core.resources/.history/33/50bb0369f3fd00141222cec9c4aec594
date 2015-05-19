@@ -128,11 +128,26 @@ int main()
 {
 	char ch;
 
+	//  StatusCMD = 0x38;
+	//	DataLCD = 'a';
+	//	ch = DataLCD;
+	//	ch = StatusCMD;
+
 	InitLcd();
 
 	DataLCD = 'a';
 
 	ch = DataLCD;
+
+	DataLCD = 'a';
+
+		ch = DataLCD;
+
+
+		DataLCD = 'a';
+
+			ch = DataLCD;
+
 
 	Print8bits(ch);
 

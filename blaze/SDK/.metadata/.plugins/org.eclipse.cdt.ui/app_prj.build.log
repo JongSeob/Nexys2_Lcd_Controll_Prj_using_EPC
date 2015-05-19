@@ -1,4 +1,4 @@
-20:17:42 **** Auto Build of configuration Release for project app_prj ****
+15:55:45 **** Auto Build of configuration Release for project app_prj ****
 make all 
 'Building file: ../src/src.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -17,7 +17,7 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -m
 'Invoking: MicroBlaze Print Size'
 mb-size app_prj.elf  |tee "app_prj.elf.size"
    text	   data	    bss	    dec	    hex	filename
-   2294	    268	   2084	   4646	   1226	app_prj.elf
+   2302	    268	   2084	   4654	   122e	app_prj.elf
 'Finished building: app_prj.elf.size'
 ' '
 'Invoking: Xilinx ELF Check'
@@ -34,5 +34,5 @@ elfcheck passed.
 'Finished building: app_prj.elf.elfcheck'
 ' '
 
-20:17:46 Build Finished (took 3s.494ms)
+15:55:50 Build Finished (took 5s.118ms)
 

@@ -131,18 +131,11 @@ int main()
 	InitLcd();
 
 	DataLCD = 'a';
+	DataLCD = 'b';
+	DataLCD = 'c';
 
 	ch = DataLCD;
-
-	DataLCD = 'a';
-
-		ch = DataLCD;
-
-
-		DataLCD = 'a';
-
-			ch = DataLCD;
-
+	ch = StatusCMD;
 
 	Print8bits(ch);
 

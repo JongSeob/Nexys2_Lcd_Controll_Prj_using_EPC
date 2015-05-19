@@ -1,14 +1,14 @@
-!SESSION 2015-05-18 19:50:37.987 -----------------------------------------------
+!SESSION 2015-05-19 15:34:48.278 -----------------------------------------------
 eclipse.buildId=Release 14.7 Build SDK_P.20131013
 java.version=1.6.0_21
 java.vendor=Sun Microsystems Inc.
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
 Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
-!ENTRY org.eclipse.cdt.core 1 0 2015-05-18 19:51:59.718
-!MESSAGE Indexed 'standalone_bsp_0' (0 sources, 0 headers) in 0.02 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-19 15:45:31.909
+!MESSAGE Indexed 'standalone_bsp_0' (0 sources, 0 headers) in 0.00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:02.730
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:34.093
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -35,7 +35,7 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:02.823
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:34.182
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -46,7 +46,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:02.823
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:34.183
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -57,7 +57,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:02.823
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:34.184
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -68,7 +68,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:02.823
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:34.185
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -79,7 +79,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:02.823
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:34.186
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -90,7 +90,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:04.681
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:35.235
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -101,7 +101,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:04.681
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:35.237
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -112,7 +112,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:04.696
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:35.243
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -123,7 +123,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:04.696
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:35.243
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -134,7 +134,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:04.696
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:35.255
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -145,7 +145,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:04.696
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:35.256
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -156,7 +156,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:04.696
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:35.256
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -167,7 +167,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:05.149
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:35.603
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -178,7 +178,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:05.149
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:35.604
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -189,7 +189,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:09.175
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:40.811
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -200,7 +200,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:09.299
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:40.884
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -211,7 +211,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:09.814
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:41.278
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -222,7 +222,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:11.265
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:41.639
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -233,7 +233,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:11.265
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:41.641
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -244,7 +244,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:11.265
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:41.643
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -255,7 +255,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:11.265
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:41.644
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -266,7 +266,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:12.607
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:42.505
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -277,7 +277,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:12.607
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:42.507
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -288,7 +288,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:12.607
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:42.508
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -299,7 +299,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:12.607
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:42.510
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -310,7 +310,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:12.622
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:42.511
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -321,7 +321,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:12.685
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:42.580
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -332,7 +332,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:15.275
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:43.356
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -343,7 +343,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:19.114
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:46.777
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -354,7 +354,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:19.925
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:47.565
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -365,7 +365,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:20.705
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:48.319
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -376,7 +376,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:21.643
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:49.206
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -387,7 +387,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:21.893
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:49.435
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -398,7 +398,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:22.142
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:49.677
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -409,7 +409,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 19:52:22.158
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:45:49.703
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -434,10 +434,10 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
-!ENTRY org.eclipse.cdt.core 1 0 2015-05-18 19:52:28.227
+!ENTRY org.eclipse.cdt.core 1 0 2015-05-19 15:49:20.908
 !MESSAGE Indexed 'app_prj' (0 sources, 0 headers) in 0.00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:02:13.167
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:50:05.004
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -464,7 +464,7 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:02:13.604
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:50:05.082
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -475,7 +475,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:02:13.682
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:50:05.128
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -500,7 +500,7 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:02:30.989
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:50:23.749
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -527,7 +527,7 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:02:31.067
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:50:23.827
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -538,7 +538,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:02:31.114
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:50:23.874
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -563,7 +563,7 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:17:52.056
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:50:40.899
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -590,7 +590,7 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:17:52.134
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:50:40.977
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -601,7 +601,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:17:52.181
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:50:41.024
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -626,7 +626,7 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:19:10.381
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:51:08.581
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -653,7 +653,7 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:19:10.459
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:51:08.661
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -664,7 +664,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:19:10.506
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:51:08.708
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -689,7 +689,7 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:19:39.692
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:51:29.368
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -716,7 +716,7 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:19:39.770
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:51:29.446
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -727,7 +727,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:19:39.817
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:51:29.493
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -752,7 +752,7 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:20:10.538
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:52:06.568
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -779,7 +779,7 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:20:10.616
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:52:06.662
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -790,7 +790,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:20:10.663
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:52:06.693
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -815,7 +815,7 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:21:07.230
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:53:02.173
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -842,7 +842,7 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:21:07.308
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:53:02.267
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -853,7 +853,76 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:21:07.355
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:53:02.298
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.closeConsoleOutputStream(ConsoleOutputSniffer.java:160)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.close(ConsoleOutputSniffer.java:68)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.close(ProcessClosure.java:97)
+	at org.eclipse.cdt.internal.core.ProcessClosure.isAlive(ProcessClosure.java:192)
+	at org.eclipse.cdt.core.CommandLauncher.waitAndRead(CommandLauncher.java:252)
+	at org.eclipse.cdt.internal.core.BuildRunnerHelper.build(BuildRunnerHelper.java:248)
+	at org.eclipse.cdt.make.core.MakeBuilder.invokeMake(MakeBuilder.java:219)
+	at org.eclipse.cdt.make.core.MakeBuilder.build(MakeBuilder.java:108)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:726)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-05-19 15:53:43.610 -----------------------------------------------
+eclipse.buildId=Release 14.7 Build SDK_P.20131013
+java.version=1.6.0_21
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:54:10.243
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(Unknown Source)
+	at org.eclipse.cdt.core.CommandLauncher.printCommandLine(CommandLauncher.java:280)
+	at org.eclipse.cdt.core.CommandLauncher.waitAndRead(CommandLauncher.java:243)
+	at org.eclipse.cdt.internal.core.BuildRunnerHelper.build(BuildRunnerHelper.java:248)
+	at org.eclipse.cdt.make.core.MakeBuilder.invokeMake(MakeBuilder.java:219)
+	at org.eclipse.cdt.make.core.MakeBuilder.build(MakeBuilder.java:108)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:726)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:54:10.321
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.processLine(ConsoleOutputSniffer.java:178)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.access$0(ConsoleOutputSniffer.java:174)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.checkLine(ConsoleOutputSniffer.java:99)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.write(ConsoleOutputSniffer.java:58)
+	at java.io.OutputStream.write(Unknown Source)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:54:10.367
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -878,7 +947,7 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:21:17.828
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:55:58.628
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -905,7 +974,7 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:21:17.906
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:55:58.706
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException
@@ -916,7 +985,7 @@ java.lang.NullPointerException
 	at java.io.OutputStream.write(Unknown Source)
 	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.run(ProcessClosure.java:55)
 
-!ENTRY org.eclipse.cdt.core 4 0 2015-05-18 20:21:17.953
+!ENTRY org.eclipse.cdt.core 4 0 2015-05-19 15:55:58.753
 !MESSAGE Error
 !STACK 0
 java.lang.NullPointerException

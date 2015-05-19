@@ -39,8 +39,8 @@
 
 
 module top #(
-	parameter LCD_DATA_ADDR		= 6'b100000,
-				 LCD_CONTROL_ADDR = 6'b100100	
+	parameter LCD_DATA_ADDR		= 6'b100000, // 0x20
+				 LCD_CONTROL_ADDR = 6'b100100	 // 0x24
 )
 (
 	input			 clk,					// 50 MHz input
@@ -57,7 +57,11 @@ module top #(
 	output [3:0] an
 	);
 	
+	// ************* 7-Segment  *************//
+	
 	reg [15:0] Digit = 16'hABCD;
+	
+	// ************** EPC 신호들 *********************** //
 	
 	wire	EPC_nCS;		// EPC로 전달하는 CS신호. Active Low
 	wire	[5:0] Addr;	// A5A4A3A2A1A0. EPC의 출력.
@@ -65,13 +69,18 @@ module top #(
 	wire	nWR;			// Write. active low. EPC의 출력.
 	wire 	BE;			// Byte Enable. Active High. EPC의 출력 1바이트이기 때문에 큰 의미 없음.
 	wire	nBE;			// Byte Enable. Active Low. EPC의 출력을 받아 극성을 반전하여 사용하기로 한다.
-	
+
 	wire	[7:0] BlazeDataOut; 
 	wire	[7:0] BlazeDataIn; 
-	
-	// Lcd Controller Signal. R/W, EN 신호는 JB[5],JB[6]에 직접 연결.
 
-	wire RS;			// RS == 1, LCD Data mode.	   Addr = 6'b1000_00
+	assign nBE = ~BE;
+	
+	
+	// *********** Lcd Controller Signal. ******************* //
+	
+	//R/W, EN 신호는 JB[5],JB[6]에 직접 연결.
+
+	reg  RS;			// RS == 1, LCD Data mode.	   Addr = 6'b1000_00
 						// RS == 0, LCD Control mode  Addr = 6'b1001_00
 	
 	wire RW;			// RW == 1, Read mode
@@ -89,20 +98,21 @@ module top #(
 		Digit[7:0]  <= BlazeDataOut;
 	end
 	
-	assign	nBE = ~BE;
-	
-	assign RS = (Addr == LCD_DATA_ADDR)    ? 1 :
-					(Addr == LCD_CONTROL_ADDR) ? 0 : 1'bx;
+	always @(negedge EPC_nCS) begin
+		if(Addr == LCD_DATA_ADDR)
+			RS <= 1;
+		else if(Addr == LCD_CONTROL_ADDR)
+			RS <= 0;
+	end
 	
 	assign LCD_nCS = ( (EPC_nCS == 0) && ((Addr == LCD_DATA_ADDR) || (Addr == LCD_CONTROL_ADDR)) ) ? 0 : 1;
-	
+
 	assign JB[4] = LCD_RS;
 	assign JB[5] = RW;
 	assign JB[6] = EN;
 	
-	assign JA = (nWR == 0) ? BlazeDataOut[7:0] : 8'bz;
-	
-	assign BlazeDataIn = (nRD == 0) ? JA : 8'bz;
+	assign JA 			 = (nWR == 0) ? BlazeDataOut[7:0] : 8'bz; // Blaze_EPC -> LCD
+	assign BlazeDataIn = (nRD == 0) ? JA : 8'bz;					   // LCD -> Blaze_EPC
 	
 	
 	// Instantiate the MicroBlaze & RS232 module

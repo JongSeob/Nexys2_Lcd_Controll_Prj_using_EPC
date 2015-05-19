@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.73 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.73 secs
  
 --> Reading design: top.prj
 
@@ -298,8 +298,9 @@ WARNING:Xst:646 - Signal <nBE> is assigned but never used. This unconnected sign
     Found 8-bit register for signal <Led>.
     Found 8-bit tristate buffer for signal <BlazeDataIn>.
     Found 16-bit register for signal <Digit>.
+    Found 1-bit register for signal <RS>.
     Summary:
-	inferred  24 D-type flip-flop(s).
+	inferred  25 D-type flip-flop(s).
 	inferred  16 Tristate(s).
 Unit <top> synthesized.
 
@@ -313,8 +314,8 @@ Macro Statistics
 # Counters                                             : 2
  20-bit up counter                                     : 1
  6-bit up counter                                      : 1
-# Registers                                            : 26
- 1-bit register                                        : 21
+# Registers                                            : 27
+ 1-bit register                                        : 22
  4-bit register                                        : 2
  8-bit register                                        : 1
  9-bit register                                        : 2
@@ -380,8 +381,8 @@ Macro Statistics
 # Counters                                             : 2
  20-bit up counter                                     : 1
  6-bit up counter                                      : 1
-# Registers                                            : 55
- Flip-Flops                                            : 55
+# Registers                                            : 56
+ Flip-Flops                                            : 56
 # Comparators                                          : 1
  20-bit comparator greater                             : 1
 
@@ -418,8 +419,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 85
- Flip-Flops                                            : 85
+# Registers                                            : 86
+ Flip-Flops                                            : 86
 
 =========================================================================
 
@@ -448,30 +449,31 @@ Design Statistics
 # IOs                              : 43
 
 Cell Usage :
-# BELS                             : 3582
+# BELS                             : 3562
 #      GND                         : 16
 #      INV                         : 53
 #      LUT1                        : 65
 #      LUT2                        : 308
 #      LUT2_D                      : 15
-#      LUT2_L                      : 12
-#      LUT3                        : 706
+#      LUT2_L                      : 11
+#      LUT3                        : 704
 #      LUT3_D                      : 52
 #      LUT3_L                      : 17
-#      LUT4                        : 1268
-#      LUT4_D                      : 24
+#      LUT4                        : 1265
+#      LUT4_D                      : 27
 #      LUT4_L                      : 45
-#      MULT_AND                    : 77
-#      MUXCY                       : 225
+#      MULT_AND                    : 71
+#      MUXCY                       : 219
 #      MUXCY_L                     : 136
-#      MUXF5                       : 347
+#      MUXF5                       : 348
 #      MUXF6                       : 6
 #      MUXF7                       : 2
 #      MUXF8                       : 1
 #      VCC                         : 10
-#      XORCY                       : 197
-# FlipFlops/Latches                : 2404
-#      FD                          : 328
+#      XORCY                       : 191
+# FlipFlops/Latches                : 2399
+#      FD                          : 304
+#      FD_1                        : 25
 #      FDC                         : 34
 #      FDC_1                       : 5
 #      FDCE                        : 15
@@ -479,7 +481,7 @@ Cell Usage :
 #      FDE_1                       : 8
 #      FDP                         : 10
 #      FDR                         : 1086
-#      FDRE                        : 436
+#      FDRE                        : 430
 #      FDRE_1                      : 1
 #      FDRS                        : 30
 #      FDRSE                       : 13
@@ -492,8 +494,8 @@ Cell Usage :
 #      SRL16                       : 25
 #      SRL16E                      : 117
 #      SRLC16E                     : 8
-# Clock Buffers                    : 7
-#      BUFG                        : 7
+# Clock Buffers                    : 8
+#      BUFG                        : 8
 # IO Buffers                       : 43
 #      IBUF                        : 10
 #      IBUFG                       : 1
@@ -512,10 +514,10 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                     2022  out of   8672    23%  
- Number of Slice Flip Flops:           2396  out of  17344    13%  
- Number of 4 input LUTs:               2971  out of  17344    17%  
-    Number used as logic:              2565
+ Number of Slices:                     2018  out of   8672    23%  
+ Number of Slice Flip Flops:           2391  out of  17344    13%  
+ Number of 4 input LUTs:               2968  out of  17344    17%  
+    Number used as logic:              2562
     Number used as Shift registers:     150
     Number used as RAMs:                256
  Number of IOs:                          43
@@ -523,7 +525,7 @@ Selected Device : 3s1200efg320-4
     IOB Flip Flops:                       8
  Number of BRAMs:                        16  out of     28    57%  
  Number of MULT18X18SIOs:                 3  out of     28    10%  
- Number of GCLKs:                         7  out of     24    29%  
+ Number of GCLKs:                         8  out of     24    33%  
  Number of DCMs:                          1  out of      8    12%  
 
 ---------------------------
@@ -547,12 +549,11 @@ Clock Information:
 ---------------------------------------------+-------------------------------------------------------+-------+
 Clock Signal                                 | Clock buffer(FF name)                                 | Load  |
 ---------------------------------------------+-------------------------------------------------------+-------+
-clk                                          | clock_generator_0/DCM0_INST/Using_Virtex.DCM_INST:CLK0| 2410  |
+clk                                          | clock_generator_0/DCM0_INST/Using_Virtex.DCM_INST:CLK0| 2404  |
 blaze/mdm_0/mdm_0/drck_i                     | BUFG                                                  | 212   |
 blaze/mdm_0/mdm_0/update1                    | BUFG                                                  | 43    |
-blaze/xps_epc_0/PRH_Wr_n                     | NONE(Digit_5)                                         | 8     |
-blaze/xps_epc_0/PRH_Rd_n                     | NONE(Digit_13)                                        | 8     |
-Lcd_Controller/RDY                           | NONE(Led_0)                                           | 8     |
+blaze/xps_epc_0/PRH_CS_n<0>                  | NONE(RS)                                              | 1     |
+Lcd_Controller/EN1                           | BUFG                                                  | 24    |
 SevenSegment/divide_Clk_50Mhz_To_240hz/OutClk| NONE(SevenSegment/TmpCnt_FSM_FFd1)                    | 12    |
 ---------------------------------------------+-------------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -592,7 +593,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 12.524ns (frequency: 79.845MHz)
-  Total number of paths / destination ports: 179599 / 6829
+  Total number of paths / destination ports: 179586 / 6811
 -------------------------------------------------------------------------
 Delay:               12.524ns (Levels of Logic = 39)
   Source:            blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/PreFetch_Buffer_I/Using_FPGA.Buffer_DFFs[1].FDS_I (FF)
@@ -708,6 +709,28 @@ Delay:               8.025ns (Levels of Logic = 6)
                                        (49.4% logic, 50.6% route)
 
 =========================================================================
+Timing constraint: Default period analysis for Clock 'blaze/xps_epc_0/PRH_CS_n<0>'
+  Clock period: 2.447ns (frequency: 408.664MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               2.447ns (Levels of Logic = 1)
+  Source:            RS (FF)
+  Destination:       RS (FF)
+  Source Clock:      blaze/xps_epc_0/PRH_CS_n<0> falling
+  Destination Clock: blaze/xps_epc_0/PRH_CS_n<0> falling
+
+  Data Path: RS to RS
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD_1:C->Q             6   0.591   0.844  RS (RS)
+     LUT4:I0->O            1   0.704   0.000  RS_mux0000 (RS_mux0000)
+     FD_1:D                    0.308          RS
+    ----------------------------------------
+    Total                      2.447ns (1.603ns logic, 0.844ns route)
+                                       (65.5% logic, 34.5% route)
+
+=========================================================================
 Timing constraint: Default period analysis for Clock 'SevenSegment/divide_Clk_50Mhz_To_240hz/OutClk'
   Clock period: 3.470ns (frequency: 288.184MHz)
   Total number of paths / destination ports: 24 / 16
@@ -758,7 +781,7 @@ Offset:              4.704ns (Levels of Logic = 4)
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
   Total number of paths / destination ports: 21 / 21
 -------------------------------------------------------------------------
-Offset:              4.001ns (Levels of Logic = 2)
+Offset:              3.965ns (Levels of Logic = 2)
   Source:            JA<7> (PAD)
   Destination:       Lcd_Controller/stNext_0 (FF)
   Destination Clock: clk rising
@@ -767,12 +790,12 @@ Offset:              4.001ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IOBUF:IO->O           6   1.218   0.748  JA_7_IOBUF (N25)
-     LUT4:I1->O            1   0.704   0.420  Lcd_Controller/stNext_mux0000<8>_SW0 (N23)
+     IOBUF:IO->O           5   1.218   0.712  JA_7_IOBUF (N28)
+     LUT4:I1->O            1   0.704   0.420  Lcd_Controller/stNext_mux0000<8>_SW0 (N26)
      FDS:S                     0.911          Lcd_Controller/stNext_0
     ----------------------------------------
-    Total                      4.001ns (2.833ns logic, 1.168ns route)
-                                       (70.8% logic, 29.2% route)
+    Total                      3.965ns (2.833ns logic, 1.132ns route)
+                                       (71.5% logic, 28.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'blaze/mdm_0/mdm_0/update1'
@@ -797,48 +820,29 @@ Offset:              4.085ns (Levels of Logic = 3)
                                        (63.3% logic, 36.7% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'blaze/xps_epc_0/PRH_Rd_n'
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Lcd_Controller/EN1'
   Total number of paths / destination ports: 8 / 8
 -------------------------------------------------------------------------
-Offset:              2.195ns (Levels of Logic = 1)
+Offset:              2.159ns (Levels of Logic = 1)
   Source:            JA<7> (PAD)
   Destination:       Digit_15 (FF)
-  Destination Clock: blaze/xps_epc_0/PRH_Rd_n rising
+  Destination Clock: Lcd_Controller/EN1 falling
 
   Data Path: JA<7> to Digit_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IOBUF:IO->O           6   1.218   0.669  JA_7_IOBUF (N25)
-     FD:D                      0.308          Digit_15
+     IOBUF:IO->O           5   1.218   0.633  JA_7_IOBUF (N28)
+     FD_1:D                    0.308          Digit_15
     ----------------------------------------
-    Total                      2.195ns (1.526ns logic, 0.669ns route)
-                                       (69.5% logic, 30.5% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'Lcd_Controller/RDY'
-  Total number of paths / destination ports: 8 / 8
--------------------------------------------------------------------------
-Offset:              2.195ns (Levels of Logic = 1)
-  Source:            JA<7> (PAD)
-  Destination:       Led_7 (FF)
-  Destination Clock: Lcd_Controller/RDY rising
-
-  Data Path: JA<7> to Led_7
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IOBUF:IO->O           6   1.218   0.669  JA_7_IOBUF (N25)
-     FD:D                      0.308          Led_7
-    ----------------------------------------
-    Total                      2.195ns (1.526ns logic, 0.669ns route)
-                                       (69.5% logic, 30.5% route)
+    Total                      2.159ns (1.526ns logic, 0.633ns route)
+                                       (70.7% logic, 29.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 20 / 12
 -------------------------------------------------------------------------
-Offset:              4.948ns (Levels of Logic = 2)
+Offset:              4.796ns (Levels of Logic = 2)
   Source:            blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Wr_n (FF)
   Destination:       JA<7> (PAD)
   Source Clock:      clk rising
@@ -847,13 +851,13 @@ Offset:              4.948ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              19   0.591   1.085  xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Wr_n (PRH_Wr_n)
+     FD:C->Q              11   0.591   0.933  xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Wr_n (PRH_Wr_n)
      end scope: 'xps_epc_0'
      end scope: 'blaze'
      IOBUF:T->IO               3.272          JA_7_IOBUF (JA<7>)
     ----------------------------------------
-    Total                      4.948ns (3.863ns logic, 1.085ns route)
-                                       (78.1% logic, 21.9% route)
+    Total                      4.796ns (3.863ns logic, 0.933ns route)
+                                       (80.5% logic, 19.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'SevenSegment/divide_Clk_50Mhz_To_240hz/OutClk'
@@ -876,19 +880,19 @@ Offset:              5.870ns (Levels of Logic = 2)
                                        (77.8% logic, 22.2% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'Lcd_Controller/RDY'
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Lcd_Controller/EN1'
   Total number of paths / destination ports: 8 / 8
 -------------------------------------------------------------------------
 Offset:              4.283ns (Levels of Logic = 1)
   Source:            Led_7 (FF)
   Destination:       Led<7> (PAD)
-  Source Clock:      Lcd_Controller/RDY rising
+  Source Clock:      Lcd_Controller/EN1 falling
 
   Data Path: Led_7 to Led<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               1   0.591   0.420  Led_7 (Led_7)
+     FD_1:C->Q             1   0.591   0.420  Led_7 (Led_7)
      OBUF:I->O                 3.272          Led_7_OBUF (Led<7>)
     ----------------------------------------
     Total                      4.283ns (3.863ns logic, 0.420ns route)
@@ -961,12 +965,12 @@ Offset:              8.921ns (Levels of Logic = 10)
 =========================================================================
 
 
-Total REAL time to Xst completion: 19.00 secs
-Total CPU time to Xst completion: 19.07 secs
+Total REAL time to Xst completion: 25.00 secs
+Total CPU time to Xst completion: 24.31 secs
  
 --> 
 
-Total memory usage is 345756 kilobytes
+Total memory usage is 370332 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    2 (   0 filtered)
