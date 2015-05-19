@@ -130,7 +130,7 @@ int main()
 
 	InitLcd();
 
-	//PrintfLcd("abcdefg");
+	PrintfLcd("abcdefg");
 
 	while(1)
 	{

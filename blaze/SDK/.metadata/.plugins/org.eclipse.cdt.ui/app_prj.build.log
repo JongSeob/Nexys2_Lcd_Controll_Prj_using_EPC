@@ -1,4 +1,4 @@
-16:07:14 **** Auto Build of configuration Release for project app_prj ****
+17:47:48 **** Auto Build of configuration Release for project app_prj ****
 make all 
 'Building file: ../src/src.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -34,5 +34,5 @@ elfcheck passed.
 'Finished building: app_prj.elf.elfcheck'
 ' '
 
-16:07:16 Build Finished (took 2s.74ms)
+17:47:50 Build Finished (took 2s.27ms)
 

@@ -130,8 +130,6 @@ int main()
 
 	InitLcd();
 
-	//PrintfLcd("abcdefg");
-
 	while(1)
 	{
 		ch = GetCh();
