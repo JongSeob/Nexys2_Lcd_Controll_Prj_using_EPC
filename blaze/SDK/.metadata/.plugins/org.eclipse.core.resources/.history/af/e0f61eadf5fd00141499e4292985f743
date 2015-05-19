@@ -130,12 +130,14 @@ int main()
 
 	InitLcd();
 
-	while(1)
-	{
-		ch = GetCh();
-		DataLCD = ch;
-		Print8bits(ch);
-	}
+	DataLCD = 'a';
+	DataLCD = 'b';
+	DataLCD = 'c';
+
+	ch = DataLCD;
+	ch = StatusCMD;
+
+	Print8bits(ch);
 
 	return 0;
 }
