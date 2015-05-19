@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue May 19 20:58:35 2015
+// Written by: Map P.20131013 on Wed May 20 03:15:58 2015
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -84,10 +84,23 @@ TIMEGRP sys_clk_pin = BEL "Lcd_Controller/count_5" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_2" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_1" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_0" BEL
-        "SevenSegment/divide_Clk_50Mhz_To_240hz/OutClk" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/OutClk" BEL "uart/UART/rClk"
+        BEL "uart/UART/clkDiv_0" BEL "uart/UART/clkDiv_1" BEL
+        "uart/UART/clkDiv_2" BEL "uart/UART/clkDiv_3" BEL "uart/UART/clkDiv_4"
+        BEL "uart/UART/clkDiv_5" BEL "uart/UART/clkDiv_6" BEL
+        "uart/UART/clkDiv_7" BEL "uart/UART/clkDiv_8" BEL
+        "uart/UART/stbeCur_FSM_FFd1" BEL "uart/UART/stbeCur_FSM_FFd2" BEL
+        "uart/FlagOverrunError" BEL "uart/FlagPatityError" BEL
+        "uart/dbOutLatch_7" BEL "uart/dbOutLatch_6" BEL "uart/dbOutLatch_5"
+        BEL "uart/dbOutLatch_4" BEL "uart/dbOutLatch_3" BEL
+        "uart/dbOutLatch_2" BEL "uart/dbOutLatch_1" BEL "uart/dbOutLatch_0"
+        BEL "uart/FlagFrameError" BEL "uart/stRcvCur_1" BEL "uart/stRcvCur_0"
+        BEL "uart/stSendNext_1" BEL "uart/stSendNext_0" BEL "uart/wrSig" BEL
+        "uart/rdSig" BEL "uart/stRcvNext_1" BEL "uart/stRcvNext_0" BEL
         "Lcd_Controller/EN" BEL "Lcd_Controller/stNext_5" BEL
         "Lcd_Controller/stNext_4" BEL "Lcd_Controller/stNext_3" BEL
-        "Lcd_Controller/stNext_0" BEL "Lcd_Controller/RW" BEL
+        "Lcd_Controller/stNext_0" BEL "uart/stSendCur_1" BEL
+        "uart/stSendCur_0" BEL "Lcd_Controller/RW" BEL
         "blaze/clock_generator_0/clock_generator_0/DCM0_INST/rsti" BEL
         "blaze/clock_generator_0/clock_generator_0/DCM0_INST/rst_delay_0" BEL
         "blaze/clock_generator_0/clock_generator_0/DCM0_INST/rst_delay_1" BEL

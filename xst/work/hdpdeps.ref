@@ -1,0 +1,9 @@
+V3 3
+FL E:/Nexys2_Lcd_Controll_Prj_using_EPC/RS232RefComp.vhd 2008/02/29.18:55:06 P.20131013
+EN work/Rs232RefComp 1432059289 \
+      FL E:/Nexys2_Lcd_Controll_Prj_using_EPC/RS232RefComp.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/Rs232RefComp/Behavioral 1432059290 \
+      FL E:/Nexys2_Lcd_Controll_Prj_using_EPC/RS232RefComp.vhd \
+      EN work/Rs232RefComp 1432059289

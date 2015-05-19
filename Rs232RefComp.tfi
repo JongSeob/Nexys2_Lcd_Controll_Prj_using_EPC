@@ -1,0 +1,21 @@
+
+
+
+// Instantiate the module
+Rs232RefComp instance_name (
+    .TXD(TXD), 
+    .RXD(RXD), 
+    .CLK(CLK), 
+    .DBIN(DBIN), 
+    .DBOUT(DBOUT), 
+    .RDA(RDA), 
+    .TBE(TBE), 
+    .RD(RD), 
+    .WR(WR), 
+    .PE(PE), 
+    .FE(FE), 
+    .OE(OE), 
+    .RST(RST)
+    );
+
+

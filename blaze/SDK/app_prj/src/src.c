@@ -19,6 +19,9 @@
 #define DataLCD		(*((volatile unsigned char *)(BASEADDRESS_EPC + 0x20))) // 1000_00
 #define StatusCMD	(*((volatile unsigned char *)(BASEADDRESS_EPC + 0x24))) // 1001_00
 
+#define DataUART    (*((volatile unsigned char *)(BASEADDRESS_EPC + 0x04))) // 0001_00
+#define StatusUART  (*((volatile unsigned char *)(BASEADDRESS_EPC + 0x08))) // 0010_00
+
 #define BUSY 0x80
 #define NULL 0
 
@@ -130,7 +133,7 @@ void	InitLcd(void)
 	SendCmdToLcd(0x38);						// Function Set(40us)= 0x20 + 0x10(DL=8bit) + 0x08(2 lines) +0x00(5*8 dots)
 	Printf("\nLCD Initialization Stage 2 : Sending 0x0f");
 	SendCmdToLcd(0x0f);						// Display On/Off Control(40us)= 0x08 + 0x04(Display On) + 0x02(Cursor On) + 0x01(Blink On)
-	Printf("\nLCD Initialization Stage 3 : Sending 0x01");
+	Printf("\nLCD Initialization Stage 3 : Sending 0x01\n");
 	SendCmdToLcd(0x01);						// Clear Display(1.64ms)
 }
 
@@ -181,6 +184,14 @@ int main()
 	InitLcd();
 
 	PrintfLcd("Lcd Printf Test");
+
+	ch = StatusUART;
+	Print8bits(ch); // 1100 1100
+	while(1)
+	{
+	ch = DataUART;
+	Print8bits(ch); // 1100 1100
+	}
 
 	while(1)
 	{

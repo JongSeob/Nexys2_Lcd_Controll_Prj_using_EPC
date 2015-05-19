@@ -40,13 +40,16 @@
 
 module top #(
 	parameter LCD_DATA_ADDR		= 6'b100000, // 0x20
-				 LCD_CONTROL_ADDR = 6'b100100	 // 0x24
+				 LCD_CONTROL_ADDR = 6'b100100, // 0x24
+	
+	parameter UART_DATA_ADDR   = 6'b000100, // 0x04
+				 UART_STATUS_ADDR = 6'b001000  // 0x08
 )
 (
 	input			 clk,					// 50 MHz input
 	input  [7:0] sw,					// Slide switch
 	input  [0:0] btn,					// reset
-	output reg [7:0] Led,			// LED
+	output [7:0] Led,			// LED
 	output 		 TXD,					// RS232 out
 	input 		 RXD,					// RS232 in
 	inout  [7:0] JA,					// LCD Data
@@ -61,7 +64,7 @@ module top #(
 	
 	reg [15:0] Digit = 16'hABCD;
 	
-	// ************** EPC 신호들 *********************** //
+	// ************** EPC 신호 *********************** //
 	
 	wire	EPC_nCS;		// EPC로 전달하는 CS신호. Active Low
 	wire	[5:0] Addr;	// A5A4A3A2A1A0. EPC의 출력.
@@ -78,8 +81,6 @@ module top #(
 	
 	// *********** Lcd Controller Signal. ******************* //
 	
-	//R/W, EN 신호는 JB[5],JB[6]에 직접 연결.
-
 	reg  RS;			// RS == 1, LCD Data mode.	   Addr = 6'b1000_00
 						// RS == 0, LCD Control mode  Addr = 6'b1001_00
 	
@@ -90,12 +91,16 @@ module top #(
 	
 	wire LCD_nCS;  // LCD로 전달할 Chip Select 신호.
 	wire LCD_RDY;	// LCD의 RDY 신호.
-		
-	always @(negedge EN) begin
-		Led[7:0] <= {RS, RW, Addr[5:0]};
-		Digit[15:8] <= JA;
-		Digit[7:0]  <= BlazeDataOut;
-	end
+	
+	// ***************** UART Signal **********************//
+	
+	wire Uart_nCS;
+//	wire Uart_RDY;
+	wire [7:0] Uart_Status;
+	wire [7:0] ReceivedData;
+	
+	
+	// Lcd Operation
 	
 	always @(negedge EPC_nCS) begin
 		if(Addr == LCD_DATA_ADDR)
@@ -111,8 +116,17 @@ module top #(
 	assign JB[6] = EN;
 	
 	assign JA 			 = (nWR == 0) ? BlazeDataOut[7:0] : 8'bz; // Blaze_EPC -> LCD
-	assign BlazeDataIn = (nRD == 0) ? JA : 8'bz;					   // LCD -> Blaze_EPC
 	
+	// Uart Operation
+	
+	assign Uart_nCS = ( (EPC_nCS == 0) && (Addr == UART_DATA_ADDR) ) ? 0 : 1;
+	
+
+	assign BlazeDataIn = (nRD == 1) 															  ? 8'bz : 
+								((Addr == LCD_CONTROL_ADDR) || (Addr == LCD_DATA_ADDR)) ? JA[7:0] :
+								(Addr == UART_STATUS_ADDR) 									  ? Uart_Status :
+								(Addr == UART_DATA_ADDR)    									  ? ReceivedData : 8'bz;
+
 	
 	// Instantiate the MicroBlaze & RS232 module
 	(* BOX_TYPE = "user_black_box" *)
@@ -159,7 +173,21 @@ module top #(
 		 .o_SegG					(seg[6]), 
 		 .o_Seg_DP				(dp)
     );
-
 	 
+	uart uart (
+		 .clk					(clk), 
+		 .iBtnSwitch		(sw), 
+		 .oLed				(Led), 
+		 .TxD					(TxD), 
+		 .RxD					(RxD), 
+		 .nCS					(Uart_nCS), 
+		 .nWR					(nWR), 
+		 .nRD					(nRD), 
+//		 .RDY					(Uart_RDY), 
+		 .SendData			(BlazeDataOut), 
+		 .Status				(Uart_Status),
+		 .ReceivedData		(ReceivedData)
+    );
+
 endmodule
 
