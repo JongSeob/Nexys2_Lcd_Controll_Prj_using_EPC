@@ -171,6 +171,7 @@ void	PrintfLcd(char *String)
 		else
 			PutCharLcd(String[i]);
 
+		//delay(1);
 	}
 }
 

@@ -30,10 +30,7 @@
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
     <file xil_pn:fileType="FILE_SYNPLIFY_MISC" xil_pn:name="blaze.ncf"/>
-    <file xil_pn:fileType="FILE_NGC" xil_pn:name="blaze.ngc">
-      <branch xil_pn:name="Implementation"/>
-      <branch xil_pn:name="PostSynthSim"/>
-    </file>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="blaze.ngc"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITINIT_OPT" xil_pn:name="blaze/__xps/bitinit.opt" xil_pn:origination="imported" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:fileType="FILE_XPS_SIM" xil_pn:name="blaze/__xps/ise/blaze.xpssim" xil_pn:origination="imported" xil_pn:subbranch="Par">
       <branch xil_pn:name="Implementation"/>
@@ -48,65 +45,23 @@
     </file>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XPS_UCF" xil_pn:name="blaze/data/blaze.ucf" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_SYNPLIFY_MISC" xil_pn:name="blaze_clock_generator_0_wrapper.ncf"/>
-    <file xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_clock_generator_0_wrapper.ngc">
-      <branch xil_pn:name="Implementation"/>
-      <branch xil_pn:name="PostSynthSim"/>
-    </file>
-    <file xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_dip_switches_wrapper.ngc">
-      <branch xil_pn:name="Implementation"/>
-      <branch xil_pn:name="PostSynthSim"/>
-    </file>
-    <file xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_dlmb_cntlr_wrapper.ngc">
-      <branch xil_pn:name="Implementation"/>
-      <branch xil_pn:name="PostSynthSim"/>
-    </file>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_clock_generator_0_wrapper.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_dip_switches_wrapper.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_dlmb_cntlr_wrapper.ngc"/>
     <file xil_pn:fileType="FILE_SYNPLIFY_MISC" xil_pn:name="blaze_dlmb_wrapper.ncf"/>
-    <file xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_dlmb_wrapper.ngc">
-      <branch xil_pn:name="Implementation"/>
-      <branch xil_pn:name="PostSynthSim"/>
-    </file>
-    <file xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_ilmb_cntlr_wrapper.ngc">
-      <branch xil_pn:name="Implementation"/>
-      <branch xil_pn:name="PostSynthSim"/>
-    </file>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_dlmb_wrapper.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_ilmb_cntlr_wrapper.ngc"/>
     <file xil_pn:fileType="FILE_SYNPLIFY_MISC" xil_pn:name="blaze_ilmb_wrapper.ncf"/>
-    <file xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_ilmb_wrapper.ngc">
-      <branch xil_pn:name="Implementation"/>
-      <branch xil_pn:name="PostSynthSim"/>
-    </file>
-    <file xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_leds_wrapper.ngc">
-      <branch xil_pn:name="Implementation"/>
-      <branch xil_pn:name="PostSynthSim"/>
-    </file>
-    <file xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_lmb_bram_wrapper.ngc">
-      <branch xil_pn:name="Implementation"/>
-      <branch xil_pn:name="PostSynthSim"/>
-    </file>
-    <file xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_mb_plb_wrapper.ngc">
-      <branch xil_pn:name="Implementation"/>
-      <branch xil_pn:name="PostSynthSim"/>
-    </file>
-    <file xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_mdm_0_wrapper.ngc">
-      <branch xil_pn:name="Implementation"/>
-      <branch xil_pn:name="PostSynthSim"/>
-    </file>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_ilmb_wrapper.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_leds_wrapper.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_lmb_bram_wrapper.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_mb_plb_wrapper.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_mdm_0_wrapper.ngc"/>
     <file xil_pn:fileType="FILE_SYNPLIFY_MISC" xil_pn:name="blaze_microblaze_0_wrapper.ncf"/>
-    <file xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_microblaze_0_wrapper.ngc">
-      <branch xil_pn:name="Implementation"/>
-      <branch xil_pn:name="PostSynthSim"/>
-    </file>
-    <file xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_proc_sys_reset_0_wrapper.ngc">
-      <branch xil_pn:name="Implementation"/>
-      <branch xil_pn:name="PostSynthSim"/>
-    </file>
-    <file xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_rs232_wrapper.ngc">
-      <branch xil_pn:name="Implementation"/>
-      <branch xil_pn:name="PostSynthSim"/>
-    </file>
-    <file xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_xps_epc_0_wrapper.ngc">
-      <branch xil_pn:name="Implementation"/>
-      <branch xil_pn:name="PostSynthSim"/>
-    </file>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_microblaze_0_wrapper.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_proc_sys_reset_0_wrapper.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_rs232_wrapper.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="blaze_xps_epc_0_wrapper.ngc"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="top.bgn" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="top.bit" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="top.bld"/>

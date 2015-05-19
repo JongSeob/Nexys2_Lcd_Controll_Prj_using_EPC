@@ -140,22 +140,14 @@ void	PutCharLcd(unsigned char cChar) // LCD print
 
 	while (CheckBusy() == BUSY);
 
+	SendCharToLcd(cChar);
+
 	DDRAM_addr = StatusCMD;
 
 	if(DDRAM_addr == 0x10)
-	{
 		SendCmdToLcd(0xC0);  // Set DDRAM addres(40uS) = 0x80 | 0x40(second line)
-		SendCharToLcd(' ');
-	}
 	else if(DDRAM_addr == 0x50)
-	{
 		SendCmdToLcd(0x80);  // Set DDRAM addres(40uS) = 0x80 | 0x00(first line)
-		SendCharToLcd(' ');
-	}
-
-	SendCharToLcd(cChar);
-
-
 }
 
 void	PrintfLcd(char *String)
@@ -171,6 +163,7 @@ void	PrintfLcd(char *String)
 		else
 			PutCharLcd(String[i]);
 
+		//delay(1);
 	}
 }
 

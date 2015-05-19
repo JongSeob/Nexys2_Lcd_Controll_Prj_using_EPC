@@ -5,3 +5,27 @@
 21:36:30.713 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
 21:38:18.707 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
 21:39:42.781 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+22:33:30.227 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+22:34:04.857 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+22:34:25.393 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+22:34:44.665 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+22:35:04.018 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+22:35:27.946 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+22:36:00.488 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+22:36:50.971 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+00:05:04.491 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+Failed to Scan JTAG Chain
+    Unknown Error
+ 
+00:05:15.838 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+00:07:00.503 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+00:07:54.303 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+00:08:36.137 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+00:09:30.484 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+00:09:58.839 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+00:10:57.601 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+00:12:16.877 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+00:15:00.016 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+00:15:08.602 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+00:17:22.046 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
