@@ -74,7 +74,7 @@ module top #(
 	wire	nBE;			// Byte Enable. Active Low. EPC의 출력을 받아 극성을 반전하여 사용하기로 한다.
 
 	wire	[7:0] BlazeDataOut; 
-	wire	[7:0] BlazeDataIn; 
+	reg	[7:0] BlazeDataIn; 
 
 	assign nBE = ~BE;
 	
@@ -121,18 +121,24 @@ module top #(
 	
 	assign Uart_nCS = ( (EPC_nCS == 0) && (Addr == UART_DATA_ADDR) ) ? 0 : 1;
 	
-
-	assign BlazeDataIn = (nRD == 1) 															  ? 8'bz : 
-								((Addr == LCD_CONTROL_ADDR) || (Addr == LCD_DATA_ADDR)) ? JA[7:0] :
-								(Addr == UART_STATUS_ADDR) 									  ? Uart_Status :
-								(Addr == UART_DATA_ADDR)    									  ? ReceivedData : 8'bz;
-
 	
+	// Data from peripheral to Blaze Operation
+	
+	always @(posedge clk) begin
+		if(EPC_nCS == 0)
+			case(Addr)
+				LCD_CONTROL_ADDR : BlazeDataIn <= JA[7:0];
+				LCD_DATA_ADDR    : BlazeDataIn <= JA[7:0];
+				UART_STATUS_ADDR : BlazeDataIn <= Uart_Status[7:0];
+				UART_DATA_ADDR   : BlazeDataIn <= ReceivedData[7:0];
+			endcase
+	end
+								
 	// Instantiate the MicroBlaze & RS232 module
 	(* BOX_TYPE = "user_black_box" *)
 	blaze blaze (
-		 .fpga_0_RS232_RX_pin(RXD), 
-		 .fpga_0_RS232_TX_pin(TXD), 
+		 .fpga_0_RS232_RX_pin(RxD), 
+		 .fpga_0_RS232_TX_pin(TxD), 
 		 .fpga_0_clk_1_sys_clk_pin(clk), 
 		 .fpga_0_rst_1_sys_rst_pin(btn[0]),
 		 .fpga_0_DIP_Switches_GPIO_IO_I_pin(sw),
@@ -159,6 +165,21 @@ module top #(
 		 .RDY			(LCD_RDY)
     );
 	 
+	uart uart (
+		 .clk					(clk), 
+		 .iBtnSwitch		(sw), 
+		 .oLed				(Led), 
+		 .TxD					(TXD), 
+		 .RxD					(RXD), 
+		 .nCS					(Uart_nCS), 
+		 .nWR					(nWR), 
+		 .nRD					(nRD), 
+//		 .RDY					(Uart_RDY), 
+		 .SendData			(BlazeDataOut), 
+		 .Status				(Uart_Status),
+		 .ReceivedData		(ReceivedData)
+    );
+	
 	 SevenSegment SevenSegment (
 		 .i_clk					(clk), 
 		 .i_Digit				(Digit), 
@@ -172,21 +193,6 @@ module top #(
 		 .o_SegF					(seg[5]), 
 		 .o_SegG					(seg[6]), 
 		 .o_Seg_DP				(dp)
-    );
-	 
-	uart uart (
-		 .clk					(clk), 
-		 .iBtnSwitch		(sw), 
-		 .oLed				(Led), 
-		 .TxD					(TxD), 
-		 .RxD					(RxD), 
-		 .nCS					(Uart_nCS), 
-		 .nWR					(nWR), 
-		 .nRD					(nRD), 
-//		 .RDY					(Uart_RDY), 
-		 .SendData			(BlazeDataOut), 
-		 .Status				(Uart_Status),
-		 .ReceivedData		(ReceivedData)
     );
 
 endmodule

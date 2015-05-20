@@ -45,11 +45,13 @@ module uart#(
 					RECEIVE_1 = 3'b001,
 					RECEIVE_2 = 3'b010,
 					RECEIVE_3 = 3'b011,
+					RECEIVE_4 = 3'b100,
 
-	parameter	SEND_0 = 3'b100,
-					SEND_1 = 3'b101,
-					SEND_2 = 3'b110,
-					SEND_3 = 3'b111
+	parameter	SEND_0 = 3'b000,
+					SEND_1 = 3'b001,
+					SEND_2 = 3'b010,
+					SEND_3 = 3'b011,
+					SEND_4 = 3'b100
 )
 (
 	input	       clk,				// 50 MHz input
@@ -79,13 +81,13 @@ module uart#(
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 	// Implementation of UART function 
 	///////////////////////////////////////////////////////////////////////////////////////////////////
-	reg  [7:0] dbInSig;		// Data Bus in.  UART의 입력. Blaze에서 보낸 데이터.
+	reg  [7:0] dbInSig = 8'h61;		// Data Bus in.  UART의 입력. Blaze에서 보낸 데이터.
 	wire [7:0] dbOutSig;		// Data Bus out. UART의 출력. PC에서 보내온 데이터를 읽어내는 포트. 
 	reg  [7:0] dbOutLatch;	// UART의 출력을 저장할 공간. LED에 연결되어 출력 결과를 육안으로 확인 가능.
 	reg 	rdaSig;				// Read Data Available : 수신 버퍼에 데이터가 들어왔음을 의미.
 	reg 	tbeSig;				// Transmit Buffer Empty
 	reg 	rdSig=1;				// Read 신호
-	reg 	wrSig;				// Write 신호
+	reg 	wrSig=0;				// Write 신호
 	wire 	peSig;				// Parity Error Flag
 	wire 	feSig;				// Frame Error Flag
 	wire 	oeSig;				// Overwrite Error Flag
@@ -102,8 +104,8 @@ module uart#(
 	reg [2:0] stRcvCur , stRcvNext;
 	reg [2:0] stSendCur, stSendNext;
 	
-	always @(negedge nCS) begin
-		if(nWR == 0)
+	// Tx로 보낼 데이터 저장
+	always @(posedge nWR) begin		
 			dbInSig <= SendData;
 	end
 
@@ -144,7 +146,14 @@ module uart#(
 						else
 							stRcvNext <= RECEIVE_1;
 					end	
-				RECEIVE_2 : 
+				RECEIVE_2 :
+					begin
+						if(nRD == 1)
+							stRcvNext <= RECEIVE_3;
+						else
+							stRcvNext <= RECEIVE_2;
+					end
+				RECEIVE_3 : 
 					begin 					// Flush the receive Buffer.
 						rdSig <= 1'b1;			// 이 신호를 UART로 보내도 VHDL UART가 rdaSig를 해제하는데 시간이 소요될 수 있다. 그래서 RECEIVE_3을 추가하였다.
 						if ( FlagPatityError == 1 || FlagFrameError ==1 || FlagOverrunError) begin
@@ -153,47 +162,58 @@ module uart#(
 							if (oeSig == 1)	CounterOE <= CounterOE +1;
 						end
 						else begin
-							stRcvNext <= RECEIVE_3;
+							stRcvNext <= RECEIVE_4;
 						end
 					end
-				RECEIVE_3 :		//wait until rdaSig is gone.
+				RECEIVE_4 :		//wait until rdaSig is gone.
 					begin
 						if ( rdaSig == 1'b1)	
 							begin
 								CounterWait_rda <= CounterWait_rda +1;	
-								stRcvNext <= RECEIVE_3; 
+								stRcvNext <= RECEIVE_4; 
 							end
 						else	
 							begin
 								CounterReceived <= CounterReceived +1;		// 카운터가 2개씩 증가하는 문제가 상태머신 negedge로 해결되었다.									
-								
-								if(nCS == 1)
-									stRcvNext <= RECEIVE_0; 
+								stRcvNext <= RECEIVE_0;
 							end
 					end	
 			endcase
 
 			case(stSendCur)
-				SEND_0 : 		// Echo back what has been received.
+				SEND_0 : 
+					begin
+						if(nCS == 0 && nWR == 0)
+							stSendNext <= SEND_1;
+						else
+							stSendNext <= SEND_0;
+					end
+				SEND_1 :
+					begin
+						if(nWR == 1)
+							stSendNext <= SEND_2;
+						else
+							stSendNext <= SEND_1;
+					end
+				SEND_2 : 		// Echo back what has been received.
 					begin 
-						if(tbeSig == 1'b1 && nCS == 0 && nWR == 0) 		// Transmit Buffer Empty.
-							stSendNext <= SEND_1;	
+						if(tbeSig == 1'b1) 		// Transmit Buffer Empty.
+							stSendNext <= SEND_3;	
 						else 	begin
 							CounterWait_tbe <= CounterWait_tbe +1;
-							stSendNext <= SEND_0;		// wait until transmit buffer empty
+							stSendNext <= SEND_2;		// wait until transmit buffer empty
 						end
 					end
-				SEND_1 : 
+				SEND_3 : 
 					begin 
 						wrSig <= 1'b1; 	// Input data of UART will be latched in the module.
-						stSendNext <= SEND_2; 
+						stSendNext <= SEND_4; 
 					end
-				SEND_2 : 
+				SEND_4 : 
 					begin 
 						wrSig <= 0; 	// "wrSig" will be maintained for 2 clocks by deleting this line
 						
-						if(nCS == 1)
-							stSendNext <= SEND_0; 
+						stSendNext <= SEND_0; 
 					end
 				default : begin stSendNext <= SEND_0; end
 			endcase

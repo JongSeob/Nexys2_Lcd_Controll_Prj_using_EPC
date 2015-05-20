@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed May 20 03:15:58 2015
+// Written by: Map P.20131013 on Wed May 20 20:13:30 2015
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -55,15 +55,32 @@ PIN
         = BEL
         "blaze/clock_generator_0/clock_generator_0/DCM0_INST/Using_Virtex.DCM_INST"
         PINNAME CLKIN;
-TIMEGRP sys_clk_pin = BEL "Lcd_Controller/count_5" BEL
-        "Lcd_Controller/count_4" BEL "Lcd_Controller/count_3" BEL
-        "Lcd_Controller/count_2" BEL "Lcd_Controller/count_1" BEL
-        "Lcd_Controller/count_0" BEL "Lcd_Controller/stCur_0" BEL
-        "Lcd_Controller/stCur_1" BEL "Lcd_Controller/stCur_2" BEL
-        "Lcd_Controller/stCur_3" BEL "Lcd_Controller/stCur_6" BEL
-        "Lcd_Controller/stCur_4" BEL "Lcd_Controller/stCur_5" BEL
-        "Lcd_Controller/RDY" BEL "Lcd_Controller/stNext_6" BEL
-        "Lcd_Controller/stNext_2" BEL "Lcd_Controller/stNext_1" BEL
+TIMEGRP sys_clk_pin = BEL "BlazeDataIn_0" BEL "BlazeDataIn_1" BEL
+        "BlazeDataIn_2" BEL "BlazeDataIn_3" BEL "BlazeDataIn_4" BEL
+        "BlazeDataIn_5" BEL "BlazeDataIn_6" BEL "BlazeDataIn_7" BEL
+        "Lcd_Controller/count_5" BEL "Lcd_Controller/count_4" BEL
+        "Lcd_Controller/count_3" BEL "Lcd_Controller/count_2" BEL
+        "Lcd_Controller/count_1" BEL "Lcd_Controller/count_0" BEL
+        "Lcd_Controller/stCur_0" BEL "Lcd_Controller/stCur_1" BEL
+        "Lcd_Controller/stCur_2" BEL "Lcd_Controller/stCur_3" BEL
+        "Lcd_Controller/stCur_6" BEL "Lcd_Controller/stCur_4" BEL
+        "Lcd_Controller/stCur_5" BEL "Lcd_Controller/RDY" BEL
+        "Lcd_Controller/stNext_6" BEL "Lcd_Controller/stNext_2" BEL
+        "Lcd_Controller/stNext_1" BEL "uart/UART/rClk" BEL
+        "uart/UART/clkDiv_0" BEL "uart/UART/clkDiv_1" BEL "uart/UART/clkDiv_2"
+        BEL "uart/UART/clkDiv_3" BEL "uart/UART/clkDiv_4" BEL
+        "uart/UART/clkDiv_5" BEL "uart/UART/clkDiv_6" BEL "uart/UART/clkDiv_7"
+        BEL "uart/UART/clkDiv_8" BEL "uart/UART/stbeCur_FSM_FFd1" BEL
+        "uart/UART/stbeCur_FSM_FFd2" BEL "uart/FlagOverrunError" BEL
+        "uart/FlagPatityError" BEL "uart/dbOutLatch_7" BEL "uart/dbOutLatch_6"
+        BEL "uart/dbOutLatch_5" BEL "uart/dbOutLatch_4" BEL
+        "uart/dbOutLatch_3" BEL "uart/dbOutLatch_2" BEL "uart/dbOutLatch_1"
+        BEL "uart/dbOutLatch_0" BEL "uart/FlagFrameError" BEL
+        "uart/stSendCur_2" BEL "uart/stSendCur_1" BEL "uart/stSendCur_0" BEL
+        "uart/stRcvCur_2" BEL "uart/stRcvCur_1" BEL "uart/stRcvCur_0" BEL
+        "uart/stSendNext_2" BEL "uart/stSendNext_1" BEL "uart/stSendNext_0"
+        BEL "uart/wrSig" BEL "uart/rdSig" BEL "uart/stRcvNext_2" BEL
+        "uart/stRcvNext_1" BEL "uart/stRcvNext_0" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_19" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_18" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_17" BEL
@@ -84,23 +101,10 @@ TIMEGRP sys_clk_pin = BEL "Lcd_Controller/count_5" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_2" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_1" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_0" BEL
-        "SevenSegment/divide_Clk_50Mhz_To_240hz/OutClk" BEL "uart/UART/rClk"
-        BEL "uart/UART/clkDiv_0" BEL "uart/UART/clkDiv_1" BEL
-        "uart/UART/clkDiv_2" BEL "uart/UART/clkDiv_3" BEL "uart/UART/clkDiv_4"
-        BEL "uart/UART/clkDiv_5" BEL "uart/UART/clkDiv_6" BEL
-        "uart/UART/clkDiv_7" BEL "uart/UART/clkDiv_8" BEL
-        "uart/UART/stbeCur_FSM_FFd1" BEL "uart/UART/stbeCur_FSM_FFd2" BEL
-        "uart/FlagOverrunError" BEL "uart/FlagPatityError" BEL
-        "uart/dbOutLatch_7" BEL "uart/dbOutLatch_6" BEL "uart/dbOutLatch_5"
-        BEL "uart/dbOutLatch_4" BEL "uart/dbOutLatch_3" BEL
-        "uart/dbOutLatch_2" BEL "uart/dbOutLatch_1" BEL "uart/dbOutLatch_0"
-        BEL "uart/FlagFrameError" BEL "uart/stRcvCur_1" BEL "uart/stRcvCur_0"
-        BEL "uart/stSendNext_1" BEL "uart/stSendNext_0" BEL "uart/wrSig" BEL
-        "uart/rdSig" BEL "uart/stRcvNext_1" BEL "uart/stRcvNext_0" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/OutClk" BEL
         "Lcd_Controller/EN" BEL "Lcd_Controller/stNext_5" BEL
         "Lcd_Controller/stNext_4" BEL "Lcd_Controller/stNext_3" BEL
-        "Lcd_Controller/stNext_0" BEL "uart/stSendCur_1" BEL
-        "uart/stSendCur_0" BEL "Lcd_Controller/RW" BEL
+        "Lcd_Controller/stNext_0" BEL "Lcd_Controller/RW" BEL
         "blaze/clock_generator_0/clock_generator_0/DCM0_INST/rsti" BEL
         "blaze/clock_generator_0/clock_generator_0/DCM0_INST/rst_delay_0" BEL
         "blaze/clock_generator_0/clock_generator_0/DCM0_INST/rst_delay_1" BEL
@@ -2491,22 +2495,6 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         BEL "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_RX_I/rx_1" BEL
         "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/FIFO_Full"
         BEL
-        "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_0_0"
-        BEL
-        "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_1_0"
-        BEL
-        "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_2_0"
-        BEL
-        "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_3_0"
-        BEL
-        "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_4_0"
-        BEL
-        "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_5_0"
-        BEL
-        "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_6_0"
-        BEL
-        "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_7_0"
-        BEL
         "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/STRUCTURAL_A_GEN.Addr_Counters[0].FDS_I"
         BEL
         "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/STRUCTURAL_A_GEN.Addr_Counters[1].FDS_I"
@@ -2521,19 +2509,12 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0 = PIN
         "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/mux_sel_1" BEL
         "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/mux_sel_2" BEL
         "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/tx_Data_Enable" BEL
-        "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/serial_Data" BEL
         "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/tx_DataBits" BEL
-        "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/TX" BEL
         "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/fifo_Read" BEL
         "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/tx_Start" BEL
         "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_31" BEL
         "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_30" BEL
-        "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_29" BEL
-        "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_28" BEL
         "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_27" BEL
-        "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_26" BEL
-        "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_25" BEL
-        "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_24" BEL
         "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_pavalid_reg" BEL
         "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/addr_cntl_cs_0" BEL
         "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_31" BEL
@@ -5328,22 +5309,6 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         BEL "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_RX_I/rx_1" BEL
         "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/FIFO_Full"
         BEL
-        "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_0_0"
-        BEL
-        "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_1_0"
-        BEL
-        "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_2_0"
-        BEL
-        "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_3_0"
-        BEL
-        "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_4_0"
-        BEL
-        "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_5_0"
-        BEL
-        "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_6_0"
-        BEL
-        "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_7_0"
-        BEL
         "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/STRUCTURAL_A_GEN.Addr_Counters[0].FDS_I"
         BEL
         "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/CNTR_INCR_DECR_ADDN_F_I/STRUCTURAL_A_GEN.Addr_Counters[1].FDS_I"
@@ -5358,19 +5323,12 @@ TIMEGRP blaze_clock_generator_0_clock_generator_0_SIG_DCM0_CLK0_0 = PIN
         "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/mux_sel_1" BEL
         "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/mux_sel_2" BEL
         "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/tx_Data_Enable" BEL
-        "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/serial_Data" BEL
         "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/tx_DataBits" BEL
-        "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/TX" BEL
         "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/fifo_Read" BEL
         "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/tx_Start" BEL
         "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_31" BEL
         "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_30" BEL
-        "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_29" BEL
-        "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_28" BEL
         "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_27" BEL
-        "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_26" BEL
-        "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_25" BEL
-        "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_24" BEL
         "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_pavalid_reg" BEL
         "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/addr_cntl_cs_0" BEL
         "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_31" BEL

@@ -9,28 +9,28 @@ Target Device  : xc3s1200e
 Target Package : fg320
 Target Speed   : -4
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Wed May 20 03:15:50 2015
+Mapped Date    : Wed May 20 20:13:23 2015
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    0
 Logic Utilization:
-  Total Number Slice Registers:       1,562 out of  17,344    9%
-    Number used as Flip Flops:        1,561
+  Total Number Slice Registers:       1,585 out of  17,344    9%
+    Number used as Flip Flops:        1,584
     Number used as Latches:               1
-  Number of 4 input LUTs:             2,561 out of  17,344   14%
+  Number of 4 input LUTs:             2,580 out of  17,344   14%
 Logic Distribution:
-  Number of occupied Slices:          1,863 out of   8,672   21%
-    Number of Slices containing only related logic:   1,863 out of   1,863 100%
-    Number of Slices containing unrelated logic:          0 out of   1,863   0%
+  Number of occupied Slices:          1,879 out of   8,672   21%
+    Number of Slices containing only related logic:   1,879 out of   1,879 100%
+    Number of Slices containing unrelated logic:          0 out of   1,879   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       2,654 out of  17,344   15%
-    Number used as logic:             2,157
+  Total Number of 4 input LUTs:       2,673 out of  17,344   15%
+    Number used as logic:             2,184
     Number used as a route-thru:         93
     Number used for Dual Port RAMs:     256
       (Two LUTs used per Dual Port RAM)
-    Number used as Shift registers:     148
+    Number used as Shift registers:     140
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
@@ -43,9 +43,9 @@ Logic Distribution:
   Number of BSCANs:                       1 out of       1  100%
   Number of MULT18X18SIOs:                3 out of      28   10%
 
-Average Fanout of Non-Clock Nets:                3.61
+Average Fanout of Non-Clock Nets:                3.60
 
-Peak Memory Usage:  354 MB
+Peak Memory Usage:  355 MB
 Total REAL time to MAP completion:  9 secs 
 Total CPU time to MAP completion:   5 secs 
 
@@ -92,13 +92,13 @@ Section 2 - Warnings
 Section 3 - Informational
 -------------------------
 INFO:LIT:243 - Logical network blaze/xps_epc_0_PRH_BE_pin has no load.
-INFO:LIT:395 - The above info message is repeated 600 more times for the
+INFO:LIT:395 - The above info message is repeated 601 more times for the
    following (max. 5 shown):
+   blaze/fpga_0_RS232_TX_pin,
    blaze/fpga_0_LEDS_GPIO_IO_O_pin<0>,
    blaze/fpga_0_LEDS_GPIO_IO_O_pin<1>,
    blaze/fpga_0_LEDS_GPIO_IO_O_pin<2>,
-   blaze/fpga_0_LEDS_GPIO_IO_O_pin<3>,
-   blaze/fpga_0_LEDS_GPIO_IO_O_pin<4>
+   blaze/fpga_0_LEDS_GPIO_IO_O_pin<3>
    To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
@@ -107,9 +107,9 @@ INFO:LIT:244 - All of the single ended outputs in this design are using slew
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-1170 block(s) removed
+1192 block(s) removed
  218 block(s) optimized away
-1250 signal(s) removed
+1272 signal(s) removed
 
 Section 5 - Removed Logic
 -------------------------
@@ -151,6 +151,55 @@ loadless and has been removed.
            Loadless block
 "blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Using_Ext_Databus.Using_
 D_PLB.DPLB_Interface_I1/dplb_m_be_i_0" (SFF) removed.
+The signal "blaze/fpga_0_RS232_TX_pin" is loadless and has been removed.
+ Loadless block "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/TX" (SFF)
+removed.
+  The signal "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/TX_and0000" is
+loadless and has been removed.
+   Loadless block "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/TX_and00001"
+(ROM) removed.
+    The signal "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/serial_Data" is
+loadless and has been removed.
+     Loadless block "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/serial_Data"
+(SFF) removed.
+      The signal "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/mux_Out" is loadless
+and has been removed.
+       Loadless block "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/mux_Out112"
+(ROM) removed.
+        The signal "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/mux_Out12" is
+loadless and has been removed.
+         Loadless block "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/mux_Out12" (ROM)
+removed.
+          The signal "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/fifo_DOut<5>" is
+loadless and has been removed.
+          The signal "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/fifo_DOut<7>" is
+loadless and has been removed.
+        The signal "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/mux_Out27" is
+loadless and has been removed.
+         Loadless block "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/mux_Out27" (ROM)
+removed.
+          The signal "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/fifo_DOut<3>" is
+loadless and has been removed.
+          The signal "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/fifo_DOut<1>" is
+loadless and has been removed.
+        The signal "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/mux_Out84" is
+loadless and has been removed.
+         Loadless block "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/mux_Out84" (MUX)
+removed.
+          The signal "blaze/RS232/N12" is loadless and has been removed.
+           Loadless block "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/mux_Out84_F"
+(ROM) removed.
+            The signal "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/fifo_DOut<0>" is
+loadless and has been removed.
+            The signal "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/fifo_DOut<2>" is
+loadless and has been removed.
+          The signal "blaze/RS232/N13" is loadless and has been removed.
+           Loadless block "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/mux_Out84_G"
+(ROM) removed.
+            The signal "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/fifo_DOut<4>" is
+loadless and has been removed.
+            The signal "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/fifo_DOut<6>" is
+loadless and has been removed.
 The signal "blaze/fpga_0_LEDS_GPIO_IO_O_pin<0>" is loadless and has been
 removed.
  Loadless block "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_0" (SFF) removed.
@@ -5496,6 +5545,26 @@ The signal
 The signal
 "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/GTR_ONE_MASTER
 .FIXED_ARB_GEN.I_PRIOR_ENC/_and001028_SW0/O" is unused and has been removed.
+The signal "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg<24>" is
+unused and has been removed.
+ Unused block "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_24"
+(SFF) removed.
+The signal "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg<25>" is
+unused and has been removed.
+ Unused block "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_25"
+(SFF) removed.
+The signal "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg<26>" is
+unused and has been removed.
+ Unused block "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_26"
+(SFF) removed.
+The signal "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg<28>" is
+unused and has been removed.
+ Unused block "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_28"
+(SFF) removed.
+The signal "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg<29>" is
+unused and has been removed.
+ Unused block "blaze/RS232/RS232/PLBV46_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_29"
+(SFF) removed.
 The signal "blaze/proc_sys_reset_0/proc_sys_reset_0/SEQ/system_Reset_Req_d1" is
 unused and has been removed.
 The signal "blaze/proc_sys_reset_0/proc_sys_reset_0/SEQ/chip_Reset_Req_d1" is
@@ -5512,6 +5581,30 @@ unused and has been removed.
  Unused block
 "blaze/proc_sys_reset_0/proc_sys_reset_0/Mshreg_Core_Reset_Req_0_d2/VCC" (ONE)
 removed.
+Unused block
+"blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYN
+SHREG_F_I/Mshreg_Dout_0_0" (SRLC16E) removed.
+Unused block
+"blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYN
+SHREG_F_I/Mshreg_Dout_1_0" (SRLC16E) removed.
+Unused block
+"blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYN
+SHREG_F_I/Mshreg_Dout_2_0" (SRLC16E) removed.
+Unused block
+"blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYN
+SHREG_F_I/Mshreg_Dout_3_0" (SRLC16E) removed.
+Unused block
+"blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYN
+SHREG_F_I/Mshreg_Dout_4_0" (SRLC16E) removed.
+Unused block
+"blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYN
+SHREG_F_I/Mshreg_Dout_5_0" (SRLC16E) removed.
+Unused block
+"blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYN
+SHREG_F_I/Mshreg_Dout_6_0" (SRLC16E) removed.
+Unused block
+"blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYN
+SHREG_F_I/Mshreg_Dout_7_0" (SRLC16E) removed.
 Unused block
 "blaze/proc_sys_reset_0/proc_sys_reset_0/Mshreg_Core_Reset_Req_0_d2/SRL16E"
 (SRLC16E) removed.
