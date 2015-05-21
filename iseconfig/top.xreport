@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-05-20T10:05:00</DateModified>
+  <DateModified>2015-05-21T04:40:52</DateModified>
   <ModuleName>top</ModuleName>
   <SummaryTimeStamp>2015-05-18T17:42:33</SummaryTimeStamp>
-  <SavedFilePath>E:/Nexys2_Lcd_Controll_Prj_using_EPC/iseconfig/top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>E:/Nexys2_Lcd_Controll_Prj_using_EPC\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/Administrator/Desktop/Nexys2_Lcd_Controll_Prj_using_EPC/iseconfig/top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/Administrator/Desktop/Nexys2_Lcd_Controll_Prj_using_EPC\</ImplementationReportsDirectory>
   <DateInitialized>2015-05-12T14:59:51</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
-  <XMP_File>E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/blaze.xmp</XMP_File>
+  <XMP_File>C:/Users/Administrator/Desktop/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/blaze.xmp</XMP_File>
  </header>
  <body>
   <viewgroup label="Design Overview" >
@@ -31,15 +31,15 @@
    <view inputState="Fitted" program="taengine" contextTags="CPLD_ONLY,EDK_OFF" hidden="true" type="EXTERNAL_HTML" file="top_html/tim/report.htm" label="CPLD Timing Report" />
   </viewgroup>
   <viewgroup label="XPS Errors and Warnings" >
-   <view program="platgen" WrapMessages="true" contextTags="EDK_ON" hidden="false" type="MessageList" hideColumns="Filtered" file="E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze\__xps\ise\_xmsgs\platgen.xmsgs" label="Platgen Messages" />
-   <view program="simgen" WrapMessages="true" contextTags="EDK_ON" hidden="false" type="MessageList" hideColumns="Filtered" file="E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze\__xps\ise\_xmsgs\simgen.xmsgs" label="Simgen Messages" />
-   <view program="bitinit" WrapMessages="true" contextTags="EDK_ON" hidden="false" type="MessageList" hideColumns="Filtered" file="E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze\__xps\ise\_xmsgs\bitinit.xmsgs" label="BitInit Messages" />
+   <view program="platgen" WrapMessages="true" contextTags="EDK_ON" hidden="false" type="MessageList" hideColumns="Filtered" file="C:/Users/Administrator/Desktop/Nexys2_Lcd_Controll_Prj_using_EPC/blaze\__xps\ise\_xmsgs\platgen.xmsgs" label="Platgen Messages" />
+   <view program="simgen" WrapMessages="true" contextTags="EDK_ON" hidden="false" type="MessageList" hideColumns="Filtered" file="C:/Users/Administrator/Desktop/Nexys2_Lcd_Controll_Prj_using_EPC/blaze\__xps\ise\_xmsgs\simgen.xmsgs" label="Simgen Messages" />
+   <view program="bitinit" WrapMessages="true" contextTags="EDK_ON" hidden="false" type="MessageList" hideColumns="Filtered" file="C:/Users/Administrator/Desktop/Nexys2_Lcd_Controll_Prj_using_EPC/blaze\__xps\ise\_xmsgs\bitinit.xmsgs" label="BitInit Messages" />
   </viewgroup>
   <viewgroup label="XPS Reports" >
-   <view inputState="PreSynthesized" program="platgen" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze\platgen.log" label="Platgen Log File" />
-   <view inputState="PreSynthesized" program="simgen" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze\simgen.log" label="Simgen Log File" />
-   <view inputState="PreSynthesized" program="bitinit" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze\bitinit.log" label="BitInit Log File" />
-   <view inputState="PreSynthesized" program="system" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze\top.log" label="System Log File" />
+   <view inputState="PreSynthesized" program="platgen" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="C:/Users/Administrator/Desktop/Nexys2_Lcd_Controll_Prj_using_EPC/blaze\platgen.log" label="Platgen Log File" />
+   <view inputState="PreSynthesized" program="simgen" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="C:/Users/Administrator/Desktop/Nexys2_Lcd_Controll_Prj_using_EPC/blaze\simgen.log" label="Simgen Log File" />
+   <view inputState="PreSynthesized" program="bitinit" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="C:/Users/Administrator/Desktop/Nexys2_Lcd_Controll_Prj_using_EPC/blaze\bitinit.log" label="BitInit Log File" />
+   <view inputState="PreSynthesized" program="system" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="C:/Users/Administrator/Desktop/Nexys2_Lcd_Controll_Prj_using_EPC/blaze\top.log" label="System Log File" />
   </viewgroup>
   <viewgroup label="Errors and Warnings" >
    <view program="pn" WrapMessages="true" contextTags="EDK_OFF" hidden="true" type="MessageList" hideColumns="Filtered, New" file="_xmsgs/pn_parser.xmsgs" label="Parser Messages" />

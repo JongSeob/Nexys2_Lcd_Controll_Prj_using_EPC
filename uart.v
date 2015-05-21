@@ -61,13 +61,9 @@ module uart#(
 	output TxD,
 	input  RxD,
 	
-	// EPC 의 신호
 	input  nCS,
 	input  nWR,
 	input  nRD,
-	
-	// UART의 RDY
-//	output reg RDY,
 	
 	// Blaze로부터 받아 전송시킬 데이터
 	input  [7:0] SendData,

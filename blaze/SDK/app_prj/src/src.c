@@ -155,13 +155,13 @@ void	SendCharToLcd(unsigned char cChar)
 
 void	InitLcd(void)
 {
-	Printf("LCD Initialization : Data out mode");
+	//Printf("LCD Initialization : Data out mode");
 
-	Printf("\nLCD Initialization Stage 1 : Sending 0x38");
+	//Printf("\nLCD Initialization Stage 1 : Sending 0x38");
 	SendCmdToLcd(0x38);						// Function Set(40us)= 0x20 + 0x10(DL=8bit) + 0x08(2 lines) +0x00(5*8 dots)
-	Printf("\nLCD Initialization Stage 2 : Sending 0x0f");
+	//Printf("\nLCD Initialization Stage 2 : Sending 0x0f");
 	SendCmdToLcd(0x0f);						// Display On/Off Control(40us)= 0x08 + 0x04(Display On) + 0x02(Cursor On) + 0x01(Blink On)
-	Printf("\nLCD Initialization Stage 3 : Sending 0x01\n");
+	//Printf("\nLCD Initialization Stage 3 : Sending 0x01\n");
 	SendCmdToLcd(0x01);						// Clear Display(1.64ms)
 }
 
@@ -176,12 +176,10 @@ void	PutCharLcd(unsigned char cChar) // LCD print
 	if(DDRAM_addr == 0x10)
 	{
 		SendCmdToLcd(0xC0);  // Set DDRAM addres(40uS) = 0x80 | 0x40(second line)
-		SendCharToLcd(' ');
 	}
 	else if(DDRAM_addr == 0x50)
 	{
 		SendCmdToLcd(0x80);  // Set DDRAM addres(40uS) = 0x80 | 0x00(first line)
-		SendCharToLcd(' ');
 	}
 
 	SendCharToLcd(cChar);
@@ -204,25 +202,27 @@ int main()
 {
 	char ch;
 
-	//Printf("Start main function\n");
-
-
-
-	PrintfLcd("Lcd Printf Test\n");
+	PutCharLcd(' ');
 	InitLcd();
-	Printf("\nLCD Initialization : Data out mode");
-	Printf("\nLCD Initialization Stage 1 : Sending 0x38");
-	Printf("\nLCD Initialization Stage 2 : Sending 0x0f");
-	Printf("\nLCD Initialization Stage 3 : Sending 0x01\n");
 
-
+	PrintfLcd("Lcd Test Start ");
 
 	while(1)
 	{
-		ch = GetCh();
-		PutCh(ch);
-		PutCharLcd(ch);
-		//Print8bits(ch);
+	   Printf("Input key : ");
+	   ch = GetCh();
+	   PutCh(ch);
+
+	   if(ch == 'd')
+	   {
+	   	   SendCmdToLcd(0x1C);
+	   	   Printf("Display Shift to Right\n");
+	   }
+	   else if(ch == 'a')
+	   {
+		   SendCmdToLcd(0x18);
+		   Printf("Display Shift to Left\n");
+	   }
 	}
 
 	return 0;

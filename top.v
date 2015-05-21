@@ -95,7 +95,6 @@ module top #(
 	// ***************** UART Signal **********************//
 	
 	wire Uart_nCS;
-//	wire Uart_RDY;
 	wire [7:0] Uart_Status;
 	wire [7:0] ReceivedData;
 	
