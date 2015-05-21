@@ -63,3 +63,8 @@
 13:12:15.399 INFO  - FPGA configured successfully with bitstream "C:/Users/Administrator/Desktop/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
 13:12:28.298 INFO  - FPGA configured successfully with bitstream "C:/Users/Administrator/Desktop/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
 13:13:26.711 INFO  - FPGA configured successfully with bitstream "C:/Users/Administrator/Desktop/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+13:22:35.819 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+13:22:35.820 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 

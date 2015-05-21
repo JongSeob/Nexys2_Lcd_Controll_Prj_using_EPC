@@ -209,9 +209,20 @@ int main()
 
 	while(1)
 	{
+	   Printf("Input key : ");
 	   ch = GetCh();
 	   PutCh(ch);
-	   PutCharLcd(ch);
+
+	   if(ch == 'd')
+	   {
+	   	   SendCmdToLcd(0x1C);
+	   	   Printf("Display Shift to Right\n");
+	   }
+	   else if(ch == 'a')
+	   {
+		   SendCmdToLcd(0x18);
+		   Printf("Display Shift to Left\n");
+	   }
 	}
 
 	return 0;

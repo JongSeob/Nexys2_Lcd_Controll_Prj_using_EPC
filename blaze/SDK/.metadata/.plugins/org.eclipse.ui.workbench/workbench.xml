@@ -39,7 +39,7 @@
 </editorArea>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="src.c" partName="src.c" path="C:/Users/Administrator/Desktop/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/SDK/app_prj/src/src.c" title="src.c" tooltip="app_prj/src/src.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app_prj/src/src.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5397" selectionTopPixel="2776"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5307" selectionTopPixel="2656"/>
 </editor>
 </editors>
 <views>
@@ -83,6 +83,9 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Errors"/>
+</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -227,8 +230,11 @@
 <item historyLabel="src.c" index="0">
 <position info="not_deleted" x="5302" y="0"/>
 </item>
-<item active="true" historyLabel="src.c" index="0">
+<item historyLabel="src.c" index="0">
 <position/>
+</item>
+<item active="true" historyLabel="src.c" index="0">
+<position info="not_deleted" x="5218" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
