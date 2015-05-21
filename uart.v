@@ -213,8 +213,8 @@ module uart#(
 					end
 				default : begin stSendNext <= SEND_0; end
 			endcase
-		end // else 의 end
-	end // always 의 end
+		end
+	end
 
 
 	// 오류 및 주요 제어 신호 상태 보이기

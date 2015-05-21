@@ -6,8 +6,7 @@ IPNAME: lmb_v10, INSTANCE: dlmb - 1 master(s) : 1 slave(s)
 
 Checking port drivers...
 WARNING:EDK:4181 - PORT: Peripheral_Reset, CONNECTOR: sys_periph_reset -
-   floating connection - E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs
-   line 171 
+   floating connection - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 171 
 
 Performing Clock DRCs...
 INFO:EDK:4060 - INSTANCE: xps_epc_0, PARAMETER: C_PRH_CLK_PERIOD_PS - Did not

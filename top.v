@@ -60,6 +60,10 @@ module top #(
 	output [3:0] an
 	);
 	
+	// Microblaze의 rx,tx에 아무것도 연결하지 않으면 Implement Design 때 에러가 발생해서 추가
+	wire dummy_rx;
+	wire dummy_tx;
+	
 	// ************* 7-Segment  *************//
 	
 	reg [15:0] Digit = 16'hABCD;
@@ -132,24 +136,32 @@ module top #(
 				UART_DATA_ADDR   : BlazeDataIn <= ReceivedData[7:0];
 			endcase
 	end
+	
+	always @(negedge EN) begin // LCD를 Control하는 경우
+		if(Addr == LCD_CONTROL_ADDR && RW == 0)
+		begin
+			Digit[7:0] <= {BlazeDataOut};
+		end
+			
+	end
 								
 	// Instantiate the MicroBlaze & RS232 module
 	(* BOX_TYPE = "user_black_box" *)
 	blaze blaze (
-		 .fpga_0_RS232_RX_pin(RxD), 
-		 .fpga_0_RS232_TX_pin(TxD), 
-		 .fpga_0_clk_1_sys_clk_pin(clk), 
-		 .fpga_0_rst_1_sys_rst_pin(btn[0]),
-		 .fpga_0_DIP_Switches_GPIO_IO_I_pin(sw),
-//		 .fpga_0_LEDS_GPIO_IO_O_pin(Led),
-		 .xps_epc_0_PRH_CS_n_pin(EPC_nCS),					
-		 .xps_epc_0_PRH_Addr_pin(Addr),
-		 .xps_epc_0_PRH_Rd_n_pin(nRD),
-		 .xps_epc_0_PRH_Wr_n_pin(nWR),
-		 .xps_epc_0_PRH_Rdy_pin(LCD_RDY),
-		 .xps_epc_0_PRH_Data_I_pin(BlazeDataIn),		// 입력전용 데이터버스
-		 .xps_epc_0_PRH_Data_O_pin(BlazeDataOut),		// 출력 전용 데이터 버스
-		 .xps_epc_0_PRH_BE_pin(BE)
+		 .fpga_0_RS232_RX_pin						(dummy_rx), 
+		 .fpga_0_RS232_TX_pin						(dummy_tx), 
+		 .fpga_0_clk_1_sys_clk_pin					(clk), 
+		 .fpga_0_rst_1_sys_rst_pin					(btn[0]),
+		 .fpga_0_DIP_Switches_GPIO_IO_I_pin		(sw),
+//		 .fpga_0_LEDS_GPIO_IO_O_pin				(Led),
+		 .xps_epc_0_PRH_CS_n_pin					(EPC_nCS),					
+		 .xps_epc_0_PRH_Addr_pin					(Addr),
+		 .xps_epc_0_PRH_Rd_n_pin					(nRD),
+		 .xps_epc_0_PRH_Wr_n_pin					(nWR),
+		 .xps_epc_0_PRH_Rdy_pin						(LCD_RDY),
+		 .xps_epc_0_PRH_Data_I_pin					(BlazeDataIn),		// 입력전용 데이터버스
+		 .xps_epc_0_PRH_Data_O_pin					(BlazeDataOut),	// 출력 전용 데이터 버스
+		 .xps_epc_0_PRH_BE_pin						(BE)
 		 );
 	
 	Lcd_Controller Lcd_Controller(
@@ -173,7 +185,6 @@ module top #(
 		 .nCS					(Uart_nCS), 
 		 .nWR					(nWR), 
 		 .nRD					(nRD), 
-//		 .RDY					(Uart_RDY), 
 		 .SendData			(BlazeDataOut), 
 		 .Status				(Uart_Status),
 		 .ReceivedData		(ReceivedData)

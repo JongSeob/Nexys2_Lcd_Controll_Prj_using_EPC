@@ -1,7 +1,7 @@
 #Release 14.7 - par P.20131013 (nt64)
 #Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-#Wed May 20 20:14:05 2015
+#Thu May 21 17:33:10 2015
 
 #
 ## NOTE: This file is designed to be imported into a spreadsheet program
@@ -265,7 +265,7 @@ P13,,DIFFM,IO_L22P_2/A23,UNUSED,,2,,,,,,,,,
 P14,,,VCCINT,,,,,,,,1.2,,,,
 P15,,IBUF,IP,UNUSED,,1,,,,,,,,,
 P16,Led<5>,IOB,IO,OUTPUT,LVCMOS25*,1,12,SLOW,NONE**,,,LOCATED,NO,NONE,
-P17,JB<4>,IOB,IO_L06P_1,OUTPUT,LVCMOS25*,1,12,SLOW,NONE**,,,LOCATED,NO,NONE,
+P17,JB<4>,IOB,IO_L06P_1,OUTPUT,LVCMOS25*,1,12,SLOW,NONE**,,,LOCATED,YES,NONE,
 P18,,DIFFS,IO_L06N_1,UNUSED,,1,,,,,,,,,
 R1,,IBUF,IP,UNUSED,,3,,,,,,,,,
 R2,,DIFFS,IO_L23N_3,UNUSED,,3,,,,,,,,,
