@@ -17,7 +17,7 @@
 </TR>
 <TR ALIGN=LEFT>
 <TD BGCOLOR='#FFFF99'><B>Project ID (random number)</B></TD>
-<TD><xtag-property name="RandomID">c8aba928d189476485ea7b268de5e731</xtag-property>.<xtag-property name="ProjectID">2590DF7935AD448ABF0E0F3E7BFEB574</xtag-property>.<xtag-property name="ProjectIteration">35</xtag-property></TD>
+<TD><xtag-property name="RandomID">c8aba928d189476485ea7b268de5e731</xtag-property>.<xtag-property name="ProjectID">2590DF7935AD448ABF0E0F3E7BFEB574</xtag-property>.<xtag-property name="ProjectIteration">36</xtag-property></TD>
 <TD BGCOLOR='#FFFF99'><B>Target Package:</B></TD>
 <TD><xtag-property name="TargetPackage">fg320</xtag-property></TD>
 </TR>
@@ -29,7 +29,7 @@
 </TR>
 <TR ALIGN=LEFT>
 <TD BGCOLOR='#FFFF99'><B>Date Generated</B></TD>
-<TD><xtag-property name="Date Generated">2015-05-22T16:15:09</xtag-property></TD>
+<TD><xtag-property name="Date Generated">2015-05-22T18:51:39</xtag-property></TD>
 <TD BGCOLOR='#FFFF99'><B>Tool Flow</B></TD>
 <TD><xtag-property name="ToolFlow">ISE</xtag-property></TD>
 </TR>
@@ -426,7 +426,7 @@
 <LI><xtag-item3>CE=[CE:290] [CE_INV:13]</xtag-item3></LI>
 <LI><xtag-item3>CK=[CK:680] [CK_INV:12]</xtag-item3></LI>
 <LI><xtag-item3>D=[D:686] [D_INV:6]</xtag-item3></LI>
-<LI><xtag-item3>FFX_INIT_ATTR=[INIT0:633] [INIT1:59]</xtag-item3></LI>
+<LI><xtag-item3>FFX_INIT_ATTR=[INIT0:632] [INIT1:60]</xtag-item3></LI>
 <LI><xtag-item3>FFX_SR_ATTR=[SRLOW:643] [SRHIGH:49]</xtag-item3></LI>
 <LI><xtag-item3>LATCH_OR_FF=[FF:692]</xtag-item3></LI>
 <LI><xtag-item3>REV=[REV_INV:0] [REV:10]</xtag-item3></LI>
@@ -1306,6 +1306,13 @@
 <LI><xtag-cmdline>par -w -intstyle ise -ol high -t 1 &lt;fname&gt;.ncd &lt;fname&gt;.ncd &lt;fname&gt;.pcf</xtag-cmdline></LI>
 <LI><xtag-cmdline>trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml &lt;fname&gt;.twx &lt;fname&gt;.ncd -o &lt;fname&gt;.twr &lt;fname&gt;.pcf -ucf &lt;fname&gt;.ucf</xtag-cmdline></LI>
 <LI><xtag-cmdline>bitgen -intstyle ise -f &lt;fname&gt;.ut &lt;fname&gt;.ncd</xtag-cmdline></LI>
+<LI><xtag-cmdline>xst -intstyle ise -ifn &lt;ise_file&gt;</xtag-cmdline></LI>
+<LI><xtag-cmdline>ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc &lt;fname&gt;.ucf -bm &lt;fname&gt;.bmm -p xc3s1200e-fg320-4 &lt;fname&gt;.ngc &lt;fname&gt;.ngd</xtag-cmdline></LI>
+<LI><xtag-cmdline>map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o &lt;fname&gt;.ncd &lt;fname&gt;.ngd &lt;fname&gt;.pcf</xtag-cmdline></LI>
+<LI><xtag-cmdline>par -w -intstyle ise -ol high -t 1 &lt;fname&gt;.ncd &lt;fname&gt;.ncd &lt;fname&gt;.pcf</xtag-cmdline></LI>
+<LI><xtag-cmdline>trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml &lt;fname&gt;.twx &lt;fname&gt;.ncd -o &lt;fname&gt;.twr &lt;fname&gt;.pcf -ucf &lt;fname&gt;.ucf</xtag-cmdline></LI>
+<LI><xtag-cmdline>bitgen -intstyle ise -f &lt;fname&gt;.ut &lt;fname&gt;.ncd</xtag-cmdline></LI>
+<LI><xtag-cmdline>bitgen -intstyle ise -f &lt;fname&gt;.ut &lt;fname&gt;.ncd</xtag-cmdline></LI>
 </xtag-section></UL></TD></TR>
 </TABLE>
 &nbsp;<BR><TABLE BORDER CELLSPACING=0 WIDTH='100%'><xtag-section name="RunStatistics"><TR ALIGN=CENTER BGCOLOR='#99CCFF'><TD COLSPAN=8><B>Software Quality</B></TD></TR><TR ALIGN=LEFT><TD COLSPAN=8><B>Run Statistics</B></TD></TR><TR ALIGN=CENTER BGCOLOR='#FFFF99'><TD><B>Program Name</B></TD><TD><B>Runs Started</B></TD><TD><B>Runs Finished</B></TD><TD><B>Errors</B></TD><TD><B>Fatal Errors</B></TD><TD><B>Internal Errors</B></TD><TD><B>Exceptions</B></TD><TD><B>Core Dumps</B></TD></TR>
@@ -1322,8 +1329,8 @@
 </tr>
 <tr>
   <td><xtag-program-name>bitgen</xtag-program-name></td>
-  <td><xtag-total-run-started>708</xtag-total-run-started></td>
-  <td><xtag-total-run-finished>706</xtag-total-run-finished></td>
+  <td><xtag-total-run-started>710</xtag-total-run-started></td>
+  <td><xtag-total-run-finished>708</xtag-total-run-finished></td>
   <td><xtag-total-error>0</xtag-total-error></td>
   <td><xtag-total-fatal-error>0</xtag-total-fatal-error></td>
   <td><xtag-total-internal-error>0</xtag-total-internal-error></td>
@@ -1332,8 +1339,8 @@
 </tr>
 <tr>
   <td><xtag-program-name>bitinit</xtag-program-name></td>
-  <td><xtag-total-run-started>98</xtag-total-run-started></td>
-  <td><xtag-total-run-finished>98</xtag-total-run-finished></td>
+  <td><xtag-total-run-started>100</xtag-total-run-started></td>
+  <td><xtag-total-run-finished>100</xtag-total-run-finished></td>
   <td><xtag-total-error>0</xtag-total-error></td>
   <td><xtag-total-fatal-error>0</xtag-total-fatal-error></td>
   <td><xtag-total-internal-error>0</xtag-total-internal-error></td>
@@ -1342,8 +1349,8 @@
 </tr>
 <tr>
   <td><xtag-program-name>elfcheck</xtag-program-name></td>
-  <td><xtag-total-run-started>2056</xtag-total-run-started></td>
-  <td><xtag-total-run-finished>2017</xtag-total-run-finished></td>
+  <td><xtag-total-run-started>2087</xtag-total-run-started></td>
+  <td><xtag-total-run-finished>2048</xtag-total-run-finished></td>
   <td><xtag-total-error>0</xtag-total-error></td>
   <td><xtag-total-fatal-error>0</xtag-total-fatal-error></td>
   <td><xtag-total-internal-error>0</xtag-total-internal-error></td>
@@ -1352,8 +1359,8 @@
 </tr>
 <tr>
   <td><xtag-program-name>libgen</xtag-program-name></td>
-  <td><xtag-total-run-started>83</xtag-total-run-started></td>
-  <td><xtag-total-run-finished>80</xtag-total-run-finished></td>
+  <td><xtag-total-run-started>84</xtag-total-run-started></td>
+  <td><xtag-total-run-finished>81</xtag-total-run-finished></td>
   <td><xtag-total-error>0</xtag-total-error></td>
   <td><xtag-total-fatal-error>0</xtag-total-fatal-error></td>
   <td><xtag-total-internal-error>0</xtag-total-internal-error></td>
@@ -1362,8 +1369,8 @@
 </tr>
 <tr>
   <td><xtag-program-name>map</xtag-program-name></td>
-  <td><xtag-total-run-started>777</xtag-total-run-started></td>
-  <td><xtag-total-run-finished>733</xtag-total-run-finished></td>
+  <td><xtag-total-run-started>778</xtag-total-run-started></td>
+  <td><xtag-total-run-finished>734</xtag-total-run-finished></td>
   <td><xtag-total-error>0</xtag-total-error></td>
   <td><xtag-total-fatal-error>0</xtag-total-fatal-error></td>
   <td><xtag-total-internal-error>0</xtag-total-internal-error></td>
@@ -1402,8 +1409,8 @@
 </tr>
 <tr>
   <td><xtag-program-name>ngdbuild</xtag-program-name></td>
-  <td><xtag-total-run-started>794</xtag-total-run-started></td>
-  <td><xtag-total-run-finished>794</xtag-total-run-finished></td>
+  <td><xtag-total-run-started>795</xtag-total-run-started></td>
+  <td><xtag-total-run-finished>795</xtag-total-run-finished></td>
   <td><xtag-total-error>0</xtag-total-error></td>
   <td><xtag-total-fatal-error>0</xtag-total-fatal-error></td>
   <td><xtag-total-internal-error>0</xtag-total-internal-error></td>
@@ -1412,8 +1419,8 @@
 </tr>
 <tr>
   <td><xtag-program-name>par</xtag-program-name></td>
-  <td><xtag-total-run-started>725</xtag-total-run-started></td>
-  <td><xtag-total-run-finished>710</xtag-total-run-finished></td>
+  <td><xtag-total-run-started>726</xtag-total-run-started></td>
+  <td><xtag-total-run-finished>711</xtag-total-run-finished></td>
   <td><xtag-total-error>11</xtag-total-error></td>
   <td><xtag-total-fatal-error>0</xtag-total-fatal-error></td>
   <td><xtag-total-internal-error>0</xtag-total-internal-error></td>
@@ -1432,8 +1439,8 @@
 </tr>
 <tr>
   <td><xtag-program-name>psf2Edward</xtag-program-name></td>
-  <td><xtag-total-run-started>55</xtag-total-run-started></td>
-  <td><xtag-total-run-finished>55</xtag-total-run-finished></td>
+  <td><xtag-total-run-started>56</xtag-total-run-started></td>
+  <td><xtag-total-run-finished>56</xtag-total-run-finished></td>
   <td><xtag-total-error>0</xtag-total-error></td>
   <td><xtag-total-fatal-error>0</xtag-total-fatal-error></td>
   <td><xtag-total-internal-error>0</xtag-total-internal-error></td>
@@ -1442,8 +1449,8 @@
 </tr>
 <tr>
   <td><xtag-program-name>trce</xtag-program-name></td>
-  <td><xtag-total-run-started>697</xtag-total-run-started></td>
-  <td><xtag-total-run-finished>697</xtag-total-run-finished></td>
+  <td><xtag-total-run-started>698</xtag-total-run-started></td>
+  <td><xtag-total-run-finished>698</xtag-total-run-finished></td>
   <td><xtag-total-error>0</xtag-total-error></td>
   <td><xtag-total-fatal-error>0</xtag-total-fatal-error></td>
   <td><xtag-total-internal-error>0</xtag-total-internal-error></td>
@@ -1452,8 +1459,8 @@
 </tr>
 <tr>
   <td><xtag-program-name>xdsgen</xtag-program-name></td>
-  <td><xtag-total-run-started>55</xtag-total-run-started></td>
-  <td><xtag-total-run-finished>55</xtag-total-run-finished></td>
+  <td><xtag-total-run-started>56</xtag-total-run-started></td>
+  <td><xtag-total-run-finished>56</xtag-total-run-finished></td>
   <td><xtag-total-error>0</xtag-total-error></td>
   <td><xtag-total-fatal-error>0</xtag-total-fatal-error></td>
   <td><xtag-total-internal-error>0</xtag-total-internal-error></td>
@@ -1462,7 +1469,7 @@
 </tr>
 <tr>
   <td><xtag-program-name>xps</xtag-program-name></td>
-  <td><xtag-total-run-started>433</xtag-total-run-started></td>
+  <td><xtag-total-run-started>436</xtag-total-run-started></td>
   <td><xtag-total-run-finished>135</xtag-total-run-finished></td>
   <td><xtag-total-error>0</xtag-total-error></td>
   <td><xtag-total-fatal-error>0</xtag-total-fatal-error></td>
@@ -1472,8 +1479,8 @@
 </tr>
 <tr>
   <td><xtag-program-name>xst</xtag-program-name></td>
-  <td><xtag-total-run-started>1509</xtag-total-run-started></td>
-  <td><xtag-total-run-finished>1502</xtag-total-run-finished></td>
+  <td><xtag-total-run-started>1510</xtag-total-run-started></td>
+  <td><xtag-total-run-finished>1503</xtag-total-run-finished></td>
   <td><xtag-total-error>0</xtag-total-error></td>
   <td><xtag-total-fatal-error>0</xtag-total-fatal-error></td>
   <td><xtag-total-internal-error>0</xtag-total-internal-error></td>
@@ -1541,31 +1548,29 @@ Help files</xtag-group-name></B></TD></TR>
 </TR><TR><TD><xtag-design-property-name>PROP_intProjectCreationTimestamp</xtag-design-property-name>=<xtag-design-property-value>2015-05-13T21:07:27</xtag-design-property-value></TD>
 <TD><xtag-design-property-name>PROP_intWbtProjectID</xtag-design-property-name>=<xtag-design-property-value>2590DF7935AD448ABF0E0F3E7BFEB574</xtag-design-property-value></TD>
 
-</TR><TR><TD><xtag-process-property-name>PROP_intWbtProjectIteration</xtag-process-property-name>=<xtag-process-property-value>35</xtag-process-property-value></TD>
+</TR><TR><TD><xtag-process-property-name>PROP_intWbtProjectIteration</xtag-process-property-name>=<xtag-process-property-value>36</xtag-process-property-value></TD>
 <TD><xtag-design-property-name>PROP_intWorkingDirLocWRTProjDir</xtag-design-property-name>=<xtag-design-property-value>Same</xtag-design-property-value></TD>
 
 </TR><TR><TD><xtag-design-property-name>PROP_intWorkingDirUsed</xtag-design-property-name>=<xtag-design-property-value>No</xtag-design-property-value></TD>
 <TD><xtag-process-property-name>PROP_xilxBitgStart_IntDone</xtag-process-property-name>=<xtag-process-property-value>true</xtag-process-property-value></TD>
 
 </TR><TR><TD><xtag-design-property-name>PROP_AutoTop</xtag-design-property-name>=<xtag-design-property-value>true</xtag-design-property-value></TD>
-<TD><xtag-process-property-name>PROP_CompxlibEdkSimLib</xtag-process-property-name>=<xtag-process-property-value>true</xtag-process-property-value></TD>
+<TD><xtag-design-property-name>PROP_DevFamily</xtag-design-property-name>=<xtag-design-property-value>Spartan3E</xtag-design-property-value></TD>
 
-</TR><TR><TD><xtag-design-property-name>PROP_DevFamily</xtag-design-property-name>=<xtag-design-property-value>Spartan3E</xtag-design-property-value></TD>
-<TD><xtag-design-property-name>PROP_DevDevice</xtag-design-property-name>=<xtag-design-property-value>xc3s1200e</xtag-design-property-value></TD>
+</TR><TR><TD><xtag-design-property-name>PROP_DevDevice</xtag-design-property-name>=<xtag-design-property-value>xc3s1200e</xtag-design-property-value></TD>
+<TD><xtag-design-property-name>PROP_DevFamilyPMName</xtag-design-property-name>=<xtag-design-property-value>spartan3e</xtag-design-property-value></TD>
 
-</TR><TR><TD><xtag-design-property-name>PROP_DevFamilyPMName</xtag-design-property-name>=<xtag-design-property-value>spartan3e</xtag-design-property-value></TD>
-<TD><xtag-design-property-name>PROP_DevPackage</xtag-design-property-name>=<xtag-design-property-value>fg320</xtag-design-property-value></TD>
+</TR><TR><TD><xtag-design-property-name>PROP_DevPackage</xtag-design-property-name>=<xtag-design-property-value>fg320</xtag-design-property-value></TD>
+<TD><xtag-design-property-name>PROP_Synthesis_Tool</xtag-design-property-name>=<xtag-design-property-value>XST (VHDL/Verilog)</xtag-design-property-value></TD>
 
-</TR><TR><TD><xtag-design-property-name>PROP_Synthesis_Tool</xtag-design-property-name>=<xtag-design-property-value>XST (VHDL/Verilog)</xtag-design-property-value></TD>
-<TD><xtag-design-property-name>PROP_DevSpeed</xtag-design-property-name>=<xtag-design-property-value>-4</xtag-design-property-value></TD>
+</TR><TR><TD><xtag-design-property-name>PROP_DevSpeed</xtag-design-property-name>=<xtag-design-property-value>-4</xtag-design-property-value></TD>
+<TD><xtag-design-property-name>PROP_PreferredLanguage</xtag-design-property-name>=<xtag-design-property-value>Verilog</xtag-design-property-value></TD>
 
-</TR><TR><TD><xtag-design-property-name>PROP_PreferredLanguage</xtag-design-property-name>=<xtag-design-property-value>Verilog</xtag-design-property-value></TD>
-<TD><xtag-source-property-name>FILE_UCF</xtag-source-property-name>=<xtag-source-property-value>1</xtag-source-property-value></TD>
+</TR><TR><TD><xtag-source-property-name>FILE_UCF</xtag-source-property-name>=<xtag-source-property-value>1</xtag-source-property-value></TD>
+<TD><xtag-source-property-name>FILE_VERILOG</xtag-source-property-name>=<xtag-source-property-value>4</xtag-source-property-value></TD>
 
-</TR><TR><TD><xtag-source-property-name>FILE_VERILOG</xtag-source-property-name>=<xtag-source-property-value>4</xtag-source-property-value></TD>
-<TD><xtag-source-property-name>FILE_VHDL</xtag-source-property-name>=<xtag-source-property-value>1</xtag-source-property-value></TD>
-
-</TR><TR><TD><xtag-source-property-name>FILE_XPS</xtag-source-property-name>=<xtag-source-property-value>1</xtag-source-property-value></TD>
+</TR><TR><TD><xtag-source-property-name>FILE_VHDL</xtag-source-property-name>=<xtag-source-property-value>1</xtag-source-property-value></TD>
+<TD><xtag-source-property-name>FILE_XPS</xtag-source-property-name>=<xtag-source-property-value>1</xtag-source-property-value></TD>
 </TR></xtag-section></TABLE>
 &nbsp;<BR><TABLE BORDER CELLSPACING=0 WIDTH='100%'>
 <xtag-section name="CoregenStatistics">

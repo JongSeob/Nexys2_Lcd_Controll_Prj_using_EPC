@@ -48,6 +48,14 @@ module Lcd_Controller#(
 	reg [2:0] stNext = stIdle;
 	
 	reg [5:0] count = 0;
+	
+	initial begin
+		stCur  = stIdle;
+		stNext = stIdle;
+		
+		count = 0;
+		RDY = 1;
+	end
 		
 	always @(posedge clk, posedge rst) begin
 		if(rst == 1)

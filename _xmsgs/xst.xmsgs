@@ -26,10 +26,19 @@
 <msg type="warning" file="HDLCompilers" num="299" delta="old" ><arg fmt="%s" index="1">&quot;Lcd_Controller.v&quot; line 29 </arg>Too many digits specified in binary constant
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;top.v&quot; line 185 </arg>Connection to input port &apos;<arg fmt="%s" index="2">iBtnSwitch</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;top.v&quot; line 188 </arg>Connection to input port &apos;<arg fmt="%s" index="2">iBtnSwitch</arg>&apos; does not match port size
 </msg>
 
-<msg type="info" file="Xst" num="2117" delta="old" >HDL ADVISOR - Mux Selector &lt;<arg fmt="%s" index="1">stCur</arg>&gt; of Case statement line <arg fmt="%s" index="2">60</arg> was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+<msg type="warning" file="Xst" num="1643" delta="new" >&quot;<arg fmt="%s" index="1">Lcd_Controller.v</arg>&quot; line <arg fmt="%d" index="2">56</arg>: You are giving the signal <arg fmt="%s" index="3">count</arg> a default value. <arg fmt="%s" index="4">count</arg> already had a default value, which will be overridden by this one.
+</msg>
+
+<msg type="warning" file="Xst" num="1643" delta="new" >&quot;<arg fmt="%s" index="1">Lcd_Controller.v</arg>&quot; line <arg fmt="%d" index="2">53</arg>: You are giving the signal <arg fmt="%s" index="3">stCur</arg> a default value. <arg fmt="%s" index="4">stCur</arg> already had a default value, which will be overridden by this one.
+</msg>
+
+<msg type="warning" file="Xst" num="1643" delta="new" >&quot;<arg fmt="%s" index="1">Lcd_Controller.v</arg>&quot; line <arg fmt="%d" index="2">54</arg>: You are giving the signal <arg fmt="%s" index="3">stNext</arg> a default value. <arg fmt="%s" index="4">stNext</arg> already had a default value, which will be overridden by this one.
+</msg>
+
+<msg type="info" file="Xst" num="2117" delta="new" >HDL ADVISOR - Mux Selector &lt;<arg fmt="%s" index="1">stCur</arg>&gt; of Case statement line <arg fmt="%s" index="2">68</arg> was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
 	- add an &apos;<arg fmt="%s" index="3">INIT</arg>&apos; attribute on signal &lt;<arg fmt="%s" index="4">stCur</arg>&gt; (optimization is then done without any risk)
 	- use the attribute &apos;<arg fmt="%s" index="5">signal_encoding</arg> <arg fmt="%s" index="6">user</arg>&apos; to avoid onehot optimization
 	- use the attribute &apos;<arg fmt="%s" index="7">safe_implementation</arg> <arg fmt="%s" index="8">yes</arg>&apos; to force XST to perform a safe (but less efficient) optimization

@@ -76,6 +76,7 @@ module top #(
 	wire	nWR;			// Write. active low. EPC의 출력.
 	wire 	BE;			// Byte Enable. Active High. EPC의 출력 1바이트이기 때문에 큰 의미 없음.
 	wire	nBE;			// Byte Enable. Active Low. EPC의 출력을 받아 극성을 반전하여 사용하기로 한다.
+	wire  EPC_Rdy;
 
 	wire	[7:0] BlazeDataOut; 
 	reg	[7:0] BlazeDataIn; 
@@ -148,7 +149,9 @@ module top #(
 		end
 			
 	end
-								
+	
+	assign EPC_Rdy = LCD_RDY & 1;
+	
 	// Instantiate the MicroBlaze & RS232 module
 	(* BOX_TYPE = "user_black_box" *)
 	blaze blaze (
@@ -162,7 +165,7 @@ module top #(
 		 .xps_epc_0_PRH_Addr_pin					(Addr),
 		 .xps_epc_0_PRH_Rd_n_pin					(nRD),
 		 .xps_epc_0_PRH_Wr_n_pin					(nWR),
-		 .xps_epc_0_PRH_Rdy_pin						(LCD_RDY),
+		 .xps_epc_0_PRH_Rdy_pin						(EPC_Rdy),
 		 .xps_epc_0_PRH_Data_I_pin					(BlazeDataIn),		// 입력전용 데이터버스
 		 .xps_epc_0_PRH_Data_O_pin					(BlazeDataOut),	// 출력 전용 데이터 버스
 		 .xps_epc_0_PRH_BE_pin						(BE)
