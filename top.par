@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-MSDN-SPECIAL::  Thu May 21 17:32:38 2015
+MSDN-SPECIAL::  Fri May 22 16:14:14 2015
 
 par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
 
@@ -44,7 +44,7 @@ Design Summary Report:
    Number of DCMs                            1 out of 8      12%
    Number of MULT18X18SIOs                   3 out of 28     10%
    Number of RAMB16s                        16 out of 28     57%
-   Number of Slices                       1884 out of 8672   21%
+   Number of Slices                       1881 out of 8672   21%
       Number of SLICEMs                    207 out of 4336    4%
 
 
@@ -54,53 +54,55 @@ Placer effort level (-pl):    High
 Placer cost table entry (-t): 1
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 3 secs 
+Starting initial Timing Analysis.  REAL time: 2 secs 
 Finished initial Timing Analysis.  REAL time: 3 secs 
 
 
 Starting Placer
 Total REAL time at the beginning of Placer: 3 secs 
-Total CPU  time at the beginning of Placer: 3 secs 
+Total CPU  time at the beginning of Placer: 2 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:142bc0e6) REAL time: 5 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:142baa0c) REAL time: 4 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:142bc0e6) REAL time: 5 secs 
+Phase 2.7  Design Feasibility Check (Checksum:142baa0c) REAL time: 4 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:1a2d5869) REAL time: 5 secs 
+Phase 3.31  Local Placement Optimization (Checksum:1a2d418f) REAL time: 4 secs 
 
 Phase 4.2  Initial Clock and IO Placement
 
-Phase 4.2  Initial Clock and IO Placement (Checksum:e9e5df3) REAL time: 6 secs 
+Phase 4.2  Initial Clock and IO Placement (Checksum:e9e4719) REAL time: 4 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:e9e5df3) REAL time: 6 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:e9e4719) REAL time: 4 secs 
 
 Phase 6.36  Local Placement Optimization
-Phase 6.36  Local Placement Optimization (Checksum:e9e5df3) REAL time: 6 secs 
+Phase 6.36  Local Placement Optimization (Checksum:e9e4719) REAL time: 4 secs 
 
 Phase 7.8  Global Placement
 ..............................
-..................................................................
-.......................
+......................................................................
+..............................
 ..............................................................................
-.................
+...........................
+.........................
+.............
 .....................
-Phase 7.8  Global Placement (Checksum:639eaaad) REAL time: 15 secs 
+Phase 7.8  Global Placement (Checksum:b7d7d7b6) REAL time: 15 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:639eaaad) REAL time: 15 secs 
+Phase 8.5  Local Placement Optimization (Checksum:b7d7d7b6) REAL time: 15 secs 
 
 Phase 9.18  Placement Optimization
-Phase 9.18  Placement Optimization (Checksum:a0005261) REAL time: 17 secs 
+Phase 9.18  Placement Optimization (Checksum:c4f08aa5) REAL time: 17 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:a0005261) REAL time: 17 secs 
+Phase 10.5  Local Placement Optimization (Checksum:c4f08aa5) REAL time: 17 secs 
 
 Total REAL time to Placer completion: 17 secs 
-Total CPU  time to Placer completion: 15 secs 
+Total CPU  time to Placer completion: 17 secs 
 Writing design to file top.ncd
 
 
@@ -108,38 +110,36 @@ Writing design to file top.ncd
 Starting Router
 
 
-Phase  1  : 13865 unrouted;      REAL time: 23 secs 
+Phase  1  : 13863 unrouted;      REAL time: 23 secs 
 
-Phase  2  : 12259 unrouted;      REAL time: 23 secs 
+Phase  2  : 12254 unrouted;      REAL time: 24 secs 
 
-Phase  3  : 4451 unrouted;      REAL time: 25 secs 
+Phase  3  : 4300 unrouted;      REAL time: 25 secs 
 
-Phase  4  : 4451 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 25 secs 
+Phase  4  : 4300 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 26 secs 
 
 Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 29 secs 
 
 Updating file: top.ncd with current fully routed design.
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 30 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 31 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 30 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 31 secs 
 
 Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 31 secs 
 WARNING:Route:455 - CLK Net:uart/UART/rClkDiv<3> may have excessive skew because 
       0 CLK pins and 1 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:SevenSegment/divide_Clk_50Mhz_To_240hz/OutClk may have excessive skew because 
       0 CLK pins and 1 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:Lcd_Controller/EN may have excessive skew because 
-      0 CLK pins and 2 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:uart/UART/stbeCur_FSM_FFd1 may have excessive skew because 
       0 CLK pins and 3 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:Lcd_Controller/EN may have excessive skew because 
+      0 CLK pins and 3 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:JA_BlazeDataOut_not0000_inv may have excessive skew because 
-      0 CLK pins and 13 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:EPC_nCS may have excessive skew because 
-      0 CLK pins and 10 NON_CLK pins failed to route using a CLK template.
+      0 CLK pins and 14 NON_CLK pins failed to route using a CLK template.
 
 Total REAL time to Router completion: 31 secs 
-Total CPU time to Router completion: 29 secs 
+Total CPU time to Router completion: 31 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -158,34 +158,34 @@ Generating Clock Report
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
 |blaze/clk_50_0000MHz |              |      |      |            |             |
-|                     | BUFGMUX_X1Y10| No   | 1029 |  0.210     |  0.379      |
+|                     | BUFGMUX_X1Y10| No   | 1029 |  0.207     |  0.379      |
 +---------------------+--------------+------+------+------------+-------------+
 |blaze/mdm_0/Dbg_Clk_ |              |      |      |            |             |
-|                   1 |  BUFGMUX_X2Y1| No   |  116 |  0.161     |  0.336      |
+|                   1 |  BUFGMUX_X2Y1| No   |  116 |  0.166     |  0.338      |
 +---------------------+--------------+------+------+------------+-------------+
-|           clk_IBUFG | BUFGMUX_X2Y11| No   |   67 |  0.190     |  0.377      |
+|           clk_IBUFG | BUFGMUX_X2Y11| No   |   67 |  0.180     |  0.379      |
 +---------------------+--------------+------+------+------------+-------------+
-|      uart/UART/rClk |  BUFGMUX_X1Y0| No   |   22 |  0.075     |  0.256      |
+|      uart/UART/rClk |  BUFGMUX_X1Y0| No   |   22 |  0.204     |  0.376      |
 +---------------------+--------------+------+------+------------+-------------+
 |JA_BlazeDataOut_not0 |              |      |      |            |             |
-|             000_inv |         Local|      |   17 |  0.051     |  2.641      |
+|             000_inv |         Local|      |   18 |  0.199     |  2.576      |
 +---------------------+--------------+------+------+------------+-------------+
-|             EPC_nCS |         Local|      |   12 |  0.754     |  2.621      |
+|           fallingRW |         Local|      |    2 |  0.567     |  2.319      |
 +---------------------+--------------+------+------+------------+-------------+
-|   Lcd_Controller/EN |         Local|      |    6 |  0.012     |  2.185      |
+|   Lcd_Controller/EN |         Local|      |    7 |  0.004     |  1.545      |
 +---------------------+--------------+------+------+------------+-------------+
 |uart/UART/stbeCur_FS |              |      |      |            |             |
-|              M_FFd1 |         Local|      |    5 |  0.606     |  2.428      |
+|              M_FFd1 |         Local|      |    5 |  0.082     |  1.819      |
 +---------------------+--------------+------+------+------------+-------------+
 |blaze/mdm_0/Dbg_Upda |              |      |      |            |             |
-|                te_1 |         Local|      |   27 |  0.414     |  2.320      |
+|                te_1 |         Local|      |   27 |  0.414     |  2.317      |
 +---------------------+--------------+------+------+------------+-------------+
 |uart/UART/rClkDiv<3> |              |      |      |            |             |
-|                     |         Local|      |   11 |  0.229     |  1.996      |
+|                     |         Local|      |   11 |  0.455     |  2.524      |
 +---------------------+--------------+------+------+------------+-------------+
 |SevenSegment/divide_ |              |      |      |            |             |
 |Clk_50Mhz_To_240hz/O |              |      |      |            |             |
-|               utClk |         Local|      |   11 |  0.150     |  1.905      |
+|               utClk |         Local|      |   11 |  0.172     |  1.930      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -205,14 +205,14 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  TS_blaze_clock_generator_0_clock_generato | SETUP       |     1.833ns|    18.167ns|       0|           0
-  r_0_SIG_DCM0_CLK0 = PERIOD TIMEGRP        | HOLD        |     0.741ns|            |       0|           0
+  TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_ | SETUP       |     3.016ns|    13.968ns|       0|           0
+  pin" 50 MHz HIGH 50%                      | HOLD        |     0.927ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  TS_blaze_clock_generator_0_clock_generato | SETUP       |     3.189ns|    16.811ns|       0|           0
+  r_0_SIG_DCM0_CLK0 = PERIOD TIMEGRP        | HOLD        |     0.722ns|            |       0|           0
     "blaze_clock_generator_0_clock_generato |             |            |            |        |            
   r_0_SIG_DCM0_CLK0"         TS_sys_clk_pin |             |            |            |        |            
    HIGH 50%                                 |             |            |            |        |            
-----------------------------------------------------------------------------------------------------------
-  TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_ | SETUP       |     3.340ns|    13.320ns|       0|           0
-  pin" 50 MHz HIGH 50%                      | HOLD        |     0.927ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -226,8 +226,8 @@ Derived Constraints for TS_sys_clk_pin
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|TS_sys_clk_pin                 |     20.000ns|     13.320ns|     18.167ns|            0|            0|         1325|       181567|
-| TS_blaze_clock_generator_0_clo|     20.000ns|     18.167ns|          N/A|            0|            0|       181567|            0|
+|TS_sys_clk_pin                 |     20.000ns|     13.968ns|     16.811ns|            0|            0|         1345|       181567|
+| TS_blaze_clock_generator_0_clo|     20.000ns|     16.811ns|          N/A|            0|            0|       181567|            0|
 | ck_generator_0_SIG_DCM0_CLK0  |             |             |             |             |             |             |             |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
@@ -239,16 +239,16 @@ Generating Pad Report.
 All signals are completely routed.
 
 Total REAL time to PAR completion: 32 secs 
-Total CPU time to PAR completion: 30 secs 
+Total CPU time to PAR completion: 32 secs 
 
-Peak Memory Usage:  448 MB
+Peak Memory Usage:  460 MB
 
 Placement: Completed - No errors found.
 Routing: Completed - No errors found.
 Timing: Completed - No errors found.
 
 Number of error messages: 0
-Number of warning messages: 6
+Number of warning messages: 5
 Number of info messages: 0
 
 Writing design to file top.ncd

@@ -105,11 +105,15 @@ module top #(
 	
 	// Lcd Operation
 	
-	always @(negedge EPC_nCS) begin
-		if(Addr == LCD_DATA_ADDR)
-			RS <= 1;
-		else if(Addr == LCD_CONTROL_ADDR)
-			RS <= 0;
+	wire fallingRW = nWR & nRD;
+	
+	always @(posedge clk, negedge fallingRW) begin
+		if(fallingRW == 0) begin
+			if(Addr == LCD_DATA_ADDR)
+				RS <= 1;
+			else if(Addr == LCD_CONTROL_ADDR)
+				RS <= 0;
+		end
 	end
 	
 	assign LCD_nCS = ( (EPC_nCS == 0) && ((Addr == LCD_DATA_ADDR) || (Addr == LCD_CONTROL_ADDR)) ) ? 0 : 1;

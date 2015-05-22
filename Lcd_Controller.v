@@ -91,7 +91,7 @@ module Lcd_Controller#(
 										stNext <= stTwoDelay; 
 								  end 
 								  
-			stTwoDelay 		 : if(count == 1) 
+			stTwoDelay 		 : if(count == 2) 
 										stNext <= stSetEn;
 										
 			stSetEn 			 : begin 
@@ -99,7 +99,7 @@ module Lcd_Controller#(
 										stNext <= stElevenDelay; 	  		 
 								  end
 								  
-			stElevenDelay 	 : if(count == 10) 
+			stElevenDelay 	 : if(count == 11) 
 										stNext <= stClearEn;
 										
 			stClearEn 		 : begin 

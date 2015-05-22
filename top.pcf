@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu May 21 17:32:32 2015
+// Written by: Map P.20131013 on Fri May 22 16:14:11 2015
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -64,8 +64,9 @@ TIMEGRP sys_clk_pin = BEL "BlazeDataIn_0" BEL "BlazeDataIn_1" BEL
         "Lcd_Controller/stCur_0" BEL "Lcd_Controller/stCur_1" BEL
         "Lcd_Controller/stCur_2" BEL "Lcd_Controller/stCur_3" BEL
         "Lcd_Controller/stCur_6" BEL "Lcd_Controller/stCur_4" BEL
-        "Lcd_Controller/stCur_5" BEL "Lcd_Controller/RDY" BEL
-        "Lcd_Controller/stNext_6" BEL "Lcd_Controller/stNext_2" BEL
+        "Lcd_Controller/stCur_5" BEL "Lcd_Controller/EN" BEL
+        "Lcd_Controller/RDY" BEL "Lcd_Controller/stNext_6" BEL
+        "Lcd_Controller/stNext_4" BEL "Lcd_Controller/stNext_2" BEL
         "Lcd_Controller/stNext_1" BEL "uart/UART/rClk" BEL
         "uart/UART/clkDiv_0" BEL "uart/UART/clkDiv_1" BEL "uart/UART/clkDiv_2"
         BEL "uart/UART/clkDiv_3" BEL "uart/UART/clkDiv_4" BEL
@@ -102,8 +103,7 @@ TIMEGRP sys_clk_pin = BEL "BlazeDataIn_0" BEL "BlazeDataIn_1" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_1" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_0" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/OutClk" BEL
-        "Lcd_Controller/EN" BEL "Lcd_Controller/stNext_5" BEL
-        "Lcd_Controller/stNext_4" BEL "Lcd_Controller/stNext_3" BEL
+        "Lcd_Controller/stNext_5" BEL "Lcd_Controller/stNext_3" BEL
         "Lcd_Controller/stNext_0" BEL "Lcd_Controller/RW" BEL
         "blaze/clock_generator_0/clock_generator_0/DCM0_INST/rsti" BEL
         "blaze/clock_generator_0/clock_generator_0/DCM0_INST/rst_delay_0" BEL

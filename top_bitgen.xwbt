@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Users\Administrator\Desktop\Assignment5\top.ncd
-OUTFILE=C:\Users\Administrator\Desktop\Assignment5\top.bit
+INFILE=E:\Nexys2_LCD_UART_EPC\top.ncd
+OUTFILE=E:\Nexys2_LCD_UART_EPC\top.bit
 FAMILY=Spartan3E
 PART=xc3s1200e-4fg320
-WORKINGDIR=C:\Users\Administrator\Desktop\Assignment5
+WORKINGDIR=E:\Nexys2_LCD_UART_EPC
 LICENSE=WebPack
 USER_INFO=_

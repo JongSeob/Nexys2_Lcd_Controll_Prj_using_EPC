@@ -1,4 +1,4 @@
-verilog work "C:/Users/Administrator/Desktop/Assignment5/blaze/hdl/blaze.v"
+verilog work "E:/Nexys2_LCD_UART_EPC/blaze/hdl/blaze.v"
 vhdl work "RS232RefComp.vhd"
 verilog work "uart.v"
 verilog work "SevenSegment.v"

@@ -1,10 +1,9 @@
-V3 4
+V3 5
 FL C:/Users/Administrator/Desktop/Assignment5/RS232RefComp.vhd 2015/05/21.04:17:36 P.20131013
-EN work/Rs232RefComp 1432197090 \
-      FL C:/Users/Administrator/Desktop/Assignment5/RS232RefComp.vhd \
+FL E:/Nexys2_Lcd_Controll_Prj_using_EPC/RS232RefComp.vhd 2015/05/20.10:00:47 P.20131013
+FL E:/Nexys2_LCD_UART_EPC/RS232RefComp.vhd 2015/05/21.04:17:36 P.20131013
+EN work/Rs232RefComp 1432278789 FL E:/Nexys2_LCD_UART_EPC/RS232RefComp.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
       PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/Rs232RefComp/Behavioral 1432197091 \
-      FL C:/Users/Administrator/Desktop/Assignment5/RS232RefComp.vhd \
-      EN work/Rs232RefComp 1432197090
-FL E:/Nexys2_Lcd_Controll_Prj_using_EPC/RS232RefComp.vhd 2015/05/20.10:00:47 P.20131013
+AR work/Rs232RefComp/Behavioral 1432278790 \
+      FL E:/Nexys2_LCD_UART_EPC/RS232RefComp.vhd EN work/Rs232RefComp 1432278789
