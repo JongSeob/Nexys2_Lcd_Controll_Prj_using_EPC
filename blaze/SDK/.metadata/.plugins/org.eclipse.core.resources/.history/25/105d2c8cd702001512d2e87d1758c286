@@ -189,10 +189,10 @@ int main()
 
 	while(1)
 	{
-//	  SendCmdToLcd(0x0C);
-	   ch = GetCh();
-	   PutCh(ch);
-	   //PutCharLcd(ch);
+	  SendCmdToLcd(0x0C);
+	  ch = GetCh();
+	  PutCh(ch);
+	  //PutCharLcd(ch);
 	}
 
 	return 0;

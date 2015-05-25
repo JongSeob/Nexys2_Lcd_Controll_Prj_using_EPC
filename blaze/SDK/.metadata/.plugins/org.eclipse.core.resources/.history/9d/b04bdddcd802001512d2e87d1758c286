@@ -180,7 +180,7 @@ int main()
 
 	PrintfLcd("Lcd Test Start ");
 
-	SendCmdToLcd(0x0C);
+	SendCmdToLcd(0x80 + 0x40);
 	//SendCmdToLcd(0xC1);
 
 	PrintfLcd("Lcd Test End ");
@@ -189,11 +189,14 @@ int main()
 
 	while(1)
 	{
-//	  SendCmdToLcd(0x0C);
-	   ch = GetCh();
-	   PutCh(ch);
-	   //PutCharLcd(ch);
+	  SendCmdToLcd(0x1C);
+	  ch = GetCh();
+	  PutCh(ch);
+	  PutCharLcd(ch);
 	}
+
+	// SendCmdToLcd(0x1C); 0001 1100 오른쪽으로 쉬프트
+	// SendCmdToLcd(0x80 + Address); Address = 0x0 ~ 0x40
 
 	return 0;
 }
