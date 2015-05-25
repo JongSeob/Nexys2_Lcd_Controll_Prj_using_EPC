@@ -180,16 +180,18 @@ int main()
 
 	PrintfLcd("Lcd Test Start ");
 
-	SendCmdToLcd(0x0C);
+	SendCmdToLcd(0xC0);
 	//SendCmdToLcd(0xC1);
 
 	PrintfLcd("Lcd Test End ");
 
+
+
 	while(1)
 	{
-	   SendCmdToLcd(0x0C);
-	   ch = GetCh();
-	   PutCh(ch);
+//	  SendCmdToLcd(0x0C);
+	   //ch = GetCh();
+	   //PutCh(ch);
 	   //PutCharLcd(ch);
 	}
 

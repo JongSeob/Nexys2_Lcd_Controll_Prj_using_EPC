@@ -26,7 +26,8 @@ module Lcd_Controller#(
 				 stTwoDelay		  = 3'b0011,
 				 stSetEn			  = 3'b0100,
 				 stElevenDelay	  = 3'b0101,
-				 stClearEn		  = 3'b0110
+				 stClearEn		  = 3'b0110,
+				 stFourteenDelay = 3'b0111
 )
 (
 	input clk,
@@ -112,10 +113,15 @@ module Lcd_Controller#(
 										
 			stClearEn 		 : begin 
 										EN  <= 0;
-										RDY <= 1;
-										stNext <= stIdle;             		 
+										stNext <= stFourteenDelay;             		 
 								  end
-			default			: stNext <= stIdle;
+								  
+			stFourteenDelay : if(count == 14) begin // Enable Cycle Time 을 맞추기위한 300ns Delay
+										RDY <= 1;
+										stNext <= stIdle;
+									end
+									
+			default			 : stNext <= stIdle;
 			
 		endcase	
 	end
@@ -124,7 +130,7 @@ module Lcd_Controller#(
 		if(rst == 1)
 			count <= 0;
 		else begin
-			if(stCur == stTwoDelay || stCur == stElevenDelay)
+			if((stCur == stTwoDelay) || (stCur == stElevenDelay) || (stCur == stFourteenDelay))
 				count <= count + 1;
 			else
 				count <= 0;

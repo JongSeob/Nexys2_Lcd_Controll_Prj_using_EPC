@@ -66,15 +66,20 @@ module top #(
 	
 	// ************* 7-Segment  *************//
 	
-	reg [15:0] Digit = 16'hABCD;
+	reg [15:0] Digit = 16'hABCD; // 7-Segment 모듈과 직접 연결
+	
+	reg [15:0] Digit_Data = 0;  // EPC의 입출력 데이터를 저장.
+	reg [15:0] Digit_Addr = 0;  // EPC에서 출력된 주소를 저장.
+	reg [15:0] Digit_Sig  = 0;  // LCD컨트롤에 이용되는 모든 신호를 저장.(nCS,nWR .... RS,RW)
+	
 	
 	// ************** EPC 신호 *********************** //
 	
-	wire	EPC_nCS;		// EPC로 전달하는 CS신호. Active Low
+	wire	EPC_nCS;		// EPC에서 전달하는 CS신호. Active Low
 	wire	[5:0] Addr;	// A5A4A3A2A1A0. EPC의 출력.
-	wire	nRD;			// Read. active low. EPC의 출력.
+	wire	nRD;			// Read.  active low. EPC의 출력.
 	wire	nWR;			// Write. active low. EPC의 출력.
-	wire 	BE;			// Byte Enable. Active High. EPC의 출력 1바이트이기 때문에 큰 의미 없음.
+	wire 	BE;			// Byte Enable. Active High. EPC의 출력이 1바이트이기 때문에 큰 의미 없음.
 	wire	nBE;			// Byte Enable. Active Low. EPC의 출력을 받아 극성을 반전하여 사용하기로 한다.
 	wire  EPC_Rdy;
 
@@ -106,9 +111,10 @@ module top #(
 	
 	// Lcd Operation
 	
+	// nWR, nRD의 Falling Edge 검출을 위한 wire
 	wire fallingRW = nWR & nRD;
 	
-	always @(posedge clk, negedge fallingRW) begin
+	always @(negedge fallingRW) begin
 		if(fallingRW == 0) begin
 			if(Addr == LCD_DATA_ADDR)
 				RS <= 1;
@@ -119,15 +125,42 @@ module top #(
 	
 	assign LCD_nCS = ( (EPC_nCS == 0) && ((Addr == LCD_DATA_ADDR) || (Addr == LCD_CONTROL_ADDR)) ) ? 0 : 1;
 
-	assign JB[4] = RS;
-	assign JB[5] = RW;
-	assign JB[6] = EN;
-	
-	assign JA 			 = (nWR == 0) ? BlazeDataOut[7:0] : 8'bz; // Blaze_EPC -> LCD
 	
 	// Uart Operation
 	
 	assign Uart_nCS = ( (EPC_nCS == 0) && (Addr == UART_DATA_ADDR) ) ? 0 : 1;
+	
+	
+	// ******** 데이터, 신호들을 7-Segment로 확인하기위한 코드들 *************** //
+	
+	always @(posedge nWR) begin
+		Digit_Data[7:0] <= BlazeDataOut[7:0]; // Blaze의 Output
+	end
+	
+	always @(posedge nRD) begin
+		Digit_Data[15:8] <= JA[7:0]; // Blaze의 Input
+	end
+	
+	always @(negedge fallingRW) begin
+		Digit_Addr[15:0] <= {10'b0000000000, Addr[5:0]};  // Blaze로 부터 받은 주소 6비트
+	end
+	
+	always @(negedge EN) begin				
+		Digit_Sig[15:0]  <= {7'b0000000, EPC_nCS, nWR, nRD, EPC_Rdy, 	  // LCD와 관련된 모든 신호
+									LCD_nCS, RS, RW, EN, LCD_RDY};				  		
+	end
+		
+	always @(posedge clk) begin
+		case(sw)
+		8'b10000000 : Digit <= Digit_Data;
+		8'b01000000 : Digit <= Digit_Addr;
+		8'b00100000 : Digit <= Digit_Sig;		
+		default     : Digit <= 16'hABCD;
+		
+		endcase
+	end
+	
+	// ******************************************************************** //
 	
 	
 	// Data from peripheral to Blaze Operation
@@ -142,15 +175,15 @@ module top #(
 			endcase
 	end
 	
-	always @(negedge EN) begin // LCD를 Control하는 경우
-		if(Addr == LCD_CONTROL_ADDR && RW == 0)
-		begin
-			Digit[7:0] <= {BlazeDataOut};
-		end
-			
-	end
+	// 3-state buffer among LCD and Blaze
+	assign JA 			 = (nWR == 0) ? BlazeDataOut[7:0] : 8'bz; // Blaze_EPC -> LCD
 	
-	assign EPC_Rdy = LCD_RDY & 1;
+	assign JB[4] = RS;
+	assign JB[5] = RW;
+	assign JB[6] = EN;
+	
+	
+	assign EPC_Rdy = LCD_RDY & 1; 
 	
 	// Instantiate the MicroBlaze & RS232 module
 	(* BOX_TYPE = "user_black_box" *)

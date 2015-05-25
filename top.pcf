@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri May 22 18:47:47 2015
+// Written by: Map P.20131013 on Mon May 25 18:00:17 2015
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -55,16 +55,16 @@ PIN
         = BEL
         "blaze/clock_generator_0/clock_generator_0/DCM0_INST/Using_Virtex.DCM_INST"
         PINNAME CLKIN;
-TIMEGRP sys_clk_pin = BEL "BlazeDataIn_0" BEL "BlazeDataIn_1" BEL
-        "BlazeDataIn_2" BEL "BlazeDataIn_3" BEL "BlazeDataIn_4" BEL
-        "BlazeDataIn_5" BEL "BlazeDataIn_6" BEL "BlazeDataIn_7" BEL
-        "Lcd_Controller/count_5" BEL "Lcd_Controller/count_4" BEL
-        "Lcd_Controller/count_3" BEL "Lcd_Controller/count_2" BEL
-        "Lcd_Controller/count_1" BEL "Lcd_Controller/count_0" BEL
-        "Lcd_Controller/stCur_0" BEL "Lcd_Controller/stCur_1" BEL
-        "Lcd_Controller/stCur_2" BEL "Lcd_Controller/stCur_3" BEL
-        "Lcd_Controller/stCur_6" BEL "Lcd_Controller/stCur_4" BEL
-        "Lcd_Controller/stCur_5" BEL "Lcd_Controller/EN" BEL
+TIMEGRP sys_clk_pin = BEL "Digit_10" BEL "Digit_12" BEL "Digit_14" BEL
+        "BlazeDataIn_0" BEL "BlazeDataIn_1" BEL "BlazeDataIn_2" BEL
+        "BlazeDataIn_3" BEL "BlazeDataIn_4" BEL "BlazeDataIn_5" BEL
+        "BlazeDataIn_6" BEL "BlazeDataIn_7" BEL "Lcd_Controller/count_5" BEL
+        "Lcd_Controller/count_4" BEL "Lcd_Controller/count_3" BEL
+        "Lcd_Controller/count_2" BEL "Lcd_Controller/count_1" BEL
+        "Lcd_Controller/count_0" BEL "Lcd_Controller/stCur_0" BEL
+        "Lcd_Controller/stCur_1" BEL "Lcd_Controller/stCur_2" BEL
+        "Lcd_Controller/stCur_3" BEL "Lcd_Controller/stCur_6" BEL
+        "Lcd_Controller/stCur_4" BEL "Lcd_Controller/stCur_5" BEL
         "Lcd_Controller/RDY" BEL "Lcd_Controller/stNext_6" BEL
         "Lcd_Controller/stNext_4" BEL "Lcd_Controller/stNext_2" BEL
         "Lcd_Controller/stNext_1" BEL "uart/UART/rClk" BEL
@@ -102,7 +102,10 @@ TIMEGRP sys_clk_pin = BEL "BlazeDataIn_0" BEL "BlazeDataIn_1" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_2" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_1" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_0" BEL
-        "SevenSegment/divide_Clk_50Mhz_To_240hz/OutClk" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/OutClk" BEL "Digit_0" BEL
+        "Digit_1" BEL "Digit_2" BEL "Digit_3" BEL "Digit_4" BEL "Digit_5" BEL
+        "Digit_6" BEL "Digit_7" BEL "Digit_8" BEL "Digit_9" BEL "Digit_11" BEL
+        "Digit_13" BEL "Digit_15" BEL "Lcd_Controller/EN" BEL
         "Lcd_Controller/stNext_5" BEL "Lcd_Controller/stNext_3" BEL
         "Lcd_Controller/stNext_0" BEL "Lcd_Controller/RW" BEL
         "blaze/clock_generator_0/clock_generator_0/DCM0_INST/rsti" BEL
