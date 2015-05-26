@@ -106,7 +106,7 @@ module uart#(
 	end
 
 	// 수신문자의 개수를 세는 CounterReceived 카운터가 2개씩 증가하는 문제가 상태머신 negedge로 해결되었다.
-	always @(negedge clk) begin		
+	always @(posedge clk) begin		
 		if(RST == 1) begin
 			stRcvCur  <= RECEIVE_0;
 			stSendCur <= SEND_0;

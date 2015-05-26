@@ -131,12 +131,22 @@ void	InitLcd(void)
 {
 	Printf("LCD Initialization : Data out mode");
 
+	delay(300000);
+
 	Printf("\nLCD Initialization Stage 1 : Sending 0x38");
 	SendCmdToLcd(0x38);						// Function Set(40us)= 0x20 + 0x10(DL=8bit) + 0x08(2 lines) +0x00(5*8 dots)
+
+	delay(38000);
+
 	Printf("\nLCD Initialization Stage 2 : Sending 0x0f");
 	SendCmdToLcd(0x0f);						// Display On/Off Control(40us)= 0x08 + 0x04(Display On) + 0x02(Cursor On) + 0x01(Blink On)
+
+	delay(38000);
+
 	Printf("\nLCD Initialization Stage 3 : Sending 0x01\n");
 	SendCmdToLcd(0x01);						// Clear Display(1.64ms)
+
+	delay(5000000);
 }
 
 void	PutCharLcd(unsigned char cChar) // LCD print
@@ -180,7 +190,7 @@ int main()
 
 	PrintfLcd("Lcd Test Start ");
 
-	SendCmdToLcd(0x80 + 0x40);
+	SendCmdToLcd(0xC0);
 	//SendCmdToLcd(0xC1);
 
 	PrintfLcd("Lcd Test End ");
@@ -189,10 +199,10 @@ int main()
 
 	while(1)
 	{
-	  SendCmdToLcd(0x1C);
+	  //SendCmdToLcd(0x1C);
 	  ch = GetCh();
 	  PutCh(ch);
-	  //PutCharLcd(ch);
+	  PutCharLcd(ch);
 	}
 
 	// SendCmdToLcd(0x1C); 0001 1100 오른쪽으로 쉬프트

@@ -29,7 +29,7 @@
 <msg type="warning" file="HDLCompilers" num="299" delta="old" ><arg fmt="%s" index="1">&quot;Lcd_Controller.v&quot; line 30 </arg>Too many digits specified in binary constant
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;top.v&quot; line 221 </arg>Connection to input port &apos;<arg fmt="%s" index="2">iBtnSwitch</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;top.v&quot; line 220 </arg>Connection to input port &apos;<arg fmt="%s" index="2">iBtnSwitch</arg>&apos; does not match port size
 </msg>
 
 <msg type="warning" file="Xst" num="1643" delta="old" >&quot;<arg fmt="%s" index="1">Lcd_Controller.v</arg>&quot; line <arg fmt="%d" index="2">57</arg>: You are giving the signal <arg fmt="%s" index="3">count</arg> a default value. <arg fmt="%s" index="4">count</arg> already had a default value, which will be overridden by this one.

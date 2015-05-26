@@ -1,0 +1,10 @@
+
+
+
+// Instantiate the module
+Frequency_Divider instance_name (
+    .Inclk(Inclk), 
+    .Outclk(Outclk)
+    );
+
+

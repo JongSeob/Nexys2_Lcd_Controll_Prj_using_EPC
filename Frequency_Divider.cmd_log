@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj Assignment5 -o E:/Nexys2_LCD_UART_EPC/Frequency_Divider.tfi -lib work E:/Nexys2_LCD_UART_EPC//Frequency_Divider.v -module Frequency_Divider -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 

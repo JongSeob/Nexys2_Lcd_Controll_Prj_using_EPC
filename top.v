@@ -108,7 +108,6 @@ module top #(
 	wire [7:0] Uart_Status;
 	wire [7:0] ReceivedData;
 	
-	
 	// Lcd Operation
 	
 	// nWR, nRD의 Falling Edge 검출을 위한 wire
@@ -176,7 +175,7 @@ module top #(
 	end
 	
 	// 3-state buffer among LCD and Blaze
-	assign JA 			 = (nWR == 0) ? BlazeDataOut[7:0] : 8'bz; // Blaze_EPC -> LCD
+	assign JA = (nWR == 0) ? BlazeDataOut[7:0] : 8'bz; // Blaze_EPC -> LCD
 	
 	assign JB[4] = RS;
 	assign JB[5] = RW;
@@ -244,6 +243,9 @@ module top #(
 		 .o_SegG					(seg[6]), 
 		 .o_Seg_DP				(dp)
     );
+	
+	 
+	 
 
 endmodule
 

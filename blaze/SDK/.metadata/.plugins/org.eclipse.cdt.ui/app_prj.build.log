@@ -1,8 +1,8 @@
-21:23:34 **** Auto Build of configuration Release for project app_prj ****
+20:27:36 **** Auto Build of configuration Release for project app_prj ****
 make all 
 'Building file: ../src/src.c'
 'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O2 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
+mb-gcc -Wall -O0 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
 ../src/src.c: In function 'Printf':
 ../src/src.c:56:4: warning: implicit declaration of function 'PutCh' [-Wimplicit-function-declaration]
 ../src/src.c: At top level:
@@ -18,7 +18,7 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -m
 'Invoking: MicroBlaze Print Size'
 mb-size app_prj.elf  |tee "app_prj.elf.size"
    text	   data	    bss	    dec	    hex	filename
-   2702	    268	   2084	   5054	   13be	app_prj.elf
+   3242	    268	   2090	   5600	   15e0	app_prj.elf
 'Finished building: app_prj.elf.size'
 ' '
 'Invoking: Xilinx ELF Check'
@@ -35,5 +35,5 @@ elfcheck passed.
 'Finished building: app_prj.elf.elfcheck'
 ' '
 
-21:23:36 Build Finished (took 1s.872ms)
+20:27:38 Build Finished (took 1s.903ms)
 
