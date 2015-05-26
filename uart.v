@@ -69,8 +69,12 @@ module uart#(
 	input  [7:0] SendData,
 	
 	output [7:0] Status,  // {rdaSig, tbeSig, stRcvCur, stSendCur} UART의 현재 상태를 반환.
-	output [7:0] ReceivedData
+	output [7:0] ReceivedData,
+	output reg RDY
    );
+	
+	initial 
+		RDY = 1;
 	
 	assign	RST = iBtnSwitch[0];
 
@@ -186,8 +190,10 @@ module uart#(
 					end
 				SEND_1 :
 					begin
-						if(nWR == 1)
+						if(nWR == 1) begin
 							stSendNext <= SEND_2;
+							RDY <= 0;
+						end
 						else
 							stSendNext <= SEND_1;
 					end
@@ -208,6 +214,7 @@ module uart#(
 				SEND_4 : 
 					begin 
 						wrSig <= 0; 	// "wrSig" will be maintained for 2 clocks by deleting this line
+						RDY <= 1;
 						
 						stSendNext <= SEND_0; 
 					end

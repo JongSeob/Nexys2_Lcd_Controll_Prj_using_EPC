@@ -105,6 +105,7 @@ module top #(
 	// ***************** UART Signal **********************//
 	
 	wire Uart_nCS;
+	wire UART_RDY;
 	wire [7:0] Uart_Status;
 	wire [7:0] ReceivedData;
 	
@@ -182,7 +183,7 @@ module top #(
 	assign JB[6] = EN;
 	
 	
-	assign EPC_Rdy = LCD_RDY & 1; 
+	assign EPC_Rdy = LCD_RDY & UART_RDY; 
 	
 	// Instantiate the MicroBlaze & RS232 module
 	(* BOX_TYPE = "user_black_box" *)
@@ -226,7 +227,8 @@ module top #(
 		 .nRD					(nRD), 
 		 .SendData			(BlazeDataOut), 
 		 .Status				(Uart_Status),
-		 .ReceivedData		(ReceivedData)
+		 .ReceivedData		(ReceivedData),
+		 .RDY					(UART_RDY)
     );
 	
 	 SevenSegment SevenSegment (

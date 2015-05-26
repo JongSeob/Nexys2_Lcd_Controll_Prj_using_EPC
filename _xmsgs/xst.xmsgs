@@ -29,7 +29,7 @@
 <msg type="warning" file="HDLCompilers" num="299" delta="old" ><arg fmt="%s" index="1">&quot;Lcd_Controller.v&quot; line 30 </arg>Too many digits specified in binary constant
 </msg>
 
-<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;top.v&quot; line 220 </arg>Connection to input port &apos;<arg fmt="%s" index="2">iBtnSwitch</arg>&apos; does not match port size
+<msg type="warning" file="HDLCompilers" num="259" delta="new" ><arg fmt="%s" index="1">&quot;top.v&quot; line 221 </arg>Connection to input port &apos;<arg fmt="%s" index="2">iBtnSwitch</arg>&apos; does not match port size
 </msg>
 
 <msg type="warning" file="Xst" num="1643" delta="old" >&quot;<arg fmt="%s" index="1">Lcd_Controller.v</arg>&quot; line <arg fmt="%d" index="2">57</arg>: You are giving the signal <arg fmt="%s" index="3">count</arg> a default value. <arg fmt="%s" index="4">count</arg> already had a default value, which will be overridden by this one.
@@ -171,9 +171,6 @@
 </msg>
 
 <msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">Digit_Addr_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Digit_Sig_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Digit_Sig_5&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Digit_Data_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;uart/dbInSig_1&gt; </arg>

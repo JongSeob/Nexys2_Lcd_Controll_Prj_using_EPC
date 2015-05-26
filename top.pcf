@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue May 26 20:13:59 2015
+// Written by: Map P.20131013 on Tue May 26 20:40:01 2015
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -72,17 +72,18 @@ TIMEGRP sys_clk_pin = BEL "Digit_10" BEL "Digit_12" BEL "Digit_14" BEL
         BEL "uart/UART/clkDiv_5" BEL "uart/UART/clkDiv_6" BEL
         "uart/UART/clkDiv_7" BEL "uart/UART/clkDiv_8" BEL
         "uart/UART/stbeCur_FSM_FFd1" BEL "uart/UART/stbeCur_FSM_FFd2" BEL
-        "uart/FlagOverrunError" BEL "uart/FlagPatityError" BEL
-        "uart/dbOutLatch_7" BEL "uart/dbOutLatch_6" BEL "uart/dbOutLatch_5"
-        BEL "uart/dbOutLatch_4" BEL "uart/dbOutLatch_3" BEL
-        "uart/dbOutLatch_2" BEL "uart/dbOutLatch_1" BEL "uart/dbOutLatch_0"
-        BEL "uart/FlagFrameError" BEL "uart/stSendCur_2" BEL
+        "uart/FlagFrameError" BEL "uart/FlagPatityError" BEL
+        "uart/FlagOverrunError" BEL "uart/dbOutLatch_7" BEL
+        "uart/dbOutLatch_6" BEL "uart/dbOutLatch_5" BEL "uart/dbOutLatch_4"
+        BEL "uart/dbOutLatch_3" BEL "uart/dbOutLatch_2" BEL
+        "uart/dbOutLatch_1" BEL "uart/dbOutLatch_0" BEL "uart/stSendCur_2" BEL
         "uart/stSendCur_1" BEL "uart/stSendCur_0" BEL "uart/stRcvCur_2" BEL
-        "uart/stRcvCur_1" BEL "uart/stRcvCur_0" BEL "uart/stSendNext_2" BEL
-        "uart/stSendNext_1" BEL "uart/stSendNext_0" BEL "uart/wrSig" BEL
-        "uart/rdSig" BEL "uart/stRcvNext_2" BEL "uart/stRcvNext_1" BEL
-        "uart/stRcvNext_0" BEL "SevenSegment/divide_Clk_50Mhz_To_240hz/q_19"
-        BEL "SevenSegment/divide_Clk_50Mhz_To_240hz/q_18" BEL
+        "uart/stRcvCur_1" BEL "uart/stRcvCur_0" BEL "uart/RDY" BEL
+        "uart/stSendNext_2" BEL "uart/stSendNext_1" BEL "uart/stSendNext_0"
+        BEL "uart/wrSig" BEL "uart/stRcvNext_2" BEL "uart/stRcvNext_1" BEL
+        "uart/stRcvNext_0" BEL "uart/rdSig" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_19" BEL
+        "SevenSegment/divide_Clk_50Mhz_To_240hz/q_18" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_17" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_16" BEL
         "SevenSegment/divide_Clk_50Mhz_To_240hz/q_15" BEL

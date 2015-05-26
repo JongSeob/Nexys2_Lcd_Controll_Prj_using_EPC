@@ -1,6 +1,13 @@
-20:21:42.137 INFO  - Processing command line option -hwspec E:/Nexys2_LCD_UART_EPC/blaze/SDK/SDK_Export/hw/blaze.xml. 
-20:26:34.992 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
-20:27:02.559 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
-20:27:22.928 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
-20:27:43.399 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
-20:28:26.021 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+20:45:27.193 INFO  - Processing command line option -hwspec E:/Nexys2_LCD_UART_EPC/blaze/SDK/SDK_Export/hw/blaze.xml. 
+20:47:49.639 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+20:48:01.373 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+20:48:47.546 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+20:49:26.760 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+20:50:02.150 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+20:51:19.156 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+20:51:42.969 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 

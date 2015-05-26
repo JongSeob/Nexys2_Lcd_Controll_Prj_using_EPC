@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 2.00 secs
-Total CPU time to Xst completion: 1.34 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.64 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 2.00 secs
-Total CPU time to Xst completion: 1.34 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.65 secs
  
 --> Reading design: top.prj
 
@@ -384,6 +384,7 @@ Unit <CounterRefresh> synthesized.
 Synthesizing Unit <uart>.
     Related source file is "uart.v".
 WARNING:Xst:647 - Input <iBtnSwitch<3:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <RDY>.
     Found 16-bit up counter for signal <CounterFE>.
     Found 16-bit up counter for signal <CounterOE>.
     Found 16-bit up counter for signal <CounterPE>.
@@ -403,7 +404,7 @@ WARNING:Xst:647 - Input <iBtnSwitch<3:1>> is never used. This port will be prese
     Found 1-bit register for signal <wrSig>.
     Summary:
 	inferred   6 Counter(s).
-	inferred  33 D-type flip-flop(s).
+	inferred  34 D-type flip-flop(s).
 Unit <uart> synthesized.
 
 
@@ -459,8 +460,8 @@ Macro Statistics
  4-bit up counter                                      : 4
  6-bit up counter                                      : 1
  9-bit up counter                                      : 1
-# Registers                                            : 48
- 1-bit register                                        : 31
+# Registers                                            : 49
+ 1-bit register                                        : 32
  10-bit register                                       : 1
  11-bit register                                       : 1
  16-bit register                                       : 3
@@ -583,8 +584,8 @@ Macro Statistics
  4-bit up counter                                      : 4
  6-bit up counter                                      : 1
  9-bit up counter                                      : 1
-# Registers                                            : 168
- Flip-Flops                                            : 168
+# Registers                                            : 169
+ Flip-Flops                                            : 169
 # Latches                                              : 1
  1-bit latch                                           : 1
 # Comparators                                          : 1
@@ -616,7 +617,6 @@ WARNING:Xst:1293 - FF/Latch <Digit_Addr_9> has a constant value of 0 in block <t
 WARNING:Xst:1293 - FF/Latch <Digit_Addr_8> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <Digit_Addr_7> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <Digit_Addr_6> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <Digit_Sig_0> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <Digit_Sig_5> 
 
 Optimizing unit <top> ...
 
@@ -654,8 +654,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 205
- Flip-Flops                                            : 205
+# Registers                                            : 207
+ Flip-Flops                                            : 207
 
 =========================================================================
 
@@ -684,35 +684,35 @@ Design Statistics
 # IOs                              : 43
 
 Cell Usage :
-# BELS                             : 3666
+# BELS                             : 3670
 #      GND                         : 16
 #      INV                         : 60
 #      LUT1                        : 73
-#      LUT2                        : 318
+#      LUT2                        : 319
 #      LUT2_D                      : 15
 #      LUT2_L                      : 9
-#      LUT3                        : 727
+#      LUT3                        : 728
 #      LUT3_D                      : 51
 #      LUT3_L                      : 16
-#      LUT4                        : 1352
+#      LUT4                        : 1353
 #      LUT4_D                      : 25
 #      LUT4_L                      : 45
 #      MULT_AND                    : 55
 #      MUXCY                       : 206
 #      MUXCY_L                     : 136
-#      MUXF5                       : 359
+#      MUXF5                       : 360
 #      MUXF6                       : 6
 #      MUXF7                       : 2
 #      MUXF8                       : 1
 #      VCC                         : 10
 #      XORCY                       : 184
-# FlipFlops/Latches                : 2504
+# FlipFlops/Latches                : 2506
 #      FD                          : 325
-#      FD_1                        : 15
+#      FD_1                        : 16
 #      FDC                         : 33
 #      FDC_1                       : 5
 #      FDCE                        : 19
-#      FDE                         : 336
+#      FDE                         : 337
 #      FDE_1                       : 8
 #      FDP                         : 10
 #      FDR                         : 1114
@@ -750,10 +750,10 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                     2104  out of   8672    24%  
- Number of Slice Flip Flops:           2503  out of  17344    14%  
- Number of 4 input LUTs:               3097  out of  17344    17%  
-    Number used as logic:              2691
+ Number of Slices:                     2105  out of   8672    24%  
+ Number of Slice Flip Flops:           2505  out of  17344    14%  
+ Number of 4 input LUTs:               3100  out of  17344    17%  
+    Number used as logic:              2694
     Number used as Shift registers:     150
     Number used as RAMs:                256
  Number of IOs:                          43
@@ -785,13 +785,13 @@ Clock Information:
 ---------------------------------------------+-------------------------------------------------------+-------+
 Clock Signal                                 | Clock buffer(FF name)                                 | Load  |
 ---------------------------------------------+-------------------------------------------------------+-------+
-clk                                          | clock_generator_0/DCM0_INST/Using_Virtex.DCM_INST:CLK0| 2446  |
+clk                                          | clock_generator_0/DCM0_INST/Using_Virtex.DCM_INST:CLK0| 2447  |
 blaze/mdm_0/mdm_0/drck_i                     | BUFG                                                  | 212   |
 blaze/mdm_0/mdm_0/update1                    | BUFG                                                  | 43    |
 fallingRW(fallingRW1:O)                      | NONE(*)(RS)                                           | 7     |
 blaze/xps_epc_0/PRH_Wr_n                     | NONE(Digit_Data_5)                                    | 11    |
 blaze/xps_epc_0/PRH_Rd_n                     | NONE(Digit_Data_15)                                   | 8     |
-Lcd_Controller/EN                            | NONE(Digit_Sig_0)                                     | 8     |
+Lcd_Controller/EN                            | NONE(Digit_Sig_0)                                     | 9     |
 uart/UART/rClk1                              | BUFG                                                  | 36    |
 uart/UART/rClkDiv_3                          | NONE(uart/UART/tfSReg_0)                              | 16    |
 uart/UART/stbeCur_FSM_FFd1                   | NONE(uart/UART/TBE)                                   | 2     |
@@ -838,7 +838,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 12.524ns (frequency: 79.845MHz)
-  Total number of paths / destination ports: 178122 / 6826
+  Total number of paths / destination ports: 178131 / 6827
 -------------------------------------------------------------------------
 Delay:               12.524ns (Levels of Logic = 39)
   Source:            blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/PreFetch_Buffer_I/Using_FPGA.Buffer_DFFs[1].FDS_I (FF)
@@ -1070,7 +1070,7 @@ Offset:              4.704ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 242 / 73
+  Total number of paths / destination ports: 243 / 74
 -------------------------------------------------------------------------
 Offset:              7.393ns (Levels of Logic = 5)
   Source:            sw<0> (PAD)
@@ -1085,7 +1085,7 @@ Offset:              7.393ns (Levels of Logic = 5)
      LUT4:I3->O            1   0.704   0.000  Digit_and00001 (Digit_and00001)
      MUXF5:I0->O           4   0.321   0.591  Digit_and0000_f5 (Digit_and0000)
      LUT4:I3->O            6   0.704   0.748  Digit_mux0000<1>11 (N12)
-     LUT4:I1->O            1   0.704   0.420  Digit_mux0000<5>_SW0 (N45)
+     LUT4:I1->O            1   0.704   0.420  Digit_mux0000<5>_SW0 (N47)
      FDS:S                     0.911          Digit_5
     ----------------------------------------
     Total                      7.393ns (4.562ns logic, 2.831ns route)
@@ -1126,7 +1126,7 @@ Offset:              1.973ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IOBUF:IO->O           2   1.218   0.447  JA_7_IOBUF (N70)
+     IOBUF:IO->O           2   1.218   0.447  JA_7_IOBUF (N72)
      FD:D                      0.308          Digit_Data_15
     ----------------------------------------
     Total                      1.973ns (1.526ns logic, 0.447ns route)
@@ -1204,7 +1204,7 @@ Offset:              5.124ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              27   0.591   1.261  xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Wr_n (PRH_Wr_n)
+     FD:C->Q              28   0.591   1.261  xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Wr_n (PRH_Wr_n)
      end scope: 'xps_epc_0'
      end scope: 'blaze'
      IOBUF:T->IO               3.272          JA_7_IOBUF (JA<7>)
@@ -1374,14 +1374,14 @@ Delay:               5.077ns (Levels of Logic = 2)
 =========================================================================
 
 
-Total REAL time to Xst completion: 34.00 secs
-Total CPU time to Xst completion: 34.20 secs
+Total REAL time to Xst completion: 32.00 secs
+Total CPU time to Xst completion: 31.83 secs
  
 --> 
 
-Total memory usage is 408988 kilobytes
+Total memory usage is 408732 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   55 (   0 filtered)
-Number of infos    :   18 (   0 filtered)
+Number of infos    :   17 (   0 filtered)
 
