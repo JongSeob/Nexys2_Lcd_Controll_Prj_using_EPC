@@ -6472,3 +6472,41 @@ INFO:EDK - IPNAME: xps_epc, INSTANCE:xps_epc_0 - tool is overriding PARAMETER
    \xps_epc_v2_1_0.mpd line 84 
 
 Checking platform address map ...
+Xilinx Platform Studio (XPS)
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Overriding Xilinx file <TextEditor.cfg> with local file <C:/Xilinx/14.7/ISE_DS/EDK/data/TextEditor.cfg>
+The project's MHS file has changed on disk.
+ERROR:EDK:3900 - issued from TCL procedure "check_rdy_tout" line 46
+xps_epc_0 (xps_epc) - 
+Invalid xps_epc_0 parameter:
+C_PRH0_RDY_TOUT must be less than C_PRH0_WRN_WIDTH, C_PRH0_RDN_WIDTH, and C_PRH0_RDY_WIDTH
+ 
+ERROR:EDK:3900 - issued from TCL procedure "check_rdy_tout" line 46
+xps_epc_0 (xps_epc) - 
+Invalid xps_epc_0 parameter:
+C_PRH0_RDY_TOUT must be less than C_PRH0_WRN_WIDTH, C_PRH0_RDN_WIDTH, and C_PRH0_RDY_WIDTH
+ 
+The project's MHS file has changed on disk.
+ERROR:EDK:3900 - issued from TCL procedure "check_rdy_tout" line 46
+xps_epc_0 (xps_epc) - 
+Invalid xps_epc_0 parameter:
+C_PRH0_RDY_TOUT must be less than C_PRH0_WRN_WIDTH, C_PRH0_RDN_WIDTH, and C_PRH0_RDY_WIDTH
+ 
+ERROR:EDK:3900 - issued from TCL procedure "check_rdy_tout" line 46
+xps_epc_0 (xps_epc) - 
+Invalid xps_epc_0 parameter:
+C_PRH0_RDY_TOUT must be less than C_PRH0_WRN_WIDTH, C_PRH0_RDN_WIDTH, and C_PRH0_RDY_WIDTH
+ 
+The project's MHS file has changed on disk.
+Xilinx Platform Studio (XPS)
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Writing filter settings....
+Done writing filter settings to:
+	E:\Nexys2_LCD_UART_EPC\blaze\etc\blaze.filters
+Done writing Tab View settings to:
+	E:\Nexys2_LCD_UART_EPC\blaze\etc\blaze.gui
+The project's MHS file has changed on disk.

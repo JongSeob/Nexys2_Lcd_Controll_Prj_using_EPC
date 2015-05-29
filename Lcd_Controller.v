@@ -89,9 +89,11 @@ module Lcd_Controller#(
 										if(RS == 1)
 											stNext <= stTwoDelay;
 										else begin	// RS가 0일때의 Read 동작은 실행시간이 0이므로 바로 EN 신호를 1로 올린다.
-											EN   <= 1;
-											RDY  <= 1;
-											stNext <= stIdle;
+											if(count == 1) begin
+												EN   <= 1;
+												RDY  <= 1;
+												stNext <= stIdle;
+											end
 										end
 								  end
 								  
@@ -130,7 +132,8 @@ module Lcd_Controller#(
 		if(rst == 1)
 			count <= 0;
 		else begin
-			if((stCur == stTwoDelay) || (stCur == stElevenDelay) || (stCur == stFourteenDelay))
+			if(  (stCur == stTwoDelay) || (stCur == stElevenDelay) || 
+				  (stCur == stFourteenDelay) || (stCur == stRead)     )
 				count <= count + 1;
 			else
 				count <= 0;

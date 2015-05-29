@@ -207,17 +207,17 @@ BEGIN xps_epc
 # 20ns. Data bus (PRH_Data) hold with respect to rising edge of write signal (PRH_Wr_n)
  PARAMETER C_PRH0_DATA_TH = 30000
 # 300ns. Minimum pulse width of read signal (PRH_Rd_n)
- PARAMETER C_PRH0_RDN_WIDTH = 30000
+ PARAMETER C_PRH0_RDN_WIDTH = 180000
 # 600ns. Cycle time of read signal (PRH_Rd_n)
-# 60000
- PARAMETER C_PRH0_RD_CYCLE = 60000
+# 60000.
+ PARAMETER C_PRH0_RD_CYCLE = 200000
 # 150ns. Data bus (PRH_Data) validity from falling edge of read signal (PRH_Rd_n). 읽기 사이클에서는 데이터는 사이클이 끝날 때 쯤 유효하다.
  PARAMETER C_PRH0_DATA_TOUT = 15000
 # 30ns. Data bus (PRH_Data) high impedance from rising edge of read (PRH_Rd_n)
  PARAMETER C_PRH0_DATA_TINV = 25000
 # 1ps. Device ready (PRH_Rdy) validity from the falling edge of read or write (PRH_Rd_n/ PRH_Wr_n).
 # less than device ready signal width (C_PRHx_RDY_WIDTH). I/O장치에서 RDY를 공급받지 않음을 가정한 듯. fast device로 가정하고 설계하자.
- PARAMETER C_PRH0_RDY_TOUT = 20000
+ PARAMETER C_PRH0_RDY_TOUT = 29000
 # Maximum period of device ready signal (PRH_Rdy) to wait before device timeout. 외부 RDY를 쓰지 않는 경우는 관계없을 듯한데....
  PARAMETER C_PRH0_RDY_WIDTH = 120000
 # PARAMETER C_PRH0_DWIDTH_MATCH = 1
