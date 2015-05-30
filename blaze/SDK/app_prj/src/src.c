@@ -51,11 +51,12 @@ void delay(unsigned int count)
 
 void Printf(char String[]) {
 	int	i;
-	for(i=0; String[i] != 0; i++) {
-		if( (String[i] == '\n') || (String[i] == '\r') )
+	for(i=0; String[i] != 0; i++)
+	{
+		if( String[i] == '\n' )
 		{
-			PutCh('\r');
 			PutCh('\n');
+			PutCh('\r');
 			continue;
 		}
 		PutCh(String[i]);
@@ -80,15 +81,12 @@ void Print32bits(unsigned long ch) {
 	tmp = (unsigned short) ch ; Print16bits(tmp);
 }
 
-
-
 unsigned char GetCh(void) {
 	unsigned char Status;
 	unsigned char ch;
 
 	do {
 		Status = StatusUART;
-		LED = Status;
 	} while ( (Status & 0x01) == 0 ); // rdaSig 가 1이 될 때까지 대기
 
 	ch = DataUART;
@@ -104,8 +102,6 @@ void PutCh(unsigned char ch) {
 	} while ( (Status & 0x02) == 0 ); // tbeSig 가 1이 될 때까지 대기
 
 	DataUART = ch;
-
-	delay(100);
 }
  // ****************** LCD Functions *************************** //
 
@@ -133,7 +129,7 @@ void	SendCharToLcd(unsigned char cChar)
 	DataLCD = cChar;
 }
 
-unsigned char GetPosition()
+unsigned char GetPositionOfLcdDDRAM()
 {
 	unsigned char position;
 
@@ -144,11 +140,21 @@ unsigned char GetPosition()
 	return (position & 0x7F); // BUSY플래그를 제거.
 }
 
+void PrintCurrentPositionOfLcdDDRAM()
+{
+	unsigned char position;
+
+	position = GetPositionOfLcdDDRAM();
+
+	Printf("Current Position = 0x"); Print8bits(position); PutCh('\n');
+
+}
+
 void	PutCharLcd(unsigned char cChar) // LCD print
 {
 	unsigned char DDRAM_addr;
 
-	DDRAM_addr = GetPosition();
+	DDRAM_addr = GetPositionOfLcdDDRAM();
 
 	if(DDRAM_addr == 0x10)
 	{
@@ -159,11 +165,7 @@ void	PutCharLcd(unsigned char cChar) // LCD print
 		SendCmdToLcd(0x80);  // Set DDRAM addres(40uS) = 0x80 | 0x00(first line)
 	}
 
-	Printf("DDRAM_addr = 0x"); Print8bits(DDRAM_addr); Printf("\n");
-
 	SendCharToLcd(cChar);
-
-
 }
 
 void	PrintfLcd(char *String)
@@ -179,21 +181,21 @@ void	PrintfLcd(char *String)
 
 void	InitLcd(void)
 {
-	Printf("LCD Initialization : Data out mode");
+	//Printf("LCD Initialization : Data out mode");
 
 	delay(300000);
 
-	Printf("\nLCD Initialization Stage 1 : Sending 0x38");
+	//Printf("\nLCD Initialization Stage 1 : Sending 0x38");
 	SendCmdToLcd(0x38);						// Function Set(40us)= 0x20 + 0x10(DL=8bit) + 0x08(2 lines) +0x00(5*8 dots)
 
 	delay(38000);
 
-	Printf("\nLCD Initialization Stage 2 : Sending 0x0f");
+	//Printf("\nLCD Initialization Stage 2 : Sending 0x0f");
 	SendCmdToLcd(0x0f);						// Display On/Off Control(40us)= 0x08 + 0x04(Display On) + 0x02(Cursor On) + 0x01(Blink On)
 
 	delay(38000);
 
-	Printf("\nLCD Initialization Stage 3 : Sending 0x01\n");
+	//Printf("\nLCD Initialization Stage 3 : Sending 0x01\n");
 	SendCmdToLcd(0x01);						// Clear Display(1.64ms)
 
 	delay(5000000);
@@ -203,18 +205,29 @@ void	InitLcd(void)
 
 int main()
 {
-	char ch;
+	unsigned char ch;
+	unsigned char position;
 
 	InitLcd();
 
-	PrintfLcd("Lcd Test Start ");
+	PrintfLcd("Lcd Test Start");
 
 	SendCmdToLcd(0xC0);
-	//SendCmdToLcd(0xC1);
 
-	PrintfLcd("Lcd Test End ");
+	delay(10000);
 
+	while((SLIDE_SW & 0x01) == 0)
+		;
 
+	PrintCurrentPositionOfLcdDDRAM();
+
+	while((SLIDE_SW & 0x02) == 0)
+		;
+
+	PrintfLcd("Lcd Test End");
+
+	while((SLIDE_SW & 0x04) == 0)
+		;
 
 	while(1)
 	{
