@@ -16,11 +16,11 @@
 #define StatReg (*((volatile unsigned char *)(BASEADDRESS_RS232 + 0x8 +3 )) )
 #define CtrlReg (*((volatile unsigned char *)(BASEADDRESS_RS232 + 0xc +3 )) )
 
-#define DataLCD		(*((volatile unsigned char *)(BASEADDRESS_EPC + 0x20))) // 1000_00
-#define StatusCMD	(*((volatile unsigned char *)(BASEADDRESS_EPC + 0x24))) // 1001_00
+#define DataLCD		(*((volatile unsigned char *)(BASEADDRESS_EPC + 0x00))) // 0000_00
+#define StatusCMD	(*((volatile unsigned char *)(BASEADDRESS_EPC + 0x04))) // 0001_00
 
-#define DataUART    (*((volatile unsigned char *)(BASEADDRESS_EPC + 0x04))) // 0001_00
-#define StatusUART  (*((volatile unsigned char *)(BASEADDRESS_EPC + 0x08))) // 0010_00
+#define DataUART    (*((volatile unsigned char *)(BASEADDRESS_EPC + 0x08))) // 0010_00
+#define StatusUART  (*((volatile unsigned char *)(BASEADDRESS_EPC + 0x0C))) // 0011_00
 
 #define BUSY 0x80
 #define NULL 0
@@ -52,8 +52,12 @@ void delay(unsigned int count)
 void Printf(char String[]) {
 	int	i;
 	for(i=0; String[i] != 0; i++) {
-		if(String[i] == '\n')
+		if( (String[i] == '\n') || (String[i] == '\r') )
+		{
 			PutCh('\r');
+			PutCh('\n');
+			continue;
+		}
 		PutCh(String[i]);
 	}
 }
@@ -84,7 +88,8 @@ unsigned char GetCh(void) {
 
 	do {
 		Status = StatusUART;
-	} while ( (Status & 0x80) == 0 );
+		LED = Status;
+	} while ( (Status & 0x01) == 0 ); // rdaSig 가 1이 될 때까지 대기
 
 	ch = DataUART;
 
@@ -96,10 +101,11 @@ void PutCh(unsigned char ch) {
 
 	do {
 			Status = StatusUART;
-	} while ( (Status & 0x40) == 0 );
+	} while ( (Status & 0x02) == 0 ); // tbeSig 가 1이 될 때까지 대기
 
 	DataUART = ch;
 
+	delay(100);
 }
  // ****************** LCD Functions *************************** //
 
@@ -127,6 +133,50 @@ void	SendCharToLcd(unsigned char cChar)
 	DataLCD = cChar;
 }
 
+unsigned char GetPosition()
+{
+	unsigned char position;
+
+	while (CheckBusy() == BUSY);
+
+	position = StatusCMD;
+
+	return position;
+}
+
+void	PutCharLcd(unsigned char cChar) // LCD print
+{
+	unsigned char DDRAM_addr;
+
+
+
+	if(DDRAM_addr == 0x10)
+	{
+		SendCmdToLcd(0xC0);  // Set DDRAM addres(40uS) = 0x80 | 0x40(second line)
+	}
+	else if(DDRAM_addr == 0x50)
+	{
+		SendCmdToLcd(0x80);  // Set DDRAM addres(40uS) = 0x80 | 0x00(first line)
+	}
+
+	Printf("DDRAM_addr = 0x"); Print8bits(DDRAM_addr); Printf("\n");
+
+	SendCharToLcd(cChar);
+
+
+}
+
+void	PrintfLcd(char *String)
+{
+	int	i;
+
+	for(i=0; String[i] != NULL; i++)
+	{
+		PutCharLcd(String[i]);
+	}
+
+}
+
 void	InitLcd(void)
 {
 	Printf("LCD Initialization : Data out mode");
@@ -149,38 +199,7 @@ void	InitLcd(void)
 	delay(5000000);
 }
 
-void	PutCharLcd(unsigned char cChar) // LCD print
-{
-	unsigned char DDRAM_addr;
 
-	while (CheckBusy() == BUSY);
-
-	DDRAM_addr = StatusCMD;
-
-	if(DDRAM_addr == 0x10)
-	{
-		SendCmdToLcd(0xC0);  // Set DDRAM addres(40uS) = 0x80 | 0x40(second line)
-	}
-	else if(DDRAM_addr == 0x50)
-	{
-		SendCmdToLcd(0x80);  // Set DDRAM addres(40uS) = 0x80 | 0x00(first line)
-	}
-
-	SendCharToLcd(cChar);
-
-
-}
-
-void	PrintfLcd(char *String)
-{
-	int	i;
-
-	for(i=0; String[i] != NULL; i++)
-	{
-		PutCharLcd(String[i]);
-	}
-
-}
 
 int main()
 {

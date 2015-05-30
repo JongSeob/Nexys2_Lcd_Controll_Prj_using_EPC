@@ -1,13 +1,13 @@
-17:28:01 **** Incremental Build of configuration Release for project app_prj ****
+15:06:53 **** Incremental Build of configuration Release for project app_prj ****
 make all 
 'Building file: ../src/src.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O2 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
 ../src/src.c: In function 'Printf':
-../src/src.c:56:4: warning: implicit declaration of function 'PutCh' [-Wimplicit-function-declaration]
+../src/src.c:57:4: warning: implicit declaration of function 'PutCh' [-Wimplicit-function-declaration]
 ../src/src.c: At top level:
-../src/src.c:94:6: warning: conflicting types for 'PutCh' [enabled by default]
-../src/src.c:56:4: note: previous implicit declaration of 'PutCh' was here
+../src/src.c:99:6: warning: conflicting types for 'PutCh' [enabled by default]
+../src/src.c:57:4: note: previous implicit declaration of 'PutCh' was here
 'Finished building: ../src/src.c'
 ' '
 'Building target: app_prj.elf'
@@ -18,7 +18,7 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -m
 'Invoking: MicroBlaze Print Size'
 mb-size app_prj.elf  |tee "app_prj.elf.size"
    text	   data	    bss	    dec	    hex	filename
-   2690	    268	   2090	   5048	   13b8	app_prj.elf
+   2934	    268	   2084	   5286	   14a6	app_prj.elf
 'Finished building: app_prj.elf.size'
 ' '
 'Invoking: Xilinx ELF Check'
@@ -34,20 +34,20 @@ ELF file	: app_prj.elf
 elfcheck passed.
 'Finished building: app_prj.elf.elfcheck'
 ' '
-17:28:12 **** Clean-only build of configuration Release for project app_prj ****
+15:07:10 **** Clean-only build of configuration Release for project app_prj ****
 make clean 
 rm -rf  ./src/src.o  ./src/src.d  app_prj.elf.size  app_prj.elf.elfcheck  app_prj.elf
 ' '
-17:28:12 **** Auto Build of configuration Release for project app_prj ****
+15:07:10 **** Auto Build of configuration Release for project app_prj ****
 make all 
 'Building file: ../src/src.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O0 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
 ../src/src.c: In function 'Printf':
-../src/src.c:56:4: warning: implicit declaration of function 'PutCh' [-Wimplicit-function-declaration]
+../src/src.c:57:4: warning: implicit declaration of function 'PutCh' [-Wimplicit-function-declaration]
 ../src/src.c: At top level:
-../src/src.c:94:6: warning: conflicting types for 'PutCh' [enabled by default]
-../src/src.c:56:4: note: previous implicit declaration of 'PutCh' was here
+../src/src.c:99:6: warning: conflicting types for 'PutCh' [enabled by default]
+../src/src.c:57:4: note: previous implicit declaration of 'PutCh' was here
 'Finished building: ../src/src.c'
 ' '
 'Building target: app_prj.elf'
@@ -58,7 +58,7 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -m
 'Invoking: MicroBlaze Print Size'
 mb-size app_prj.elf  |tee "app_prj.elf.size"
    text	   data	    bss	    dec	    hex	filename
-   3242	    268	   2090	   5600	   15e0	app_prj.elf
+   3750	    268	   2084	   6102	   17d6	app_prj.elf
 'Finished building: app_prj.elf.size'
 ' '
 'Invoking: Xilinx ELF Check'
@@ -74,22 +74,25 @@ ELF file	: app_prj.elf
 elfcheck passed.
 'Finished building: app_prj.elf.elfcheck'
 ' '
-17:28:48 **** Auto Build of project standalone_bsp_0 ****
+15:07:19 **** Auto Build of project standalone_bsp_0 ****
 make -k all 
 'Finished building libraries'
-17:53:38 **** Auto Build of project standalone_bsp_0 ****
+15:07:31 **** Auto Build of project standalone_bsp_0 ****
 make -k all 
 'Finished building libraries'
-17:54:24 **** Auto Build of configuration Release for project app_prj ****
+15:08:00 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+'Finished building libraries'
+15:08:51 **** Auto Build of configuration Release for project app_prj ****
 make all 
 'Building file: ../src/src.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O0 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
 ../src/src.c: In function 'Printf':
-../src/src.c:56:4: warning: implicit declaration of function 'PutCh' [-Wimplicit-function-declaration]
+../src/src.c:57:4: warning: implicit declaration of function 'PutCh' [-Wimplicit-function-declaration]
 ../src/src.c: At top level:
-../src/src.c:94:6: warning: conflicting types for 'PutCh' [enabled by default]
-../src/src.c:56:4: note: previous implicit declaration of 'PutCh' was here
+../src/src.c:99:6: warning: conflicting types for 'PutCh' [enabled by default]
+../src/src.c:57:4: note: previous implicit declaration of 'PutCh' was here
 'Finished building: ../src/src.c'
 ' '
 'Building target: app_prj.elf'
@@ -100,7 +103,7 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -m
 'Invoking: MicroBlaze Print Size'
 mb-size app_prj.elf  |tee "app_prj.elf.size"
    text	   data	    bss	    dec	    hex	filename
-   3266	    268	   2090	   5624	   15f8	app_prj.elf
+   3750	    268	   2084	   6102	   17d6	app_prj.elf
 'Finished building: app_prj.elf.size'
 ' '
 'Invoking: Xilinx ELF Check'
@@ -116,6 +119,161 @@ ELF file	: app_prj.elf
 elfcheck passed.
 'Finished building: app_prj.elf.elfcheck'
 ' '
-17:54:33 **** Auto Build of project standalone_bsp_0 ****
+15:08:57 **** Auto Build of configuration Release for project app_prj ****
+make all 
+'Building file: ../src/src.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
+../src/src.c: In function 'Printf':
+../src/src.c:57:4: warning: implicit declaration of function 'PutCh' [-Wimplicit-function-declaration]
+../src/src.c: At top level:
+../src/src.c:99:6: warning: conflicting types for 'PutCh' [enabled by default]
+../src/src.c:57:4: note: previous implicit declaration of 'PutCh' was here
+'Finished building: ../src/src.c'
+' '
+'Building target: app_prj.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "app_prj.elf"  ./src/src.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: app_prj.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size app_prj.elf  |tee "app_prj.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   3750	    268	   2084	   6102	   17d6	app_prj.elf
+'Finished building: app_prj.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck app_prj.elf -hw ../../blaze_hw_platform/system.xml -pe microblaze_0  |tee "app_prj.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../blaze_hw_platform/system.xml -pe microblaze_0
+app_prj.elf 
+
+ELF file	: app_prj.elf
+elfcheck passed.
+'Finished building: app_prj.elf.elfcheck'
+' '
+15:09:04 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+'Finished building libraries'
+15:12:08 **** Auto Build of configuration Release for project app_prj ****
+make all 
+'Building file: ../src/src.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
+../src/src.c: In function 'Printf':
+../src/src.c:57:4: warning: implicit declaration of function 'PutCh' [-Wimplicit-function-declaration]
+../src/src.c: At top level:
+../src/src.c:99:6: warning: conflicting types for 'PutCh' [enabled by default]
+../src/src.c:57:4: note: previous implicit declaration of 'PutCh' was here
+../src/src.c: In function 'PutCharLcd':
+../src/src.c:153:4: warning: 'DDRAM_addr' is used uninitialized in this function [-Wuninitialized]
+'Finished building: ../src/src.c'
+' '
+'Building target: app_prj.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "app_prj.elf"  ./src/src.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: app_prj.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size app_prj.elf  |tee "app_prj.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   3710	    268	   2084	   6062	   17ae	app_prj.elf
+'Finished building: app_prj.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck app_prj.elf -hw ../../blaze_hw_platform/system.xml -pe microblaze_0  |tee "app_prj.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../blaze_hw_platform/system.xml -pe microblaze_0
+app_prj.elf 
+
+ELF file	: app_prj.elf
+elfcheck passed.
+'Finished building: app_prj.elf.elfcheck'
+' '
+15:12:27 **** Auto Build of configuration Release for project app_prj ****
+make all 
+'Building file: ../src/src.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
+../src/src.c: In function 'Printf':
+../src/src.c:57:4: warning: implicit declaration of function 'PutCh' [-Wimplicit-function-declaration]
+../src/src.c: At top level:
+../src/src.c:99:6: warning: conflicting types for 'PutCh' [enabled by default]
+../src/src.c:57:4: note: previous implicit declaration of 'PutCh' was here
+'Finished building: ../src/src.c'
+' '
+'Building target: app_prj.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "app_prj.elf"  ./src/src.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: app_prj.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size app_prj.elf  |tee "app_prj.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   3810	    268	   2090	   6168	   1818	app_prj.elf
+'Finished building: app_prj.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck app_prj.elf -hw ../../blaze_hw_platform/system.xml -pe microblaze_0  |tee "app_prj.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../blaze_hw_platform/system.xml -pe microblaze_0
+app_prj.elf 
+
+ELF file	: app_prj.elf
+elfcheck passed.
+'Finished building: app_prj.elf.elfcheck'
+' '
+15:13:30 **** Auto Build of configuration Release for project app_prj ****
+make all 
+'Building file: ../src/src.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
+../src/src.c: In function 'Printf':
+../src/src.c:57:4: warning: implicit declaration of function 'PutCh' [-Wimplicit-function-declaration]
+../src/src.c: At top level:
+../src/src.c:99:6: warning: conflicting types for 'PutCh' [enabled by default]
+../src/src.c:57:4: note: previous implicit declaration of 'PutCh' was here
+'Finished building: ../src/src.c'
+' '
+'Building target: app_prj.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "app_prj.elf"  ./src/src.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: app_prj.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size app_prj.elf  |tee "app_prj.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   3818	    268	   2090	   6176	   1820	app_prj.elf
+'Finished building: app_prj.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck app_prj.elf -hw ../../blaze_hw_platform/system.xml -pe microblaze_0  |tee "app_prj.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../blaze_hw_platform/system.xml -pe microblaze_0
+app_prj.elf 
+
+ELF file	: app_prj.elf
+elfcheck passed.
+'Finished building: app_prj.elf.elfcheck'
+' '
+15:13:55 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+'Finished building libraries'
+15:14:19 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+'Finished building libraries'
+15:16:26 **** Auto Build of project standalone_bsp_0 ****
 make -k all 
 'Finished building libraries'

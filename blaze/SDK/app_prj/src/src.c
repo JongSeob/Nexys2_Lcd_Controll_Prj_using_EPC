@@ -52,8 +52,12 @@ void delay(unsigned int count)
 void Printf(char String[]) {
 	int	i;
 	for(i=0; String[i] != 0; i++) {
-		if(String[i] == '\n')
+		if( (String[i] == '\n') || (String[i] == '\r') )
+		{
 			PutCh('\r');
+			PutCh('\n');
+			continue;
+		}
 		PutCh(String[i]);
 	}
 }
@@ -84,6 +88,7 @@ unsigned char GetCh(void) {
 
 	do {
 		Status = StatusUART;
+		LED = Status;
 	} while ( (Status & 0x01) == 0 ); // rdaSig 가 1이 될 때까지 대기
 
 	ch = DataUART;
@@ -98,10 +103,9 @@ void PutCh(unsigned char ch) {
 			Status = StatusUART;
 	} while ( (Status & 0x02) == 0 ); // tbeSig 가 1이 될 때까지 대기
 
-	delay(100);
-
 	DataUART = ch;
 
+	delay(100);
 }
  // ****************** LCD Functions *************************** //
 
@@ -129,6 +133,50 @@ void	SendCharToLcd(unsigned char cChar)
 	DataLCD = cChar;
 }
 
+unsigned char GetPosition()
+{
+	unsigned char position;
+
+	while (CheckBusy() == BUSY);
+
+	position = StatusCMD;
+
+	return (position & 0x7F); // BUSY플래그를 제거.
+}
+
+void	PutCharLcd(unsigned char cChar) // LCD print
+{
+	unsigned char DDRAM_addr;
+
+	DDRAM_addr = GetPosition();
+
+	if(DDRAM_addr == 0x10)
+	{
+		SendCmdToLcd(0xC0);  // Set DDRAM addres(40uS) = 0x80 | 0x40(second line)
+	}
+	else if(DDRAM_addr == 0x50)
+	{
+		SendCmdToLcd(0x80);  // Set DDRAM addres(40uS) = 0x80 | 0x00(first line)
+	}
+
+	Printf("DDRAM_addr = 0x"); Print8bits(DDRAM_addr); Printf("\n");
+
+	SendCharToLcd(cChar);
+
+
+}
+
+void	PrintfLcd(char *String)
+{
+	int	i;
+
+	for(i=0; String[i] != NULL; i++)
+	{
+		PutCharLcd(String[i]);
+	}
+
+}
+
 void	InitLcd(void)
 {
 	Printf("LCD Initialization : Data out mode");
@@ -151,38 +199,7 @@ void	InitLcd(void)
 	delay(5000000);
 }
 
-void	PutCharLcd(unsigned char cChar) // LCD print
-{
-	unsigned char DDRAM_addr;
 
-	while (CheckBusy() == BUSY);
-
-	DDRAM_addr = StatusCMD;
-
-	if(DDRAM_addr == 0x10)
-	{
-		SendCmdToLcd(0xC0);  // Set DDRAM addres(40uS) = 0x80 | 0x40(second line)
-	}
-	else if(DDRAM_addr == 0x50)
-	{
-		SendCmdToLcd(0x80);  // Set DDRAM addres(40uS) = 0x80 | 0x00(first line)
-	}
-
-	SendCharToLcd(cChar);
-
-
-}
-
-void	PrintfLcd(char *String)
-{
-	int	i;
-
-	for(i=0; String[i] != NULL; i++)
-	{
-		PutCharLcd(String[i]);
-	}
-
-}
 
 int main()
 {

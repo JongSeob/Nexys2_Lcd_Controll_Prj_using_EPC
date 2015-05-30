@@ -147,6 +147,8 @@ module top #(
 	
 	assign EPC_Rdy = LCD_RDY & UART_RDY; 
 	
+	//assign Led = Uart_Status;
+	
 	// Instantiate the MicroBlaze & RS232 module
 	(* BOX_TYPE = "user_black_box" *)
 	blaze blaze (
@@ -155,7 +157,7 @@ module top #(
 		 .fpga_0_clk_1_sys_clk_pin					(clk), 
 		 .fpga_0_rst_1_sys_rst_pin					(btn[0]),
 		 .fpga_0_DIP_Switches_GPIO_IO_I_pin		(sw),
-//		 .fpga_0_LEDS_GPIO_IO_O_pin				(Led),
+		 .fpga_0_LEDS_GPIO_IO_O_pin				(Led),
 		 .xps_epc_0_PRH_CS_n_pin					(EPC_nCS),					
 		 .xps_epc_0_PRH_Addr_pin					(Addr),
 		 .xps_epc_0_PRH_Rd_n_pin					(nRD),

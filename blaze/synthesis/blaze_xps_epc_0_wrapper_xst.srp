@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.15 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> 
 TABLE OF CONTENTS
@@ -303,10 +303,10 @@ Analyzing hierarchy for entity <xps_epc> in library <xps_epc_v1_02_a> (architect
 	C_PRH0_FIFO_ACCESS = 0
 	C_PRH0_FIFO_OFFSET = 0
 	C_PRH0_HIGHADDR = "10000000100000000000000000111111"
-	C_PRH0_RDN_WIDTH = 180000
-	C_PRH0_RDY_TOUT = 29000
+	C_PRH0_RDN_WIDTH = 30000
+	C_PRH0_RDY_TOUT = 20000
 	C_PRH0_RDY_WIDTH = 120000
-	C_PRH0_RD_CYCLE = 200000
+	C_PRH0_RD_CYCLE = 60000
 	C_PRH0_SYNC = 0
 	C_PRH0_WRN_WIDTH = 30000
 	C_PRH0_WR_CYCLE = 60000
@@ -428,10 +428,10 @@ Analyzing hierarchy for entity <epc_core> in library <xps_epc_v1_02_a> (architec
 	C_PRH0_DWIDTH = 8
 	C_PRH0_DWIDTH_MATCH = 0
 	C_PRH0_FIFO_ACCESS = 0
-	C_PRH0_RDN_WIDTH = 180000
-	C_PRH0_RDY_TOUT = 29000
+	C_PRH0_RDN_WIDTH = 30000
+	C_PRH0_RDY_TOUT = 20000
 	C_PRH0_RDY_WIDTH = 120000
-	C_PRH0_RD_CYCLE = 200000
+	C_PRH0_RD_CYCLE = 60000
 	C_PRH0_SYNC = 0
 	C_PRH0_WRN_WIDTH = 30000
 	C_PRH0_WR_CYCLE = 60000
@@ -589,10 +589,10 @@ Analyzing hierarchy for entity <async_cntl> in library <xps_epc_v1_02_a> (archit
 	C_PRH0_DATA_TINV = 25000
 	C_PRH0_DATA_TOUT = 15000
 	C_PRH0_DATA_TSU = 30000
-	C_PRH0_RDN_WIDTH = 180000
-	C_PRH0_RDY_TOUT = 29000
+	C_PRH0_RDN_WIDTH = 30000
+	C_PRH0_RDY_TOUT = 20000
 	C_PRH0_RDY_WIDTH = 120000
-	C_PRH0_RD_CYCLE = 200000
+	C_PRH0_RD_CYCLE = 60000
 	C_PRH0_WRN_WIDTH = 30000
 	C_PRH0_WR_CYCLE = 60000
 	C_PRH1_ADDR_TH = 0
@@ -698,7 +698,7 @@ Analyzing hierarchy for entity <async_statemachine> in library <xps_epc_v1_02_a>
 	C_ADDR_DATA_CS_TH_CNT_WIDTH = 2
 	C_ADDR_TH_CNT_WIDTH = 2
 	C_ADS_CNT_WIDTH = 2
-	C_CONTROL_CNT_WIDTH = 4
+	C_CONTROL_CNT_WIDTH = 2
 	C_DEV_RDY_CNT_WIDTH = 3
 	C_DEV_VALID_CNT_WIDTH = 2
 	C_NUM_PERIPHERALS = 1
@@ -711,7 +711,7 @@ Analyzing hierarchy for entity <async_counters> in library <xps_epc_v1_02_a> (ar
 	C_ADDR_DATA_CS_TH_CNT_WIDTH = 2
 	C_ADDR_TH_CNT_WIDTH = 2
 	C_ADS_CNT_WIDTH = 2
-	C_CONTROL_CNT_WIDTH = 4
+	C_CONTROL_CNT_WIDTH = 2
 	C_DEV_RDY_CNT_WIDTH = 3
 	C_DEV_VALID_CNT_WIDTH = 2
 	C_RD_REC_M_CNT_WIDTH = 2
@@ -738,15 +738,6 @@ Analyzing hierarchy for entity <ld_arith_reg> in library <proc_common_v3_00_a> (
 	C_LD_WIDTH = 2
 	C_REG_WIDTH = 2
 	C_RESET_VALUE = "00"
-
-Analyzing hierarchy for entity <ld_arith_reg> in library <proc_common_v3_00_a> (architecture <imp>) with generics.
-	C_ADD_SUB_NOT = false
-	C_AD_OFFSET = 0
-	C_AD_WIDTH = 1
-	C_LD_OFFSET = 0
-	C_LD_WIDTH = 4
-	C_REG_WIDTH = 4
-	C_RESET_VALUE = "0000"
 
 Analyzing hierarchy for entity <ld_arith_reg> in library <proc_common_v3_00_a> (architecture <imp>) with generics.
 	C_ADD_SUB_NOT = false
@@ -795,10 +786,10 @@ Analyzing generic Entity <xps_epc> in library <xps_epc_v1_02_a> (Architecture <i
 	C_PRH0_FIFO_ACCESS = 0
 	C_PRH0_FIFO_OFFSET = 0
 	C_PRH0_HIGHADDR = "10000000100000000000000000111111"
-	C_PRH0_RDN_WIDTH = 180000
-	C_PRH0_RDY_TOUT = 29000
+	C_PRH0_RDN_WIDTH = 30000
+	C_PRH0_RDY_TOUT = 20000
 	C_PRH0_RDY_WIDTH = 120000
-	C_PRH0_RD_CYCLE = 200000
+	C_PRH0_RD_CYCLE = 60000
 	C_PRH0_SYNC = 0
 	C_PRH0_WRN_WIDTH = 30000
 	C_PRH0_WR_CYCLE = 60000
@@ -973,10 +964,10 @@ Analyzing generic Entity <epc_core> in library <xps_epc_v1_02_a> (Architecture <
 	C_PRH0_DWIDTH = 8
 	C_PRH0_DWIDTH_MATCH = 0
 	C_PRH0_FIFO_ACCESS = 0
-	C_PRH0_RDN_WIDTH = 180000
-	C_PRH0_RDY_TOUT = 29000
+	C_PRH0_RDN_WIDTH = 30000
+	C_PRH0_RDY_TOUT = 20000
 	C_PRH0_RDY_WIDTH = 120000
-	C_PRH0_RD_CYCLE = 200000
+	C_PRH0_RD_CYCLE = 60000
 	C_PRH0_SYNC = 0
 	C_PRH0_WRN_WIDTH = 30000
 	C_PRH0_WR_CYCLE = 60000
@@ -1123,10 +1114,10 @@ Analyzing generic Entity <async_cntl> in library <xps_epc_v1_02_a> (Architecture
 	C_PRH0_DATA_TINV = 25000
 	C_PRH0_DATA_TOUT = 15000
 	C_PRH0_DATA_TSU = 30000
-	C_PRH0_RDN_WIDTH = 180000
-	C_PRH0_RDY_TOUT = 29000
+	C_PRH0_RDN_WIDTH = 30000
+	C_PRH0_RDY_TOUT = 20000
 	C_PRH0_RDY_WIDTH = 120000
-	C_PRH0_RD_CYCLE = 200000
+	C_PRH0_RD_CYCLE = 60000
 	C_PRH0_WRN_WIDTH = 30000
 	C_PRH0_WR_CYCLE = 60000
 	C_PRH1_ADDR_TH = 0
@@ -1185,7 +1176,7 @@ Analyzing generic Entity <async_statemachine> in library <xps_epc_v1_02_a> (Arch
 	C_ADDR_DATA_CS_TH_CNT_WIDTH = 2
 	C_ADDR_TH_CNT_WIDTH = 2
 	C_ADS_CNT_WIDTH = 2
-	C_CONTROL_CNT_WIDTH = 4
+	C_CONTROL_CNT_WIDTH = 2
 	C_DEV_RDY_CNT_WIDTH = 3
 	C_DEV_VALID_CNT_WIDTH = 2
 	C_NUM_PERIPHERALS = 1
@@ -1199,7 +1190,7 @@ Analyzing generic Entity <async_counters> in library <xps_epc_v1_02_a> (Architec
 	C_ADDR_DATA_CS_TH_CNT_WIDTH = 2
 	C_ADDR_TH_CNT_WIDTH = 2
 	C_ADS_CNT_WIDTH = 2
-	C_CONTROL_CNT_WIDTH = 4
+	C_CONTROL_CNT_WIDTH = 2
 	C_DEV_RDY_CNT_WIDTH = 3
 	C_DEV_VALID_CNT_WIDTH = 2
 	C_RD_REC_M_CNT_WIDTH = 2
@@ -1231,32 +1222,6 @@ Analyzing generic Entity <ld_arith_reg.2> in library <proc_common_v3_00_a> (Arch
 	C_AD_OFFSET = 0
 	C_AD_WIDTH = 1
 	C_LD_OFFSET = 0
-	C_LD_WIDTH = 4
-	C_REG_WIDTH = 4
-	C_RESET_VALUE = "0000"
-WARNING:Xst:2211 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ld_arith_reg.vhd" line 284: Instantiating black box module <MULT_AND>.
-WARNING:Xst:2211 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ld_arith_reg.vhd" line 294: Instantiating black box module <MUXCY>.
-WARNING:Xst:2211 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ld_arith_reg.vhd" line 305: Instantiating black box module <XORCY>.
-WARNING:Xst:2211 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ld_arith_reg.vhd" line 321: Instantiating black box module <FDRE>.
-WARNING:Xst:2211 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ld_arith_reg.vhd" line 284: Instantiating black box module <MULT_AND>.
-WARNING:Xst:2211 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ld_arith_reg.vhd" line 294: Instantiating black box module <MUXCY>.
-WARNING:Xst:2211 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ld_arith_reg.vhd" line 305: Instantiating black box module <XORCY>.
-WARNING:Xst:2211 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ld_arith_reg.vhd" line 321: Instantiating black box module <FDRE>.
-WARNING:Xst:2211 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ld_arith_reg.vhd" line 284: Instantiating black box module <MULT_AND>.
-WARNING:Xst:2211 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ld_arith_reg.vhd" line 294: Instantiating black box module <MUXCY>.
-WARNING:Xst:2211 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ld_arith_reg.vhd" line 305: Instantiating black box module <XORCY>.
-WARNING:Xst:2211 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ld_arith_reg.vhd" line 321: Instantiating black box module <FDRE>.
-WARNING:Xst:2211 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ld_arith_reg.vhd" line 284: Instantiating black box module <MULT_AND>.
-WARNING:Xst:2211 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ld_arith_reg.vhd" line 294: Instantiating black box module <MUXCY>.
-WARNING:Xst:2211 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ld_arith_reg.vhd" line 305: Instantiating black box module <XORCY>.
-WARNING:Xst:2211 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ld_arith_reg.vhd" line 321: Instantiating black box module <FDRE>.
-Entity <ld_arith_reg.2> analyzed. Unit <ld_arith_reg.2> generated.
-
-Analyzing generic Entity <ld_arith_reg.3> in library <proc_common_v3_00_a> (Architecture <imp>).
-	C_ADD_SUB_NOT = false
-	C_AD_OFFSET = 0
-	C_AD_WIDTH = 1
-	C_LD_OFFSET = 0
 	C_LD_WIDTH = 3
 	C_REG_WIDTH = 3
 	C_RESET_VALUE = "000"
@@ -1272,7 +1237,7 @@ WARNING:Xst:2211 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/pro
 WARNING:Xst:2211 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ld_arith_reg.vhd" line 294: Instantiating black box module <MUXCY>.
 WARNING:Xst:2211 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ld_arith_reg.vhd" line 305: Instantiating black box module <XORCY>.
 WARNING:Xst:2211 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ld_arith_reg.vhd" line 321: Instantiating black box module <FDRE>.
-Entity <ld_arith_reg.3> analyzed. Unit <ld_arith_reg.3> generated.
+Entity <ld_arith_reg.2> analyzed. Unit <ld_arith_reg.2> generated.
 
 Analyzing generic Entity <address_gen> in library <xps_epc_v1_02_a> (Architecture <imp>).
 	ADDRCNT_WIDTH = 2
@@ -1630,12 +1595,6 @@ WARNING:Xst:646 - Signal <cry<0>> is assigned but never used. This unconnected s
 Unit <ld_arith_reg_2> synthesized.
 
 
-Synthesizing Unit <ld_arith_reg_3>.
-    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ld_arith_reg.vhd".
-WARNING:Xst:646 - Signal <cry<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-Unit <ld_arith_reg_3> synthesized.
-
-
 Synthesizing Unit <plb_address_decoder>.
     Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plb_address_decoder.vhd".
 WARNING:Xst:647 - Input <Bus_RNW_Erly> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -1774,8 +1733,8 @@ Macro Statistics
  6-bit register                                        : 1
  8-bit register                                        : 1
  9-bit register                                        : 1
-# Xors                                                 : 8
- 1-bit xor2                                            : 8
+# Xors                                                 : 9
+ 1-bit xor2                                            : 9
 
 =========================================================================
 
@@ -1815,10 +1774,10 @@ Macro Statistics
 # FSMs                                                 : 1
 # Adders/Subtractors                                   : 1
  9-bit subtractor                                      : 1
-# Registers                                            : 266
- Flip-Flops                                            : 266
-# Xors                                                 : 8
- 1-bit xor2                                            : 8
+# Registers                                            : 264
+ Flip-Flops                                            : 264
+# Xors                                                 : 9
+ 1-bit xor2                                            : 9
 
 =========================================================================
 
@@ -1848,8 +1807,6 @@ Optimizing unit <ld_arith_reg_1> ...
 
 Optimizing unit <ld_arith_reg_2> ...
 
-Optimizing unit <ld_arith_reg_3> ...
-
 Optimizing unit <plb_address_decoder> ...
 
 Optimizing unit <async_counters> ...
@@ -1859,7 +1816,11 @@ Optimizing unit <plb_slave_attachment> ...
 Optimizing unit <async_cntl> ...
 WARNING:Xst:1293 - FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd16> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd11> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd7> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd6> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd5> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd2> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd1> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd3> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_31> (without init value) has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_30> (without init value) has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
@@ -1947,13 +1908,9 @@ WARNING:Xst:1898 - Due to constant pushing, FF/Latch <xps_epc_0/PLBv46_IPIF_I/I_
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_3> is unconnected in block <blaze_xps_epc_0_wrapper>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_3> is unconnected in block <blaze_xps_epc_0_wrapper>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_0> is unconnected in block <blaze_xps_epc_0_wrapper>.
-WARNING:Xst:1710 - FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Twr_muxed_recovery_load_ce> (without init value) has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Trd_muxed_recovery_load_ce> (without init value) has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd1> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd5> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd6> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd7> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Asynch_addr_strobe> (without init value) has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Twr_muxed_recovery_load_ce> (without init value) has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Trd_muxed_recovery_load_ce> (without init value) has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Taddr_hold_load_ce> (without init value) has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd4> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_ADS> (without init value) has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
@@ -1963,12 +1920,19 @@ Building and optimizing final netlist ...
 
 Final Macro Processing ...
 
+Processing Unit <blaze_xps_epc_0_wrapper> :
+	Found 4-bit shift register for signal <xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip_async_Rdack_d4>.
+	Found 4-bit shift register for signal <xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip_async_Wrack_d4>.
+Unit <blaze_xps_epc_0_wrapper> processed.
+
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 178
- Flip-Flops                                            : 178
+# Registers                                            : 168
+ Flip-Flops                                            : 168
+# Shift Registers                                      : 2
+ 4-bit shift register                                  : 2
 
 =========================================================================
 
@@ -1996,29 +1960,29 @@ Design Statistics
 # IOs                              : 241
 
 Cell Usage :
-# BELS                             : 234
+# BELS                             : 217
 #      GND                         : 1
 #      LUT1                        : 1
-#      LUT2                        : 30
+#      LUT2                        : 29
 #      LUT2_D                      : 1
-#      LUT2_L                      : 5
-#      LUT3                        : 40
-#      LUT3_D                      : 4
-#      LUT3_L                      : 3
+#      LUT3                        : 43
+#      LUT3_D                      : 3
+#      LUT3_L                      : 2
 #      LUT4                        : 58
-#      LUT4_D                      : 3
-#      LUT4_L                      : 4
-#      MULT_AND                    : 23
-#      MUXCY                       : 30
-#      MUXF5                       : 7
+#      LUT4_D                      : 6
+#      LUT4_L                      : 2
+#      MULT_AND                    : 21
+#      MUXCY                       : 28
 #      VCC                         : 1
-#      XORCY                       : 23
-# FlipFlops/Latches                : 178
-#      FD                          : 21
-#      FDR                         : 85
-#      FDRE                        : 50
+#      XORCY                       : 21
+# FlipFlops/Latches                : 175
+#      FD                          : 22
+#      FDR                         : 82
+#      FDRE                        : 48
 #      FDRS                        : 8
-#      FDS                         : 14
+#      FDS                         : 15
+# Shift Registers                  : 2
+#      SRL16                       : 2
 =========================================================================
 
 Device utilization summary:
@@ -2026,9 +1990,11 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                      135  out of   8672     1%  
- Number of Slice Flip Flops:            178  out of  17344     1%  
- Number of 4 input LUTs:                149  out of  17344     0%  
+ Number of Slices:                      127  out of   8672     1%  
+ Number of Slice Flip Flops:            175  out of  17344     1%  
+ Number of 4 input LUTs:                147  out of  17344     0%  
+    Number used as logic:               145
+    Number used as Shift registers:       2
  Number of IOs:                         241
  Number of bonded IOBs:                   0  out of    250     0%  
 
@@ -2050,11 +2016,11 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+-----------------------------------------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)                                     | Load  |
------------------------------------+-----------------------------------------------------------+-------+
-SPLB_Clk                           | NONE(xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip_async_Rdack_d4)| 178   |
------------------------------------+-----------------------------------------------------------+-------+
+-----------------------------------+---------------------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                                   | Load  |
+-----------------------------------+---------------------------------------------------------+-------+
+SPLB_Clk                           | NONE(xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/local_async_req)| 177   |
+-----------------------------------+---------------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
@@ -2065,8 +2031,8 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 6.781ns (Maximum Frequency: 147.471MHz)
-   Minimum input arrival time before clock: 4.177ns
+   Minimum period: 7.528ns (Maximum Frequency: 132.837MHz)
+   Minimum input arrival time before clock: 3.813ns
    Maximum output required time after clock: 0.591ns
    Maximum combinational path delay: No path found
 
@@ -2076,10 +2042,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'SPLB_Clk'
-  Clock period: 6.781ns (frequency: 147.471MHz)
-  Total number of paths / destination ports: 1352 / 222
+  Clock period: 7.528ns (frequency: 132.837MHz)
+  Total number of paths / destination ports: 1534 / 216
 -------------------------------------------------------------------------
-Delay:               6.781ns (Levels of Logic = 3)
+Delay:               7.528ns (Levels of Logic = 4)
   Source:            xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[1].FF_RST0_GEN.FDRE_i1 (FF)
   Destination:       xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0 (FF)
   Source Clock:      SPLB_Clk rising
@@ -2090,34 +2056,34 @@ Delay:               6.781ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDRE:C->Q             2   0.591   0.622  xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[1].FF_RST0_GEN.FDRE_i1 (xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/tdevrdy_wdth_cnt<1>)
-     LUT3_D:I0->O          6   0.704   0.704  xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_cmp_eq00021 (xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_cmp_eq0002)
-     LUT4:I2->O           15   0.704   1.021  xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/asynch_Rdack_i11 (xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/N13)
-     LUT4:I3->O            9   0.704   0.820  xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i_or00001 (xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_or0000)
+     LUT3_D:I0->LO         1   0.704   0.135  xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_cmp_eq00021 (N107)
+     LUT3:I2->O           12   0.704   0.965  xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/asynch_error_i1 (xps_epc_0/EPC_CORE_I/ip_async_error)
+     LUT4:I3->O            5   0.704   0.668  xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/asynch_Wrack_i1 (xps_epc_0/EPC_CORE_I/ip_async_Wrack)
+     LUT4:I2->O            9   0.704   0.820  xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i_or00001 (xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_or0000)
      FDRE:R                    0.911          xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0
     ----------------------------------------
-    Total                      6.781ns (3.614ns logic, 3.167ns route)
-                                       (53.3% logic, 46.7% route)
+    Total                      7.528ns (4.318ns logic, 3.210ns route)
+                                       (57.4% logic, 42.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'SPLB_Clk'
-  Total number of paths / destination ports: 203 / 199
+  Total number of paths / destination ports: 194 / 194
 -------------------------------------------------------------------------
-Offset:              4.177ns (Levels of Logic = 3)
+Offset:              3.813ns (Levels of Logic = 2)
   Source:            SPLB_Rst (PAD)
-  Destination:       xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_1 (FF)
+  Destination:       xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0 (FF)
   Destination Clock: SPLB_Clk rising
 
-  Data Path: SPLB_Rst to xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_1
+  Data Path: SPLB_Rst to xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LUT2_L:I0->LO         1   0.704   0.104  xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_0_or000021_SW0 (N16)
-     LUT4:I3->O            1   0.704   0.455  xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Rdack_i1_SW2 (N55)
-     LUT4:I2->O            1   0.704   0.420  xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_1_or00001 (xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_1_or0000)
-     FDR:R                     0.911          xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_1
+     LUT2:I1->O            1   0.704   0.595  xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i_or00001_SW0 (N36)
+     LUT4:I0->O            9   0.704   0.820  xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i_or00001 (xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_or0000)
+     FDRE:R                    0.911          xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0
     ----------------------------------------
-    Total                      4.177ns (3.198ns logic, 0.979ns route)
-                                       (76.6% logic, 23.4% route)
+    Total                      3.813ns (2.398ns logic, 1.415ns route)
+                                       (62.9% logic, 37.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'SPLB_Clk'
@@ -2140,14 +2106,14 @@ Offset:              0.591ns (Levels of Logic = 0)
 =========================================================================
 
 
-Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 11.77 secs
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 12.11 secs
  
 --> 
 
-Total memory usage is 407324 kilobytes
+Total memory usage is 407452 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  346 (   0 filtered)
+Number of warnings :  329 (   0 filtered)
 Number of infos    :    6 (   0 filtered)
 

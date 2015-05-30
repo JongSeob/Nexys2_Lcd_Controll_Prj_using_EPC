@@ -1,9 +1,8 @@
-17:24:43.004 INFO  - Processing command line option -hwspec E:/Nexys2_LCD_UART_EPC/blaze/SDK/SDK_Export/hw/blaze.xml. 
-17:28:47.952 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
-17:53:37.419 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
-17:54:32.061 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
-21:04:05.244 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
-	at java.net.SocketInputStream.read(Unknown Source)
-	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
-
-21:04:05.245 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+15:06:16.862 INFO  - Processing command line option -hwspec E:/Nexys2_LCD_UART_EPC/blaze/SDK/SDK_Export/hw/blaze.xml. 
+15:07:18.275 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+15:07:30.236 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+15:07:59.161 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+15:09:03.971 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+15:13:54.153 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+15:14:18.443 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+15:16:25.704 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 

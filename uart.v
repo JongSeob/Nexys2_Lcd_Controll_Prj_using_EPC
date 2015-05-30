@@ -65,9 +65,12 @@ module uart#(
 	reg 	[15:0] CounterFE;				// Frame Error Flag
 	reg 	[15:0] CounterOE;				// Overwrite Error Flag
 	reg	[15:0] CounterReceived;		// Number of data received	
+	reg   [15:0] CounterWait_rda;
 
-	reg [2:0] stRcvCur , stRcvNext;
-	reg [2:0] stSendCur, stSendNext;
+	reg [2:0] stRcvCur    = RECEIVE_0;
+	reg [2:0] stRcvNext   = RECEIVE_0;
+	reg [2:0] stSendCur   = SEND_0;
+   reg [2:0] stSendNext  = SEND_0;
 	
 	// Tx로 보낼 데이터 저장
 	always @(posedge nWR) begin		

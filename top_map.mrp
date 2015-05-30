@@ -9,44 +9,43 @@ Target Device  : xc3s1200e
 Target Package : fg320
 Target Speed   : -4
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Fri May 29 17:14:55 2015
+Mapped Date    : Sat May 30 14:59:44 2015
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    1
 Logic Utilization:
-  Total Number Slice Registers:       1,633 out of  17,344    9%
-    Number used as Flip Flops:        1,632
+  Total Number Slice Registers:       1,641 out of  17,344    9%
+    Number used as Flip Flops:        1,640
     Number used as Latches:               1
-  Number of 4 input LUTs:             2,644 out of  17,344   15%
+  Number of 4 input LUTs:             2,620 out of  17,344   15%
 Logic Distribution:
-  Number of occupied Slices:          1,922 out of   8,672   22%
-    Number of Slices containing only related logic:   1,922 out of   1,922 100%
-    Number of Slices containing unrelated logic:          0 out of   1,922   0%
+  Number of occupied Slices:          1,918 out of   8,672   22%
+    Number of Slices containing only related logic:   1,918 out of   1,918 100%
+    Number of Slices containing unrelated logic:          0 out of   1,918   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       2,737 out of  17,344   15%
-    Number used as logic:             2,250
+  Total Number of 4 input LUTs:       2,713 out of  17,344   15%
+    Number used as logic:             2,224
     Number used as a route-thru:         93
     Number used for Dual Port RAMs:     256
       (Two LUTs used per Dual Port RAM)
-    Number used as Shift registers:     138
+    Number used as Shift registers:     140
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
 
   Number of bonded IOBs:                 43 out of     250   17%
-    IOB Latches:                          1
   Number of RAMB16s:                     16 out of      28   57%
   Number of BUFGMUXs:                     4 out of      24   16%
   Number of DCMs:                         1 out of       8   12%
   Number of BSCANs:                       1 out of       1  100%
   Number of MULT18X18SIOs:                3 out of      28   10%
 
-Average Fanout of Non-Clock Nets:                3.58
+Average Fanout of Non-Clock Nets:                3.57
 
-Peak Memory Usage:  367 MB
-Total REAL time to MAP completion:  7 secs 
+Peak Memory Usage:  371 MB
+Total REAL time to MAP completion:  8 secs 
 Total CPU time to MAP completion:   5 secs 
 
 NOTES:
@@ -95,13 +94,13 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net fallingRW is sourced by a
 Section 3 - Informational
 -------------------------
 INFO:LIT:243 - Logical network blaze/xps_epc_0_PRH_BE_pin has no load.
-INFO:LIT:395 - The above info message is repeated 601 more times for the
+INFO:LIT:395 - The above info message is repeated 593 more times for the
    following (max. 5 shown):
    blaze/fpga_0_RS232_TX_pin,
-   blaze/fpga_0_LEDS_GPIO_IO_O_pin<0>,
-   blaze/fpga_0_LEDS_GPIO_IO_O_pin<1>,
-   blaze/fpga_0_LEDS_GPIO_IO_O_pin<2>,
-   blaze/fpga_0_LEDS_GPIO_IO_O_pin<3>
+   blaze/N1,
+   blaze/mb_plb_PLB_MIRQ<1>,
+   blaze/mb_plb_PLB_MRdErr<1>,
+   blaze/mb_plb_PLB_MBusy<0>
    To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
@@ -110,9 +109,9 @@ INFO:LIT:244 - All of the single ended outputs in this design are using slew
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-1201 block(s) removed
- 217 block(s) optimized away
-1281 signal(s) removed
+1183 block(s) removed
+ 218 block(s) optimized away
+1263 signal(s) removed
 
 Section 5 - Removed Logic
 -------------------------
@@ -203,34 +202,6 @@ loadless and has been removed.
 loadless and has been removed.
             The signal "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/fifo_DOut<6>" is
 loadless and has been removed.
-The signal "blaze/fpga_0_LEDS_GPIO_IO_O_pin<0>" is loadless and has been
-removed.
- Loadless block "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_0" (SFF) removed.
-  The signal "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_0_not0001" is loadless and
-has been removed.
-   Loadless block "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_0_not00011" (ROM)
-removed.
-The signal "blaze/fpga_0_LEDS_GPIO_IO_O_pin<1>" is loadless and has been
-removed.
- Loadless block "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_1" (SFF) removed.
-The signal "blaze/fpga_0_LEDS_GPIO_IO_O_pin<2>" is loadless and has been
-removed.
- Loadless block "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_2" (SFF) removed.
-The signal "blaze/fpga_0_LEDS_GPIO_IO_O_pin<3>" is loadless and has been
-removed.
- Loadless block "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_3" (SFF) removed.
-The signal "blaze/fpga_0_LEDS_GPIO_IO_O_pin<4>" is loadless and has been
-removed.
- Loadless block "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_4" (SFF) removed.
-The signal "blaze/fpga_0_LEDS_GPIO_IO_O_pin<5>" is loadless and has been
-removed.
- Loadless block "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_5" (SFF) removed.
-The signal "blaze/fpga_0_LEDS_GPIO_IO_O_pin<6>" is loadless and has been
-removed.
- Loadless block "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_6" (SFF) removed.
-The signal "blaze/fpga_0_LEDS_GPIO_IO_O_pin<7>" is loadless and has been
-removed.
- Loadless block "blaze/LEDS/LEDS/gpio_core_1/gpio_Data_Out_7" (SFF) removed.
 The signal "blaze/N1" is loadless and has been removed.
  Loadless block "blaze/XST_VCC" (ONE) removed.
 The signal "blaze/mb_plb_PLB_MIRQ<1>" is loadless and has been removed.
@@ -289,10 +260,30 @@ removed.
      Loadless block
 "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_1_or0000
 1" (ROM) removed.
-      The signal "blaze/xps_epc_0/N55" is loadless and has been removed.
+      The signal "blaze/xps_epc_0/N24" is loadless and has been removed.
        Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Rdack_i1_SW2" (ROM)
+"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_0_or0000
+21_SW0" (ROM) removed.
+        The signal
+"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/master_id<0>" is
+loadless and has been removed.
+         Loadless block
+"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/master_id_0" (SFF)
 removed.
+          The signal
+"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_masterid_reg<0>"
+is loadless and has been removed.
+           Loadless block
+"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_masterid_reg_0"
+(SFF) removed.
+      The signal "blaze/xps_epc_0/N70" is loadless and has been removed.
+       Loadless block
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
+EMACHINE_I/asynch_Rdack_i2_SW2" (ROM) removed.
+        The signal "blaze/xps_epc_0/N89" is loadless and has been removed.
+         Loadless block
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
+EMACHINE_I/asynch_Rdack_i2_SW2_SW0" (ROM) removed.
 The signal "blaze/mb_plb_PLB_MBusy<0>" is loadless and has been removed.
  Loadless block
 "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/MBUSY_OR/Y_0_or0000_f5" (MUX)
@@ -358,18 +349,6 @@ removed.
      Loadless block
 "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mbusy_i_0_and0000
 1" (ROM) removed.
-      The signal
-"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/master_id<0>" is
-loadless and has been removed.
-       Loadless block
-"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/master_id_0" (SFF)
-removed.
-        The signal
-"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_masterid_reg<0>"
-is loadless and has been removed.
-         Loadless block
-"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_masterid_reg_0"
-(SFF) removed.
 The signal "blaze/mb_plb_PLB_MIRQ<0>" is loadless and has been removed.
  Loadless block
 "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/MIRQ_OR/Y_0_or0000_f5" (MUX)
@@ -468,27 +447,15 @@ removed.
 " is loadless and has been removed.
      Loadless block
 "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mwrerr_i_1_or0000
-1" (MUX) removed.
-      The signal "blaze/xps_epc_0/N90" is loadless and has been removed.
+1" (ROM) removed.
+      The signal "blaze/xps_epc_0/N76" is loadless and has been removed.
        Loadless block
-"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mwrerr_i_1_or0000
-1_F" (ROM) removed.
-      The signal "blaze/xps_epc_0/N91" is loadless and has been removed.
-       Loadless block
-"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mwrerr_i_1_or0000
-1_G" (ROM) removed.
-        The signal "blaze/xps_epc_0/N61" is loadless and has been removed.
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
+EMACHINE_I/asynch_Wrack_i1_SW1" (ROM) removed.
+        The signal "blaze/xps_epc_0/N93" is loadless and has been removed.
          Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Wrack_i1_SW1" (MUX)
-removed.
-          The signal "blaze/xps_epc_0/N78" is loadless and has been removed.
-           Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Wrack_i1_SW1_F" (ROM)
-removed.
-          The signal "blaze/xps_epc_0/N79" is loadless and has been removed.
-           Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Wrack_i1_SW1_G" (ROM)
-removed.
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
+EMACHINE_I/asynch_Wrack_i1_SW1_SW0" (ROM) removed.
 The signal "blaze/mb_plb_PLB_MRdErr<0>" is loadless and has been removed.
  Loadless block
 "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_SLAVE_ORS/MRDERR_OR/Y_0_or0000_f5" (MUX)
@@ -521,10 +488,14 @@ removed.
      Loadless block
 "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_0_or0000
 1" (ROM) removed.
-      The signal "blaze/xps_epc_0/N58" is loadless and has been removed.
+      The signal "blaze/xps_epc_0/N26" is loadless and has been removed.
        Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Rdack_i1_SW4" (ROM)
-removed.
+"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_0_or0000
+21_SW1" (ROM) removed.
+      The signal "blaze/xps_epc_0/N71" is loadless and has been removed.
+       Loadless block
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
+EMACHINE_I/asynch_Rdack_i2_SW3" (ROM) removed.
 The signal "blaze/mb_plb_PLB_MRdBTerm<1>" is loadless and has been removed.
  Loadless block
 "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_MUXEDSIGNALS/PLB_MRdBTerm_
@@ -574,27 +545,11 @@ removed.
 " is loadless and has been removed.
      Loadless block
 "blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mwrerr_i_0_or0000
-1" (MUX) removed.
-      The signal "blaze/xps_epc_0/N92" is loadless and has been removed.
+1" (ROM) removed.
+      The signal "blaze/xps_epc_0/N77" is loadless and has been removed.
        Loadless block
-"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mwrerr_i_0_or0000
-1_F" (ROM) removed.
-      The signal "blaze/xps_epc_0/N93" is loadless and has been removed.
-       Loadless block
-"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mwrerr_i_0_or0000
-1_G" (ROM) removed.
-        The signal "blaze/xps_epc_0/N64" is loadless and has been removed.
-         Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Wrack_i1_SW3" (MUX)
-removed.
-          The signal "blaze/xps_epc_0/N80" is loadless and has been removed.
-           Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Wrack_i1_SW3_F" (ROM)
-removed.
-          The signal "blaze/xps_epc_0/N81" is loadless and has been removed.
-           Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Wrack_i1_SW3_G" (ROM)
-removed.
+"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
+EMACHINE_I/asynch_Wrack_i1_SW2" (ROM) removed.
 The signal "blaze/mb_plb_PLB_MRearbitrate<0>" is loadless and has been removed.
  Loadless block
 "blaze/mb_plb/mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_MUXEDSIGNALS/PLB_MRearbitr
@@ -5075,20 +5030,14 @@ EMACHINE_I/Asynch_data_sel" is loadless and has been removed.
 EMACHINE_I/Asynch_data_sel" (SFF) removed.
     The signal
 "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
-EMACHINE_I/asynch_data_sel_i13" is loadless and has been removed.
+EMACHINE_I/asynch_data_sel_i1" is loadless and has been removed.
      Loadless block
 "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
-EMACHINE_I/asynch_data_sel_i13" (ROM) removed.
-      The signal
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
-EMACHINE_I/asynch_data_sel_i10" is loadless and has been removed.
+EMACHINE_I/asynch_data_sel_i1" (ROM) removed.
+      The signal "blaze/xps_epc_0/N101" is loadless and has been removed.
        Loadless block
 "blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
-EMACHINE_I/asynch_data_sel_i10" (ROM) removed.
-      The signal "blaze/xps_epc_0/N88" is loadless and has been removed.
-       Loadless block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STAT
-EMACHINE_I/asynch_data_sel_i13_SW0" (ROM) removed.
+EMACHINE_I/asynch_data_sel_i1_SW0" (ROM) removed.
 Loadless block "blaze/clock_generator_0/clock_generator_0/DCM0_CLK270_BUFG_INST"
 (CKBUF) removed.
  The signal "blaze/clock_generator_0/clock_generator_0/SIG_DCM0_CLK270" is
@@ -5605,30 +5554,6 @@ The signal
 unused and has been removed.
  Unused block
 "blaze/proc_sys_reset_0/proc_sys_reset_0/Mshreg_Core_Reset_Req_0_d2/VCC" (ONE)
-removed.
-The signal
-"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_0_or0000
-21_SW0/O" is unused and has been removed.
- Unused block
-"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_0_or0000
-21_SW0" (ROM) removed.
-The signal
-"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_0_or0000
-21_SW1/O" is unused and has been removed.
- Unused block
-"blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_0_or0000
-21_SW1" (ROM) removed.
-The signal
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Rdack_i1_SW1/O" is
-unused and has been removed.
- Unused block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Rdack_i1_SW1" (ROM)
-removed.
-The signal
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Rdack_i1_SW3/O" is
-unused and has been removed.
- Unused block
-"blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Rdack_i1_SW3" (ROM)
 removed.
 Unused block
 "blaze/RS232/RS232/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYN
@@ -6170,13 +6095,10 @@ FDR 		blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_type_reg_1
    optimized to 0
 FDR 		blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/plb_type_reg_2
    optimized to 0
-LUT2_L
+LUT2
 		blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rearbitrate_ns11
 1
    optimized to 1
-LOCALBUF
-		blaze/xps_epc_0/xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rearbitrate_ns11
-1/LUT2_L_BUF
 MUXCY_L
 		blaze/microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Data_Flow_I/PC_Module_I
 /Using_FPGA.All_Bits.PC_GEN[31].PC_Bit_I/MUXCY_X
@@ -6203,7 +6125,7 @@ Section 6 - IOB Properties
 | JB<5>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | JB<6>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | Led<0>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| Led<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| Led<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | Led<2>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | Led<3>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | Led<4>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
