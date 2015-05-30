@@ -1,49 +1,11 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: Seokyong University
-// Engineer: Jin Heon Kim
-// 
-// Create Date: May. 5, 2015 
-// Design Name: GPIO design using the EPC module
-// Required IP : GPIO LED, GPIO switch, UART lite, and EPC
-// 설계의 목적
-//		Micro Blaze에 EPC를 장착하여 EPC(External Peripheral Controller)를 통해 FPGA 내부에 정의된 register 들에 대한 쓰기/읽기 동작을 확인한다.
-//		EPC는 	Micro Blaze의 PLB 버스를 사용하기 편한 범용 버스로 변환해주는 일종의 bus bridge라고 할 수 있다.
-// 설계의 내용
-// ISE 내에서는 32비트*8개의 R/W 레지스터를 설계하였다.
-// 쓰기 동작에서 32비트의 Digital Data Output 장치들이 32비트, 16비트, 8비트 단위로 개별 동작하도록 설계되었다.
-// 읽을 때도 8/16/32 비트 단위로 읽어 내는 것이 가능하다.
-//		- 단, 정렬되지 않은(unaligned) 액세스 동작에서는 오동작한다. MB는 당초 이러한 비정렬동작에서는 exception을 발생하여 이를 교정하는 것으로 설계되어 있으나 현재 이 익셉션에 대비한 서비스 루틴이 마련되어 있지 않다. 
-//      SDK 예제. Test 3 참조.
-// Data BUS interface buffer모듈을 설계하여 3상태를 지원하는 양방향 데이터 버스를 접속 가능하게 하였다.
-// nCs 신호 발생의 정확성을 높이기 위해 4바이트 레지스터 * 8개 =32 바이트의 영역만 XPS에서 설정하였다.
-//////////////////////////////////////////////////////////////////////////////////
-// 아래는 실험과정의 오류 정정 역사를 기록한 것으로 단순 기록용이므로 무시하여도 됩니다.
-// nWR 신호에 대한 데이터 holding time을 넉넉히 잡지 않으면 0번지의 일부 데이터에서 쓰기 동작 오류 발견. C_PRH0_DATA_TH를 20ns->40ns로 상향 조정하여 해결하였다.
-// => 개발 초기에 있었던 위 nWR 신호 holding time 문제는 BlazeDataT를 활용함으로써 해결하였다.
-// nWR을 이용해 DataBuffer의 데이터버스 방향을 통제하는 것은 충분한 데이터 홀드 타임을 지원할 수 없는 것으로 판단된다.
-//////////////////////////////////////////////////////////////////////////////////
-// 개선할 점 : 3상태버퍼 사용을 자제하여야 할 듯. =>이 버전에서 수정. 정상 작동함을 확인하였다.
-// 현재 소스는 3상태 신호를 활용하였으나 FPAG에서는 최종 입출력단에서만 3상태 버퍼를 지원하겠다고 하였다.
-// 현재 경고 오류를 보면 3상태 버퍼는 다음과 같이 pull-up을 이용한 open-collector로 설계된 것으로 추정된다.
-// 32 internal tristates are replaced by logic (pull-up yes):
-// BufInOut<0>, BufInOut<10>, BufInOut<11>, BufInOut<12>, BufInOut<13>, BufInOut<14>,
-// BufInOut<15>, BufInOut<16>, BufInOut<17>, BufInOut<18>, BufInOut<19>, BufInOut<1>, 
-// BufInOut<20>, BufInOut<21>, BufInOut<22>, BufInOut<23>, BufInOut<24>, BufInOut<25>, 
-// BufInOut<26>, BufInOut<27>, BufInOut<28>, BufInOut<29>, BufInOut<2>, BufInOut<30>,
-// BufInOut<31>, BufInOut<3>, BufInOut<4>, BufInOut<5>, BufInOut<6>, BufInOut<7>, BufInOut<8>, BufInOut<9>.
-//////////////////////////////////////////////////////////////////////////////////
-// 수정 사항 : 3상태 버퍼를 사용하지 않고 2개의 입출력 데이터 버스를 그대로 활용하였다.
-// 설계는 오히려 간편한 장점이 있다.
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module top #(
-	parameter LCD_DATA_ADDR		= 6'b100000, // 0x20
-				 LCD_CONTROL_ADDR = 6'b100100, // 0x24
+	parameter LCD_DATA_ADDR		= 6'b0000_00, // 0x00
+				 LCD_CONTROL_ADDR = 6'b0001_00, // 0x04
 	
-	parameter UART_DATA_ADDR   = 6'b000100, // 0x04
-				 UART_STATUS_ADDR = 6'b001000  // 0x08
+	parameter UART_DATA_ADDR   = 6'b0010_00, // 0x08
+				 UART_STATUS_ADDR = 6'b0011_00  // 0x0C
 )
 (
 	input			 clk,					// 50 MHz input
@@ -91,8 +53,8 @@ module top #(
 	
 	// *********** Lcd Controller Signal. ******************* //
 	
-	reg  RS;			// RS == 1, LCD Data mode.	   Addr = 6'b1000_00
-						// RS == 0, LCD Control mode  Addr = 6'b1001_00
+	reg  RS;			// RS == 1, LCD Data mode.	   Addr = 6'b0000_00
+						// RS == 0, LCD Control mode  Addr = 6'b0001_00
 	
 	wire RW;			// RW == 1, Read mode
 						// RW == 0, Write mode
@@ -106,6 +68,7 @@ module top #(
 	
 	wire Uart_nCS;
 	wire UART_RDY;
+	
 	wire [7:0] Uart_Status;
 	wire [7:0] ReceivedData;
 	
@@ -182,7 +145,6 @@ module top #(
 	assign JB[5] = RW;
 	assign JB[6] = EN;
 	
-	
 	assign EPC_Rdy = LCD_RDY & UART_RDY; 
 	
 	// Instantiate the MicroBlaze & RS232 module
@@ -219,15 +181,14 @@ module top #(
 	uart uart (
 		 .clk					(clk), 
 		 .iBtnSwitch		(sw), 
-		 .oLed				(Led), 
 		 .TxD					(TXD), 
 		 .RxD					(RXD), 
 		 .nCS					(Uart_nCS), 
 		 .nWR					(nWR), 
 		 .nRD					(nRD), 
 		 .SendData			(BlazeDataOut), 
-		 .Status				(Uart_Status),
 		 .ReceivedData		(ReceivedData),
+		 .Status				(Uart_Status),
 		 .RDY					(UART_RDY)
     );
 	

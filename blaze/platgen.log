@@ -5,7 +5,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Command Line: platgen -p xc3s1200efg320-4 -lang verilog -intstyle ise -toplevel
 no -ti blaze_i -msg __xps/ise/xmsgprops.lst blaze.mhs 
 
-Parse E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/blaze.mhs ...
+Parse E:/Nexys2_LCD_UART_EPC/blaze/blaze.mhs ...
 
 Read MPD definitions ...
 
@@ -96,8 +96,7 @@ IPNAME: lmb_v10, INSTANCE: dlmb - 1 master(s) : 1 slave(s)
 
 Checking port drivers...
 WARNING:EDK:4181 - PORT: Peripheral_Reset, CONNECTOR: sys_periph_reset -
-   floating connection - E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs
-   line 171 
+   floating connection - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 171 
 
 Performing Clock DRCs...
 INFO:EDK:4060 - INSTANCE: xps_epc_0, PARAMETER: C_PRH_CLK_PERIOD_PS - Did not
@@ -177,47 +176,39 @@ Creating hardware output directories ...
 Managing hardware (BBD-specified) netlist files ...
 
 Managing cache ...
-IPNAME:microblaze INSTANCE:microblaze_0 -
-E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 34 - Copying cache
-implementation netlist
-IPNAME:plb_v46 INSTANCE:mb_plb -
-E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 48 - Copying cache
-implementation netlist
-IPNAME:lmb_v10 INSTANCE:ilmb -
-E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 55 - Copying cache
-implementation netlist
-IPNAME:lmb_v10 INSTANCE:dlmb -
-E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 62 - Copying cache
-implementation netlist
+IPNAME:microblaze INSTANCE:microblaze_0 - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs
+line 34 - Copying cache implementation netlist
+IPNAME:plb_v46 INSTANCE:mb_plb - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 48
+- Copying cache implementation netlist
+IPNAME:lmb_v10 INSTANCE:ilmb - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 55 -
+Copying cache implementation netlist
+IPNAME:lmb_v10 INSTANCE:dlmb - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 62 -
+Copying cache implementation netlist
 IPNAME:lmb_bram_if_cntlr INSTANCE:dlmb_cntlr -
-E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 69 - Copying cache
-implementation netlist
+E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 69 - Copying cache implementation
+netlist
 IPNAME:lmb_bram_if_cntlr INSTANCE:ilmb_cntlr -
-E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 78 - Copying cache
-implementation netlist
-IPNAME:bram_block INSTANCE:lmb_bram -
-E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 87 - Copying cache
-implementation netlist
-IPNAME:xps_gpio INSTANCE:dip_switches -
-E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 94 - Copying cache
-implementation netlist
-IPNAME:xps_gpio INSTANCE:leds -
-E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 107 - Copying cache
-implementation netlist
-IPNAME:xps_uartlite INSTANCE:rs232 -
-E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 120 - Copying cache
-implementation netlist
-IPNAME:mdm INSTANCE:mdm_0 - E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs
-line 149 - Copying cache implementation netlist
+E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 78 - Copying cache implementation
+netlist
+IPNAME:bram_block INSTANCE:lmb_bram - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs
+line 87 - Copying cache implementation netlist
+IPNAME:xps_gpio INSTANCE:dip_switches - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs
+line 94 - Copying cache implementation netlist
+IPNAME:xps_gpio INSTANCE:leds - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 107
+- Copying cache implementation netlist
+IPNAME:xps_uartlite INSTANCE:rs232 - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line
+120 - Copying cache implementation netlist
+IPNAME:mdm INSTANCE:mdm_0 - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 149 -
+Copying cache implementation netlist
 IPNAME:proc_sys_reset INSTANCE:proc_sys_reset_0 -
-E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 161 - Copying cache
-implementation netlist
+E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 161 - Copying cache implementation
+netlist
 
 Elaborating instances ...
-IPNAME:bram_block INSTANCE:lmb_bram -
-E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 87 - elaborating IP
+IPNAME:bram_block INSTANCE:lmb_bram - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs
+line 87 - elaborating IP
 IPNAME:clock_generator INSTANCE:clock_generator_0 -
-E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 134 - elaborating IP
+E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 134 - elaborating IP
 ClkGen elaborate status: PASSED
 ----------------------------------------
 ----------------------------------------
@@ -241,19 +232,18 @@ Running XST synthesis ...
 INFO:EDK:4211 - The following instances are synthesized with XST. The MPD option
    IMP_NETLIST=TRUE indicates that a NGC file is to be produced using XST
    synthesis. IMP_NETLIST=FALSE (default) instances are not synthesized. 
-INSTANCE:clock_generator_0 -
-E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 134 - Running XST
-synthesis
-INSTANCE:xps_epc_0 - E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line
-174 - Running XST synthesis
+INSTANCE:clock_generator_0 - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 134 -
+Running XST synthesis
+INSTANCE:xps_epc_0 - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 174 - Running
+XST synthesis
 
 Running NGCBUILD ...
 IPNAME:blaze_clock_generator_0_wrapper INSTANCE:clock_generator_0 -
-E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\blaze.mhs line 134 - Running NGCBUILD
+E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 134 - Running NGCBUILD
 INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
    If any constraint needs to be overridden, this should be done by modifying
    the data/blaze.ucf file.
 
 Rebuilding cache ...
 
-Total run time: 34.00 seconds
+Total run time: 41.00 seconds

@@ -16,11 +16,11 @@
 #define StatReg (*((volatile unsigned char *)(BASEADDRESS_RS232 + 0x8 +3 )) )
 #define CtrlReg (*((volatile unsigned char *)(BASEADDRESS_RS232 + 0xc +3 )) )
 
-#define DataLCD		(*((volatile unsigned char *)(BASEADDRESS_EPC + 0x20))) // 1000_00
-#define StatusCMD	(*((volatile unsigned char *)(BASEADDRESS_EPC + 0x24))) // 1001_00
+#define DataLCD		(*((volatile unsigned char *)(BASEADDRESS_EPC + 0x00))) // 0000_00
+#define StatusCMD	(*((volatile unsigned char *)(BASEADDRESS_EPC + 0x04))) // 0001_00
 
-#define DataUART    (*((volatile unsigned char *)(BASEADDRESS_EPC + 0x04))) // 0001_00
-#define StatusUART  (*((volatile unsigned char *)(BASEADDRESS_EPC + 0x08))) // 0010_00
+#define DataUART    (*((volatile unsigned char *)(BASEADDRESS_EPC + 0x08))) // 0010_00
+#define StatusUART  (*((volatile unsigned char *)(BASEADDRESS_EPC + 0x0C))) // 0011_00
 
 #define BUSY 0x80
 #define NULL 0
@@ -84,7 +84,7 @@ unsigned char GetCh(void) {
 
 	do {
 		Status = StatusUART;
-	} while ( (Status & 0x80) == 0 );
+	} while ( (Status & 0x01) == 0 ); // rdaSig 가 1이 될 때까지 대기
 
 	ch = DataUART;
 
@@ -96,7 +96,9 @@ void PutCh(unsigned char ch) {
 
 	do {
 			Status = StatusUART;
-	} while ( (Status & 0x40) == 0 );
+	} while ( (Status & 0x02) == 0 ); // tbeSig 가 1이 될 때까지 대기
+
+	delay(100);
 
 	DataUART = ch;
 

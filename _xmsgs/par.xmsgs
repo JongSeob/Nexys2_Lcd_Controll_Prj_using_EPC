@@ -5,10 +5,6 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="Route" num="455" delta="new" >CLK Net:<arg fmt="%s" index="1">blaze/mdm_0/Dbg_Update_1</arg> may have excessive skew because 
-   <arg fmt="%d" index="2">2</arg> CLK pins and <arg fmt="%d" index="3">0</arg> NON_CLK pins failed to route using a CLK template.
-</msg>
-
 <msg type="warning" file="Route" num="455" delta="old" >CLK Net:<arg fmt="%s" index="1">uart/UART/rClkDiv&lt;3&gt;</arg> may have excessive skew because 
    <arg fmt="%d" index="2">0</arg> CLK pins and <arg fmt="%d" index="3">1</arg> NON_CLK pins failed to route using a CLK template.
 </msg>
@@ -17,20 +13,20 @@
    <arg fmt="%d" index="2">0</arg> CLK pins and <arg fmt="%d" index="3">1</arg> NON_CLK pins failed to route using a CLK template.
 </msg>
 
-<msg type="warning" file="Route" num="455" delta="old" >CLK Net:<arg fmt="%s" index="1">Lcd_Controller/EN</arg> may have excessive skew because 
-   <arg fmt="%d" index="2">0</arg> CLK pins and <arg fmt="%d" index="3">3</arg> NON_CLK pins failed to route using a CLK template.
-</msg>
-
 <msg type="warning" file="Route" num="455" delta="old" >CLK Net:<arg fmt="%s" index="1">uart/UART/stbeCur_FSM_FFd1</arg> may have excessive skew because 
    <arg fmt="%d" index="2">0</arg> CLK pins and <arg fmt="%d" index="3">3</arg> NON_CLK pins failed to route using a CLK template.
 </msg>
 
-<msg type="warning" file="Route" num="455" delta="old" >CLK Net:<arg fmt="%s" index="1">nRD</arg> may have excessive skew because 
-   <arg fmt="%d" index="2">0</arg> CLK pins and <arg fmt="%d" index="3">12</arg> NON_CLK pins failed to route using a CLK template.
+<msg type="warning" file="Route" num="455" delta="new" >CLK Net:<arg fmt="%s" index="1">Lcd_Controller/EN</arg> may have excessive skew because 
+   <arg fmt="%d" index="2">0</arg> CLK pins and <arg fmt="%d" index="3">4</arg> NON_CLK pins failed to route using a CLK template.
+</msg>
+
+<msg type="warning" file="Route" num="455" delta="new" >CLK Net:<arg fmt="%s" index="1">nRD</arg> may have excessive skew because 
+   <arg fmt="%d" index="2">0</arg> CLK pins and <arg fmt="%d" index="3">13</arg> NON_CLK pins failed to route using a CLK template.
 </msg>
 
 <msg type="warning" file="Route" num="455" delta="new" >CLK Net:<arg fmt="%s" index="1">JA_BlazeDataOut_not0000_inv</arg> may have excessive skew because 
-   <arg fmt="%d" index="2">0</arg> CLK pins and <arg fmt="%d" index="3">17</arg> NON_CLK pins failed to route using a CLK template.
+   <arg fmt="%d" index="2">0</arg> CLK pins and <arg fmt="%d" index="3">18</arg> NON_CLK pins failed to route using a CLK template.
 </msg>
 
 </messages>
