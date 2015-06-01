@@ -118,7 +118,7 @@ unsigned char	CheckBusy(void)
 
 	iBusyStatus = StatusCMD;
 
-	delay(200);	// Read Data Output Delay의 최대시간 120ns가 지날때까지 대기.
+	delay(100);	// Read Data Output Delay의 최대시간 120ns가 지날때까지 대기.
 
 	iBusyStatus = StatusCMD;
 
@@ -146,7 +146,7 @@ unsigned char GetPositionOfLcd()
 
 	position = StatusCMD;
 
-	delay(200);	// Read Data Output Delay의 최대시간 120ns가 지날때까지 대기.
+	delay(100);	// Read Data Output Delay의 최대시간 120ns가 지날때까지 대기.
 
 	position = StatusCMD;
 

@@ -47,7 +47,7 @@
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="src.c" partName="src.c" path="E:/Nexys2_LCD_UART_EPC/blaze/SDK/app_prj/src/src.c" title="src.c" tooltip="app_prj/src/src.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app_prj/src/src.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5214" selectionTopPixel="3820"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3806" selectionTopPixel="2280"/>
 </editor>
 </editors>
 <views>
@@ -208,8 +208,11 @@
 <item historyLabel="src.c" index="2">
 <position info="not_deleted" x="3163" y="9"/>
 </item>
-<item active="true" historyLabel="src.c" index="2">
+<item historyLabel="src.c" index="2">
 <position info="not_deleted" x="3055" y="0"/>
+</item>
+<item active="true" historyLabel="src.c" index="2">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
