@@ -73,7 +73,8 @@ module uart#(
    reg [2:0] stSendNext  = SEND_0;
 	
 	// Tx로 보낼 데이터 저장
-	always @(posedge nWR) begin		
+	always @(posedge nWR) begin	
+		if(nCS == 0)
 			dbInSig <= SendData;
 	end
 

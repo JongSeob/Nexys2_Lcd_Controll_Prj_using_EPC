@@ -1,10 +1,10 @@
 Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\synthesis\xst_temp_dir\
+--> Parameter TMPDIR set to E:\Nexys2_LCD_UART_EPC\blaze\synthesis\xst_temp_dir\
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.22 secs
+Total CPU time to Xst completion: 0.23 secs
  
 --> 
 TABLE OF CONTENTS
@@ -30,7 +30,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "blaze_microblaze_0_wrapper_xst.prj"
-Verilog Include Directory          : {"E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"E:\Nexys2_LCD_UART_EPC\blaze\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc3s1200efg320-4
@@ -354,7 +354,7 @@ Compiling vhdl file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/mi
 Entity <MicroBlaze> compiled.
 WARNING:HDLParsers:3293 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/microblaze_v8_50_c/hdl/vhdl/microblaze.vhd" Line 1156. Constant 'C_CORE_GENERATION_INFO' C_CORE_GENERATION_INFO is not locally static.
 Entity <MicroBlaze> (Architecture <IMP>) compiled.
-Compiling vhdl file "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_microblaze_0_wrapper.vhd" in Library work.
+Compiling vhdl file "E:/Nexys2_LCD_UART_EPC/blaze/hdl/blaze_microblaze_0_wrapper.vhd" in Library work.
 Entity <blaze_microblaze_0_wrapper> compiled.
 Entity <blaze_microblaze_0_wrapper> (Architecture <STRUCTURE>) compiled.
 
@@ -1253,8 +1253,8 @@ WARNING:Xst:795 - "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/micr
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <blaze_microblaze_0_wrapper> in library <work> (Architecture <STRUCTURE>).
-WARNING:Xst:752 - "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_microblaze_0_wrapper.vhd" line 1472: Unconnected input port 'Config_Reset' of component 'microblaze' is tied to default value.
-WARNING:Xst:752 - "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_microblaze_0_wrapper.vhd" line 1472: Unconnected input port 'Dbg_Disable' of component 'microblaze' is tied to default value.
+WARNING:Xst:752 - "E:/Nexys2_LCD_UART_EPC/blaze/hdl/blaze_microblaze_0_wrapper.vhd" line 1472: Unconnected input port 'Config_Reset' of component 'microblaze' is tied to default value.
+WARNING:Xst:752 - "E:/Nexys2_LCD_UART_EPC/blaze/hdl/blaze_microblaze_0_wrapper.vhd" line 1472: Unconnected input port 'Dbg_Disable' of component 'microblaze' is tied to default value.
 Entity <blaze_microblaze_0_wrapper> analyzed. Unit <blaze_microblaze_0_wrapper> generated.
 
 Analyzing generic Entity <microblaze> in library <microblaze_v8_50_c> (Architecture <IMP>).
@@ -3851,7 +3851,7 @@ Unit <microblaze> synthesized.
 
 
 Synthesizing Unit <blaze_microblaze_0_wrapper>.
-    Related source file is "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_microblaze_0_wrapper.vhd".
+    Related source file is "E:/Nexys2_LCD_UART_EPC/blaze/hdl/blaze_microblaze_0_wrapper.vhd".
 Unit <blaze_microblaze_0_wrapper> synthesized.
 
 WARNING:Xst:524 - All outputs of the instance <PVR_I> of the block <PVR> are unconnected in block <Data_Flow>.
@@ -7886,12 +7886,12 @@ Delay:               3.241ns (Levels of Logic = 3)
 =========================================================================
 
 
-Total REAL time to Xst completion: 223.00 secs
-Total CPU time to Xst completion: 222.96 secs
+Total REAL time to Xst completion: 232.00 secs
+Total CPU time to Xst completion: 232.07 secs
  
 --> 
 
-Total memory usage is 515996 kilobytes
+Total memory usage is 516636 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings : 4099 (   0 filtered)

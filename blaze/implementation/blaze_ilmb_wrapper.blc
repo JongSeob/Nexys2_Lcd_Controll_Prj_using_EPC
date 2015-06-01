@@ -6,8 +6,8 @@ xc3s1200efg320-4 -intstyle silent -i -sd .. blaze_ilmb_wrapper.ngc
 ../blaze_ilmb_wrapper
 
 Reading NGO file
-"E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/implementation/ilmb_wrapper/blaze_il
-mb_wrapper.ngc" ...
+"E:/Nexys2_LCD_UART_EPC/blaze/implementation/ilmb_wrapper/blaze_ilmb_wrapper.ngc
+" ...
 
 Partition Implementation Status
 -------------------------------
@@ -20,7 +20,7 @@ NGCBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 153876 kilobytes
+Total memory usage is 153300 kilobytes
 
 Writing NGC file "../blaze_ilmb_wrapper.ngc" ...
 Total REAL time to NGCBUILD completion:  2 sec

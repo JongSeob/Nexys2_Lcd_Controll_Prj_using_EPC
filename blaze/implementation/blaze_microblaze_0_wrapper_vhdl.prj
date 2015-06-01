@@ -96,4 +96,4 @@ vhdl microblaze_v8_50_c "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcore
 vhdl microblaze_v8_50_c "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_50_c\hdl\vhdl\mmu.vhd"
 vhdl microblaze_v8_50_c "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_50_c\hdl\vhdl\microblaze_core.vhd"
 vhdl microblaze_v8_50_c "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_50_c\hdl\vhdl\microblaze.vhd"
-vhdl work "E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\hdl\blaze_microblaze_0_wrapper.vhd"
+vhdl work "E:\Nexys2_LCD_UART_EPC\blaze\hdl\blaze_microblaze_0_wrapper.vhd"

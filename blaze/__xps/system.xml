@@ -1,4 +1,5 @@
-<EDKSYSTEM EDKVERSION="14.7" EDWVERSION="1.2" TIMESTAMP="Sat May 30 14:33:08 2015">
+
+<EDKSYSTEM EDKVERSION="14.7" EDWVERSION="1.2" TIMESTAMP="Mon Jun 01 17:03:00 2015">
 
   <SYSTEMINFO ARCH="spartan3e" DEVICE="xc3s1200e" PACKAGE="fg320" PART="xc3s1200efg320-4" SOURCE="E:/Nexys2_LCD_UART_EPC/blaze/blaze.xmp" SPEEDGRADE="-4"/>
 
@@ -7197,46 +7198,6 @@
         <PARAMETER ASSIGNMENT="REQUIRE" MPD_INDEX="111" NAME="C_PRH3_RDY_WIDTH" TYPE="INTEGER" VALUE="0"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="O" IOS="epc_0" IS_INSTANTIATED="TRUE" MHS_INDEX="0" MPD_INDEX="44" NAME="PRH_CS_n" SIGNAME="xps_epc_0_PRH_CS_n" VECFORMULA="[0:(C_NUM_PERIPHERALS-1)]">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="xps_epc_0_PRH_CS_n_pin"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" ENDIAN="BIG" IOS="epc_0" IS_INSTANTIATED="TRUE" LEFT="0" LSB="5" MHS_INDEX="1" MPD_INDEX="45" MSB="0" NAME="PRH_Addr" RIGHT="5" SIGNAME="xps_epc_0_PRH_Addr" VECFORMULA="[0:(C_PRH_MAX_AWIDTH-1)]">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="xps_epc_0_PRH_Addr_pin"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" IOS="epc_0" IS_INSTANTIATED="TRUE" MHS_INDEX="2" MPD_INDEX="49" NAME="PRH_Rd_n" SIGNAME="xps_epc_0_PRH_Rd_n">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="xps_epc_0_PRH_Rd_n_pin"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" IOS="epc_0" IS_INSTANTIATED="TRUE" MHS_INDEX="3" MPD_INDEX="50" NAME="PRH_Wr_n" SIGNAME="xps_epc_0_PRH_Wr_n">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="xps_epc_0_PRH_Wr_n_pin"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" IOS="epc_0" IS_INSTANTIATED="TRUE" MHS_INDEX="4" MPD_INDEX="52" NAME="PRH_Rdy" SIGNAME="net_xps_epc_0_PRH_Rdy_pin" VECFORMULA="[0:(C_NUM_PERIPHERALS-1)]">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="xps_epc_0_PRH_Rdy_pin"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" IOS="epc_0" IS_INSTANTIATED="TRUE" MHS_INDEX="5" MPD_INDEX="47" NAME="PRH_BE" SIGNAME="xps_epc_0_PRH_BE" VECFORMULA="[0:((C_PRH_MAX_DWIDTH/8)-1)]">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="xps_epc_0_PRH_BE_pin"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" ENDIAN="BIG" IOS="epc_0" IS_INSTANTIATED="TRUE" LEFT="0" LSB="7" MHS_INDEX="6" MPD_INDEX="54" MSB="0" NAME="PRH_Data_O" RIGHT="7" SIGNAME="xps_epc_0_PRH_Data_O" VECFORMULA="[0:(C_PRH_MAX_ADWIDTH-1)]">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="xps_epc_0_PRH_Data_O_pin"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" ENDIAN="BIG" IOS="epc_0" IS_INSTANTIATED="TRUE" LEFT="0" LSB="7" MHS_INDEX="7" MPD_INDEX="53" MSB="0" NAME="PRH_Data_I" RIGHT="7" SIGNAME="xps_epc_0_PRH_Data_I" VECFORMULA="[0:(C_PRH_MAX_ADWIDTH-1)]">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="xps_epc_0_PRH_Data_I_pin"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT BUS="SPLB" CLKFREQUENCY="50000000" DEF_SIGNAME="clk_50_0000MHz" DIR="I" MPD_INDEX="0" NAME="SPLB_Clk" SIGIS="CLK" SIGNAME="clk_50_0000MHz">
           <CONNECTIONS>
             <CONNECTION INSTANCE="clock_generator_0" PORT="CLKOUT0"/>
@@ -7453,14 +7414,54 @@
         <PORT DIR="I" MPD_INDEX="43" NAME="PRH_Rst" SIGIS="RST" SIGNAME="__NOC__">
           <CONNECTIONS/>
         </PORT>
+        <PORT DIR="O" IOS="epc_0" IS_INSTANTIATED="TRUE" MPD_INDEX="44" NAME="PRH_CS_n" SIGNAME="xps_epc_0_PRH_CS_n" VECFORMULA="[0:(C_NUM_PERIPHERALS-1)]">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="xps_epc_0_PRH_CS_n_pin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" ENDIAN="BIG" IOS="epc_0" IS_INSTANTIATED="TRUE" LEFT="0" LSB="5" MPD_INDEX="45" MSB="0" NAME="PRH_Addr" RIGHT="5" SIGNAME="xps_epc_0_PRH_Addr" VECFORMULA="[0:(C_PRH_MAX_AWIDTH-1)]">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="xps_epc_0_PRH_Addr_pin"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" IOS="epc_0" MPD_INDEX="46" NAME="PRH_ADS" SIGNAME="__NOC__">
           <CONNECTIONS/>
+        </PORT>
+        <PORT DIR="O" IOS="epc_0" IS_INSTANTIATED="TRUE" MPD_INDEX="47" NAME="PRH_BE" SIGNAME="xps_epc_0_PRH_BE" VECFORMULA="[0:((C_PRH_MAX_DWIDTH/8)-1)]">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="xps_epc_0_PRH_BE_pin"/>
+          </CONNECTIONS>
         </PORT>
         <PORT DIR="O" IOS="epc_0" MPD_INDEX="48" NAME="PRH_RNW" SIGNAME="__NOC__">
           <CONNECTIONS/>
         </PORT>
+        <PORT DIR="O" IOS="epc_0" IS_INSTANTIATED="TRUE" MPD_INDEX="49" NAME="PRH_Rd_n" SIGNAME="xps_epc_0_PRH_Rd_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="xps_epc_0_PRH_Rd_n_pin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" IOS="epc_0" IS_INSTANTIATED="TRUE" MPD_INDEX="50" NAME="PRH_Wr_n" SIGNAME="xps_epc_0_PRH_Wr_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="xps_epc_0_PRH_Wr_n_pin"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" IOS="epc_0" MPD_INDEX="51" NAME="PRH_Burst" SIGNAME="__NOC__">
           <CONNECTIONS/>
+        </PORT>
+        <PORT DIR="I" IOS="epc_0" IS_INSTANTIATED="TRUE" MPD_INDEX="52" NAME="PRH_Rdy" SIGNAME="net_xps_epc_0_PRH_Rdy_pin" VECFORMULA="[0:(C_NUM_PERIPHERALS-1)]">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="xps_epc_0_PRH_Rdy_pin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" ENDIAN="BIG" IOS="epc_0" IS_INSTANTIATED="TRUE" LEFT="0" LSB="7" MPD_INDEX="53" MSB="0" NAME="PRH_Data_I" RIGHT="7" SIGNAME="xps_epc_0_PRH_Data_I" VECFORMULA="[0:(C_PRH_MAX_ADWIDTH-1)]">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="xps_epc_0_PRH_Data_I_pin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" ENDIAN="BIG" IOS="epc_0" IS_INSTANTIATED="TRUE" LEFT="0" LSB="7" MPD_INDEX="54" MSB="0" NAME="PRH_Data_O" RIGHT="7" SIGNAME="xps_epc_0_PRH_Data_O" VECFORMULA="[0:(C_PRH_MAX_ADWIDTH-1)]">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="xps_epc_0_PRH_Data_O_pin"/>
+          </CONNECTIONS>
         </PORT>
         <PORT DIR="O" ENDIAN="BIG" IOS="epc_0" LEFT="0" LSB="7" MPD_INDEX="55" MSB="0" NAME="PRH_Data_T" RIGHT="7" SIGNAME="__NOC__" VECFORMULA="[0:(C_PRH_MAX_ADWIDTH-1)]">
           <CONNECTIONS/>
@@ -7522,15 +7523,15 @@
           <PORTMAPS>
             <PORTMAP DIR="O" PHYSICAL="PRH_CS_n"/>
             <PORTMAP DIR="O" PHYSICAL="PRH_Addr"/>
+            <PORTMAP DIR="O" PHYSICAL="PRH_ADS"/>
+            <PORTMAP DIR="O" PHYSICAL="PRH_BE"/>
+            <PORTMAP DIR="O" PHYSICAL="PRH_RNW"/>
             <PORTMAP DIR="O" PHYSICAL="PRH_Rd_n"/>
             <PORTMAP DIR="O" PHYSICAL="PRH_Wr_n"/>
-            <PORTMAP DIR="I" PHYSICAL="PRH_Rdy"/>
-            <PORTMAP DIR="O" PHYSICAL="PRH_BE"/>
-            <PORTMAP DIR="O" PHYSICAL="PRH_Data_O"/>
-            <PORTMAP DIR="I" PHYSICAL="PRH_Data_I"/>
-            <PORTMAP DIR="O" PHYSICAL="PRH_ADS"/>
-            <PORTMAP DIR="O" PHYSICAL="PRH_RNW"/>
             <PORTMAP DIR="O" PHYSICAL="PRH_Burst"/>
+            <PORTMAP DIR="I" PHYSICAL="PRH_Rdy"/>
+            <PORTMAP DIR="I" PHYSICAL="PRH_Data_I"/>
+            <PORTMAP DIR="O" PHYSICAL="PRH_Data_O"/>
             <PORTMAP DIR="O" PHYSICAL="PRH_Data_T"/>
             <PORTMAP DIR="IO" PHYSICAL="PRH_Data"/>
           </PORTMAPS>

@@ -1,10 +1,10 @@
 Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\synthesis\xst_temp_dir\
+--> Parameter TMPDIR set to E:\Nexys2_LCD_UART_EPC\blaze\synthesis\xst_temp_dir\
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.19 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> 
 TABLE OF CONTENTS
@@ -30,7 +30,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "blaze_mb_plb_wrapper_xst.prj"
-Verilog Include Directory          : {"E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"E:\Nexys2_LCD_UART_EPC\blaze\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxBFMinterface\pcores\" "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc3s1200efg320-4
@@ -289,7 +289,7 @@ Entity <plb_arbiter_logic> (Architecture <implementation>) compiled.
 Compiling vhdl file "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plb_v46_v1_05_a/hdl/vhdl/plb_v46.vhd" in Library plb_v46_v1_05_a.
 Entity <plb_v46> compiled.
 Entity <plb_v46> (Architecture <simulation>) compiled.
-Compiling vhdl file "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_mb_plb_wrapper.vhd" in Library work.
+Compiling vhdl file "E:/Nexys2_LCD_UART_EPC/blaze/hdl/blaze_mb_plb_wrapper.vhd" in Library work.
 Entity <blaze_mb_plb_wrapper> compiled.
 Entity <blaze_mb_plb_wrapper> (Architecture <STRUCTURE>) compiled.
 
@@ -1087,7 +1087,7 @@ Unit <plb_v46> synthesized.
 
 
 Synthesizing Unit <blaze_mb_plb_wrapper>.
-    Related source file is "E:/Nexys2_Lcd_Controll_Prj_using_EPC/blaze/hdl/blaze_mb_plb_wrapper.vhd".
+    Related source file is "E:/Nexys2_LCD_UART_EPC/blaze/hdl/blaze_mb_plb_wrapper.vhd".
 Unit <blaze_mb_plb_wrapper> synthesized.
 
 
@@ -1374,12 +1374,12 @@ Delay:               4.221ns (Levels of Logic = 4)
 =========================================================================
 
 
-Total REAL time to Xst completion: 22.00 secs
-Total CPU time to Xst completion: 22.03 secs
+Total REAL time to Xst completion: 20.00 secs
+Total CPU time to Xst completion: 19.17 secs
  
 --> 
 
-Total memory usage is 552348 kilobytes
+Total memory usage is 552924 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  160 (   0 filtered)

@@ -68,4 +68,4 @@ vhdl mdm_v2_10_a "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\mdm_v
 vhdl mdm_v2_10_a "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\mdm_v2_10_a\hdl\vhdl\jtag_control.vhd"
 vhdl mdm_v2_10_a "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\mdm_v2_10_a\hdl\vhdl\mdm_core.vhd"
 vhdl mdm_v2_10_a "C:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\mdm_v2_10_a\hdl\vhdl\mdm.vhd"
-vhdl work "E:\Nexys2_Lcd_Controll_Prj_using_EPC\blaze\hdl\blaze_mdm_0_wrapper.vhd"
+vhdl work "E:\Nexys2_LCD_UART_EPC\blaze\hdl\blaze_mdm_0_wrapper.vhd"

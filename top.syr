@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 2.00 secs
-Total CPU time to Xst completion: 1.76 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 2.00 secs
-Total CPU time to Xst completion: 1.76 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Reading design: top.prj
 
@@ -142,7 +142,8 @@ No errors in compilation
 Analysis of file <"top.prj"> succeeded.
  
 Compiling vhdl file "E:/Nexys2_LCD_UART_EPC/RS232RefComp.vhd" in Library work.
-Architecture behavioral of Entity rs232refcomp is up to date.
+Entity <Rs232RefComp> compiled.
+Entity <Rs232RefComp> (Architecture <Behavioral>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -177,7 +178,7 @@ Analyzing hierarchy for module <uart> in library <work> with parameters.
 
 Analyzing hierarchy for module <SevenSegment> in library <work>.
 
-Analyzing hierarchy for entity <rs232refcomp> in library <work> (architecture <behavioral>).
+Analyzing hierarchy for entity <rs232refcomp> in library <work> (architecture <Behavioral>).
 
 Analyzing hierarchy for module <SegmentDecoder> in library <work> with parameters.
 	BLANK = "1111111"
@@ -240,7 +241,7 @@ Analyzing module <uart> in library <work>.
 	SEND_4 = 3'b100
 Module <uart> is correct for synthesis.
  
-Analyzing Entity <rs232refcomp> in library <work> (Architecture <behavioral>).
+Analyzing Entity <rs232refcomp> in library <work> (Architecture <Behavioral>).
 Entity <rs232refcomp> analyzed. Unit <rs232refcomp> generated.
 
 Analyzing module <SevenSegment> in library <work>.
@@ -386,11 +387,11 @@ Synthesizing Unit <uart>.
 WARNING:Xst:647 - Input <iBtnSwitch<3:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Using one-hot encoding for signal <stRcvCur>.
     Using one-hot encoding for signal <stSendCur>.
-INFO:Xst:2117 - HDL ADVISOR - Mux Selector <stRcvCur> of Case statement line 100 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <stRcvCur> of Case statement line 101 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
    	- add an 'INIT' attribute on signal <stRcvCur> (optimization is then done without any risk)
    	- use the attribute 'signal_encoding user' to avoid onehot optimization
    	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
-INFO:Xst:2117 - HDL ADVISOR - Mux Selector <stSendCur> of Case statement line 157 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <stSendCur> of Case statement line 158 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
    	- add an 'INIT' attribute on signal <stSendCur> (optimization is then done without any risk)
    	- use the attribute 'signal_encoding user' to avoid onehot optimization
    	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
@@ -639,14 +640,6 @@ Optimizing unit <SevenSegment> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-INFO:Xst:2261 - The FF/Latch <Digit_Data_1> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <uart/dbInSig_1> 
-INFO:Xst:2261 - The FF/Latch <Digit_Data_2> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <uart/dbInSig_2> 
-INFO:Xst:2261 - The FF/Latch <Digit_Data_3> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <uart/dbInSig_3> 
-INFO:Xst:2261 - The FF/Latch <Digit_Data_4> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <uart/dbInSig_4> 
-INFO:Xst:2261 - The FF/Latch <Digit_Data_5> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <uart/dbInSig_5> 
-INFO:Xst:2261 - The FF/Latch <Digit_Data_6> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <uart/dbInSig_6> 
-INFO:Xst:2261 - The FF/Latch <Digit_Data_7> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <uart/dbInSig_7> 
-INFO:Xst:2261 - The FF/Latch <Digit_Data_0> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <uart/dbInSig_0> 
 Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 24.
 INFO:Xst:2260 - The FF/Latch <microblaze_0/MicroBlaze_Core_I/Area.Decode_I/SWAP_Instr_0> in Unit <microblaze_0> is equivalent to the following FF/Latch : <microblaze_0/MicroBlaze_Core_I/Area.Decode_I/SWAP_Instr_0_1> 
 INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_MPLB_RST[1].I_MPLB_RST> in Unit <mb_plb> is equivalent to the following 7 FFs/Latches : <mb_plb/GEN_MPLB_RST[0].I_MPLB_RST> <mb_plb/GEN_SPLB_RST[4].I_SPLB_RST> <mb_plb/GEN_SPLB_RST[3].I_SPLB_RST> <mb_plb/GEN_SPLB_RST[2].I_SPLB_RST> <mb_plb/GEN_SPLB_RST[1].I_SPLB_RST> <mb_plb/GEN_SPLB_RST[0].I_SPLB_RST> <mb_plb/I_PLB_RST> 
@@ -665,8 +658,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 210
- Flip-Flops                                            : 210
+# Registers                                            : 218
+ Flip-Flops                                            : 218
 
 =========================================================================
 
@@ -695,7 +688,7 @@ Design Statistics
 # IOs                              : 43
 
 Cell Usage :
-# BELS                             : 3657
+# BELS                             : 3658
 #      GND                         : 16
 #      INV                         : 60
 #      LUT1                        : 73
@@ -705,7 +698,7 @@ Cell Usage :
 #      LUT3                        : 729
 #      LUT3_D                      : 51
 #      LUT3_L                      : 16
-#      LUT4                        : 1338
+#      LUT4                        : 1339
 #      LUT4_D                      : 25
 #      LUT4_L                      : 45
 #      MULT_AND                    : 55
@@ -717,13 +710,13 @@ Cell Usage :
 #      MUXF8                       : 1
 #      VCC                         : 10
 #      XORCY                       : 184
-# FlipFlops/Latches                : 2508
+# FlipFlops/Latches                : 2516
 #      FD                          : 323
 #      FD_1                        : 16
 #      FDC                         : 33
 #      FDC_1                       : 5
 #      FDCE                        : 19
-#      FDE                         : 340
+#      FDE                         : 348
 #      FDE_1                       : 8
 #      FDP                         : 10
 #      FDR                         : 1108
@@ -763,10 +756,10 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                     2101  out of   8672    24%  
- Number of Slice Flip Flops:           2508  out of  17344    14%  
- Number of 4 input LUTs:               3088  out of  17344    17%  
-    Number used as logic:              2682
+ Number of Slices:                     2105  out of   8672    24%  
+ Number of Slice Flip Flops:           2516  out of  17344    14%  
+ Number of 4 input LUTs:               3089  out of  17344    17%  
+    Number used as logic:              2683
     Number used as Shift registers:     150
     Number used as RAMs:                256
  Number of IOs:                          43
@@ -801,7 +794,7 @@ clk                                          | clock_generator_0/DCM0_INST/Using
 blaze/mdm_0/mdm_0/drck_i                     | BUFG                                                  | 212   |
 blaze/mdm_0/mdm_0/update1                    | BUFG                                                  | 43    |
 fallingRW(fallingRW1:O)                      | NONE(*)(RS)                                           | 7     |
-blaze/xps_epc_0/PRH_Wr_n                     | NONE(Digit_Data_5)                                    | 8     |
+blaze/xps_epc_0/PRH_Wr_n                     | NONE(Digit_Data_5)                                    | 16    |
 blaze/xps_epc_0/PRH_Rd_n                     | NONE(Digit_Data_15)                                   | 8     |
 Lcd_Controller/EN                            | NONE(Digit_Sig_0)                                     | 9     |
 uart/UART/rClk1                              | BUFG                                                  | 36    |
@@ -1206,7 +1199,7 @@ Offset:              4.283ns (Levels of Logic = 1)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 26 / 18
 -------------------------------------------------------------------------
-Offset:              5.124ns (Levels of Logic = 2)
+Offset:              5.126ns (Levels of Logic = 2)
   Source:            blaze/xps_epc_0/xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Wr_n (FF)
   Destination:       JA<7> (PAD)
   Source Clock:      clk rising
@@ -1215,12 +1208,12 @@ Offset:              5.124ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              27   0.591   1.261  xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Wr_n (PRH_Wr_n)
+     FD:C->Q              35   0.591   1.263  xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_Wr_n (PRH_Wr_n)
      end scope: 'xps_epc_0'
      end scope: 'blaze'
      IOBUF:T->IO               3.272          JA_7_IOBUF (JA<7>)
     ----------------------------------------
-    Total                      5.124ns (3.863ns logic, 1.261ns route)
+    Total                      5.126ns (3.863ns logic, 1.263ns route)
                                        (75.4% logic, 24.6% route)
 
 =========================================================================
@@ -1329,14 +1322,14 @@ Offset:              8.921ns (Levels of Logic = 10)
 =========================================================================
 
 
-Total REAL time to Xst completion: 32.00 secs
-Total CPU time to Xst completion: 31.97 secs
+Total REAL time to Xst completion: 36.00 secs
+Total CPU time to Xst completion: 36.54 secs
  
 --> 
 
-Total memory usage is 377564 kilobytes
+Total memory usage is 408284 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   55 (   0 filtered)
-Number of infos    :   22 (   0 filtered)
+Number of infos    :   14 (   0 filtered)
 
