@@ -26,10 +26,10 @@ module blaze_stub
   input fpga_0_clk_1_sys_clk_pin;
   input fpga_0_rst_1_sys_rst_pin;
   output [0:5] xps_epc_0_PRH_Addr_pin;
-  output xps_epc_0_PRH_CS_n_pin;
+  output [0:1] xps_epc_0_PRH_CS_n_pin;
   output xps_epc_0_PRH_Rd_n_pin;
   output xps_epc_0_PRH_Wr_n_pin;
-  input xps_epc_0_PRH_Rdy_pin;
+  input [0:1] xps_epc_0_PRH_Rdy_pin;
   output xps_epc_0_PRH_BE_pin;
   input [0:7] xps_epc_0_PRH_Data_I_pin;
   output [0:7] xps_epc_0_PRH_Data_O_pin;
@@ -79,10 +79,10 @@ module blaze
   input fpga_0_clk_1_sys_clk_pin;
   input fpga_0_rst_1_sys_rst_pin;
   output [0:5] xps_epc_0_PRH_Addr_pin;
-  output xps_epc_0_PRH_CS_n_pin;
+  output [0:1] xps_epc_0_PRH_CS_n_pin;
   output xps_epc_0_PRH_Rd_n_pin;
   output xps_epc_0_PRH_Wr_n_pin;
-  input xps_epc_0_PRH_Rdy_pin;
+  input [0:1] xps_epc_0_PRH_Rdy_pin;
   output xps_epc_0_PRH_BE_pin;
   input [0:7] xps_epc_0_PRH_Data_I_pin;
   output [0:7] xps_epc_0_PRH_Data_O_pin;

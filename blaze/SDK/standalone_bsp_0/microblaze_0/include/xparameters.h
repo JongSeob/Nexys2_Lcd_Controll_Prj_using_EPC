@@ -180,7 +180,9 @@
 
 /* Definitions for peripheral XPS_EPC_0 */
 #define XPAR_XPS_EPC_0_PRH0_BASEADDR 0x80800000
-#define XPAR_XPS_EPC_0_PRH0_HIGHADDR 0x8080003F
+#define XPAR_XPS_EPC_0_PRH0_HIGHADDR 0x80800007
+#define XPAR_XPS_EPC_0_PRH1_BASEADDR 0x80800008
+#define XPAR_XPS_EPC_0_PRH1_HIGHADDR 0x8080000F
 
 
 /******************************************************************/

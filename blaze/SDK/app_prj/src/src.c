@@ -6,7 +6,8 @@
 #define	BASEADDRESS_LEDS	0x81400000
 #define	BASEADDRESS_SLIDESW	0x81420000
 #define	BASEADDRESS_RS232	0x84000000
-#define	BASEADDRESS_EPC		0x80800000
+#define	BASEADDRESS_EPC_0	0x80800000
+#define	BASEADDRESS_EPC_1	0x80800008
 
 #define	LED   (*((volatile unsigned char *)(BASEADDRESS_LEDS + 0x03)))
 #define SLIDE_SW (*((volatile unsigned char *)(BASEADDRESS_SLIDESW + 3)))
@@ -16,11 +17,11 @@
 #define StatReg (*((volatile unsigned char *)(BASEADDRESS_RS232 + 0x8 +3 )) )
 #define CtrlReg (*((volatile unsigned char *)(BASEADDRESS_RS232 + 0xc +3 )) )
 
-#define DataLCD		(*((volatile unsigned char *)(BASEADDRESS_EPC + 0x00))) // 0000_00
-#define StatusCMD	(*((volatile unsigned char *)(BASEADDRESS_EPC + 0x04))) // 0001_00
+#define DataLCD		(*((volatile unsigned char *)(BASEADDRESS_EPC_0 + 0x00))) // 0000_00
+#define StatusCMD	(*((volatile unsigned char *)(BASEADDRESS_EPC_0 + 0x04))) // 0001_00
 
-#define DataUART    (*((volatile unsigned char *)(BASEADDRESS_EPC + 0x08))) // 0010_00
-#define StatusUART  (*((volatile unsigned char *)(BASEADDRESS_EPC + 0x0C))) // 0011_00
+#define DataUART    (*((volatile unsigned char *)(BASEADDRESS_EPC_1 + 0x00))) // 0010_00
+#define StatusUART  (*((volatile unsigned char *)(BASEADDRESS_EPC_1 + 0x04))) // 0011_00
 
 #define BUSY 0x80
 #define NULL 0
@@ -168,7 +169,15 @@ void	PutCharLcd(unsigned char cChar) // LCD print
 
 	DDRAM_addr = GetPositionOfLcd();
 
-	if(DDRAM_addr == 0x10)
+	if(cChar == '\r' || cChar == '\n')
+	{
+		if(DDRAM_addr < 0x40)
+			SendCmdToLcd(0x80 + DDRAM_addr + 0x40);
+		else
+			SendCmdToLcd(0x80 + DDRAM_addr - 0x40);
+		return;
+	}
+	else if(DDRAM_addr == 0x10)
 	{
 		SendCmdToLcd(0xC0);  // Set DDRAM addres(40uS) = 0x80 | 0x40(second line)
 	}
@@ -176,6 +185,7 @@ void	PutCharLcd(unsigned char cChar) // LCD print
 	{
 		SendCmdToLcd(0x80);  // Set DDRAM addres(40uS) = 0x80 | 0x00(first line)
 	}
+
 
 	SendCharToLcd(cChar);
 }

@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.19 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> 
 TABLE OF CONTENTS
@@ -174,11 +174,13 @@ INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_MPLB_RST[1].I_MPLB_RST> in Unit <mb_plb
 INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/arbctrl_sm_cs_FSM_FFd3> in Unit <mb_plb> is equivalent to the following FF/Latch : <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/arbctrl_sm_cs_FSM_FFd3_1> 
 INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_1> in Unit <mb_plb> is equivalent to the following 3 FFs/Latches : <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_1_1> <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_1_2> <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_1_3> 
 INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_0> in Unit <mb_plb> is equivalent to the following 3 FFs/Latches : <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_0_1> <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_0_2> <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_0_3> 
+INFO:Xst:2260 - The FF/Latch <xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_1> in Unit <xps_epc_0> is equivalent to the following FF/Latch : <xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_1_1> 
 INFO:Xst:2260 - The FF/Latch <microblaze_0/MicroBlaze_Core_I/Area.Decode_I/SWAP_Instr_0> in Unit <microblaze_0> is equivalent to the following FF/Latch : <microblaze_0/MicroBlaze_Core_I/Area.Decode_I/SWAP_Instr_0_1> 
 INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_0> in Unit <mb_plb> is equivalent to the following 3 FFs/Latches : <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_0_1> <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_0_2> <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_0_3> 
 INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_1> in Unit <mb_plb> is equivalent to the following 3 FFs/Latches : <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_1_1> <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_1_2> <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_1_3> 
 INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/arbctrl_sm_cs_FSM_FFd3> in Unit <mb_plb> is equivalent to the following FF/Latch : <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/arbctrl_sm_cs_FSM_FFd3_1> 
 INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_MPLB_RST[1].I_MPLB_RST> in Unit <mb_plb> is equivalent to the following 7 FFs/Latches : <mb_plb/GEN_MPLB_RST[0].I_MPLB_RST> <mb_plb/GEN_SPLB_RST[4].I_SPLB_RST> <mb_plb/GEN_SPLB_RST[3].I_SPLB_RST> <mb_plb/GEN_SPLB_RST[2].I_SPLB_RST> <mb_plb/GEN_SPLB_RST[1].I_SPLB_RST> <mb_plb/GEN_SPLB_RST[0].I_SPLB_RST> <mb_plb/I_PLB_RST> 
+INFO:Xst:2260 - The FF/Latch <xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_1> in Unit <xps_epc_0> is equivalent to the following FF/Latch : <xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_1_1> 
 
 Final Macro Processing ...
 
@@ -209,24 +211,24 @@ Optimization Goal                  : speed
 Keep Hierarchy                     : no
 
 Design Statistics
-# IOs                              : 47
+# IOs                              : 49
 
 Cell Usage :
-# BELS                             : 3334
+# BELS                             : 3338
 #      GND                         : 15
-#      INV                         : 46
-#      LUT1                        : 45
-#      LUT2                        : 280
+#      INV                         : 49
+#      LUT1                        : 44
+#      LUT2                        : 275
 #      LUT2_D                      : 15
-#      LUT2_L                      : 9
-#      LUT3                        : 689
-#      LUT3_D                      : 51
+#      LUT2_L                      : 10
+#      LUT3                        : 679
+#      LUT3_D                      : 50
 #      LUT3_L                      : 16
-#      LUT4                        : 1224
-#      LUT4_D                      : 25
-#      LUT4_L                      : 45
+#      LUT4                        : 1237
+#      LUT4_D                      : 24
+#      LUT4_L                      : 49
 #      MULT_AND                    : 55
-#      MUXCY                       : 168
+#      MUXCY                       : 169
 #      MUXCY_L                     : 136
 #      MUXF5                       : 342
 #      MUXF6                       : 6
@@ -234,26 +236,26 @@ Cell Usage :
 #      MUXF8                       : 1
 #      VCC                         : 9
 #      XORCY                       : 155
-# FlipFlops/Latches                : 2297
-#      FD                          : 293
+# FlipFlops/Latches                : 2307
+#      FD                          : 292
 #      FDC                         : 20
 #      FDC_1                       : 5
 #      FDCE                        : 15
 #      FDE                         : 279
 #      FDE_1                       : 8
 #      FDP                         : 9
-#      FDR                         : 1061
-#      FDRE                        : 414
+#      FDR                         : 1063
+#      FDRE                        : 421
 #      FDRE_1                      : 1
-#      FDRS                        : 31
+#      FDRS                        : 32
 #      FDRSE                       : 13
-#      FDS                         : 80
+#      FDS                         : 81
 #      FDSE                        : 68
 # RAMS                             : 144
 #      RAM16X1D                    : 128
 #      RAMB16_S2_S2                : 16
-# Shift Registers                  : 150
-#      SRL16                       : 25
+# Shift Registers                  : 148
+#      SRL16                       : 23
 #      SRL16E                      : 117
 #      SRLC16E                     : 8
 # Clock Buffers                    : 6
@@ -271,13 +273,13 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                     1942  out of   8672    22%  
- Number of Slice Flip Flops:           2297  out of  17344    13%  
- Number of 4 input LUTs:               2851  out of  17344    16%  
-    Number used as logic:              2445
-    Number used as Shift registers:     150
+ Number of Slices:                     1946  out of   8672    22%  
+ Number of Slice Flip Flops:           2307  out of  17344    13%  
+ Number of 4 input LUTs:               2852  out of  17344    16%  
+    Number used as logic:              2448
+    Number used as Shift registers:     148
     Number used as RAMs:                256
- Number of IOs:                          47
+ Number of IOs:                          49
  Number of bonded IOBs:                   0  out of    250     0%  
  Number of BRAMs:                        16  out of     28    57%  
  Number of MULT18X18SIOs:                 3  out of     28    10%  
@@ -305,7 +307,7 @@ Clock Information:
 -----------------------------------+-------------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                                 | Load  |
 -----------------------------------+-------------------------------------------------------+-------+
-fpga_0_clk_1_sys_clk_pin           | clock_generator_0/DCM0_INST/Using_Virtex.DCM_INST:CLK0| 2339  |
+fpga_0_clk_1_sys_clk_pin           | clock_generator_0/DCM0_INST/Using_Virtex.DCM_INST:CLK0| 2347  |
 mdm_0/mdm_0/drck_i                 | BUFG                                                  | 212   |
 mdm_0/mdm_0/update1                | BUFG                                                  | 43    |
 -----------------------------------+-------------------------------------------------------+-------+
@@ -345,7 +347,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'fpga_0_clk_1_sys_clk_pin'
   Clock period: 12.524ns (frequency: 79.845MHz)
-  Total number of paths / destination ports: 176670 / 6680
+  Total number of paths / destination ports: 176959 / 6708
 -------------------------------------------------------------------------
 Delay:               12.524ns (Levels of Logic = 39)
   Source:            microblaze_0/microblaze_0/MicroBlaze_Core_I/Area.Decode_I/PreFetch_Buffer_I/Using_FPGA.Buffer_DFFs[1].FDS_I (FF)
@@ -487,19 +489,19 @@ Offset:              4.704ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'fpga_0_clk_1_sys_clk_pin'
-  Total number of paths / destination ports: 19 / 19
+  Total number of paths / destination ports: 20 / 19
 -------------------------------------------------------------------------
 Offset:              1.091ns (Levels of Logic = 2)
-  Source:            xps_epc_0_PRH_Rdy_pin (PAD)
+  Source:            xps_epc_0_PRH_Rdy_pin<0> (PAD)
   Destination:       xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.REG_PRH_RDY (FF)
   Destination Clock: fpga_0_clk_1_sys_clk_pin rising
 
-  Data Path: xps_epc_0_PRH_Rdy_pin to xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.REG_PRH_RDY
+  Data Path: xps_epc_0_PRH_Rdy_pin<0> to xps_epc_0/xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.REG_PRH_RDY
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      begin scope: 'xps_epc_0'
-     LUT2:I1->O            1   0.704   0.000  xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/Dev_Rdy1 (xps_epc_0/EPC_CORE_I/dev_rdy)
+     LUT4:I1->O            1   0.704   0.000  xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/Dev_Rdy1 (xps_epc_0/EPC_CORE_I/dev_rdy)
      FDR:D                     0.308          xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.REG_PRH_RDY
     ----------------------------------------
     Total                      1.091ns (1.091ns logic, 0.000ns route)
@@ -529,7 +531,7 @@ Offset:              4.085ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'fpga_0_clk_1_sys_clk_pin'
-  Total number of paths / destination ports: 27 / 27
+  Total number of paths / destination ports: 28 / 28
 -------------------------------------------------------------------------
 Offset:              0.591ns (Levels of Logic = 1)
   Source:            xps_epc_0/xps_epc_0/EPC_CORE_I/DATA_STEER_I/PRH_BE_0 (FF)
@@ -613,14 +615,14 @@ Offset:              8.921ns (Levels of Logic = 10)
 =========================================================================
 
 
-Total REAL time to Xst completion: 40.00 secs
-Total CPU time to Xst completion: 39.85 secs
+Total REAL time to Xst completion: 34.00 secs
+Total CPU time to Xst completion: 33.67 secs
  
 --> 
 
-Total memory usage is 356060 kilobytes
+Total memory usage is 355100 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
-Number of infos    :   10 (   0 filtered)
+Number of infos    :   12 (   0 filtered)
 

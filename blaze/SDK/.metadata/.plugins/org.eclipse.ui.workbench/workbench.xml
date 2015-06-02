@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="20" version="2.0">
+<workbench progressCount="16" version="2.0">
 <workbenchAdvisor/>
-<window height="768" maximized="true" width="1024" x="30" y="30">
+<window height="768" maximized="true" width="1024" x="515" y="23">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -26,7 +26,7 @@
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
-<page aggregateWorkingSetId="Aggregate for window 1433146802508" focus="true" label="Workspace - C/C++">
+<page aggregateWorkingSetId="Aggregate for window 1433243077647" focus="true" label="Workspace - C/C++">
 <editors>
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
@@ -47,7 +47,7 @@
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="src.c" partName="src.c" path="E:/Nexys2_LCD_UART_EPC/blaze/SDK/app_prj/src/src.c" title="src.c" tooltip="app_prj/src/src.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/app_prj/src/src.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3806" selectionTopPixel="2280"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4240" selectionTopPixel="3099"/>
 </editor>
 </editors>
 <views>
@@ -145,7 +145,7 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@6a39d072" ratio="0.749499" ratioLeft="748" ratioRight="250" relationship="2" relative="topLeft">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@f58046e" ratio="0.749499" ratioLeft="748" ratioRight="250" relationship="2" relative="topLeft">
 <folder appearance="2" expanded="2">
 <page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
@@ -199,20 +199,8 @@
 <item historyLabel="src.c" index="2">
 <position/>
 </item>
-<item historyLabel="src.c" index="2">
-<position info="not_deleted" x="3040" y="0"/>
-</item>
-<item historyLabel="src.c" index="2">
-<position info="not_deleted" x="3529" y="0"/>
-</item>
-<item historyLabel="src.c" index="2">
-<position info="not_deleted" x="3163" y="9"/>
-</item>
-<item historyLabel="src.c" index="2">
-<position info="not_deleted" x="3055" y="0"/>
-</item>
 <item active="true" historyLabel="src.c" index="2">
-<position info="not_deleted" x="0" y="0"/>
+<position info="not_deleted" x="4685" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>

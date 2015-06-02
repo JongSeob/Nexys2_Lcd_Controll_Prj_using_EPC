@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.25 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> 
 TABLE OF CONTENTS
@@ -285,7 +285,7 @@ Analyzing hierarchy for entity <blaze_xps_epc_0_wrapper> in library <work> (arch
 
 Analyzing hierarchy for entity <xps_epc> in library <xps_epc_v1_02_a> (architecture <imp>) with generics.
 	C_FAMILY = "spartan3e"
-	C_NUM_PERIPHERALS = 1
+	C_NUM_PERIPHERALS = 2
 	C_PRH0_ADDR_TH = 30000
 	C_PRH0_ADDR_TSU = 40000
 	C_PRH0_ADS_WIDTH = 0
@@ -302,7 +302,7 @@ Analyzing hierarchy for entity <xps_epc> in library <xps_epc_v1_02_a> (architect
 	C_PRH0_DWIDTH_MATCH = 0
 	C_PRH0_FIFO_ACCESS = 0
 	C_PRH0_FIFO_OFFSET = 0
-	C_PRH0_HIGHADDR = "10000000100000000000000000111111"
+	C_PRH0_HIGHADDR = "10000000100000000000000000000111"
 	C_PRH0_RDN_WIDTH = 30000
 	C_PRH0_RDY_TOUT = 20000
 	C_PRH0_RDY_WIDTH = 120000
@@ -310,30 +310,30 @@ Analyzing hierarchy for entity <xps_epc> in library <xps_epc_v1_02_a> (architect
 	C_PRH0_SYNC = 0
 	C_PRH0_WRN_WIDTH = 30000
 	C_PRH0_WR_CYCLE = 60000
-	C_PRH1_ADDR_TH = 0
-	C_PRH1_ADDR_TSU = 0
+	C_PRH1_ADDR_TH = 30000
+	C_PRH1_ADDR_TSU = 40000
 	C_PRH1_ADS_WIDTH = 0
-	C_PRH1_AWIDTH = 32
-	C_PRH1_BASEADDR = "11111111111111111111111111111111"
+	C_PRH1_AWIDTH = 6
+	C_PRH1_BASEADDR = "10000000100000000000000000001000"
 	C_PRH1_BUS_MULTIPLEX = 0
-	C_PRH1_CSN_TH = 0
-	C_PRH1_CSN_TSU = 0
-	C_PRH1_DATA_TH = 0
-	C_PRH1_DATA_TINV = 0
-	C_PRH1_DATA_TOUT = 0
-	C_PRH1_DATA_TSU = 0
-	C_PRH1_DWIDTH = 32
+	C_PRH1_CSN_TH = 30000
+	C_PRH1_CSN_TSU = 40000
+	C_PRH1_DATA_TH = 30000
+	C_PRH1_DATA_TINV = 25000
+	C_PRH1_DATA_TOUT = 15000
+	C_PRH1_DATA_TSU = 30000
+	C_PRH1_DWIDTH = 8
 	C_PRH1_DWIDTH_MATCH = 0
 	C_PRH1_FIFO_ACCESS = 0
 	C_PRH1_FIFO_OFFSET = 0
-	C_PRH1_HIGHADDR = "00000000000000000000000000000000"
-	C_PRH1_RDN_WIDTH = 0
-	C_PRH1_RDY_TOUT = 0
-	C_PRH1_RDY_WIDTH = 0
-	C_PRH1_RD_CYCLE = 0
-	C_PRH1_SYNC = 1
-	C_PRH1_WRN_WIDTH = 0
-	C_PRH1_WR_CYCLE = 0
+	C_PRH1_HIGHADDR = "10000000100000000000000000001111"
+	C_PRH1_RDN_WIDTH = 30000
+	C_PRH1_RDY_TOUT = 20000
+	C_PRH1_RDY_WIDTH = 120000
+	C_PRH1_RD_CYCLE = 60000
+	C_PRH1_SYNC = 0
+	C_PRH1_WRN_WIDTH = 30000
+	C_PRH1_WR_CYCLE = 60000
 	C_PRH2_ADDR_TH = 0
 	C_PRH2_ADDR_TSU = 0
 	C_PRH2_ADS_WIDTH = 0
@@ -399,8 +399,10 @@ Analyzing hierarchy for entity <xps_epc> in library <xps_epc_v1_02_a> (architect
 
 Analyzing hierarchy for entity <plbv46_slave_single> in library <plbv46_slave_single_v1_01_a> (architecture <implementation>) with generics.
 	C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000010000000100000000000000000000000",
-	                          "0000000000000000000000000000000010000000100000000000000000111111")
-	C_ARD_NUM_CE_ARRAY = (1)
+	                          "0000000000000000000000000000000010000000100000000000000000000111",
+	                          "0000000000000000000000000000000010000000100000000000000000001000",
+	                          "0000000000000000000000000000000010000000100000000000000000001111")
+	C_ARD_NUM_CE_ARRAY = (1,1)
 	C_BUS2CORE_CLK_RATIO = 1
 	C_FAMILY = "spartan3e"
 	C_INCLUDE_DPHASE_TIMER = 1
@@ -413,7 +415,7 @@ Analyzing hierarchy for entity <plbv46_slave_single> in library <plbv46_slave_si
 
 Analyzing hierarchy for entity <epc_core> in library <xps_epc_v1_02_a> (architecture <imp>) with generics.
 	C_FAMILY = "spartan3e"
-	C_NUM_PERIPHERALS = 1
+	C_NUM_PERIPHERALS = 2
 	C_PRH0_ADDR_TH = 30000
 	C_PRH0_ADDR_TSU = 40000
 	C_PRH0_ADS_WIDTH = 0
@@ -435,27 +437,27 @@ Analyzing hierarchy for entity <epc_core> in library <xps_epc_v1_02_a> (architec
 	C_PRH0_SYNC = 0
 	C_PRH0_WRN_WIDTH = 30000
 	C_PRH0_WR_CYCLE = 60000
-	C_PRH1_ADDR_TH = 0
-	C_PRH1_ADDR_TSU = 0
+	C_PRH1_ADDR_TH = 30000
+	C_PRH1_ADDR_TSU = 40000
 	C_PRH1_ADS_WIDTH = 0
-	C_PRH1_AWIDTH = 32
+	C_PRH1_AWIDTH = 6
 	C_PRH1_BUS_MULTIPLEX = 0
-	C_PRH1_CSN_TH = 0
-	C_PRH1_CSN_TSU = 0
-	C_PRH1_DATA_TH = 0
-	C_PRH1_DATA_TINV = 0
-	C_PRH1_DATA_TOUT = 0
-	C_PRH1_DATA_TSU = 0
-	C_PRH1_DWIDTH = 32
+	C_PRH1_CSN_TH = 30000
+	C_PRH1_CSN_TSU = 40000
+	C_PRH1_DATA_TH = 30000
+	C_PRH1_DATA_TINV = 25000
+	C_PRH1_DATA_TOUT = 15000
+	C_PRH1_DATA_TSU = 30000
+	C_PRH1_DWIDTH = 8
 	C_PRH1_DWIDTH_MATCH = 0
 	C_PRH1_FIFO_ACCESS = 0
-	C_PRH1_RDN_WIDTH = 0
-	C_PRH1_RDY_TOUT = 0
-	C_PRH1_RDY_WIDTH = 0
-	C_PRH1_RD_CYCLE = 0
-	C_PRH1_SYNC = 1
-	C_PRH1_WRN_WIDTH = 0
-	C_PRH1_WR_CYCLE = 0
+	C_PRH1_RDN_WIDTH = 30000
+	C_PRH1_RDY_TOUT = 20000
+	C_PRH1_RDY_WIDTH = 120000
+	C_PRH1_RD_CYCLE = 60000
+	C_PRH1_SYNC = 0
+	C_PRH1_WRN_WIDTH = 30000
+	C_PRH1_WR_CYCLE = 60000
 	C_PRH2_ADDR_TH = 0
 	C_PRH2_ADDR_TSU = 0
 	C_PRH2_ADS_WIDTH = 0
@@ -510,14 +512,16 @@ Analyzing hierarchy for entity <epc_core> in library <xps_epc_v1_02_a> (architec
 	LOCAL_CLK_PERIOD_PS = 20000
 	MAX_PERIPHERALS = 4
 	PRH0_FIFO_ADDRESS = "10000000100000000000000000000000"
-	PRH1_FIFO_ADDRESS = "11111111111111111111111111111111"
+	PRH1_FIFO_ADDRESS = "10000000100000000000000000001000"
 	PRH2_FIFO_ADDRESS = "11111111111111111111111111111111"
 	PRH3_FIFO_ADDRESS = "11111111111111111111111111111111"
 
 Analyzing hierarchy for entity <plb_slave_attachment> in library <plbv46_slave_single_v1_01_a> (architecture <implementation>) with generics.
 	C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000010000000100000000000000000000000",
-	                          "0000000000000000000000000000000010000000100000000000000000111111")
-	C_ARD_NUM_CE_ARRAY = (1)
+	                          "0000000000000000000000000000000010000000100000000000000000000111",
+	                          "0000000000000000000000000000000010000000100000000000000000001000",
+	                          "0000000000000000000000000000000010000000100000000000000000001111")
+	C_ARD_NUM_CE_ARRAY = (1,1)
 	C_BUS2CORE_CLK_RATIO = 1
 	C_DPHASE_TIMEOUT = 128
 	C_FAMILY = "spartan3e"
@@ -529,10 +533,10 @@ Analyzing hierarchy for entity <plb_slave_attachment> in library <plbv46_slave_s
 	C_SPLB_P2P = 0
 
 Analyzing hierarchy for entity <ipic_if_decode> in library <xps_epc_v1_02_a> (architecture <imp>) with generics.
-	C_NUM_PERIPHERALS = 1
+	C_NUM_PERIPHERALS = 2
 	C_PRH0_DWIDTH = 8
 	C_PRH0_DWIDTH_MATCH = 0
-	C_PRH1_DWIDTH = 32
+	C_PRH1_DWIDTH = 8
 	C_PRH1_DWIDTH_MATCH = 0
 	C_PRH2_DWIDTH = 32
 	C_PRH2_DWIDTH_MATCH = 0
@@ -547,19 +551,19 @@ Analyzing hierarchy for entity <ipic_if_decode> in library <xps_epc_v1_02_a> (ar
 	NO_PRH_SYNC = 1
 	PRH_BUS_MULTIPLEX = "0000"
 	PRH_DWIDTH_MATCH = "0000"
-	PRH_SYNC = "0111"
+	PRH_SYNC = "0011"
 
 Analyzing hierarchy for entity <sync_cntl> in library <xps_epc_v1_02_a> (architecture <imp>) with generics.
 	ADDRCNT_WIDTH = 2
-	C_NUM_PERIPHERALS = 1
+	C_NUM_PERIPHERALS = 2
 	C_PRH0_ADDR_TH = 30000
 	C_PRH0_ADDR_TSU = 40000
 	C_PRH0_ADS_WIDTH = 0
 	C_PRH0_RDY_WIDTH = 120000
-	C_PRH1_ADDR_TH = 0
-	C_PRH1_ADDR_TSU = 0
+	C_PRH1_ADDR_TH = 30000
+	C_PRH1_ADDR_TSU = 40000
 	C_PRH1_ADS_WIDTH = 0
-	C_PRH1_RDY_WIDTH = 0
+	C_PRH1_RDY_WIDTH = 120000
 	C_PRH2_ADDR_TH = 0
 	C_PRH2_ADDR_TSU = 0
 	C_PRH2_ADS_WIDTH = 0
@@ -574,12 +578,12 @@ Analyzing hierarchy for entity <sync_cntl> in library <xps_epc_v1_02_a> (archite
 	MAX_PERIPHERALS = 4
 	NO_PRH_DWIDTH_MATCH = 1
 	NO_PRH_SYNC = 1
-	PRH_SYNC = "0111"
+	PRH_SYNC = "0011"
 
 Analyzing hierarchy for entity <async_cntl> in library <xps_epc_v1_02_a> (architecture <imp>) with generics.
 	C_BUS_CLOCK_PERIOD_PS = 20000
 	C_MAX_PERIPHERALS = 4
-	C_NUM_PERIPHERALS = 1
+	C_NUM_PERIPHERALS = 2
 	C_PRH0_ADDR_TH = 30000
 	C_PRH0_ADDR_TSU = 40000
 	C_PRH0_ADS_WIDTH = 0
@@ -595,21 +599,21 @@ Analyzing hierarchy for entity <async_cntl> in library <xps_epc_v1_02_a> (archit
 	C_PRH0_RD_CYCLE = 60000
 	C_PRH0_WRN_WIDTH = 30000
 	C_PRH0_WR_CYCLE = 60000
-	C_PRH1_ADDR_TH = 0
-	C_PRH1_ADDR_TSU = 0
+	C_PRH1_ADDR_TH = 30000
+	C_PRH1_ADDR_TSU = 40000
 	C_PRH1_ADS_WIDTH = 0
-	C_PRH1_CSN_TH = 0
-	C_PRH1_CSN_TSU = 0
-	C_PRH1_DATA_TH = 0
-	C_PRH1_DATA_TINV = 0
-	C_PRH1_DATA_TOUT = 0
-	C_PRH1_DATA_TSU = 0
-	C_PRH1_RDN_WIDTH = 0
-	C_PRH1_RDY_TOUT = 0
-	C_PRH1_RDY_WIDTH = 0
-	C_PRH1_RD_CYCLE = 0
-	C_PRH1_WRN_WIDTH = 0
-	C_PRH1_WR_CYCLE = 0
+	C_PRH1_CSN_TH = 30000
+	C_PRH1_CSN_TSU = 40000
+	C_PRH1_DATA_TH = 30000
+	C_PRH1_DATA_TINV = 25000
+	C_PRH1_DATA_TOUT = 15000
+	C_PRH1_DATA_TSU = 30000
+	C_PRH1_RDN_WIDTH = 30000
+	C_PRH1_RDY_TOUT = 20000
+	C_PRH1_RDY_WIDTH = 120000
+	C_PRH1_RD_CYCLE = 60000
+	C_PRH1_WRN_WIDTH = 30000
+	C_PRH1_WR_CYCLE = 60000
 	C_PRH2_ADDR_TH = 0
 	C_PRH2_ADDR_TSU = 0
 	C_PRH2_ADS_WIDTH = 0
@@ -642,7 +646,7 @@ Analyzing hierarchy for entity <async_cntl> in library <xps_epc_v1_02_a> (archit
 	C_PRH3_WR_CYCLE = 0
 	C_SPLB_NATIVE_DWIDTH = 32
 	NO_PRH_ASYNC = 0
-	PRH_SYNC = "0111"
+	PRH_SYNC = "0011"
 
 Analyzing hierarchy for entity <address_gen> in library <xps_epc_v1_02_a> (architecture <imp>) with generics.
 	ADDRCNT_WIDTH = 2
@@ -661,13 +665,13 @@ Analyzing hierarchy for entity <data_steer> in library <xps_epc_v1_02_a> (archit
 	NO_PRH_SYNC = 1
 
 Analyzing hierarchy for entity <access_mux> in library <xps_epc_v1_02_a> (architecture <imp>) with generics.
-	C_NUM_PERIPHERALS = 1
+	C_NUM_PERIPHERALS = 2
 	C_PRH0_AWIDTH = 6
 	C_PRH0_BUS_MULTIPLEX = 0
 	C_PRH0_DWIDTH = 8
-	C_PRH1_AWIDTH = 32
+	C_PRH1_AWIDTH = 6
 	C_PRH1_BUS_MULTIPLEX = 0
-	C_PRH1_DWIDTH = 32
+	C_PRH1_DWIDTH = 8
 	C_PRH2_AWIDTH = 32
 	C_PRH2_BUS_MULTIPLEX = 0
 	C_PRH2_DWIDTH = 32
@@ -684,8 +688,10 @@ Analyzing hierarchy for entity <access_mux> in library <xps_epc_v1_02_a> (archit
 
 Analyzing hierarchy for entity <plb_address_decoder> in library <plbv46_slave_single_v1_01_a> (architecture <IMP>) with generics.
 	C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000010000000100000000000000000000000",
-	                          "0000000000000000000000000000000010000000100000000000000000111111")
-	C_ARD_NUM_CE_ARRAY = (1)
+	                          "0000000000000000000000000000000010000000100000000000000000000111",
+	                          "0000000000000000000000000000000010000000100000000000000000001000",
+	                          "0000000000000000000000000000000010000000100000000000000000001111")
+	C_ARD_NUM_CE_ARRAY = (1,1)
 	C_BUS_AWIDTH = 32
 	C_FAMILY = "nofamily"
 	C_SPLB_P2P = 0
@@ -701,7 +707,7 @@ Analyzing hierarchy for entity <async_statemachine> in library <xps_epc_v1_02_a>
 	C_CONTROL_CNT_WIDTH = 2
 	C_DEV_RDY_CNT_WIDTH = 3
 	C_DEV_VALID_CNT_WIDTH = 2
-	C_NUM_PERIPHERALS = 1
+	C_NUM_PERIPHERALS = 2
 	C_RD_REC_M_CNT_WIDTH = 2
 	C_RD_REC_NM_CNT_WIDTH = 2
 	C_WR_REC_M_CNT_WIDTH = 2
@@ -720,14 +726,20 @@ Analyzing hierarchy for entity <async_counters> in library <xps_epc_v1_02_a> (ar
 	C_WR_REC_NM_CNT_WIDTH = 2
 
 Analyzing hierarchy for entity <pselect_f> in library <proc_common_v3_00_a> (architecture <imp>) with generics.
-	C_AB = 26
+	C_AB = 29
 	C_AW = 32
 	C_BAR = "10000000100000000000000000000000"
 	C_FAMILY = "nofamily"
 
+Analyzing hierarchy for entity <pselect_f> in library <proc_common_v3_00_a> (architecture <imp>) with generics.
+	C_AB = 29
+	C_AW = 32
+	C_BAR = "10000000100000000000000000001000"
+	C_FAMILY = "nofamily"
+
 Analyzing hierarchy for entity <or_gate128> in library <proc_common_v3_00_a> (architecture <imp>) with generics.
 	C_BUS_WIDTH = 1
-	C_OR_WIDTH = 1
+	C_OR_WIDTH = 2
 	C_USE_LUT_OR = false
 
 Analyzing hierarchy for entity <ld_arith_reg> in library <proc_common_v3_00_a> (architecture <imp>) with generics.
@@ -749,7 +761,7 @@ Analyzing hierarchy for entity <ld_arith_reg> in library <proc_common_v3_00_a> (
 	C_RESET_VALUE = "000"
 
 Analyzing hierarchy for entity <or_muxcy> in library <proc_common_v3_00_a> (architecture <implementation>) with generics.
-	C_NUM_BITS = 1
+	C_NUM_BITS = 2
 
 
 =========================================================================
@@ -768,7 +780,7 @@ Entity <blaze_xps_epc_0_wrapper> analyzed. Unit <blaze_xps_epc_0_wrapper> genera
 
 Analyzing generic Entity <xps_epc> in library <xps_epc_v1_02_a> (Architecture <imp>).
 	C_FAMILY = "spartan3e"
-	C_NUM_PERIPHERALS = 1
+	C_NUM_PERIPHERALS = 2
 	C_PRH0_ADDR_TH = 30000
 	C_PRH0_ADDR_TSU = 40000
 	C_PRH0_ADS_WIDTH = 0
@@ -785,7 +797,7 @@ Analyzing generic Entity <xps_epc> in library <xps_epc_v1_02_a> (Architecture <i
 	C_PRH0_DWIDTH_MATCH = 0
 	C_PRH0_FIFO_ACCESS = 0
 	C_PRH0_FIFO_OFFSET = 0
-	C_PRH0_HIGHADDR = "10000000100000000000000000111111"
+	C_PRH0_HIGHADDR = "10000000100000000000000000000111"
 	C_PRH0_RDN_WIDTH = 30000
 	C_PRH0_RDY_TOUT = 20000
 	C_PRH0_RDY_WIDTH = 120000
@@ -793,30 +805,30 @@ Analyzing generic Entity <xps_epc> in library <xps_epc_v1_02_a> (Architecture <i
 	C_PRH0_SYNC = 0
 	C_PRH0_WRN_WIDTH = 30000
 	C_PRH0_WR_CYCLE = 60000
-	C_PRH1_ADDR_TH = 0
-	C_PRH1_ADDR_TSU = 0
+	C_PRH1_ADDR_TH = 30000
+	C_PRH1_ADDR_TSU = 40000
 	C_PRH1_ADS_WIDTH = 0
-	C_PRH1_AWIDTH = 32
-	C_PRH1_BASEADDR = "11111111111111111111111111111111"
+	C_PRH1_AWIDTH = 6
+	C_PRH1_BASEADDR = "10000000100000000000000000001000"
 	C_PRH1_BUS_MULTIPLEX = 0
-	C_PRH1_CSN_TH = 0
-	C_PRH1_CSN_TSU = 0
-	C_PRH1_DATA_TH = 0
-	C_PRH1_DATA_TINV = 0
-	C_PRH1_DATA_TOUT = 0
-	C_PRH1_DATA_TSU = 0
-	C_PRH1_DWIDTH = 32
+	C_PRH1_CSN_TH = 30000
+	C_PRH1_CSN_TSU = 40000
+	C_PRH1_DATA_TH = 30000
+	C_PRH1_DATA_TINV = 25000
+	C_PRH1_DATA_TOUT = 15000
+	C_PRH1_DATA_TSU = 30000
+	C_PRH1_DWIDTH = 8
 	C_PRH1_DWIDTH_MATCH = 0
 	C_PRH1_FIFO_ACCESS = 0
 	C_PRH1_FIFO_OFFSET = 0
-	C_PRH1_HIGHADDR = "00000000000000000000000000000000"
-	C_PRH1_RDN_WIDTH = 0
-	C_PRH1_RDY_TOUT = 0
-	C_PRH1_RDY_WIDTH = 0
-	C_PRH1_RD_CYCLE = 0
-	C_PRH1_SYNC = 1
-	C_PRH1_WRN_WIDTH = 0
-	C_PRH1_WR_CYCLE = 0
+	C_PRH1_HIGHADDR = "10000000100000000000000000001111"
+	C_PRH1_RDN_WIDTH = 30000
+	C_PRH1_RDY_TOUT = 20000
+	C_PRH1_RDY_WIDTH = 120000
+	C_PRH1_RD_CYCLE = 60000
+	C_PRH1_SYNC = 0
+	C_PRH1_WRN_WIDTH = 30000
+	C_PRH1_WR_CYCLE = 60000
 	C_PRH2_ADDR_TH = 0
 	C_PRH2_ADDR_TSU = 0
 	C_PRH2_ADS_WIDTH = 0
@@ -887,8 +899,10 @@ Entity <xps_epc> analyzed. Unit <xps_epc> generated.
 
 Analyzing generic Entity <plbv46_slave_single> in library <plbv46_slave_single_v1_01_a> (Architecture <implementation>).
 	C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000010000000100000000000000000000000",
-	                          "0000000000000000000000000000000010000000100000000000000000111111")
-	C_ARD_NUM_CE_ARRAY = (1)
+	                          "0000000000000000000000000000000010000000100000000000000000000111",
+	                          "0000000000000000000000000000000010000000100000000000000000001000",
+	                          "0000000000000000000000000000000010000000100000000000000000001111")
+	C_ARD_NUM_CE_ARRAY = (1,1)
 	C_BUS2CORE_CLK_RATIO = 1
 	C_FAMILY = "spartan3e"
 	C_INCLUDE_DPHASE_TIMER = 1
@@ -902,8 +916,10 @@ Entity <plbv46_slave_single> analyzed. Unit <plbv46_slave_single> generated.
 
 Analyzing generic Entity <plb_slave_attachment> in library <plbv46_slave_single_v1_01_a> (Architecture <implementation>).
 	C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000010000000100000000000000000000000",
-	                          "0000000000000000000000000000000010000000100000000000000000111111")
-	C_ARD_NUM_CE_ARRAY = (1)
+	                          "0000000000000000000000000000000010000000100000000000000000000111",
+	                          "0000000000000000000000000000000010000000100000000000000000001000",
+	                          "0000000000000000000000000000000010000000100000000000000000001111")
+	C_ARD_NUM_CE_ARRAY = (1,1)
 	C_BUS2CORE_CLK_RATIO = 1
 	C_DPHASE_TIMEOUT = 128
 	C_FAMILY = "spartan3e"
@@ -918,28 +934,37 @@ Entity <plb_slave_attachment> analyzed. Unit <plb_slave_attachment> generated.
 
 Analyzing generic Entity <plb_address_decoder> in library <plbv46_slave_single_v1_01_a> (Architecture <IMP>).
 	C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000010000000100000000000000000000000",
-	                          "0000000000000000000000000000000010000000100000000000000000111111")
-	C_ARD_NUM_CE_ARRAY = (1)
+	                          "0000000000000000000000000000000010000000100000000000000000000111",
+	                          "0000000000000000000000000000000010000000100000000000000000001000",
+	                          "0000000000000000000000000000000010000000100000000000000000001111")
+	C_ARD_NUM_CE_ARRAY = (1,1)
 	C_BUS_AWIDTH = 32
 	C_FAMILY = "nofamily"
 	C_SPLB_P2P = 0
 Entity <plb_address_decoder> analyzed. Unit <plb_address_decoder> generated.
 
-Analyzing generic Entity <pselect_f> in library <proc_common_v3_00_a> (Architecture <imp>).
-	C_AB = 26
+Analyzing generic Entity <pselect_f.1> in library <proc_common_v3_00_a> (Architecture <imp>).
+	C_AB = 29
 	C_AW = 32
 	C_BAR = "10000000100000000000000000000000"
 	C_FAMILY = "nofamily"
-Entity <pselect_f> analyzed. Unit <pselect_f> generated.
+Entity <pselect_f.1> analyzed. Unit <pselect_f.1> generated.
+
+Analyzing generic Entity <pselect_f.2> in library <proc_common_v3_00_a> (Architecture <imp>).
+	C_AB = 29
+	C_AW = 32
+	C_BAR = "10000000100000000000000000001000"
+	C_FAMILY = "nofamily"
+Entity <pselect_f.2> analyzed. Unit <pselect_f.2> generated.
 
 Analyzing generic Entity <or_gate128> in library <proc_common_v3_00_a> (Architecture <imp>).
 	C_BUS_WIDTH = 1
-	C_OR_WIDTH = 1
+	C_OR_WIDTH = 2
 	C_USE_LUT_OR = false
 Entity <or_gate128> analyzed. Unit <or_gate128> generated.
 
 Analyzing generic Entity <or_muxcy> in library <proc_common_v3_00_a> (Architecture <implementation>).
-	C_NUM_BITS = 1
+	C_NUM_BITS = 2
 Entity <or_muxcy> analyzed. Unit <or_muxcy> generated.
 
 Analyzing generic Entity <counter_f> in library <proc_common_v3_00_a> (Architecture <imp>).
@@ -949,7 +974,7 @@ Entity <counter_f> analyzed. Unit <counter_f> generated.
 
 Analyzing generic Entity <epc_core> in library <xps_epc_v1_02_a> (Architecture <imp>).
 	C_FAMILY = "spartan3e"
-	C_NUM_PERIPHERALS = 1
+	C_NUM_PERIPHERALS = 2
 	C_PRH0_ADDR_TH = 30000
 	C_PRH0_ADDR_TSU = 40000
 	C_PRH0_ADS_WIDTH = 0
@@ -971,27 +996,27 @@ Analyzing generic Entity <epc_core> in library <xps_epc_v1_02_a> (Architecture <
 	C_PRH0_SYNC = 0
 	C_PRH0_WRN_WIDTH = 30000
 	C_PRH0_WR_CYCLE = 60000
-	C_PRH1_ADDR_TH = 0
-	C_PRH1_ADDR_TSU = 0
+	C_PRH1_ADDR_TH = 30000
+	C_PRH1_ADDR_TSU = 40000
 	C_PRH1_ADS_WIDTH = 0
-	C_PRH1_AWIDTH = 32
+	C_PRH1_AWIDTH = 6
 	C_PRH1_BUS_MULTIPLEX = 0
-	C_PRH1_CSN_TH = 0
-	C_PRH1_CSN_TSU = 0
-	C_PRH1_DATA_TH = 0
-	C_PRH1_DATA_TINV = 0
-	C_PRH1_DATA_TOUT = 0
-	C_PRH1_DATA_TSU = 0
-	C_PRH1_DWIDTH = 32
+	C_PRH1_CSN_TH = 30000
+	C_PRH1_CSN_TSU = 40000
+	C_PRH1_DATA_TH = 30000
+	C_PRH1_DATA_TINV = 25000
+	C_PRH1_DATA_TOUT = 15000
+	C_PRH1_DATA_TSU = 30000
+	C_PRH1_DWIDTH = 8
 	C_PRH1_DWIDTH_MATCH = 0
 	C_PRH1_FIFO_ACCESS = 0
-	C_PRH1_RDN_WIDTH = 0
-	C_PRH1_RDY_TOUT = 0
-	C_PRH1_RDY_WIDTH = 0
-	C_PRH1_RD_CYCLE = 0
-	C_PRH1_SYNC = 1
-	C_PRH1_WRN_WIDTH = 0
-	C_PRH1_WR_CYCLE = 0
+	C_PRH1_RDN_WIDTH = 30000
+	C_PRH1_RDY_TOUT = 20000
+	C_PRH1_RDY_WIDTH = 120000
+	C_PRH1_RD_CYCLE = 60000
+	C_PRH1_SYNC = 0
+	C_PRH1_WRN_WIDTH = 30000
+	C_PRH1_WR_CYCLE = 60000
 	C_PRH2_ADDR_TH = 0
 	C_PRH2_ADDR_TSU = 0
 	C_PRH2_ADS_WIDTH = 0
@@ -1046,16 +1071,16 @@ Analyzing generic Entity <epc_core> in library <xps_epc_v1_02_a> (Architecture <
 	LOCAL_CLK_PERIOD_PS = 20000
 	MAX_PERIPHERALS = 4
 	PRH0_FIFO_ADDRESS = "10000000100000000000000000000000"
-	PRH1_FIFO_ADDRESS = "11111111111111111111111111111111"
+	PRH1_FIFO_ADDRESS = "10000000100000000000000000001000"
 	PRH2_FIFO_ADDRESS = "11111111111111111111111111111111"
 	PRH3_FIFO_ADDRESS = "11111111111111111111111111111111"
 Entity <epc_core> analyzed. Unit <epc_core> generated.
 
 Analyzing generic Entity <ipic_if_decode> in library <xps_epc_v1_02_a> (Architecture <imp>).
-	C_NUM_PERIPHERALS = 1
+	C_NUM_PERIPHERALS = 2
 	C_PRH0_DWIDTH = 8
 	C_PRH0_DWIDTH_MATCH = 0
-	C_PRH1_DWIDTH = 32
+	C_PRH1_DWIDTH = 8
 	C_PRH1_DWIDTH_MATCH = 0
 	C_PRH2_DWIDTH = 32
 	C_PRH2_DWIDTH_MATCH = 0
@@ -1070,20 +1095,20 @@ Analyzing generic Entity <ipic_if_decode> in library <xps_epc_v1_02_a> (Architec
 	NO_PRH_SYNC = 1
 	PRH_BUS_MULTIPLEX = "0000"
 	PRH_DWIDTH_MATCH = "0000"
-	PRH_SYNC = "0111"
+	PRH_SYNC = "0011"
 Entity <ipic_if_decode> analyzed. Unit <ipic_if_decode> generated.
 
 Analyzing generic Entity <sync_cntl> in library <xps_epc_v1_02_a> (Architecture <imp>).
 	ADDRCNT_WIDTH = 2
-	C_NUM_PERIPHERALS = 1
+	C_NUM_PERIPHERALS = 2
 	C_PRH0_ADDR_TH = 30000
 	C_PRH0_ADDR_TSU = 40000
 	C_PRH0_ADS_WIDTH = 0
 	C_PRH0_RDY_WIDTH = 120000
-	C_PRH1_ADDR_TH = 0
-	C_PRH1_ADDR_TSU = 0
+	C_PRH1_ADDR_TH = 30000
+	C_PRH1_ADDR_TSU = 40000
 	C_PRH1_ADS_WIDTH = 0
-	C_PRH1_RDY_WIDTH = 0
+	C_PRH1_RDY_WIDTH = 120000
 	C_PRH2_ADDR_TH = 0
 	C_PRH2_ADDR_TSU = 0
 	C_PRH2_ADS_WIDTH = 0
@@ -1098,13 +1123,13 @@ Analyzing generic Entity <sync_cntl> in library <xps_epc_v1_02_a> (Architecture 
 	MAX_PERIPHERALS = 4
 	NO_PRH_DWIDTH_MATCH = 1
 	NO_PRH_SYNC = 1
-	PRH_SYNC = "0111"
+	PRH_SYNC = "0011"
 Entity <sync_cntl> analyzed. Unit <sync_cntl> generated.
 
 Analyzing generic Entity <async_cntl> in library <xps_epc_v1_02_a> (Architecture <imp>).
 	C_BUS_CLOCK_PERIOD_PS = 20000
 	C_MAX_PERIPHERALS = 4
-	C_NUM_PERIPHERALS = 1
+	C_NUM_PERIPHERALS = 2
 	C_PRH0_ADDR_TH = 30000
 	C_PRH0_ADDR_TSU = 40000
 	C_PRH0_ADS_WIDTH = 0
@@ -1120,21 +1145,21 @@ Analyzing generic Entity <async_cntl> in library <xps_epc_v1_02_a> (Architecture
 	C_PRH0_RD_CYCLE = 60000
 	C_PRH0_WRN_WIDTH = 30000
 	C_PRH0_WR_CYCLE = 60000
-	C_PRH1_ADDR_TH = 0
-	C_PRH1_ADDR_TSU = 0
+	C_PRH1_ADDR_TH = 30000
+	C_PRH1_ADDR_TSU = 40000
 	C_PRH1_ADS_WIDTH = 0
-	C_PRH1_CSN_TH = 0
-	C_PRH1_CSN_TSU = 0
-	C_PRH1_DATA_TH = 0
-	C_PRH1_DATA_TINV = 0
-	C_PRH1_DATA_TOUT = 0
-	C_PRH1_DATA_TSU = 0
-	C_PRH1_RDN_WIDTH = 0
-	C_PRH1_RDY_TOUT = 0
-	C_PRH1_RDY_WIDTH = 0
-	C_PRH1_RD_CYCLE = 0
-	C_PRH1_WRN_WIDTH = 0
-	C_PRH1_WR_CYCLE = 0
+	C_PRH1_CSN_TH = 30000
+	C_PRH1_CSN_TSU = 40000
+	C_PRH1_DATA_TH = 30000
+	C_PRH1_DATA_TINV = 25000
+	C_PRH1_DATA_TOUT = 15000
+	C_PRH1_DATA_TSU = 30000
+	C_PRH1_RDN_WIDTH = 30000
+	C_PRH1_RDY_TOUT = 20000
+	C_PRH1_RDY_WIDTH = 120000
+	C_PRH1_RD_CYCLE = 60000
+	C_PRH1_WRN_WIDTH = 30000
+	C_PRH1_WR_CYCLE = 60000
 	C_PRH2_ADDR_TH = 0
 	C_PRH2_ADDR_TSU = 0
 	C_PRH2_ADS_WIDTH = 0
@@ -1167,7 +1192,7 @@ Analyzing generic Entity <async_cntl> in library <xps_epc_v1_02_a> (Architecture
 	C_PRH3_WR_CYCLE = 0
 	C_SPLB_NATIVE_DWIDTH = 32
 	NO_PRH_ASYNC = 0
-	PRH_SYNC = "0111"
+	PRH_SYNC = "0011"
     Set user-defined property "ASYNC_REG =  TRUE" for instance <SOME_DEV_ASYNC_GEN.REG_PRH_RDY> in unit <async_cntl>.
     Set user-defined property "INIT =  0" for instance <SOME_DEV_ASYNC_GEN.REG_PRH_RDY> in unit <async_cntl>.
 Entity <async_cntl> analyzed. Unit <async_cntl> generated.
@@ -1179,7 +1204,7 @@ Analyzing generic Entity <async_statemachine> in library <xps_epc_v1_02_a> (Arch
 	C_CONTROL_CNT_WIDTH = 2
 	C_DEV_RDY_CNT_WIDTH = 3
 	C_DEV_VALID_CNT_WIDTH = 2
-	C_NUM_PERIPHERALS = 1
+	C_NUM_PERIPHERALS = 2
 	C_RD_REC_M_CNT_WIDTH = 2
 	C_RD_REC_NM_CNT_WIDTH = 2
 	C_WR_REC_M_CNT_WIDTH = 2
@@ -1274,13 +1299,13 @@ Analyzing generic Entity <data_steer> in library <xps_epc_v1_02_a> (Architecture
 Entity <data_steer> analyzed. Unit <data_steer> generated.
 
 Analyzing generic Entity <access_mux> in library <xps_epc_v1_02_a> (Architecture <imp>).
-	C_NUM_PERIPHERALS = 1
+	C_NUM_PERIPHERALS = 2
 	C_PRH0_AWIDTH = 6
 	C_PRH0_BUS_MULTIPLEX = 0
 	C_PRH0_DWIDTH = 8
-	C_PRH1_AWIDTH = 32
+	C_PRH1_AWIDTH = 6
 	C_PRH1_BUS_MULTIPLEX = 0
-	C_PRH1_DWIDTH = 32
+	C_PRH1_DWIDTH = 8
 	C_PRH2_AWIDTH = 32
 	C_PRH2_BUS_MULTIPLEX = 0
 	C_PRH2_DWIDTH = 32
@@ -1315,10 +1340,16 @@ Synthesizing Unit <counter_f>.
 Unit <counter_f> synthesized.
 
 
-Synthesizing Unit <pselect_f>.
+Synthesizing Unit <pselect_f_1>.
     Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-WARNING:Xst:647 - Input <A<26:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-Unit <pselect_f> synthesized.
+WARNING:Xst:647 - Input <A<29:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <pselect_f_1> synthesized.
+
+
+Synthesizing Unit <pselect_f_2>.
+    Related source file is "C:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
+WARNING:Xst:647 - Input <A<29:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <pselect_f_2> synthesized.
 
 
 Synthesizing Unit <or_muxcy>.
@@ -1357,7 +1388,7 @@ WARNING:Xst:1780 - Signal <dev_bus_multiplex_i> is never used or assigned. This 
 WARNING:Xst:1780 - Signal <dev_burst_i> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
     Found 1-bit register for signal <Dev_fifo_access>.
     Found 1-bit register for signal <Dev_rnw>.
-    Found 1-bit register for signal <Dev_id<0>>.
+    Found 2-bit register for signal <Dev_id>.
     Found 3-bit register for signal <dev_dbus_width_i>.
     Found 1-bit register for signal <dev_in_access_int_d1>.
     Found 1-bit register for signal <ip_async_Rdack_d1>.
@@ -1370,7 +1401,7 @@ WARNING:Xst:1780 - Signal <dev_burst_i> is never used or assigned. This unconnec
     Found 1-bit register for signal <ip_async_Wrack_d4>.
     Found 1-bit register for signal <local_async_req>.
     Summary:
-	inferred  16 D-type flip-flop(s).
+	inferred  17 D-type flip-flop(s).
 Unit <ipic_if_decode> synthesized.
 
 
@@ -1390,7 +1421,7 @@ WARNING:Xst:647 - Input <Steer_index> is never used. This port will be preserved
 WARNING:Xst:647 - Input <Dev_rnw> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <Dev_dwidth_match> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <Bus2IP_BE> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <Dev_id<0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Dev_id> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <Dev_in_access> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <Dev_dbus_width> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:1780 - Signal <temp_1_rst> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
@@ -1475,7 +1506,7 @@ WARNING:Xst:647 - Input <Async_addr_ph> is never used. This port will be preserv
 WARNING:Xst:647 - Input <Sync_addr_ph> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <Sync_RNW> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <Sync_data_oe> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <Sync_CS_n<0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Sync_CS_n> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <Sync_Burst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:1780 - Signal <sync_data_oe_i> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <sync_async_data_oe_i> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
@@ -1492,13 +1523,13 @@ WARNING:Xst:1780 - Signal <addr_out> is never used or assigned. This unconnected
     Register <async_data_oe_i<7>> equivalent to <async_data_oe_i<0>> has been removed
     Found 1-bit register for signal <PRH_Rd_n>.
     Found 1-bit register for signal <PRH_Wr_n>.
-    Found 1-bit register for signal <PRH_CS_n<0>>.
+    Found 2-bit register for signal <PRH_CS_n>.
     Found 6-bit register for signal <PRH_Addr>.
     Found 1-bit register for signal <PRH_ADS>.
     Found 8-bit register for signal <PRH_Data_O>.
     Found 1-bit register for signal <async_data_oe_i<0>>.
     Summary:
-	inferred  19 D-type flip-flop(s).
+	inferred  20 D-type flip-flop(s).
 Unit <access_mux> synthesized.
 
 
@@ -1534,10 +1565,10 @@ Synthesizing Unit <async_statemachine>.
     Found 1-bit register for signal <Asynch_en>.
     Found 1-bit register for signal <Asynch_addr_strobe>.
     Found 1-bit register for signal <Taddr_hold_load_ce>.
-    Found 1-bit register for signal <Asynch_chip_select<0>>.
+    Found 2-bit register for signal <Asynch_chip_select>.
     Summary:
 	inferred   1 Finite State Machine(s).
-	inferred  17 D-type flip-flop(s).
+	inferred  18 D-type flip-flop(s).
 Unit <async_statemachine> synthesized.
 
 
@@ -1601,17 +1632,20 @@ WARNING:Xst:647 - Input <Bus_RNW_Erly> is never used. This port will be preserve
 WARNING:Xst:647 - Input <Address_In_Erly> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <Address_Valid_Erly> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:646 - Signal <cs_s_h_clr> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <cs_out_s_h0<0>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <cs_out_s_h<1>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <cs_ce_clr> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <addr_out_s_h> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <addr_match_clr> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-    Found 1-bit register for signal <cs_out_i<0>>.
+    Found 2-bit register for signal <cs_out_i>.
     Found 1-bit register for signal <cs_out_s_h<0>>.
+    Found 1-bit register for signal <cs_out_s_h0<1>>.
     Found 1-bit register for signal <decode_hit_reg>.
-    Found 1-bit register for signal <rdce_out_i<0>>.
+    Found 2-bit register for signal <rdce_out_i>.
     Found 1-bit register for signal <rnw_s_h>.
-    Found 1-bit register for signal <wrce_out_i<0>>.
+    Found 2-bit register for signal <wrce_out_i>.
     Summary:
-	inferred   6 D-type flip-flop(s).
+	inferred  10 D-type flip-flop(s).
 Unit <plb_address_decoder> synthesized.
 
 
@@ -1725,8 +1759,9 @@ HDL Synthesis Report
 Macro Statistics
 # Adders/Subtractors                                   : 1
  9-bit subtractor                                      : 1
-# Registers                                            : 77
- 1-bit register                                        : 65
+# Registers                                            : 81
+ 1-bit register                                        : 66
+ 2-bit register                                        : 3
  3-bit register                                        : 2
  32-bit register                                       : 4
  4-bit register                                        : 3
@@ -1774,8 +1809,8 @@ Macro Statistics
 # FSMs                                                 : 1
 # Adders/Subtractors                                   : 1
  9-bit subtractor                                      : 1
-# Registers                                            : 264
- Flip-Flops                                            : 264
+# Registers                                            : 271
+ Flip-Flops                                            : 271
 # Xors                                                 : 9
  1-bit xor2                                            : 9
 
@@ -1787,7 +1822,6 @@ Macro Statistics
 WARNING:Xst:1293 - FF/Latch <dev_dbus_width_i_1> has a constant value of 0 in block <ipic_if_decode>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <dev_dbus_width_i_0> has a constant value of 0 in block <ipic_if_decode>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Dev_fifo_access> (without init value) has a constant value of 0 in block <ipic_if_decode>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <dev_dbus_width_i_2> in Unit <ipic_if_decode> is equivalent to the following FF/Latch, which will be removed : <Dev_id_0> 
 INFO:Xst:2261 - The FF/Latch <Asynch_en> in Unit <async_statemachine> is equivalent to the following FF/Latch, which will be removed : <Tcontrol_load_ce> 
 INFO:Xst:2261 - The FF/Latch <addr_cntl_cs_0> in Unit <plb_slave_attachment> is equivalent to the following FF/Latch, which will be removed : <addr_cycle_flush> 
 
@@ -1816,11 +1850,7 @@ Optimizing unit <plb_slave_attachment> ...
 Optimizing unit <async_cntl> ...
 WARNING:Xst:1293 - FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd16> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd11> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd7> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd6> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd5> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd2> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd1> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd3> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_31> (without init value) has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_30> (without init value) has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
@@ -1908,31 +1938,29 @@ WARNING:Xst:1898 - Due to constant pushing, FF/Latch <xps_epc_0/PLBv46_IPIF_I/I_
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_3> is unconnected in block <blaze_xps_epc_0_wrapper>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_3> is unconnected in block <blaze_xps_epc_0_wrapper>.
 WARNING:Xst:1898 - Due to constant pushing, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/async_cycle_bit_0> is unconnected in block <blaze_xps_epc_0_wrapper>.
-WARNING:Xst:1710 - FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Asynch_addr_strobe> (without init value) has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Twr_muxed_recovery_load_ce> (without init value) has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Twr_muxed_recovery_load_ce> (without init value) has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Trd_muxed_recovery_load_ce> (without init value) has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd1> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd5> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd6> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd7> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Asynch_addr_strobe> (without init value) has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/Taddr_hold_load_ce> (without init value) has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_FSM_FFd4> has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <xps_epc_0/EPC_CORE_I/ACCESS_MUX_I/PRH_ADS> (without init value) has a constant value of 0 in block <blaze_xps_epc_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
+FlipFlop xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_1 has been replicated 1 time(s)
 
 Final Macro Processing ...
-
-Processing Unit <blaze_xps_epc_0_wrapper> :
-	Found 4-bit shift register for signal <xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip_async_Rdack_d4>.
-	Found 4-bit shift register for signal <xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip_async_Wrack_d4>.
-Unit <blaze_xps_epc_0_wrapper> processed.
 
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 168
- Flip-Flops                                            : 168
-# Shift Registers                                      : 2
- 4-bit shift register                                  : 2
+# Registers                                            : 185
+ Flip-Flops                                            : 185
 
 =========================================================================
 
@@ -1957,32 +1985,31 @@ Optimization Goal                  : speed
 Keep Hierarchy                     : no
 
 Design Statistics
-# IOs                              : 241
+# IOs                              : 243
 
 Cell Usage :
-# BELS                             : 217
+# BELS                             : 221
 #      GND                         : 1
-#      LUT1                        : 1
-#      LUT2                        : 29
+#      INV                         : 3
+#      LUT2                        : 24
 #      LUT2_D                      : 1
-#      LUT3                        : 43
-#      LUT3_D                      : 3
+#      LUT2_L                      : 1
+#      LUT3                        : 33
+#      LUT3_D                      : 2
 #      LUT3_L                      : 2
-#      LUT4                        : 58
-#      LUT4_D                      : 6
-#      LUT4_L                      : 2
+#      LUT4                        : 71
+#      LUT4_D                      : 5
+#      LUT4_L                      : 6
 #      MULT_AND                    : 21
-#      MUXCY                       : 28
+#      MUXCY                       : 29
 #      VCC                         : 1
 #      XORCY                       : 21
-# FlipFlops/Latches                : 175
-#      FD                          : 22
-#      FDR                         : 82
-#      FDRE                        : 48
-#      FDRS                        : 8
-#      FDS                         : 15
-# Shift Registers                  : 2
-#      SRL16                       : 2
+# FlipFlops/Latches                : 185
+#      FD                          : 21
+#      FDR                         : 84
+#      FDRE                        : 55
+#      FDRS                        : 9
+#      FDS                         : 16
 =========================================================================
 
 Device utilization summary:
@@ -1990,12 +2017,10 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                      127  out of   8672     1%  
- Number of Slice Flip Flops:            175  out of  17344     1%  
- Number of 4 input LUTs:                147  out of  17344     0%  
-    Number used as logic:               145
-    Number used as Shift registers:       2
- Number of IOs:                         241
+ Number of Slices:                      133  out of   8672     1%  
+ Number of Slice Flip Flops:            185  out of  17344     1%  
+ Number of 4 input LUTs:                148  out of  17344     0%  
+ Number of IOs:                         243
  Number of bonded IOBs:                   0  out of    250     0%  
 
 ---------------------------
@@ -2016,11 +2041,11 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+---------------------------------------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)                                   | Load  |
------------------------------------+---------------------------------------------------------+-------+
-SPLB_Clk                           | NONE(xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/local_async_req)| 177   |
------------------------------------+---------------------------------------------------------+-------+
+-----------------------------------+-----------------------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                                     | Load  |
+-----------------------------------+-----------------------------------------------------------+-------+
+SPLB_Clk                           | NONE(xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip_async_Rdack_d4)| 185   |
+-----------------------------------+-----------------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
@@ -2031,8 +2056,8 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 7.528ns (Maximum Frequency: 132.837MHz)
-   Minimum input arrival time before clock: 3.813ns
+   Minimum period: 7.603ns (Maximum Frequency: 131.522MHz)
+   Minimum input arrival time before clock: 4.279ns
    Maximum output required time after clock: 0.591ns
    Maximum combinational path delay: No path found
 
@@ -2042,52 +2067,52 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'SPLB_Clk'
-  Clock period: 7.528ns (frequency: 132.837MHz)
-  Total number of paths / destination ports: 1534 / 216
+  Clock period: 7.603ns (frequency: 131.522MHz)
+  Total number of paths / destination ports: 1805 / 242
 -------------------------------------------------------------------------
-Delay:               7.528ns (Levels of Logic = 4)
-  Source:            xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[1].FF_RST0_GEN.FDRE_i1 (FF)
-  Destination:       xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0 (FF)
+Delay:               7.603ns (Levels of Logic = 3)
+  Source:            xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0 (FF)
+  Destination:       xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_1 (FF)
   Source Clock:      SPLB_Clk rising
   Destination Clock: SPLB_Clk rising
 
-  Data Path: xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[1].FF_RST0_GEN.FDRE_i1 to xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0
+  Data Path: xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0 to xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             2   0.591   0.622  xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR4/PERBIT_GEN[1].FF_RST0_GEN.FDRE_i1 (xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/tdevrdy_wdth_cnt<1>)
-     LUT3_D:I0->LO         1   0.704   0.135  xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/command_cs_cmp_eq00021 (N107)
-     LUT3:I2->O           12   0.704   0.965  xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/asynch_error_i1 (xps_epc_0/EPC_CORE_I/ip_async_error)
-     LUT4:I3->O            5   0.704   0.668  xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_STATEMACHINE_I/asynch_Wrack_i1 (xps_epc_0/EPC_CORE_I/ip_async_Wrack)
-     LUT4:I2->O            9   0.704   0.820  xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i_or00001 (xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_or0000)
-     FDRE:R                    0.911          xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0
+     FDRE:C->Q            29   0.591   1.340  xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0 (xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0)
+     LUT2:I1->O           14   0.704   1.004  xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/taddr_data_cs_hold_count_i<0>1 (xps_epc_0/EPC_CORE_I/ASYNC_CNTL_I/SOME_DEV_ASYNC_GEN.ASYNC_CNTR_I/LD_ARITH_REG_I_CNTR2/q_i_ns<0>)
+     LUT4:I3->O            7   0.704   0.712  xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i_or00001_SW0 (N44)
+     LUT4:I3->O           11   0.704   0.933  xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i_or00001 (xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_or0000)
+     FDRE:R                    0.911          xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_1
     ----------------------------------------
-    Total                      7.528ns (4.318ns logic, 3.210ns route)
-                                       (57.4% logic, 42.6% route)
+    Total                      7.603ns (3.614ns logic, 3.989ns route)
+                                       (47.5% logic, 52.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'SPLB_Clk'
-  Total number of paths / destination ports: 194 / 194
+  Total number of paths / destination ports: 213 / 204
 -------------------------------------------------------------------------
-Offset:              3.813ns (Levels of Logic = 2)
+Offset:              4.279ns (Levels of Logic = 3)
   Source:            SPLB_Rst (PAD)
-  Destination:       xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0 (FF)
+  Destination:       xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_1 (FF)
   Destination Clock: SPLB_Clk rising
 
-  Data Path: SPLB_Rst to xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0
+  Data Path: SPLB_Rst to xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LUT2:I1->O            1   0.704   0.595  xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i_or00001_SW0 (N36)
-     LUT4:I0->O            9   0.704   0.820  xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i_or00001 (xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_or0000)
-     FDRE:R                    0.911          xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0
+     LUT3:I0->O            2   0.704   0.526  xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Rdack_i1_SW2_SW0 (N74)
+     LUT4_L:I1->LO         1   0.704   0.135  xps_epc_0/EPC_CORE_I/IPIC_DECODE_I/ip2bus_Rdack_i1_SW2 (N59)
+     LUT4:I2->O            1   0.704   0.420  xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_1_or00001 (xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_1_or0000)
+     FDR:R                     0.911          xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_1
     ----------------------------------------
-    Total                      3.813ns (2.398ns logic, 1.415ns route)
-                                       (62.9% logic, 37.1% route)
+    Total                      4.279ns (3.198ns logic, 1.081ns route)
+                                       (74.7% logic, 25.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'SPLB_Clk'
-  Total number of paths / destination ports: 46 / 46
+  Total number of paths / destination ports: 47 / 47
 -------------------------------------------------------------------------
 Offset:              0.591ns (Levels of Logic = 0)
   Source:            xps_epc_0/PLBv46_IPIF_I/I_SLAVE_ATTACHMENT/sl_rearbitrate_i (FF)
@@ -2107,13 +2132,13 @@ Offset:              0.591ns (Levels of Logic = 0)
 
 
 Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 13.27 secs
+Total CPU time to Xst completion: 13.34 secs
  
 --> 
 
-Total memory usage is 407516 kilobytes
+Total memory usage is 434076 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  329 (   0 filtered)
-Number of infos    :    6 (   0 filtered)
+Number of warnings :  332 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
 

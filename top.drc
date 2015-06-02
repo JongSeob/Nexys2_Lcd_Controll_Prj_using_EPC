@@ -1,7 +1,7 @@
 Release 14.7 Drc P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Mon Jun 01 17:17:01 2015
+Tue Jun 02 19:56:22 2015
 
 drc -z top.ncd top.pcf
 

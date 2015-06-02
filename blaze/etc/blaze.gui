@@ -14,10 +14,9 @@
       <VARIABLE COL_INDEX="6" IS_VISIBLE="FALSE" VIEWDISP="Type" VIEWTYPE="HEADER"/>
     </HEADERS>
     <SPLITTERS COLLAPSIBLE="1" HANDLEWIDTH="4" MARKER="255" ORIENTATION="1" RESIZE="1" SIZES="180,450,200" VERSION="0"/>
-    <SET ID="xps_epc_0" IS_EXPANDED="TRUE"/>
     <STATUS>
       <SELECTIONS>
-        <VARIABLE ID="SPLB" PARENT="xps_epc_0"/>
+        <VARIABLE ID="xps_epc_0"/>
       </SELECTIONS>
     </STATUS>
     <SEQUENCES IS_DEF_SEQUENCES="TRUE">
@@ -34,7 +33,7 @@
       <VARIABLE ID="clock_generator_0" ROW_INDEX="12"/>
       <VARIABLE ID="mdm_0" ROW_INDEX="7"/>
       <VARIABLE ID="proc_sys_reset_0" ROW_INDEX="13"/>
-      <VARIABLE ID="xps_epc_0" IS_EXPANDED="TRUE" ROW_INDEX="8"/>
+      <VARIABLE ID="xps_epc_0" ROW_INDEX="8"/>
     </SEQUENCES>
   </SET>
 
@@ -101,9 +100,7 @@
       <SET ID="epc_0" IS_EXPANDED="TRUE"/>
     </SET>
     <STATUS>
-      <SELECTIONS>
-        <VARIABLE ID="xps_epc_0_PRH_Data_O_pin" PARENT="ExternalPorts"/>
-      </SELECTIONS>
+      <SELECTIONS/>
     </STATUS>
     <SEQUENCES IS_DEF_SEQUENCES="TRUE">
       <VARIABLE ID="ExternalPorts" IS_EXPANDED="TRUE" ROW_INDEX="0"/>

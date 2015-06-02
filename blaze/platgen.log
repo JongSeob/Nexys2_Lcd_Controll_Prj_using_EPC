@@ -29,7 +29,8 @@ Running DRC Tcl procedures for OPTION IPLEVEL_DRC_PROC...
 Address Map for Processor microblaze_0
   (0000000000-0x00007fff) dlmb_cntlr	dlmb
   (0000000000-0x00007fff) ilmb_cntlr	ilmb
-  (0x80800000-0x8080003f) xps_epc_0	mb_plb
+  (0x80800000-0x80800007) xps_epc_0	mb_plb
+  (0x80800008-0x8080000f) xps_epc_0	mb_plb
   (0x81400000-0x8140ffff) LEDS	mb_plb
   (0x81420000-0x8142ffff) DIP_Switches	mb_plb
   (0x84000000-0x8400ffff) RS232	mb_plb
@@ -176,6 +177,33 @@ Creating hardware output directories ...
 Managing hardware (BBD-specified) netlist files ...
 
 Managing cache ...
+IPNAME:microblaze INSTANCE:microblaze_0 - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs
+line 34 - Copying cache implementation netlist
+IPNAME:plb_v46 INSTANCE:mb_plb - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 48
+- Copying cache implementation netlist
+IPNAME:lmb_v10 INSTANCE:ilmb - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 55 -
+Copying cache implementation netlist
+IPNAME:lmb_v10 INSTANCE:dlmb - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 62 -
+Copying cache implementation netlist
+IPNAME:lmb_bram_if_cntlr INSTANCE:dlmb_cntlr -
+E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 69 - Copying cache implementation
+netlist
+IPNAME:lmb_bram_if_cntlr INSTANCE:ilmb_cntlr -
+E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 78 - Copying cache implementation
+netlist
+IPNAME:bram_block INSTANCE:lmb_bram - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs
+line 87 - Copying cache implementation netlist
+IPNAME:xps_gpio INSTANCE:dip_switches - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs
+line 94 - Copying cache implementation netlist
+IPNAME:xps_gpio INSTANCE:leds - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 107
+- Copying cache implementation netlist
+IPNAME:xps_uartlite INSTANCE:rs232 - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line
+120 - Copying cache implementation netlist
+IPNAME:mdm INSTANCE:mdm_0 - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 149 -
+Copying cache implementation netlist
+IPNAME:proc_sys_reset INSTANCE:proc_sys_reset_0 -
+E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 161 - Copying cache implementation
+netlist
 
 Elaborating instances ...
 IPNAME:bram_block INSTANCE:lmb_bram - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs
@@ -205,42 +233,12 @@ Running XST synthesis ...
 INFO:EDK:4211 - The following instances are synthesized with XST. The MPD option
    IMP_NETLIST=TRUE indicates that a NGC file is to be produced using XST
    synthesis. IMP_NETLIST=FALSE (default) instances are not synthesized. 
-INSTANCE:microblaze_0 - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 34 - Running
-XST synthesis
-INSTANCE:mb_plb - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 48 - Running XST
-synthesis
-INSTANCE:ilmb - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 55 - Running XST
-synthesis
-INSTANCE:dlmb - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 62 - Running XST
-synthesis
-INSTANCE:dlmb_cntlr - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 69 - Running
-XST synthesis
-INSTANCE:ilmb_cntlr - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 78 - Running
-XST synthesis
-INSTANCE:lmb_bram - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 87 - Running XST
-synthesis
-INSTANCE:dip_switches - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 94 - Running
-XST synthesis
-INSTANCE:leds - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 107 - Running XST
-synthesis
-INSTANCE:rs232 - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 120 - Running XST
-synthesis
 INSTANCE:clock_generator_0 - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 134 -
-Running XST synthesis
-INSTANCE:mdm_0 - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 149 - Running XST
-synthesis
-INSTANCE:proc_sys_reset_0 - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 161 -
 Running XST synthesis
 INSTANCE:xps_epc_0 - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 174 - Running
 XST synthesis
 
 Running NGCBUILD ...
-IPNAME:blaze_microblaze_0_wrapper INSTANCE:microblaze_0 -
-E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 34 - Running NGCBUILD
-IPNAME:blaze_ilmb_wrapper INSTANCE:ilmb - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs
-line 55 - Running NGCBUILD
-IPNAME:blaze_dlmb_wrapper INSTANCE:dlmb - E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs
-line 62 - Running NGCBUILD
 IPNAME:blaze_clock_generator_0_wrapper INSTANCE:clock_generator_0 -
 E:\Nexys2_LCD_UART_EPC\blaze\blaze.mhs line 134 - Running NGCBUILD
 INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
@@ -249,4 +247,4 @@ INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
 
 Rebuilding cache ...
 
-Total run time: 430.00 seconds
+Total run time: 45.00 seconds

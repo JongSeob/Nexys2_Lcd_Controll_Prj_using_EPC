@@ -37,13 +37,16 @@ module top #(
 	
 	// ************** EPC 신호 *********************** //
 	
-	wire	EPC_nCS;		// EPC에서 전달하는 CS신호. Active Low
+	// EPC_nCS[1], EPC_nRdy = LCD
+	// EPC_nCS[0], EPC_nRdy = UART
+	wire	[1:0] EPC_nCS;		// EPC에서 전달하는 CS신호. Active Low
+	wire  [1:0] EPC_Rdy;
 	wire	[5:0] Addr;	// A5A4A3A2A1A0. EPC의 출력.
 	wire	nRD;			// Read.  active low. EPC의 출력.
 	wire	nWR;			// Write. active low. EPC의 출력.
 	wire 	BE;			// Byte Enable. Active High. EPC의 출력이 1바이트이기 때문에 큰 의미 없음.
 	wire	nBE;			// Byte Enable. Active Low. EPC의 출력을 받아 극성을 반전하여 사용하기로 한다.
-	wire  EPC_Rdy;
+	
 
 	wire	[7:0] BlazeDataOut; 
 	reg	[7:0] BlazeDataIn; 
@@ -86,12 +89,12 @@ module top #(
 		end
 	end
 	
-	assign LCD_nCS = ( (EPC_nCS == 0) && ((Addr == LCD_DATA_ADDR) || (Addr == LCD_CONTROL_ADDR)) ) ? 0 : 1;
+	assign LCD_nCS = ( (EPC_nCS[1] == 0) && ((Addr == LCD_DATA_ADDR) || (Addr == LCD_CONTROL_ADDR)) ) ? 0 : 1;
 
 	
 	// Uart Operation
 	
-	assign Uart_nCS = ( (EPC_nCS == 0) && (Addr == UART_DATA_ADDR) ) ? 0 : 1;
+	assign Uart_nCS = ( (EPC_nCS[0] == 0) && (Addr == UART_DATA_ADDR) ) ? 0 : 1;
 	
 	
 	// ******** 데이터, 신호들을 7-Segment로 확인하기위한 코드들 *************** //
@@ -109,7 +112,7 @@ module top #(
 	end
 	
 	always @(negedge EN) begin				
-		Digit_Sig[15:0]  <= {7'b0000000, EPC_nCS, nWR, nRD, EPC_Rdy, 	  // LCD와 관련된 모든 신호
+		Digit_Sig[15:0]  <= {7'b0000000, EPC_nCS[1], nWR, nRD, EPC_Rdy[1], 	  // LCD와 관련된 모든 신호
 									LCD_nCS, RS, RW, EN, LCD_RDY};				  		
 	end
 		
@@ -129,10 +132,14 @@ module top #(
 	// Data from peripheral to Blaze Operation
 	
 	always @(posedge clk) begin
-		if(EPC_nCS == 0)
+		if(EPC_nCS[1] == 0)
 			case(Addr)
 				LCD_CONTROL_ADDR : BlazeDataIn <= JA[7:0];
 				LCD_DATA_ADDR    : BlazeDataIn <= JA[7:0];
+			endcase
+		
+		if(EPC_nCS[0] == 0)
+			case(Addr)
 				UART_STATUS_ADDR : BlazeDataIn <= Uart_Status[7:0];
 				UART_DATA_ADDR   : BlazeDataIn <= ReceivedData[7:0];
 			endcase
@@ -145,7 +152,8 @@ module top #(
 	assign JB[5] = RW;
 	assign JB[6] = EN;
 	
-	assign EPC_Rdy = LCD_RDY & UART_RDY; 
+	assign EPC_Rdy[1] = LCD_RDY;
+	assign EPC_Rdy[0] = UART_RDY; 
 	
 	//assign Led = Uart_Status;
 	

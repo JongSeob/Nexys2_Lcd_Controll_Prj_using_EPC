@@ -56,7 +56,7 @@ entity blaze_xps_epc_0_wrapper is
     Sl_MIRQ : out std_logic_vector(0 to 1);
     PRH_Clk : in std_logic;
     PRH_Rst : in std_logic;
-    PRH_CS_n : out std_logic_vector(0 to 0);
+    PRH_CS_n : out std_logic_vector(0 to 1);
     PRH_Addr : out std_logic_vector(0 to 5);
     PRH_ADS : out std_logic;
     PRH_BE : out std_logic_vector(0 to 0);
@@ -64,7 +64,7 @@ entity blaze_xps_epc_0_wrapper is
     PRH_Rd_n : out std_logic;
     PRH_Wr_n : out std_logic;
     PRH_Burst : out std_logic;
-    PRH_Rdy : in std_logic_vector(0 to 0);
+    PRH_Rdy : in std_logic_vector(0 to 1);
     PRH_Data_I : in std_logic_vector(0 to 7);
     PRH_Data_O : out std_logic_vector(0 to 7);
     PRH_Data_T : out std_logic_vector(0 to 7)
@@ -266,14 +266,14 @@ begin
       C_SPLB_NUM_MASTERS => 2,
       C_SPLB_NATIVE_DWIDTH => 32,
       C_SPLB_SUPPORT_BURSTS => 0,
-      C_NUM_PERIPHERALS => 1,
+      C_NUM_PERIPHERALS => 2,
       C_PRH_MAX_AWIDTH => 6,
       C_PRH_MAX_DWIDTH => 8,
       C_PRH_MAX_ADWIDTH => 8,
       C_PRH_CLK_SUPPORT => 0,
       C_PRH_BURST_SUPPORT => 0,
       C_PRH0_BASEADDR => X"80800000",
-      C_PRH0_HIGHADDR => X"8080003F",
+      C_PRH0_HIGHADDR => X"80800007",
       C_PRH0_FIFO_ACCESS => 0,
       C_PRH0_FIFO_OFFSET => 0,
       C_PRH0_AWIDTH => 6,
@@ -296,30 +296,30 @@ begin
       C_PRH0_DATA_TINV => 25000,
       C_PRH0_RDY_TOUT => 20000,
       C_PRH0_RDY_WIDTH => 120000,
-      C_PRH1_BASEADDR => X"ffffffff",
-      C_PRH1_HIGHADDR => X"00000000",
+      C_PRH1_BASEADDR => X"80800008",
+      C_PRH1_HIGHADDR => X"8080000F",
       C_PRH1_FIFO_ACCESS => 0,
       C_PRH1_FIFO_OFFSET => 0,
-      C_PRH1_AWIDTH => 32,
-      C_PRH1_DWIDTH => 32,
+      C_PRH1_AWIDTH => 6,
+      C_PRH1_DWIDTH => 8,
       C_PRH1_DWIDTH_MATCH => 0,
-      C_PRH1_SYNC => 1,
+      C_PRH1_SYNC => 0,
       C_PRH1_BUS_MULTIPLEX => 0,
-      C_PRH1_ADDR_TSU => 0,
-      C_PRH1_ADDR_TH => 0,
+      C_PRH1_ADDR_TSU => 40000,
+      C_PRH1_ADDR_TH => 30000,
       C_PRH1_ADS_WIDTH => 0,
-      C_PRH1_CSN_TSU => 0,
-      C_PRH1_CSN_TH => 0,
-      C_PRH1_WRN_WIDTH => 0,
-      C_PRH1_WR_CYCLE => 0,
-      C_PRH1_DATA_TSU => 0,
-      C_PRH1_DATA_TH => 0,
-      C_PRH1_RDN_WIDTH => 0,
-      C_PRH1_RD_CYCLE => 0,
-      C_PRH1_DATA_TOUT => 0,
-      C_PRH1_DATA_TINV => 0,
-      C_PRH1_RDY_TOUT => 0,
-      C_PRH1_RDY_WIDTH => 0,
+      C_PRH1_CSN_TSU => 40000,
+      C_PRH1_CSN_TH => 30000,
+      C_PRH1_WRN_WIDTH => 30000,
+      C_PRH1_WR_CYCLE => 60000,
+      C_PRH1_DATA_TSU => 30000,
+      C_PRH1_DATA_TH => 30000,
+      C_PRH1_RDN_WIDTH => 30000,
+      C_PRH1_RD_CYCLE => 60000,
+      C_PRH1_DATA_TOUT => 15000,
+      C_PRH1_DATA_TINV => 25000,
+      C_PRH1_RDY_TOUT => 20000,
+      C_PRH1_RDY_WIDTH => 120000,
       C_PRH2_BASEADDR => X"ffffffff",
       C_PRH2_HIGHADDR => X"00000000",
       C_PRH2_FIFO_ACCESS => 0,

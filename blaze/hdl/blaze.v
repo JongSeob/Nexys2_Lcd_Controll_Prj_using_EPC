@@ -26,10 +26,10 @@ module blaze
   input fpga_0_clk_1_sys_clk_pin;
   input fpga_0_rst_1_sys_rst_pin;
   output [0:5] xps_epc_0_PRH_Addr_pin;
-  output xps_epc_0_PRH_CS_n_pin;
+  output [0:1] xps_epc_0_PRH_CS_n_pin;
   output xps_epc_0_PRH_Rd_n_pin;
   output xps_epc_0_PRH_Wr_n_pin;
-  input xps_epc_0_PRH_Rdy_pin;
+  input [0:1] xps_epc_0_PRH_Rdy_pin;
   output xps_epc_0_PRH_BE_pin;
   input [0:7] xps_epc_0_PRH_Data_I_pin;
   output [0:7] xps_epc_0_PRH_Data_O_pin;
@@ -192,12 +192,12 @@ module blaze
   wire [0:31] net_gnd32;
   wire [0:4095] net_gnd4096;
   wire net_vcc0;
-  wire [0:0] net_xps_epc_0_PRH_Rdy_pin;
+  wire [0:1] net_xps_epc_0_PRH_Rdy_pin;
   wire [0:0] sys_bus_reset;
   wire sys_rst_s;
   wire [0:5] xps_epc_0_PRH_Addr;
   wire [0:0] xps_epc_0_PRH_BE;
-  wire [0:0] xps_epc_0_PRH_CS_n;
+  wire [0:1] xps_epc_0_PRH_CS_n;
   wire [0:7] xps_epc_0_PRH_Data_I;
   wire [0:7] xps_epc_0_PRH_Data_O;
   wire xps_epc_0_PRH_Rd_n;
@@ -210,10 +210,10 @@ module blaze
   assign CLK_S = fpga_0_clk_1_sys_clk_pin;
   assign sys_rst_s = fpga_0_rst_1_sys_rst_pin;
   assign xps_epc_0_PRH_Addr_pin = xps_epc_0_PRH_Addr;
-  assign xps_epc_0_PRH_CS_n_pin = xps_epc_0_PRH_CS_n[0];
+  assign xps_epc_0_PRH_CS_n_pin = xps_epc_0_PRH_CS_n;
   assign xps_epc_0_PRH_Rd_n_pin = xps_epc_0_PRH_Rd_n;
   assign xps_epc_0_PRH_Wr_n_pin = xps_epc_0_PRH_Wr_n;
-  assign net_xps_epc_0_PRH_Rdy_pin[0] = xps_epc_0_PRH_Rdy_pin;
+  assign net_xps_epc_0_PRH_Rdy_pin = xps_epc_0_PRH_Rdy_pin;
   assign xps_epc_0_PRH_BE_pin = xps_epc_0_PRH_BE[0];
   assign xps_epc_0_PRH_Data_I = xps_epc_0_PRH_Data_I_pin;
   assign xps_epc_0_PRH_Data_O_pin = xps_epc_0_PRH_Data_O;
@@ -1907,7 +1907,7 @@ module blaze
       .Sl_MIRQ ( mb_plb_Sl_MIRQ[8:9] ),
       .PRH_Clk ( net_gnd0 ),
       .PRH_Rst ( net_gnd0 ),
-      .PRH_CS_n ( xps_epc_0_PRH_CS_n[0:0] ),
+      .PRH_CS_n ( xps_epc_0_PRH_CS_n ),
       .PRH_Addr ( xps_epc_0_PRH_Addr ),
       .PRH_ADS (  ),
       .PRH_BE ( xps_epc_0_PRH_BE[0:0] ),
@@ -1915,7 +1915,7 @@ module blaze
       .PRH_Rd_n ( xps_epc_0_PRH_Rd_n ),
       .PRH_Wr_n ( xps_epc_0_PRH_Wr_n ),
       .PRH_Burst (  ),
-      .PRH_Rdy ( net_xps_epc_0_PRH_Rdy_pin[0:0] ),
+      .PRH_Rdy ( net_xps_epc_0_PRH_Rdy_pin ),
       .PRH_Data_I ( xps_epc_0_PRH_Data_I ),
       .PRH_Data_O ( xps_epc_0_PRH_Data_O ),
       .PRH_Data_T (  )
@@ -5223,7 +5223,7 @@ module blaze_xps_epc_0_wrapper
   output [0:1] Sl_MIRQ;
   input PRH_Clk;
   input PRH_Rst;
-  output [0:0] PRH_CS_n;
+  output [0:1] PRH_CS_n;
   output [0:5] PRH_Addr;
   output PRH_ADS;
   output [0:0] PRH_BE;
@@ -5231,7 +5231,7 @@ module blaze_xps_epc_0_wrapper
   output PRH_Rd_n;
   output PRH_Wr_n;
   output PRH_Burst;
-  input [0:0] PRH_Rdy;
+  input [0:1] PRH_Rdy;
   input [0:7] PRH_Data_I;
   output [0:7] PRH_Data_O;
   output [0:7] PRH_Data_T;
