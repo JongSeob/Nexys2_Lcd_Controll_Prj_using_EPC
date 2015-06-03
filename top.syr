@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.25 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.25 secs
  
 --> Reading design: top.prj
 
@@ -142,7 +142,8 @@ No errors in compilation
 Analysis of file <"top.prj"> succeeded.
  
 Compiling vhdl file "E:/Nexys2_LCD_UART_EPC/RS232RefComp.vhd" in Library work.
-Architecture behavioral of Entity rs232refcomp is up to date.
+Entity <Rs232RefComp> compiled.
+Entity <Rs232RefComp> (Architecture <Behavioral>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -177,7 +178,7 @@ Analyzing hierarchy for module <uart> in library <work> with parameters.
 
 Analyzing hierarchy for module <SevenSegment> in library <work>.
 
-Analyzing hierarchy for entity <rs232refcomp> in library <work> (architecture <behavioral>).
+Analyzing hierarchy for entity <rs232refcomp> in library <work> (architecture <Behavioral>).
 
 Analyzing hierarchy for module <SegmentDecoder> in library <work> with parameters.
 	BLANK = "1111111"
@@ -240,7 +241,7 @@ Analyzing module <uart> in library <work>.
 	SEND_4 = 3'b100
 Module <uart> is correct for synthesis.
  
-Analyzing Entity <rs232refcomp> in library <work> (Architecture <behavioral>).
+Analyzing Entity <rs232refcomp> in library <work> (Architecture <Behavioral>).
 Entity <rs232refcomp> analyzed. Unit <rs232refcomp> generated.
 
 Analyzing module <SevenSegment> in library <work>.
@@ -1324,12 +1325,12 @@ Offset:              8.921ns (Levels of Logic = 10)
 =========================================================================
 
 
-Total REAL time to Xst completion: 29.00 secs
-Total CPU time to Xst completion: 28.72 secs
+Total REAL time to Xst completion: 30.00 secs
+Total CPU time to Xst completion: 30.52 secs
  
 --> 
 
-Total memory usage is 377444 kilobytes
+Total memory usage is 377564 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   55 (   0 filtered)

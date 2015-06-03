@@ -37,8 +37,8 @@ module top #(
 	
 	// ************** EPC 신호 *********************** //
 	
-	// EPC_nCS[1], EPC_nRdy = LCD
-	// EPC_nCS[0], EPC_nRdy = UART
+	// EPC_nCS[1], EPC_nRdy[1] = LCD
+	// EPC_nCS[0], EPC_nRdy[0] = UART
 	wire	[1:0] EPC_nCS;		// EPC에서 전달하는 CS신호. Active Low
 	wire  [1:0] EPC_Rdy;
 	wire	[5:0] Addr;	// A5A4A3A2A1A0. EPC의 출력.
@@ -46,7 +46,6 @@ module top #(
 	wire	nWR;			// Write. active low. EPC의 출력.
 	wire 	BE;			// Byte Enable. Active High. EPC의 출력이 1바이트이기 때문에 큰 의미 없음.
 	wire	nBE;			// Byte Enable. Active Low. EPC의 출력을 받아 극성을 반전하여 사용하기로 한다.
-	
 
 	wire	[7:0] BlazeDataOut; 
 	reg	[7:0] BlazeDataIn; 
@@ -89,10 +88,9 @@ module top #(
 		end
 	end
 	
-	assign LCD_nCS = ( (EPC_nCS[1] == 0) && ((Addr == LCD_DATA_ADDR) || (Addr == LCD_CONTROL_ADDR)) ) ? 0 : 1;
-
+	// nCS 설정
 	
-	// Uart Operation
+	assign LCD_nCS = ( (EPC_nCS[1] == 0) && ((Addr == LCD_DATA_ADDR) || (Addr == LCD_CONTROL_ADDR)) ) ? 0 : 1;
 	
 	assign Uart_nCS = ( (EPC_nCS[0] == 0) && (Addr == UART_DATA_ADDR) ) ? 0 : 1;
 	
@@ -129,8 +127,9 @@ module top #(
 	// ******************************************************************** //
 	
 	
-	// Data from peripheral to Blaze Operation
+	// ******************** 입출력 데이터 정의 ************************* //
 	
+	// Data from peripheral to Blaze Operation
 	always @(posedge clk) begin
 		if(EPC_nCS[1] == 0)
 			case(Addr)
@@ -145,15 +144,17 @@ module top #(
 			endcase
 	end
 	
-	// 3-state buffer among LCD and Blaze
+	// 3-state buffer
 	assign JA = (nWR == 0) ? BlazeDataOut[7:0] : 8'bz; // Blaze_EPC -> LCD
+	
+	// **************************************************************** //
 	
 	assign JB[4] = RS;
 	assign JB[5] = RW;
 	assign JB[6] = EN;
 	
 	assign EPC_Rdy[1] = LCD_RDY;
-	assign EPC_Rdy[0] = UART_RDY; 
+	assign EPC_Rdy[0] = UART_RDY;
 	
 	//assign Led = Uart_Status;
 	

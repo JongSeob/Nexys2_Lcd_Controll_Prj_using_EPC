@@ -1,15 +1,15 @@
-20:14:32 **** Auto Build of configuration Release for project app_prj ****
+23:34:59 **** Auto Build of configuration Release for project app_prj ****
 make all 
 'Building file: ../src/src.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O0 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/src.d" -MT"src/src.d" -o "src/src.o" "../src/src.c"
+../src/src.c: In function 'delay':
+../src/src.c:52:2: warning: suggest parentheses around '+' in operand of '&' [-Wparentheses]
 ../src/src.c: In function 'Printf':
-../src/src.c:57:3: warning: implicit declaration of function 'PutCh' [-Wimplicit-function-declaration]
+../src/src.c:59:3: warning: implicit declaration of function 'PutCh' [-Wimplicit-function-declaration]
 ../src/src.c: At top level:
-../src/src.c:92:6: warning: conflicting types for 'PutCh' [enabled by default]
-../src/src.c:57:3: note: previous implicit declaration of 'PutCh' was here
-../src/src.c: In function 'main':
-../src/src.c:223:16: warning: unused variable 'position' [-Wunused-variable]
+../src/src.c:94:6: warning: conflicting types for 'PutCh' [enabled by default]
+../src/src.c:59:3: note: previous implicit declaration of 'PutCh' was here
 'Finished building: ../src/src.c'
 ' '
 'Building target: app_prj.elf'
@@ -20,7 +20,7 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -m
 'Invoking: MicroBlaze Print Size'
 mb-size app_prj.elf  |tee "app_prj.elf.size"
    text	   data	    bss	    dec	    hex	filename
-   3450	    268	   2098	   5816	   16b8	app_prj.elf
+   3678	    268	   2092	   6038	   1796	app_prj.elf
 'Finished building: app_prj.elf.size'
 ' '
 'Invoking: Xilinx ELF Check'
@@ -37,5 +37,5 @@ elfcheck passed.
 'Finished building: app_prj.elf.elfcheck'
 ' '
 
-20:14:34 Build Finished (took 1s.794ms)
+23:35:01 Build Finished (took 1s.859ms)
 

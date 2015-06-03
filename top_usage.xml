@@ -5,7 +5,7 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <DeviceUsageSummary rev="4">
-<DesignStatistics TimeStamp="Tue Jun 02 19:56:31 2015"><group name="NetStatistics">
+<DesignStatistics TimeStamp="Wed Jun 03 23:23:06 2015"><group name="NetStatistics">
 <item name="NumNets_Active" rev="4">
 <attrib name="value" value="3667"/></item>
 <item name="NumNets_Gnd" rev="4">
@@ -104,73 +104,73 @@
 <attrib name="value" value="761"/></item>
 </group>
 <group name="MiscellaneousStatistics">
-<item name="AGG_BONDED_IO" rev="3">
+<item name="AGG_BONDED_IO" rev="1">
 <attrib name="value" value="43"/></item>
-<item name="AGG_IO" rev="3">
+<item name="AGG_IO" rev="1">
 <attrib name="value" value="43"/></item>
-<item name="AGG_SLICE" rev="3">
+<item name="AGG_SLICE" rev="1">
 <attrib name="value" value="1924"/></item>
-<item name="NUM_4_INPUT_LUT" rev="3">
+<item name="NUM_4_INPUT_LUT" rev="1">
 <attrib name="value" value="2712"/></item>
-<item name="NUM_BONDED_IBUF" rev="3">
+<item name="NUM_BONDED_IBUF" rev="1">
 <attrib name="value" value="11"/></item>
-<item name="NUM_BONDED_IOB" rev="3">
+<item name="NUM_BONDED_IOB" rev="1">
 <attrib name="value" value="32"/></item>
-<item name="NUM_BSCAN" rev="3">
+<item name="NUM_BSCAN" rev="1">
 <attrib name="value" value="1"/></item>
-<item name="NUM_BUFGMUX" rev="3">
+<item name="NUM_BUFGMUX" rev="1">
 <attrib name="value" value="4"/></item>
-<item name="NUM_CYMUX" rev="3">
+<item name="NUM_CYMUX" rev="1">
 <attrib name="value" value="273"/></item>
-<item name="NUM_DCM" rev="3">
+<item name="NUM_DCM" rev="1">
 <attrib name="value" value="1"/></item>
-<item name="NUM_DP_RAM" rev="3">
+<item name="NUM_DP_RAM" rev="1">
 <attrib name="value" value="256"/></item>
-<item name="NUM_LUT_RT" rev="3">
+<item name="NUM_LUT_RT" rev="1">
 <attrib name="value" value="92"/></item>
-<item name="NUM_MULT18X18SIO" rev="3">
+<item name="NUM_MULT18X18SIO" rev="1">
 <attrib name="value" value="3"/></item>
-<item name="NUM_MULTAND" rev="3">
+<item name="NUM_MULTAND" rev="1">
 <attrib name="value" value="42"/></item>
-<item name="NUM_RAMB16" rev="3">
+<item name="NUM_RAMB16" rev="1">
 <attrib name="value" value="16"/></item>
-<item name="NUM_SHIFT" rev="3">
+<item name="NUM_SHIFT" rev="1">
 <attrib name="value" value="138"/></item>
-<item name="NUM_SLICEL" rev="3">
+<item name="NUM_SLICEL" rev="1">
 <attrib name="value" value="1719"/></item>
-<item name="NUM_SLICEM" rev="3">
+<item name="NUM_SLICEM" rev="1">
 <attrib name="value" value="205"/></item>
-<item name="NUM_SLICE_FF" rev="3">
+<item name="NUM_SLICE_FF" rev="1">
 <attrib name="value" value="1657"/></item>
-<item name="NUM_SLICE_LATCH" rev="3">
+<item name="NUM_SLICE_LATCH" rev="1">
 <attrib name="value" value="1"/></item>
-<item name="NUM_XOR" rev="3">
+<item name="NUM_XOR" rev="1">
 <attrib name="value" value="178"/></item>
-<item name="Xilinx Core clock_generator_v4_03_a" rev="3">
+<item name="Xilinx Core clock_generator_v4_03_a" rev="1">
 <attrib name="value" value="1"/></item>
-<item name="Xilinx Core lmb_bram_elaborate_v1_00_a" rev="3">
+<item name="Xilinx Core lmb_bram_elaborate_v1_00_a" rev="1">
 <attrib name="value" value="1"/></item>
-<item name="Xilinx Core lmb_bram_if_cntlr_v3_10_c" rev="3">
+<item name="Xilinx Core lmb_bram_if_cntlr_v3_10_c" rev="1">
 <attrib name="value" value="2"/></item>
-<item name="Xilinx Core lmb_v10_v2_00_b" rev="3">
+<item name="Xilinx Core lmb_v10_v2_00_b" rev="1">
 <attrib name="value" value="2"/></item>
-<item name="Xilinx Core mdm_v2_10_a" rev="3">
+<item name="Xilinx Core mdm_v2_10_a" rev="1">
 <attrib name="value" value="1"/></item>
-<item name="Xilinx Core microblaze_v8_50_c" rev="3">
+<item name="Xilinx Core microblaze_v8_50_c" rev="1">
 <attrib name="value" value="2"/></item>
-<item name="Xilinx Core plb_v46_v1_05_a" rev="3">
+<item name="Xilinx Core plb_v46_v1_05_a" rev="1">
 <attrib name="value" value="1"/></item>
-<item name="Xilinx Core proc_sys_reset_v3_00_a" rev="3">
+<item name="Xilinx Core proc_sys_reset_v3_00_a" rev="1">
 <attrib name="value" value="1"/></item>
-<item name="Xilinx Core xps_epc_v1_02_a" rev="3">
+<item name="Xilinx Core xps_epc_v1_02_a" rev="1">
 <attrib name="value" value="1"/></item>
-<item name="Xilinx Core xps_gpio_v2_00_a" rev="3">
+<item name="Xilinx Core xps_gpio_v2_00_a" rev="1">
 <attrib name="value" value="2"/></item>
-<item name="Xilinx Core xps_uartlite_v1_02_a" rev="3">
+<item name="Xilinx Core xps_uartlite_v1_02_a" rev="1">
 <attrib name="value" value="1"/></item>
 </group>
 </DesignStatistics>
-<DeviceUsage TimeStamp="Tue Jun 02 19:56:31 2015"><group name="SiteSummary">
+<DeviceUsage TimeStamp="Wed Jun 03 23:23:06 2015"><group name="SiteSummary">
 <item name="BSCAN" rev="4">
 <attrib name="total" value="1000000"/><attrib name="used" value="1"/></item>
 <item name="BSCAN_BSCAN_BLACKBOX" rev="4">
@@ -279,7 +279,7 @@
 <attrib name="total" value="1000000"/><attrib name="used" value="200"/></item>
 </group>
 </DeviceUsage>
-<ReportConfigData TimeStamp="Tue Jun 02 19:56:31 2015"><group name="SLICEL_CYMUXF">
+<ReportConfigData TimeStamp="Wed Jun 03 23:23:06 2015"><group name="SLICEL_CYMUXF">
 <item name="0" rev="4">
 <attrib name="0" value="141"/><attrib name="0_INV" value="0"/></item>
 <item name="1" rev="4">
@@ -606,7 +606,7 @@
 <attrib name="RST" value="1"/><attrib name="RST_INV" value="0"/></item>
 </group>
 </ReportConfigData>
-<ReportPinData TimeStamp="Tue Jun 02 19:56:31 2015"><group name="SLICEL_CYMUXF">
+<ReportPinData TimeStamp="Wed Jun 03 23:23:06 2015"><group name="SLICEL_CYMUXF">
 <item name="0" rev="4">
 <attrib name="value" value="141"/></item>
 <item name="1" rev="4">

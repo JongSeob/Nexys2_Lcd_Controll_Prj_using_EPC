@@ -1,6 +1,25 @@
-20:04:44.587 INFO  - Processing command line option -hwspec E:/Nexys2_LCD_UART_EPC/blaze/SDK/SDK_Export/hw/blaze.xml. 
-20:06:48.709 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
-20:13:01.090 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
-20:13:22.155 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
-20:14:39.283 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
-20:14:51.312 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+23:25:25.538 INFO  - Processing command line option -hwspec E:/Nexys2_LCD_UART_EPC/blaze/SDK/SDK_Export/hw/blaze.xml. 
+23:30:59.038 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+23:31:11.256 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+23:32:30.132 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+23:32:41.073 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+23:32:56.038 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+23:34:13.284 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+23:34:23.240 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+23:35:08.163 INFO  - FPGA configured successfully with bitstream "E:/Nexys2_LCD_UART_EPC/blaze/SDK/blaze_hw_platform/download.bit" 
+23:35:25.637 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  

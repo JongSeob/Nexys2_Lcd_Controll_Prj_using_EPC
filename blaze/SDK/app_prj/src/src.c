@@ -48,6 +48,8 @@ void delay(unsigned int count)
 {
 	while(count != 0)
 		count--;
+
+	LED = LED + count&0;
 }
 
 void Printf(char String[]) {
@@ -229,6 +231,24 @@ int main()
 	SendCmdToLcd(0xC0);
 
 	PrintfLcd("Lcd Test End");
+
+	// CGRAM Å×½ºÆ®
+
+	position = GetPositionOfLcd();
+
+	SendCmdToLcd(0x40);
+	SendCharToLcd(0x0E);
+	SendCharToLcd(0x11);
+	SendCharToLcd(0x0E);
+	SendCharToLcd(0x04);
+	SendCharToLcd(0x1F);
+	SendCharToLcd(0x04);
+	SendCharToLcd(0x0A);
+	SendCharToLcd(0x11);
+
+	SendCmdToLcd(0x80 + position);
+
+	PutCharLcd(0);
 
 	while(1)
 	{

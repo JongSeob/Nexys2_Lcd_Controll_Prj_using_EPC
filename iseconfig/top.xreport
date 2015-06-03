@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-06-02T19:40:42</DateModified>
+  <DateModified>2015-06-03T23:20:40</DateModified>
   <ModuleName>top</ModuleName>
-  <SummaryTimeStamp>2015-05-18T17:42:33</SummaryTimeStamp>
+  <SummaryTimeStamp>2015-06-03T14:30:32</SummaryTimeStamp>
   <SavedFilePath>E:/Nexys2_LCD_UART_EPC/iseconfig/top.xreport</SavedFilePath>
   <ImplementationReportsDirectory>E:/Nexys2_LCD_UART_EPC\</ImplementationReportsDirectory>
   <DateInitialized>2015-05-12T14:59:51</DateInitialized>
